@@ -13,11 +13,34 @@ class NavBar extends React.Component {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Header inverted as='h1'>meteor-application-template</Header>
+            <Dropdown text='File'>
+              <Dropdown.Menu>
+                <Dropdown.Item text='New' />
+                <Dropdown.Item text='Open...' description='ctrl + o' />
+                <Dropdown.Item text='Save as...' description='ctrl + s' />
+                <Dropdown.Item text='Rename' description='ctrl + r' />
+                <Dropdown.Item text='Make a copy' />
+                <Dropdown.Item icon='folder' text='Move to folder' />
+                <Dropdown.Item icon='trash' text='Move to trash' />
+                <Dropdown.Divider />
+                <Dropdown.Item text='Download As...' />
+                <Dropdown.Item text='Publish To Web' />
+                <Dropdown.Item text='E-mail Collaborators' />
+              </Dropdown.Menu>
+          </Dropdown>
+          <Header inverted as='h1'>JohnsonsList</Header>
         </Menu.Item>
         {this.props.currentUser ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Stuff</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Stuff</Menu.Item>]
+            [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>ADD ITEM</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>NEW</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>DEALS</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>YOUR SHOP</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>SELL</Menu.Item>,
+              <Dropdown item text="MY CART 0" icon="shop">
+                <Dropdown.Menu>
+                  <Dropdown.Item>cart is currently empty.</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
