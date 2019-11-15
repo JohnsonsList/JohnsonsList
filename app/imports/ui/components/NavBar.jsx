@@ -9,23 +9,23 @@ import { Roles } from 'meteor/alanning:roles';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const menuStyle = { marginBottom: '10px' };
+    const menuStyle = { marginBottom: '10px', backgroundColor: 'green'};
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Dropdown text='File'>
+            <Dropdown text='Dropdown Menu'>
               <Dropdown.Menu>
-                <Dropdown.Item text='New' />
-                <Dropdown.Item text='Open...' description='ctrl + o' />
-                <Dropdown.Item text='Save as...' description='ctrl + s' />
-                <Dropdown.Item text='Rename' description='ctrl + r' />
-                <Dropdown.Item text='Make a copy' />
-                <Dropdown.Item icon='folder' text='Move to folder' />
-                <Dropdown.Item icon='trash' text='Move to trash' />
+                <Dropdown.Item text='Home Page' />
+                <Dropdown.Item text='Profile Page'/>
+                <Dropdown.Item text='Cart'/>
+                <Dropdown.Item text='Notify Admin'/>
+                <Dropdown.Item text='Clothing' />
+                <Dropdown.Item icon='Dorm Stuff'/>
+                <Dropdown.Item icon='Supplies'/>
                 <Dropdown.Divider />
-                <Dropdown.Item text='Download As...' />
-                <Dropdown.Item text='Publish To Web' />
-                <Dropdown.Item text='E-mail Collaborators' />
+                <Dropdown.Item text='Feedback Page' />
+                <Dropdown.Item text='Sign-In' />
+                <Dropdown.Item text='Sign-Out' />
               </Dropdown.Menu>
           </Dropdown>
           <Header inverted as='h1'>JohnsonsList</Header>
