@@ -4,17 +4,18 @@ import { Grid, List, Input, Button, Icon } from 'semantic-ui-react';
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
   render() {
+    const itemPad = { paddingTop: '10px' };
     return (
         <div className="footer-background">
           <Grid container>
-            <Grid.Column floated='left'>
+            <Grid.Column width={2}>
               <List>
-                <List.Item>About us</List.Item>
+                <List.Item style={itemPad}>About us</List.Item>
                 <List.Item>Help</List.Item>
               </List>
             </Grid.Column>
 
-            <Grid.Column width={4} floated='left'>
+            <Grid.Column width={4}>
               <List>
                 <List.Item>Sign up for the latest updates</List.Item>
                 <List.Item>
@@ -26,11 +27,11 @@ class Footer extends React.Component {
 
             <Grid.Column width={3} floated='right'>
               <List>
-                <List.Item>Follow us</List.Item>
+                <List.Item style={itemPad}>Follow us</List.Item>
                 <List.Item>
-                  <Icon padded inverted name="facebook f"/>
-                  <Icon padded inverted name="instagram"/>
-                  <Icon padded inverted name="twitter"/>
+                  <Icon inverted name="facebook f"/>
+                  <Icon inverted name="instagram"/>
+                  <Icon inverted name="twitter"/>
                 </List.Item>
               </List>
             </Grid.Column>
