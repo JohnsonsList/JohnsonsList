@@ -1,12 +1,19 @@
-.NavBar{
+.TitleBar{
   background-color: green;
   color: white;
   padding-top: 100px;
   padding-left: 0px;
 }
 
+.NavBar{
+  background-color: white;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-bottom: 10px;
+}
+
 .footer-background {
-  background-color: green;
+  background-color: #363636;
   color: white;
   padding-top: 20px;
   padding-bottom: 0px;
