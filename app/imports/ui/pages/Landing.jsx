@@ -14,8 +14,9 @@ class Landing extends React.Component {
 
             <Grid.Column width={8} inverted>
               <h1>JohnsonsList</h1>
-              <h3>A sales website dedicated to new incoming and current University of Hawaii students.  This proprietary website
-              helps in giving every University of Hawaii college student an opportunity to purchase items with also enabling other students to sell their unneeded stuff.</h3>
+              <h3>A sales website dedicated to new incoming and current University of Hawaii students. This proprietary
+                website helps in giving every University of Hawaii college student an opportunity to purchase items with
+                also enabling other students to sell their unneeded stuff.</h3>
             </Grid.Column>
           </Grid>
         </div>
