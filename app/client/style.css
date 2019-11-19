@@ -2,11 +2,14 @@
   background-color: green;
   color: white;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 0px;
 }
 
 .landing {
   background: url("/images/manoa-campus.jpg");
   background-size: cover;
   height: 100%;
+  margin: 0;
+  padding-top: 250px;
+  padding-bottom: 200px;
 }
