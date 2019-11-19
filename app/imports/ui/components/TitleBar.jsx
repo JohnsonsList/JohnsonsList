@@ -13,8 +13,6 @@ class TitleBar extends React.Component {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-        </Menu.Item>
-        <Menu.Item>
           <Header inverted as='h1'>JohnsonsList</Header>
         </Menu.Item>
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
