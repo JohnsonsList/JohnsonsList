@@ -1,0 +1,12 @@
+.footer-background {
+  background-color: green;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.landing {
+  background: url("/images/manoa-campus.jpg");
+  background-size: cover;
+  height: 100%;
+}
