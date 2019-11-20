@@ -9,7 +9,7 @@ class Landing extends React.Component {
           <Grid verticalAlign='middle' textAlign='center' container>
 
             <Grid.Column width={4}>
-              <Image size='small' circular src="/images/meteor-logo.png"/>
+              <Image size='medium' circular src="/images/JL-logo2.png"/>
             </Grid.Column>
 
             <Grid.Column width={8} inverted>

@@ -6,14 +6,17 @@ import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Image } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
+
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. UPDATED */
 class TitleBar extends React.Component {
   render() {
-    const menuStyle = { marginBottom: '0px', backgroundColor: 'green' };
+    const menuStyle = { marginBottom: '0px', backgroundColor: '#024731' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Image size='small' src='/images/JL-logo2.png' to="/"/>
+        </Menu.Item>
+        <Menu.Item>
         </Menu.Item>
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>

@@ -37,7 +37,7 @@ class NavBar extends React.Component {
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>DEALS</Menu.Item>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>YOUR SHOP</Menu.Item>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>SELL</Menu.Item>
-                  <Dropdown item text="SAVED LISTINGS" icon="star" pointing="top right">
+                  <Dropdown item text="SAVED LISTINGS" icon="star" pointing="right">
                     <Dropdown.Menu>
                       <Dropdown.Item>Your cart is currently empty.</Dropdown.Item>
                     </Dropdown.Menu>

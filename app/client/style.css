@@ -1,12 +1,11 @@
-.TitleBar{
+.TitleBar {
   background-color: #13aa52;
-  color: white;
-  padding-top: 100px;
-  padding-left: 0px;
+  color: #024731;
+  padding-left: 0;
 }
 
-.NavBar{
-  background-color: white;
+.NavBar {
+  background-color: #155e63;
   padding-top: 0;
   padding-left: 0;
   padding-bottom: 10px;
@@ -16,7 +15,7 @@
   background-color: #363636;
   color: white;
   padding-top: 20px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .landing {
