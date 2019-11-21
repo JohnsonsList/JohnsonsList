@@ -8,6 +8,7 @@ const Stuffs = new Mongo.Collection('Stuffs');
 /** Define a schema to specify the structure of each document in the collection. */
 const StuffSchema = new SimpleSchema({
   name: String,
+  description: String,
   quantity: Number,
   owner: String,
   condition: {
