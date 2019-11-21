@@ -28,8 +28,8 @@ class NavBar extends React.Component {
             {this.props.currentUser ? (
                 // eslint-disable-next-line react/jsx-key
                 [<Container>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='add'>VIEW STORE</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='add'>VIEW
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/store" key='add'>VIEW STORE</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/yourshop" key='add'>VIEW
                     MY LISTINGS</Menu.Item>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='list'>SELL AN ITEM</Menu.Item>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='add'>YOUR SHOP</Menu.Item>
