@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown } from 'semantic-ui-react';
+import { Menu, Dropdown, Icon } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 import Container from 'semantic-ui-react/dist/commonjs/elements/Container';
 
@@ -33,11 +33,8 @@ class NavBar extends React.Component {
                     MY LISTINGS</Menu.Item>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='list'>SELL AN ITEM</Menu.Item>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='add'>YOUR SHOP</Menu.Item>
-                  <Dropdown item text="SAVED LISTINGS" icon="star" pointing="right">
-                    <Dropdown.Menu>
-                      <Dropdown.Item>Your cart is currently empty.</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
+                  <Menu.Item as={NavLink} activeclassNAme="active" exact to="/saved" key="add">SAVED ITEMS
+                    <Icon name='star'></Icon></Menu.Item>
                 </Container>]
             ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
