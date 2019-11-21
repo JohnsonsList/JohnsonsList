@@ -29,15 +29,10 @@ class NavBar extends React.Component {
                 // eslint-disable-next-line react/jsx-key
                 [<Container>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='add'>VIEW STORE</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='list'>ADD ITEM</Menu.Item>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='add'>VIEW
                     MY LISTINGS</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>ADD
-                    ITEM</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>NEW</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>DEALS</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>YOUR SHOP</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>SELL</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='list'>SELL AN ITEM</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='add'>YOUR SHOP</Menu.Item>
                   <Dropdown item text="SAVED LISTINGS" icon="star" pointing="right">
                     <Dropdown.Menu>
                       <Dropdown.Item>Your cart is currently empty.</Dropdown.Item>
