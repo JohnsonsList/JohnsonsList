@@ -1,13 +1,25 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Header, Loader, Input, Card } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/Stuff';
-import StuffItem from '/imports/ui/components/StuffItem';
+import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders a table containing all of the Stuff documents. Use <Stuff> to render each row. */
 class ListStuff extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      search: '',
+    };
+  }
+
+  updateSearch(event) {
+    // console.log(event.target.value);
+    this.setState({ search: event.target.value });
+  }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -16,22 +28,24 @@ class ListStuff extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const filteredItems = this.props.stuffs.filter(
+        (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
+    );
     return (
         <Container>
           <Header as="h2" textAlign="center">List Stuff</Header>
-          <Table celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Quantity</Table.HeaderCell>
-                <Table.HeaderCell>Condition</Table.HeaderCell>
-                <Table.HeaderCell>Edit</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
-            </Table.Body>
-          </Table>
+          <Input
+              type='text'
+              value={this.state.search}
+              onChange={this.updateSearch.bind(this)}
+              placeholder='Search...'
+              icon='search'
+          />
+          <Card.Group>
+            {filteredItems.map((stuff) => <Stuff
+                key={stuff._id}
+                stuff={stuff}/>)}
+          </Card.Group>
         </Container>
     );
   }
