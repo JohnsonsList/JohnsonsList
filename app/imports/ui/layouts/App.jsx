@@ -8,7 +8,7 @@ import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuff from '../pages/ListStuff';
+import MyListing from '../pages/MyListing';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
@@ -35,7 +35,7 @@ class App extends React.Component {
               <Route path="/store" component={Store}/>
               <Route path="/saved" component={Saved}/>
               <Route path="/yourshop" component={YourShop}/>
-              <ProtectedRoute path="/list" component={ListStuff}/>
+              <ProtectedRoute path="/list" component={MyListing}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>

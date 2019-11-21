@@ -7,7 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
 /** Renders a table containing all of the Stuff documents. Use <Stuff> to render each row. */
-class ListStuff extends React.Component {
+class MyListing extends React.Component {
 
   constructor() {
     super();
@@ -35,7 +35,7 @@ class ListStuff extends React.Component {
     return (
         <div className='background'>
         <Container>
-          <Header as="h2" textAlign="center">List Stuff</Header>
+          <Header as="h2" textAlign="center" inverted>Current Items Being Sold</Header>
           <Input
               type='text'
               value={this.state.search}
@@ -55,7 +55,7 @@ class ListStuff extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ListStuff.propTypes = {
+MyListing.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -68,4 +68,4 @@ export default withTracker(() => {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ListStuff);
+})(MyListing);
