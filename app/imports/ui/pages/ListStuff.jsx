@@ -31,6 +31,7 @@ class ListStuff extends React.Component {
     const filteredItems = this.props.stuffs.filter(
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
+    const cardStyle = { paddingTop: '50px', paddingBottom: '50px' };
     return (
         <Container>
           <Header as="h2" textAlign="center">List Stuff</Header>
@@ -41,7 +42,7 @@ class ListStuff extends React.Component {
               placeholder='Search...'
               icon='search'
           />
-          <Card.Group>
+          <Card.Group style={cardStyle}>
             {filteredItems.map((stuff) => <Stuff
                 key={stuff._id}
                 stuff={stuff}/>)}
