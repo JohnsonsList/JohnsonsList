@@ -20,9 +20,6 @@ class NavBar extends React.Component {
                   <Dropdown.Item text='Profile Page'/>
                   <Dropdown.Item text='Cart'/>
                   <Dropdown.Item text='Notify Admin'/>
-                  <Dropdown.Item text='Clothing'/>
-                  <Dropdown.Item text='Dorm Stuff'/>
-                  <Dropdown.Item text='Supplies'/>
                   <Dropdown.Divider/>
                   <Dropdown.Item text='Feedback Page'/>
                 </Dropdown.Menu>
@@ -35,6 +32,12 @@ class NavBar extends React.Component {
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='list'>ADD ITEM</Menu.Item>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='add'>VIEW
                     MY LISTINGS</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>ADD
+                    ITEM</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>NEW</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>DEALS</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>YOUR SHOP</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>SELL</Menu.Item>
                   <Dropdown item text="SAVED LISTINGS" icon="star" pointing="right">
                     <Dropdown.Menu>
                       <Dropdown.Item>Your cart is currently empty.</Dropdown.Item>
