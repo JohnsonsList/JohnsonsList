@@ -33,6 +33,7 @@ class ListStuff extends React.Component {
     );
     const cardStyle = { paddingTop: '50px', paddingBottom: '50px' };
     return (
+        <div className='background'>
         <Container>
           <Header as="h2" textAlign="center">List Stuff</Header>
           <Input
@@ -48,6 +49,7 @@ class ListStuff extends React.Component {
                 stuff={stuff}/>)}
           </Card.Group>
         </Container>
+        </div>
     );
   }
 }
