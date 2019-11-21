@@ -1,6 +1,6 @@
 .TitleBar {
   background-color: #13aa52;
-  color: #024731;
+  color: #FFFFFF;
   padding-left: 0;
 }
 
@@ -9,6 +9,8 @@
   padding-top: 0;
   padding-left: 0;
   padding-bottom: 10px;
+  outline-color: black;
+  outline-width: 10px;
 }
 
 .footer-background {
@@ -27,4 +29,9 @@
   padding-bottom: 200px;
   color: white;
   font: sans-serif;
+}
+
+.background {
+  background: url("/images/manoa-blur.jpg") !important;
+  padding-bottom: 20px;
 }
