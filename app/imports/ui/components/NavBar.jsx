@@ -28,17 +28,17 @@ class NavBar extends React.Component {
             {this.props.currentUser ? (
                 // eslint-disable-next-line react/jsx-key
                 [<Container>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/store" key='
-                  add' position='right'>VIEW STORE</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/
-                  yourshop" key='add' position='right'>VIEW
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/store" key=
+                      'add' position='right'>VIEW STORE</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/yourshop" key=
+                      'add' position='right'>VIEW
                     MY LISTINGS</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="
-                  /add" key='list' position='right'>SELL AN ITEM</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/
-                  list" key='add' position='right'>YOUR SHOP</Menu.Item>
-                  <Menu.Item as={NavLink} activeclassNAme="active" exact to="/
-                  saved" key="add" position='right'>SAVED ITEMS
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key=
+                      'list' position='right'>SELL AN ITEM</Menu.Item>
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key=
+                      'add' position='right'>YOUR SHOP</Menu.Item>
+                  <Menu.Item as={NavLink} activeclassNAme="active" exact to="/saved" key=
+                      'add' position='right'>SAVED ITEMS
                     <Icon name='star'></Icon></Menu.Item>
                 </Container>]
             ) : ''}
