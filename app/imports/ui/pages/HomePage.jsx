@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 /** A simple static component to render some text for the landing page. */
 class HomePage extends React.Component {
   render() {
-    const gridStyle = { height: '400px' };
+    const gridStyle = { height: '600px' };
     return (
         <div className='background'>
           <TitleBar/>

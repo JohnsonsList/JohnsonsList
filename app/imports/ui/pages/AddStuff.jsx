@@ -49,7 +49,7 @@ class AddStuff extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     let fRef = null;
-    const formStyle = { paddingBottom: '50px' };
+    const formStyle = { paddingTop: '20px', paddingBottom: '50px' };
     return (
         <div className='background'>
           <TitleBar/>

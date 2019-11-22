@@ -34,13 +34,14 @@ class ListStuff extends React.Component {
     const filteredItems = this.props.stuffs.filter(
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
-    const cardStyle = { paddingTop: '50px', paddingBottom: '50px' };
+    const cardStyle = { paddingTop: '30px', paddingBottom: '50px' };
+    const pageStyle = { paddingTop: '20px' };
     return (
         <div className="background">
           <TitleBar/>
           <NavBar/>
-          <Container>
-            <Header as="h2" textAlign="center">List Stuff</Header>
+          <Container style={pageStyle}>
+            <Header as="h2" textAlign="center" inverted>Saved Listings</Header>
             <Input
                 type='text'
                 value={this.state.search}

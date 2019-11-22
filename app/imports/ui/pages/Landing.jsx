@@ -6,7 +6,7 @@ import SOFooter from '../components/SOFooter';
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
-    const gridStyle = { height: '400px' };
+    const gridStyle = { height: '600px' };
     return (
         <div className='landing'>
           <SOBar/>
