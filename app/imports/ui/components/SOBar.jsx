@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Image } from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. UPDATED */
@@ -22,7 +22,9 @@ class TitleBar extends React.Component {
   }
 
   render() {
-    const menuStyle = { marginBottom: '0px', backgroundColor: '#000000' };
+    const color = { color: '#41a6de' };
+    const color2 = { color: '#000000' };
+    const menuStyle = { marginBottom: '0px', backgroundColor: '#FFFFFF' };
     return (
         <Menu style={menuStyle} attached="top" borderless inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
@@ -32,10 +34,10 @@ class TitleBar extends React.Component {
               <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
           ) : ''}
           <Menu.Item position="right">
-                <Menu.Item as={NavLink} exact to='/signin'>Log In
+                <Menu.Item style={color} as={NavLink} exact to='/signin'>Log In
                 </Menu.Item>
-            <Menu.Item>|</Menu.Item>
-            <Menu.Item as={NavLink} exact to='/signup'>Sign Up
+            <Menu.Item style={color2}>|</Menu.Item>
+            <Menu.Item style={color} as={NavLink} exact to='/signup'>Sign Up
             </Menu.Item>
           </Menu.Item>
         </Menu>
