@@ -5,12 +5,9 @@
 }
 
 .NavBar {
-  background-color: #155e63;
+  background-color: #FFFFFF;
   padding-top: 0;
   padding-left: 0;
-  padding-bottom: 10px;
-  outline-color: black;
-  outline-width: 10px;
 }
 
 .footer-background {
