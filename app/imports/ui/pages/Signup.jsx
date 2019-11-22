@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
+import SOBar from '../components/SOBar';
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.
@@ -39,6 +40,8 @@ class Signup extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
+        <div>
+          <SOBar/>
       <Container>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
@@ -83,6 +86,7 @@ class Signup extends React.Component {
           </Grid.Column>
         </Grid>
       </Container>
+        </div>
     );
   }
 }
