@@ -7,6 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
+import Footer from '../components/Footer';
 
 /** Renders a table containing all of the Stuff documents. Use <Stuff> to render each row. */
 class MyListing extends React.Component {
@@ -38,21 +39,22 @@ class MyListing extends React.Component {
         <div className='background'>
           <TitleBar/>
           <NavBar/>
-        <Container>
-          <Header as="h2" textAlign="center" inverted>Current Items Being Sold</Header>
-          <Input
-              type='text'
-              value={this.state.search}
-              onChange={this.updateSearch.bind(this)}
-              placeholder='Search...'
-              icon='search'
-          />
-          <Card.Group style={cardStyle}>
-            {filteredItems.map((stuff) => <Stuff
-                key={stuff._id}
-                stuff={stuff}/>)}
-          </Card.Group>
-        </Container>
+          <Container>
+            <Header as="h2" textAlign="center" inverted>Current Items Being Sold</Header>
+            <Input
+                type='text'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                placeholder='Search...'
+                icon='search'
+            />
+            <Card.Group style={cardStyle}>
+              {filteredItems.map((stuff) => <Stuff
+                  key={stuff._id}
+                  stuff={stuff}/>)}
+            </Card.Group>
+          </Container>
+          <Footer/>
         </div>
     );
   }

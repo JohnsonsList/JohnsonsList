@@ -1,17 +1,20 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, Image, Container } from 'semantic-ui-react';
 import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
+import Footer from '../components/Footer';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     const gridStyle = { height: '400px' };
+    const footerStyle = { paddingBottom: '60px' };
     return (
         <div className='landing'>
           <TitleBar/>
           <NavBar/>
-          <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
+          <Container>
+            <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
 
             <Grid.Column width={4}>
               <Image size='medium' circular src="/images/JL-logo2.png"/>
@@ -23,6 +26,8 @@ class Landing extends React.Component {
                 also enabling other students to sell their unneeded stuff.</h3>
             </Grid.Column>
           </Grid>
+          </Container>
+          <Footer style={footerStyle}/>
         </div>
     );
   }
