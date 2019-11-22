@@ -5,12 +5,11 @@ import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
 /** A simple static component to render some text for the landing page. */
-class Landing extends React.Component {
+class HomePage extends React.Component {
   render() {
     const gridStyle = { height: '400px' };
-    const footerStyle = { paddingBottom: '60px' };
     return (
-        <div className='landing'>
+        <div className='background'>
           <TitleBar/>
           <NavBar/>
           <Container>
@@ -27,10 +26,10 @@ class Landing extends React.Component {
             </Grid.Column>
           </Grid>
           </Container>
-          <Footer style={footerStyle}/>
+          <Footer/>
         </div>
     );
   }
 }
 
-export default Landing;
+export default HomePage;
