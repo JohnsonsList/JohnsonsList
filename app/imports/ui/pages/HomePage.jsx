@@ -20,7 +20,7 @@ class HomePage extends React.Component {
             </Grid.Column>
 
             <Grid.Column width={8} inverted>
-              <h3>A sales website dedicated to new incoming and current University of Hawaii students. This proprietary
+              <h3>A sales website dedicated to incoming and current University of Hawaii students. This proprietary
                 website helps in giving every University of Hawaii college student an opportunity to purchase items with
                 also enabling other students to sell their unneeded stuff.</h3>
             </Grid.Column>
