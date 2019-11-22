@@ -14,6 +14,7 @@ import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
 import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
+import SOFooter from '../components/SOFooter';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
@@ -35,14 +36,14 @@ class AddStuff extends React.Component {
     const { name, description, quantity, condition } = data;
     const owner = Meteor.user().username;
     Stuffs.insert({ name, description, quantity, condition, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      });
+        (error) => {
+          if (error) {
+            swal('Error', error.message, 'error');
+          } else {
+            swal('Success', 'Item added successfully', 'success');
+            formRef.reset();
+          }
+        });
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -52,21 +53,24 @@ class AddStuff extends React.Component {
         <div className='background'>
           <TitleBar/>
           <NavBar/>
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center" inverted>Add Item to Store</Header>
-            <AutoForm ref={ref => { fRef = ref; }} schema={formSchema} onSubmit={data => this.submit(data, fRef)} >
-              <Segment>
-                <TextField name='name'/>
-                <LongTextField name='description'/>
-                <NumField name='quantity' decimal={false}/>
-                <SelectField name='condition'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
+          <Grid container centered>
+            <Grid.Column>
+              <Header as="h2" textAlign="center" inverted>Add Item to Store</Header>
+              <AutoForm ref={ref => {
+                fRef = ref;
+              }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
+                <Segment>
+                  <TextField name='name'/>
+                  <LongTextField name='description'/>
+                  <NumField name='quantity' decimal={false}/>
+                  <SelectField name='condition'/>
+                  <SubmitField value='Submit'/>
+                  <ErrorsField/>
+                </Segment>
+              </AutoForm>
+            </Grid.Column>
+          </Grid>
+          <SOFooter/>
         </div>
     );
   }

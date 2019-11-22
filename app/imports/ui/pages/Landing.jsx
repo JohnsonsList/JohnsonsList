@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Image } from 'semantic-ui-react';
 import SOBar from '../components/SOBar';
+import SOFooter from '../components/SOFooter';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -21,6 +22,7 @@ class Landing extends React.Component {
                 also enabling other students to sell their unneeded stuff.</h3>
             </Grid.Column>
           </Grid>
+          <SOFooter/>
         </div>
     );
   }
