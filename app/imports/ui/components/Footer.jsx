@@ -12,7 +12,7 @@ class Footer extends React.Component {
               <hr/>
               <List>
                 <List.Item floated='middle'>Area 52 Raid Squad</List.Item>
-                <List.Item floated='middle'>Universiy of Hawaii</List.Item>
+                <List.Item floated='middle'>University of Hawaii</List.Item>
                 <List.Item floated='middle'>Honolulu, HI 96822</List.Item>
                 <List.Item>
                   {/* eslint-disable-next-line react/jsx-no-target-blank */}
