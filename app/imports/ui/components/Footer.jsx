@@ -1,6 +1,5 @@
 import React from 'react';
-import { Grid, List, Button } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
+import { Grid, List} from 'semantic-ui-react';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
