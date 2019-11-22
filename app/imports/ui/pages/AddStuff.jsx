@@ -49,29 +49,29 @@ class AddStuff extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     let fRef = null;
-    const footerStyle = { height: 'calc(100% - 60px)', paddingBottom: '60px' };
+    const formStyle = { paddingTop: '20px', paddingBottom: '50px' };
     return (
         <div className='background'>
           <TitleBar/>
           <NavBar/>
-          <Container style={footerStyle}>
-            <Grid container centered>
-            <Grid.Column>
-              <Header as="h2" textAlign="center" inverted>Add Item to Store</Header>
-              <AutoForm ref={ref => {
-                fRef = ref;
-              }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
-                <Segment>
-                  <TextField name='name'/>
-                  <LongTextField name='description'/>
-                  <NumField name='quantity' decimal={false}/>
-                  <SelectField name='condition'/>
-                  <SubmitField value='Submit'/>
-                  <ErrorsField/>
-                </Segment>
-              </AutoForm>
-            </Grid.Column>
-          </Grid>
+          <Container>
+              <Grid container centered style={formStyle}>
+                <Grid.Column>
+                  <Header as="h2" textAlign="center" inverted>Add Item to Store</Header>
+                  <AutoForm ref={ref => {
+                    fRef = ref;
+                  }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
+                    <Segment>
+                      <TextField name='name'/>
+                      <LongTextField name='description'/>
+                      <NumField name='quantity' decimal={false}/>
+                      <SelectField name='condition'/>
+                      <SubmitField value='Submit'/>
+                      <ErrorsField/>
+                    </Segment>
+                  </AutoForm>
+                </Grid.Column>
+              </Grid>
           </Container>
           <Footer/>
         </div>

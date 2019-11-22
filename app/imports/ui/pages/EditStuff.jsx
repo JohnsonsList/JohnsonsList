@@ -36,14 +36,14 @@ class EditStuff extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
-    const footerStyle = { paddingBottom: '60px' };
+    const formStyle = { paddingTop: '20px', paddingBottom: '50px' };
     return (
         <div className="background">
           <TitleBar/>
           <NavBar/>
-          <Grid container centered style={footerStyle}>
+          <Grid container centered style={formStyle}>
             <Grid.Column>
-              <Header as="h2" textAlign="center">Edit Stuff</Header>
+              <Header as="h2" textAlign="center" inverted>Edit Stuff</Header>
               <AutoForm schema={StuffSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
                 <Segment>
                   <TextField name='name'/>

@@ -17,10 +17,11 @@ class ListStuffAdmin extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const pageStyle = { paddingTop: '20px', paddingBottom: '50px' };
     return (
         <div className="background">
-          <Container>
-            <Header as="h2" textAlign="center">List Stuff (Admin)</Header>
+          <Container style={pageStyle}>
+            <Header as="h2" textAlign="center" inverted>List Stuff (Admin)</Header>
             <Table celled>
               <Table.Header>
                 <Table.Row>
