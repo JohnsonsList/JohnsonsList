@@ -4,7 +4,6 @@ import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import SOFooter from '../components/SOFooter';
 import Landing from '../pages/Landing';
 import MyListing from '../pages/MyListing';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
