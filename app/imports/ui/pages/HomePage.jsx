@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Image } from 'semantic-ui-react';
 import NavBar from '../components/NavBar';
+import TitleBar from '../components/TitleBar';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -8,6 +9,7 @@ class Landing extends React.Component {
     const gridStyle = { height: '400px' };
     return (
         <div className='landing'>
+          <TitleBar/>
           <NavBar/>
           <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
 

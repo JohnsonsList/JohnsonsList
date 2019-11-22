@@ -6,6 +6,7 @@ import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import NavBar from '../components/NavBar';
+import TitleBar from '../components/TitleBar';
 
 /** Renders a table containing all of the Stuff documents. Use <Stuff> to render each row. */
 class ListStuff extends React.Component {
@@ -35,6 +36,7 @@ class ListStuff extends React.Component {
     const cardStyle = { paddingTop: '50px', paddingBottom: '50px' };
     return (
         <div className='background'>
+          <TitleBar/>
           <NavBar/>
         <Container>
           <Header as="h2" textAlign="center">List Stuff</Header>

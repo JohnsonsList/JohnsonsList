@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Image } from 'semantic-ui-react';
+import SOBar from '../components/SOBar';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -7,6 +8,7 @@ class Landing extends React.Component {
     const gridStyle = { height: '400px' };
     return (
         <div className='landing'>
+          <SOBar/>
           <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
 
             <Grid.Column width={4}>

@@ -13,6 +13,7 @@ import { Meteor } from 'meteor/meteor';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
 import NavBar from '../components/NavBar';
+import TitleBar from '../components/TitleBar';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
@@ -49,6 +50,7 @@ class AddStuff extends React.Component {
     let fRef = null;
     return (
         <div className='background'>
+          <TitleBar/>
           <NavBar/>
         <Grid container centered>
           <Grid.Column>
