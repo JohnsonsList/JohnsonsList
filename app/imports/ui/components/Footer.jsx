@@ -1,38 +1,33 @@
 import React from 'react';
-import { Grid, List, Input, Button, Icon } from 'semantic-ui-react';
+import { Grid, List, Button } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
   render() {
-    const itemPad = { paddingTop: '10px' };
     return (
         <div className="footer-background">
-          <Grid container>
-            <Grid.Column width={2}>
+          <Grid container columns="2">
+            <Grid.Column>
+              A Manoa Flea Market Project
+              <hr/>
               <List>
-                <List.Item style={itemPad}>About us</List.Item>
-                <List.Item>Help</List.Item>
-              </List>
-            </Grid.Column>
-
-            <Grid.Column width={4}>
-              <List>
-                <List.Item>Sign up for the latest updates</List.Item>
+                <List.Item>Area 52 Raid Squad</List.Item>
+                <List.Item>Universiy of Hawaii</List.Item>
+                <List.Item>Honolulu, HI 96822</List.Item>
                 <List.Item>
-                  <Input placeholder="Enter email address" />
-                  <Button color="black">Join</Button>
+                  {/* eslint-disable-next-line react/jsx-no-target-blank */}
+                  <a href={'https://johnsonslist.github.io/'} target="_blank">Our Home Page</a>
                 </List.Item>
               </List>
             </Grid.Column>
 
-            <Grid.Column width={3} floated='right'>
+            <Grid.Column>
+              Not a member?
+              <hr/>
               <List>
-                <List.Item style={itemPad}>Follow us</List.Item>
-                <List.Item>
-                  <Icon inverted name="facebook f"/>
-                  <Icon inverted name="instagram"/>
-                  <Icon inverted name="twitter"/>
-                </List.Item>
+                <List.Item>Any student, faculty, or staff in the UH system can register for our website!</List.Item>
+                <List.Item><Button basic inverted as={NavLink} exact to="/signup">Register</Button></List.Item>
               </List>
             </Grid.Column>
           </Grid>
