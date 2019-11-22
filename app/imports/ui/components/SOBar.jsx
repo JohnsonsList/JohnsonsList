@@ -25,7 +25,7 @@ class TitleBar extends React.Component {
     const menuStyle = { marginBottom: '0px', backgroundColor: '#FFFFFF' };
     return (
         <Menu style={menuStyle} attached="top" borderless inverted>
-          <Menu.Item as={NavLink} activeClassName="" exact to="/home">
+          <Menu.Item as={NavLink} activeClassName="" exact to="/">
             <Image size='small' src='/images/JL-logo.png' to="/"/>
           </Menu.Item>
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
