@@ -25,8 +25,8 @@ class TitleBar extends React.Component {
     const menuStyle = { marginBottom: '0px', backgroundColor: '#024731' };
     return (
         <Menu style={menuStyle} attached="top" borderless inverted>
-          <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Image size='small' src='/images/JL-logo2.png' to="/"/>
+          <Menu.Item as={NavLink} activeClassName="" exact to="/home">
+            <Image size='small' src='/images/JL-logo2.png' to="/home"/>
           </Menu.Item>
           <Menu.Item>
             <Input

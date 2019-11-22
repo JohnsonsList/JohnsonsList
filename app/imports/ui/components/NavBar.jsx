@@ -16,7 +16,7 @@ class NavBar extends React.Component {
             <Menu.Item>
               <Dropdown icon='bars'>
                 <Dropdown.Menu>
-                  <Dropdown.Item as={NavLink} activeClassName=" " text='Home Page' exact to="/"/>
+                  <Dropdown.Item as={NavLink} activeClassName=" " text='Home Page' exact to="/home"/>
                   <Dropdown.Item text='Profile Page'/>
                   <Dropdown.Item text='Cart'/>
                   <Dropdown.Item text='Notify Admin'/>

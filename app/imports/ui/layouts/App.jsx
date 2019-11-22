@@ -4,7 +4,6 @@ import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
@@ -19,6 +18,7 @@ import Signout from '../pages/Signout';
 import Store from '../pages/Store';
 import YourShop from '../pages/YourShop';
 import Saved from '../pages/Saved';
+import Home from '../pages/HomePage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -27,13 +27,13 @@ class App extends React.Component {
         <Router>
           <div>
             <TitleBar/>
-            <NavBar/>
             <Switch>
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/store" component={Store}/>
               <Route path="/saved" component={Saved}/>
+              <Route path="/home" component={Home}/>
               <Route path="/yourshop" component={YourShop}/>
               <ProtectedRoute path="/list" component={MyListing}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
