@@ -13,7 +13,7 @@ class Landing extends React.Component {
           <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
             <Grid.Column width={5}>
               <Image size='medium' circular src="/images/JL-logo2.png"/>
-              <h3>Change me later lol.</h3>
+              <h3>Visual Studio Code Test.</h3>
             </Grid.Column>
             <Grid.Column width={8}>
             </Grid.Column>
