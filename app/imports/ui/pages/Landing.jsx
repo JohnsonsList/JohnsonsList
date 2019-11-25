@@ -11,15 +11,11 @@ class Landing extends React.Component {
         <div className='landing'>
           <SOBar/>
           <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
-
-            <Grid.Column width={4}>
+            <Grid.Column width={5}>
               <Image size='medium' circular src="/images/JL-logo2.png"/>
+              <h3>Change me later lol.</h3>
             </Grid.Column>
-
-            <Grid.Column width={8} inverted>
-              <h3>A sales website dedicated to new incoming and current University of Hawaii students. This proprietary
-                website helps in giving every University of Hawaii college student an opportunity to purchase items with
-                also enabling other students to sell their unneeded stuff.</h3>
+            <Grid.Column width={8}>
             </Grid.Column>
           </Grid>
           <SOFooter/>
