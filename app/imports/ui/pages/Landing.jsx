@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, Image, Container } from 'semantic-ui-react';
 import SOBar from '../components/SOBar';
 import SOFooter from '../components/SOFooter';
 
@@ -10,6 +10,7 @@ class Landing extends React.Component {
     return (
         <div className='landing'>
           <SOBar/>
+          <Container>
           <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
             <Grid.Column width={5}>
               <Image size='medium' circular src="/images/JL-logo2.png"/>
@@ -18,6 +19,14 @@ class Landing extends React.Component {
             <Grid.Column width={8}>
             </Grid.Column>
           </Grid>
+          </Container>
+          <Container>
+          <Grid.Column>
+            <div className="landing-block">
+              <h1>test</h1>
+            </div>
+          </Grid.Column>
+          </Container>
           <SOFooter/>
         </div>
     );
