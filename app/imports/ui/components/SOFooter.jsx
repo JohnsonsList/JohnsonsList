@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 class SOFooter extends React.Component {
   render() {
     return (
-        <div className="footer-background">
+        <div className="SOFoot">
           <Grid container columns="2">
             <Grid.Column>
               A Manoa Flea Market Project

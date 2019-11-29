@@ -43,3 +43,35 @@
 .gridStyle {
   border-bottom: 40px;
 }
+
+.features {
+  background-color: #fcfbfb;
+}
+
+h1 {
+  font-family: "Roboto", "Helvetica Neue", serif;
+  font-size: 30px !important;
+  color: #4a4a4a;
+  padding-top: 50px !important;
+  padding-bottom: 30px !important;
+}
+
+h4 {
+  font-family: "Roboto", "Helvetica Neue", serif;
+  color: #4a4a4a;
+  padding-bottom: 30px !important;
+}
+
+#test {
+  color: #000000;
+}
+
+.SOFoot {
+  background-color: #363636;
+  color: white;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-top: 14px;
+  text-align: center;
+}
