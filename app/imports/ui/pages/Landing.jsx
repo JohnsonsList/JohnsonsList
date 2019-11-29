@@ -7,7 +7,7 @@ import SOFooter from '../components/SOFooter';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
-  state = { activeItem: 'home' }
+  state = { activeItem: 'SELLING AN ITEM' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -21,7 +21,7 @@ class Landing extends React.Component {
           <Grid verticalAlign='middle' textAlign='left' container style={gridStyle}>
             <Grid.Column width={6}>
               <h2>A convenient website to buy and sell goods for UH campus life</h2>
-              <h3 color={ 'white' } >Sign up to browse and shop with other students right now</h3>
+              <h3 color={ 'white' } >Sign up now to browse and shop with other students right now</h3>
               <Button color='green' as={NavLink} exact to='/signup'>
                 <Icon name='envelope'/>Sign up with UH email</Button>
             </Grid.Column>
@@ -36,14 +36,15 @@ class Landing extends React.Component {
               <h1 align='center'>HOW IT WORKS</h1>
             <Container>
             <Menu pointing secondary>
-              <Menu.Item name='SELLING'
-                         active={activeItem === 'SELLING'}
+              <Menu.Item name='SELLING AN ITEM'
+                         active={activeItem === 'SELLING AN ITEM'}
                          onClick={this.handleItemClick}/>
-              <Menu.Item name='BUYING'
-                         active={activeItem === 'BUYING'}
+              <Menu.Item name='BUYING AN ITEM'
+                         active={activeItem === 'BUYING AN ITEM'}
                          onClick={this.handleItemClick}/>
             </Menu>
              <Segment id='test' basic>Why is this like this?</Segment>
+
               <h1 align='center'>WHY JOHNSONSLIST WORKS</h1>
             <Grid centered>
               <Grid.Column textAlign='left' width={4}>
