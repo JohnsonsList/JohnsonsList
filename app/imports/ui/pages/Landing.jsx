@@ -45,16 +45,21 @@ class Landing extends React.Component {
             </Menu>
              <Segment id='test' basic>Why is this like this?</Segment>
               <h1 align='center'>WHY JOHNSONSLIST WORKS</h1>
-            <Grid>
+            <Grid centered>
               <Grid.Column textAlign='left' width={4}>
                 <Icon.Group size='huge'>
                 <Icon color='grey' name='registered'/>
                 <Icon color='grey' corner name='check'/>
                 </Icon.Group>
-                <h4>Only verified UH students can sign up and use the website</h4>
+                <h4>Only verified UH students can sign up and use Johnsonslist</h4>
               </Grid.Column>
-              <Grid.Column width={3}>
-                <h4>Test yeah idk why it works</h4>
+              <Grid.Column width={4}>
+                <Icon color='grey' size='huge' name='student'/>
+                <h4>A website designed for students and used only by them with constant input</h4>
+              </Grid.Column>
+              <Grid.Column width={4}>
+                <Icon color='grey' size='huge' name='eye'/>
+                <h4>Johnsonslist is monitored by admins to look at reports and remove anything inappropriate</h4>
               </Grid.Column>
             </Grid>
             </Container>
