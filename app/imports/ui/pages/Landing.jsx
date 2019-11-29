@@ -1,33 +1,58 @@
 import React from 'react';
-import { Grid, Image, Container } from 'semantic-ui-react';
+import { Grid, Button, Container, Icon, Menu, Segment } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 import SOBar from '../components/SOBar';
 import SOFooter from '../components/SOFooter';
 
+
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
+  state = { activeItem: 'home' }
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
   render() {
+    const { activeItem } = this.state;
     const gridStyle = { height: '600px' };
     return (
         <div className='landing'>
           <SOBar/>
           <Container>
-          <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
-            <Grid.Column width={5}>
-              <Image size='medium' circular src="/images/JL-logo2.png"/>
-              <h3>Visual Studio Code Test.</h3>
+          <Grid verticalAlign='middle' textAlign='left' container style={gridStyle}>
+            <Grid.Column width={6}>
+              <h2>A convenient website to buy and sell goods for UH campus life</h2>
+              <h3>Sign up to browse and shop with other students today</h3>
+              <Button color='green' as={NavLink} exact to='/signup'>
+                <Icon name='envelope'/>Sign up with email</Button>
             </Grid.Column>
             <Grid.Column width={8}>
             </Grid.Column>
           </Grid>
           </Container>
-          <Container>
-          <Grid.Column>
-            <div className="landing-block">
-              <h1>test</h1>
-            </div>
+
+          <div className='features'>
+          <Container className='ui fluid container'>
+          <Grid.Column width={20}>
+              <h1 align='center'>HOW IT WORKS</h1>
+            <Container>
+            <Menu pointing secondary>
+              <Menu.Item name='SELLING'
+                         active={activeItem === 'SELLING'}
+                         onClick={this.handleItemClick}/>
+              <Menu.Item name='BUYING'
+                         active={activeItem === 'BUYING'}
+                         onClick={this.handleItemClick}/>
+            </Menu>
+
+             <Segment id='test' basic>Why is this like this?</Segment>
+            </Container>
           </Grid.Column>
+            </Container>
+          </div>
+
+          <Container className='ui fluid container'>
+            <SOFooter/>
           </Container>
-          <SOFooter/>
         </div>
     );
   }
