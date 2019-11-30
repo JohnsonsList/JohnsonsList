@@ -33,7 +33,7 @@ class NavBar extends React.Component {
                     MY LISTINGS</Menu.Item>
                   <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key=
                       'list' position='right'>SELL AN ITEM</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/yourshop" key=
+                  <Menu.Item as={NavLink} activeClassName="active" exact to="/YourShop" key=
                       'add' position='right'>YOUR SHOP</Menu.Item>
                   {this.props.currentUser ? (
                       // eslint-disable-next-line react/jsx-key

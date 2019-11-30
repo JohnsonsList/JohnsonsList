@@ -37,23 +37,36 @@ class ListStuff extends React.Component {
     const cardStyle = { paddingTop: '30px', paddingBottom: '50px' };
     const pageStyle = { paddingTop: '20px' };
     return (
-        <div className="background">
+        <div class="ui card" className="background">
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
             <Header as="h2" textAlign="center" inverted>Your Interests</Header>
-            <Input
-                type='text'
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}
-                placeholder='Search...'
-                icon='search'
-            />
-            <Card.Group style={cardStyle}>
-              {filteredItems.map((stuff) => <Stuff
-                  key={stuff._id}
-                  stuff={stuff}/>)}
-            </Card.Group>
+            <h1>Your shop</h1>
+            <div className="ui card" style={cardStyle}>
+              <div className="image">
+                <img src="https://react.semantic-ui.com/images/avatar/large/matthew.png"/>
+              </div>
+              <div className="content">
+                <div className="header">Matthew</div>
+                <div className="meta"><span className="date"><Input
+                    type='text'
+                    value={this.state.search}
+                    onChange={this.updateSearch.bind(this)}
+                    placeholder='Search...'
+                    icon='search'
+                />{filteredItems.map((stuff) => <Stuff
+                    key={stuff._id}
+                    stuff={stuff}/>)}</span></div>
+                <div className="description">Matthew is a musician living in Nashville.</div>
+              </div>
+              <div className="extra content">
+                <a>
+                  <i aria-hidden="true" className="user icon"></i>
+                  22 Friends
+                </a>
+              </div>
+            </div> 
           </Container>
           <Footer/>
         </div>

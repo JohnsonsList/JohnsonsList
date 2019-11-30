@@ -26,12 +26,12 @@ class App extends React.Component {
           <div>
             <Switch>
               <Route exact path="/" component={Landing}/>
-              <Route path="/signin" component={Signin}/>
-              <Route path="/signup" component={Signup}/>
+              <Route path="/Signin" component={Signin}/>
+              <Route path="/Signup" component={Signup}/>
               <Route path="/store" component={Store}/>
               <Route path="/saved" component={Saved}/>
               <Route path="/home" component={Home}/>
-              <Route path="/yourshop" component={YourShop}/>
+              <Route path="/YourShop" component={YourShop}/>
               <ProtectedRoute path="/list" component={MyListing}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
