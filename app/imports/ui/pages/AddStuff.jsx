@@ -30,7 +30,36 @@ const formSchema = new SimpleSchema({
 
 /** Renders the Page for adding a document. */
 class AddStuff extends React.Component {
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            file: '',
+            imagePreviewUrl: ''
+        };
+        this._handleImageChange = this._handleImageChange.bind(this);
+        this._handleSubmit = this._handleSubmit.bind(this);
+    }
+
+    _handleSubmit(e) {
+        e.preventDefault();
+        // TODO: do something with -> this.state.file
+    }
+
+    _handleImageChange(e) {
+        e.preventDefault();
+
+        let reader = new FileReader();
+        let file = e.target.files[0];
+
+        reader.onloadend = () => {
+            this.setState({
+                file: file,
+                imagePreviewUrl: reader.result
+            });
+        }
+
+        reader.readAsDataURL(file)
+    }
   /** On submit, insert the data. */
   submit(data, formRef) {
     const { name, description, quantity, condition } = data;
@@ -48,6 +77,11 @@ class AddStuff extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+      let {imagePreviewUrl} = this.state;
+      let $imagePreview = null;
+      if (imagePreviewUrl) {
+          $imagePreview = (<img src={imagePreviewUrl} />);
+      }
     let fRef = null;
     const formStyle = { paddingTop: '20px', paddingBottom: '50px' };
     return (
@@ -66,6 +100,11 @@ class AddStuff extends React.Component {
                       <LongTextField name='description'/>
                       <NumField name='quantity' decimal={false}/>
                       <SelectField name='condition'/>
+                        <form onSubmit={this._handleSubmit}>
+                            <input type="file" onChange={this._handleImageChange} />
+                            <button type="submit" onClick={this._handleSubmit}>Upload Image</button>
+                        </form>
+                        {$imagePreview}
                       <SubmitField value='Submit'/>
                       <ErrorsField/>
                     </Segment>
