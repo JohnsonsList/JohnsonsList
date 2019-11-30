@@ -41,7 +41,6 @@ class ListStuff extends React.Component {
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
-            <Header as="h2" textAlign="center" inverted>Your Interests</Header>
             <h1>Your shop</h1>
             <div className="ui card" style={cardStyle}>
               <div className="image">
@@ -58,7 +57,6 @@ class ListStuff extends React.Component {
                 />{filteredItems.map((stuff) => <Stuff
                     key={stuff._id}
                     stuff={stuff}/>)}</span></div>
-                <div className="description">Matthew is a musician living in Nashville.</div>
               </div>
               <div className="extra content">
                 <a>
@@ -66,7 +64,7 @@ class ListStuff extends React.Component {
                   22 Friends
                 </a>
               </div>
-            </div> 
+            </div>
           </Container>
           <Footer/>
         </div>
