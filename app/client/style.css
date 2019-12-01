@@ -83,7 +83,8 @@ h4 {
 
 #sign-page {
   font-family: "Roboto", "Helvetica Neue", serif;
-  background-color: #f5f2ee !important;
+  background-color: #fafafa !important;
+  /*#FFFFFF or #f5f2ee try this later instead for white background*/
   height: 100%;
 }
 

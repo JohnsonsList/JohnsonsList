@@ -24,7 +24,10 @@ class TitleBar extends React.Component {
   render() {
     const color = { color: '#41a6de' };
     const color2 = { color: '#000000' };
-    const menuStyle = { marginBottom: '0px', backgroundColor: '#FFFFFF' };
+    const menuStyle = { marginBottom: '0px', backgroundColor: '#FFFFFF',
+      WebkitBoxShadow: '0 8px 8px -8px #D6C8B7',
+      MozBoxShadow: '0 8px 8px -8px #D6C8B7',
+      boxShadow: '0 8px 8px -8px #D6C8B7' };
     return (
         <div id='SUbar'>
         <Menu style={menuStyle} className="ui borderless top fixed menu" inverted>
