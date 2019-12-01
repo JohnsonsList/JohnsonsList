@@ -52,8 +52,10 @@ class TitleBar extends React.Component {
               style={{ color: '#024731' }}
               pointing='top right'
               icon={'caret down'}>
-              <Dropdown.Menu>
-                <Dropdown.Item icon='user' text={this.props.currentUser} as={NavLink} exact to='/home'/>
+              <Dropdown.Menu centered>
+                <Dropdown.Item icon='user' text={this.props.currentUser} as={NavLink} exact to='/home'>
+                  <Image size='tiny' src='/images/matthew.png' avatar/>{this.props.currentUser}
+                </Dropdown.Item>
                 <Dropdown.Item icon='heart' text='Your Listings' as={NavLink} exact to='/list'/>
                 <Dropdown.Item icon='star' text='Saved Items' as={NavLink} exact to='/saved'/>
               <div className='ui divider'/>
