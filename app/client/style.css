@@ -75,3 +75,11 @@ h4 {
   margin-top: 14px;
   text-align: center;
 }
+
+#sign-up {
+  padding-top: 100px;
+}
+
+#sign-page {
+  background-color: #fcfbfb !important;
+}
