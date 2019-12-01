@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import LIBar from '../components/LIBar';
@@ -53,7 +53,7 @@ export default class Signin extends React.Component {
           <Grid.Column>
             <Segment>
             <Header as="h2" textAlign="center">
-              Login to your account
+              Log in
             </Header>
               <div className='ui divider'/>
             <Form onSubmit={this.submit}>

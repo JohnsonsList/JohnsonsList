@@ -77,8 +77,8 @@ h4 {
 }
 
 #sign-up {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 150px;
+  padding-bottom: 80px;
 }
 
 #sign-page {
@@ -95,13 +95,13 @@ h4 {
 }
 
 #log-page {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
-#log-in {
   font-family: "Roboto", "Helvetica Neue", serif;
   background-color: #fafafa !important;
   /*#FFFFFF or #f5f2ee try this later instead for white background*/
   height: 100%;
+}
+
+#log-in {
+  padding-top: 150px;
+  padding-bottom: 110px;
 }
