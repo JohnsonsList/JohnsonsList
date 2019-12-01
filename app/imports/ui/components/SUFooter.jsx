@@ -1,15 +1,14 @@
 import React from 'react';
-import { Grid, List, Button } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
+import { Grid, List } from 'semantic-ui-react';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class SOFooter extends React.Component {
   render() {
     return (
         <div className="SOFoot">
-          <Grid container columns="2">
+          <Grid container>
             <Grid.Column>
-              A Manoa Flea Market Project
+              Johnsonslist
               <hr/>
               <List>
                 <List.Item>Area 52 Raid Squad</List.Item>
@@ -19,15 +18,6 @@ class SOFooter extends React.Component {
                   {/* eslint-disable-next-line react/jsx-no-target-blank */}
                   <a href={'https://johnsonslist.github.io/'} target="_blank">Our Home Page</a>
                 </List.Item>
-              </List>
-            </Grid.Column>
-
-            <Grid.Column>
-              Not a member?
-              <hr/>
-              <List>
-                <List.Item>Any student, faculty, or staff in the UH system can register for our website!</List.Item>
-                <List.Item><Button basic inverted as={NavLink} exact to="/signup">Register</Button></List.Item>
               </List>
             </Grid.Column>
           </Grid>
