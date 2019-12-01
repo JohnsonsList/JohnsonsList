@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import LIBar from '../components/LIBar';
@@ -58,16 +58,14 @@ export default class Signin extends React.Component {
               <div className='ui divider'/>
             <Form onSubmit={this.submit}>
                 <Form.Input
-                  label="Email"
                   icon="user"
                   iconPosition="left"
                   name="email"
                   type="email"
-                  placeholder="E-mail address"
+                  placeholder="Username or Email"
                   onChange={this.handleChange}
                 />
                 <Form.Input
-                  label="Password"
                   icon="lock"
                   iconPosition="left"
                   name="password"
@@ -75,7 +73,9 @@ export default class Signin extends React.Component {
                   type="password"
                   onChange={this.handleChange}
                 />
-                <Form.Button content="Submit"/>
+                <Form.Button color='blue' content="Log in"/>
+                <div className='ui divider' />
+                <p>Don&apos;t have an account yet? <a href="/#/signup">Sign up</a></p>
             </Form>
             </Segment>
             {this.state.error === '' ? (
