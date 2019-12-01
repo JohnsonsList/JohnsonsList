@@ -6,7 +6,7 @@
 
 .NavBar {
   background-color: #FFFFFF;
-  padding-top: 0;
+  padding-top: 60px;
   padding-left: 0;
 }
 
@@ -114,7 +114,7 @@ h4 {
 #out-page {
   font-family: "Roboto", "Helvetica Neue", serif;
   background-color: #fafafa !important;
-  /*#FFFFFF or #f5f2ee try this later instead for white background*/
+  /*#FFFFFF or #f5f2ee or #fafafa try this later instead for white background*/
   height: 100%;
 }
 
