@@ -19,7 +19,7 @@ class HomePage extends React.Component {
               <Image size='medium' circular src="/images/JL-logo2.png"/>
             </Grid.Column>
 
-            <Grid.Column width={8} inverted>
+            <Grid.Column width={8} inverted='true'>
               <h3>A sales website dedicated to incoming and current University of Hawaii students. This proprietary
                 website helps in giving every University of Hawaii college student an opportunity to purchase items with
                 also enabling other students to sell their unneeded stuff.</h3>
