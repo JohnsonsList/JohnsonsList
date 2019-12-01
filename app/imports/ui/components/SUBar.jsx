@@ -26,6 +26,7 @@ class TitleBar extends React.Component {
     const color2 = { color: '#000000' };
     const menuStyle = { marginBottom: '0px', backgroundColor: '#FFFFFF' };
     return (
+        <div id='SUbar'>
         <Menu style={menuStyle} className="ui borderless top fixed menu" inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/">
             <Image size='small' src='/images/JL-logo.png' to="/"/>
@@ -39,6 +40,7 @@ class TitleBar extends React.Component {
                 </Menu.Item>
           </Menu.Item>
         </Menu>
+        </div>
     );
   }
 }

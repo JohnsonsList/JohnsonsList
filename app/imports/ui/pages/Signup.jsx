@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Redirect } from 'react-router-dom';
-import { Container, Form, Grid, Message, Segment } from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom';
+import { Container, Form, Grid, Message, Header, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 import SUBar from '../components/SUBar';
+import SUFooter from '../components/SUFooter';
 
 /**
  * Signup component is similar to signin component, but we create a new user instead.
@@ -12,7 +13,7 @@ class Signup extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { user: '', email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
   }
 
   /** Update the form controls each time the user interacts with them. */
@@ -22,8 +23,8 @@ class Signup extends React.Component {
 
   /** Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { user, email, password } = this.state;
-    Accounts.createUser({ user, email, username: email, password }, (err) => {
+    const { email, password } = this.state;
+    Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -42,30 +43,57 @@ class Signup extends React.Component {
     return (
         <div>
           <SUBar/>
-          <div className='sign-page'>
+          <div id='sign-page'>
           <div id='sign-up'>
       <Container>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
+            <Segment>
             <Form onSubmit={this.submit}>
-              <h2 centered>
-                Register your account
-              </h2>
-              <Segment stacked>
-                <Form.Group>
+              <Header id='header' as='h2' textAlign='center'>
+                Create an Account
+              </Header>
+              <p id='span'>
+               Johnsonslist is an easy way to sell goods to other UH community members
+              </p>
+              <div className='ui divider'/>
+              <Form.Group>
                   <Form.Input
-                      width={3} label='Username' name='user'
-                      placeholder='First Name' type='user'
-                      onChange={this.handleChange()}
+                    width={8}
+                    icon='user'
+                    iconPosition='left'
+                    name='firstname'
+                    placeholder="First Name"
+                    onChange={this.handleChange}
                   />
-                <Form.Input width={10}
-                  label="Email" icon="user" iconPosition="left" name="email" type="email"
-                  placeholder="E-mail address"
+              <Form.Input
+                  width={8}
+                  icon='user'
+                  name='lastname'
+                  iconPosition='left'
+                  placeholder="Last Name"
+                  onChange={this.handleChange}
+              />
+              </Form.Group>
+              <Form.Input
+                  width={16}
+                  label='Careful, this is what others will see when they interact with you'
+                  icon="id badge"
+                  iconPosition="left"
+                  name="username"
+                  placeholder="Username"
+                  onChange={this.handleChange}
+              />
+                <Form.Input
+                    width={16}
+                    icon="envelope"
+                    iconPosition="left"
+                    name="email"
+                    type="email"
+                  placeholder="Email"
                   onChange={this.handleChange}
                 />
-                </Form.Group>
-                <Form.Input width={10}
-                  label="Password"
+                <Form.Input width={16}
                   icon="lock"
                   iconPosition="left"
                   name="password"
@@ -73,12 +101,13 @@ class Signup extends React.Component {
                   type="password"
                   onChange={this.handleChange}
                 />
-                <Form.Button content="Submit"/>
-              </Segment>
+              <div className='ui divider'/>
+                <Form.Button
+                    fluid
+                    color='blue'
+                    content="Done"/>
             </Form>
-            <Message>
-              Already have an account? Login <Link to="/signin">here</Link>
-            </Message>
+            </Segment>
             {this.state.error === '' ? (
               ''
             ) : (
@@ -92,6 +121,7 @@ class Signup extends React.Component {
         </Grid>
       </Container>
           </div>
+            <SUFooter/>
           </div>
         </div>
     );

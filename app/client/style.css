@@ -77,9 +77,18 @@ h4 {
 }
 
 #sign-up {
-  padding-top: 100px;
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 #sign-page {
-  background-color: #fcfbfb !important;
+  font-family: "Roboto", "Helvetica Neue", serif;
+  background-color: #f5f2ee !important;
+  height: 100%;
+}
+
+#span {
+  font-family: "Roboto", "Helvetica Neue", serif;
+  color: #000000;
+  text-align: center !important;
 }
