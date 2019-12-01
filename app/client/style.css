@@ -1,13 +1,19 @@
 .TitleBar {
   background-color: #13aa52;
+  /*#13aa52 and #024731 keep this in case of changes*/
   color: #FFFFFF;
   padding-left: 0;
 }
 
 .NavBar {
-  background-color: #FFFFFF;
+  background-color: #fafafa;
+  color: #024731 !important;
   padding-top: 60px;
   padding-left: 0;
+}
+
+#search {
+  border-color: #024731 !important;
 }
 
 .footer-background {

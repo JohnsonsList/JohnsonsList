@@ -25,20 +25,23 @@ class TitleBar extends React.Component {
     const trigger = (
         <Image src='/images/matthew.png' avatar/>
     );
-    const menuStyle = { marginBottom: '0px', backgroundColor: '#024731' };
+    const menuStyle = { marginBottom: '0px', backgroundColor: '#fafafa', color: '#024731' };
     return (
         <Menu style={menuStyle} className='ui borderless top fixed menu' inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/home">
-            <Image size='small' src='/images/JL-logo2.png' to="/home"/>
+            <Image size='small' src='/images/JL-logo.png' to="/home"/>
           </Menu.Item>
           <Menu.Item>
+            <div id='search'>
             <Input
                 type='text'
+                style={{ color: '#024731' }}
                 value={this.state.search}
                 onChange={this.updateSearch.bind(this)}
                 placeholder='Search...'
                 icon='search'
             />
+            </div>
           </Menu.Item>
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
@@ -46,6 +49,7 @@ class TitleBar extends React.Component {
           <Menu.Item position="right">
             <Dropdown
               trigger={trigger}
+              style={{ color: '#024731' }}
               pointing='top right'
               icon={'caret down'}>
               <Dropdown.Menu>

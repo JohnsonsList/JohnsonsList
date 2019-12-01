@@ -9,27 +9,24 @@ import { Roles } from 'meteor/alanning:roles';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. UPDATED */
 class NavBar extends React.Component {
   render() {
+    const menuStyle = { marginBottom: '0px', backgroundColor: '#fafafa' };
     return (
         <div className='NavBar'>
-          <Menu attached="top" borderless>
+          <Menu style={menuStyle} attached="top" borderless>
             <Menu.Item>
-              <Dropdown icon='bars'>
+              <Dropdown style={{ color: '#024731' }} icon='bars'>
                 <Dropdown.Menu>
                   <Dropdown.Item as={NavLink} activeclassname='' text='Men' exact to="/home"/>
                   <Dropdown.Item as={NavLink} activeclassname='' text='Women' exact to='/home'/>
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>
-            <Menu.Item>|</Menu.Item>
-                  <Menu.Item as={NavLink} activeclassname="active"
+                  <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
                              exact to="/store">Clothing</Menu.Item>
-                  <Menu.Item>|</Menu.Item>
-                  <Menu.Item as={NavLink} activeclassname="active"
+                  <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
                              exact to="/list">Dormitory</Menu.Item>
-                  <Menu.Item>|</Menu.Item>
-                  <Menu.Item as={NavLink} activeclassname="active"
+                  <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
                              exact to="/add">Supplies</Menu.Item>
-                  <Menu.Item>|</Menu.Item>
                   {this.props.currentUser ? (
                       // eslint-disable-next-line react/jsx-key
                   <Menu.Item
@@ -37,10 +34,16 @@ class NavBar extends React.Component {
                       activeclassNAme="active"
                       exact to="/add"
                       key='add'
+                      style={{ color: '#024731' }}
                       position='right'><Icon name='tag'/>Create a Listing</Menu.Item>
                   ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                <Menu.Item as={NavLink} activeclassname="active" exact to="/admin" key='admin'>Admin</Menu.Item>
+                <Menu.Item
+                    style={{ color: '#024731' }}
+                    as={NavLink}
+                    activeclassname="active"
+                    exact to="/admin"
+                    key='admin'>Admin</Menu.Item>
             ) : ''}</Menu></div>
     );
   }
