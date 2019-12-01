@@ -105,3 +105,23 @@ h4 {
   padding-top: 150px;
   padding-bottom: 110px;
 }
+
+#signed-out {
+  padding-top: 150px;
+  padding-bottom: 350px;
+}
+
+#out-page {
+  font-family: "Roboto", "Helvetica Neue", serif;
+  background-color: #fafafa !important;
+  /*#FFFFFF or #f5f2ee try this later instead for white background*/
+  height: 100%;
+}
+
+#redirect {
+  text-align: center !important;
+  font-family: "Roboto", "Helvetica Neue", serif;
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 50px;
+}
