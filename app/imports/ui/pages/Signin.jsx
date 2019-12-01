@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
-import SOBar from '../components/SOBar'
+import LIBar from '../components/LIBar';
+import SUFooter from '../components/SUFooter';
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -44,15 +45,18 @@ export default class Signin extends React.Component {
     // Otherwise return the Login form.
     return (
         <div>
-          <SOBar/>
+          <LIBar/>
+          <div id='log-page'>
+            <div id='log-in'>
       <Container>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
+            <Segment>
             <Header as="h2" textAlign="center">
               Login to your account
             </Header>
+              <div className='ui divider'/>
             <Form onSubmit={this.submit}>
-              <Segment stacked>
                 <Form.Input
                   label="Email"
                   icon="user"
@@ -72,11 +76,8 @@ export default class Signin extends React.Component {
                   onChange={this.handleChange}
                 />
                 <Form.Button content="Submit"/>
-              </Segment>
             </Form>
-            <Message>
-              <Link to="/signup">Click here to Register</Link>
-            </Message>
+            </Segment>
             {this.state.error === '' ? (
               ''
             ) : (
@@ -89,6 +90,9 @@ export default class Signin extends React.Component {
           </Grid.Column>
         </Grid>
       </Container>
+          </div>
+          </div>
+          <SUFooter/>
         </div>
     );
   }

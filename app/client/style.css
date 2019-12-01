@@ -93,3 +93,15 @@ h4 {
   color: #000000;
   text-align: center !important;
 }
+
+#log-page {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+#log-in {
+  font-family: "Roboto", "Helvetica Neue", serif;
+  background-color: #fafafa !important;
+  /*#FFFFFF or #f5f2ee try this later instead for white background*/
+  height: 100%;
+}
