@@ -2,13 +2,13 @@ import React from 'react';
 import { Grid, List } from 'semantic-ui-react';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
-class Footer extends React.Component {
+class SOFooter extends React.Component {
   render() {
     return (
-        <div className="footer-background">
-          <Grid container columns="1">
+        <div className="SOFoot">
+          <Grid container>
             <Grid.Column>
-              A Manoa Flea Market Project
+              Johnsonslist
               <hr/>
               <List>
                 <List.Item>Area 52 Raid Squad</List.Item>
@@ -26,4 +26,4 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+export default SOFooter;

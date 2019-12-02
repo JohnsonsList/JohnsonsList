@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import LIBar from '../components/LIBar';
+import SUFooter from '../components/SUFooter';
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -13,7 +15,12 @@ export default class Signin extends React.Component {
   /** Initialize component state with properties for login and redirection. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = {
+      user: '',
+      email: '',
+      password: '',
+      error: '',
+      redirectToReferer: false };
   }
 
   /** Update the form controls each time the user interacts with them. */
@@ -42,25 +49,28 @@ export default class Signin extends React.Component {
     }
     // Otherwise return the Login form.
     return (
+        <div>
+          <LIBar/>
+          <div id='log-page'>
+            <div id='log-in'>
       <Container>
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
+            <Segment>
             <Header as="h2" textAlign="center">
-              Login to your account
+              Log in
             </Header>
+              <div className='ui divider'/>
             <Form onSubmit={this.submit}>
-              <Segment stacked>
                 <Form.Input
-                  label="Email"
                   icon="user"
                   iconPosition="left"
                   name="email"
                   type="email"
-                  placeholder="E-mail address"
+                  placeholder="Email"
                   onChange={this.handleChange}
                 />
                 <Form.Input
-                  label="Password"
                   icon="lock"
                   iconPosition="left"
                   name="password"
@@ -68,12 +78,13 @@ export default class Signin extends React.Component {
                   type="password"
                   onChange={this.handleChange}
                 />
-                <Form.Button content="Submit"/>
-              </Segment>
+                <Form.Button color='blue' content="Log in"/>
+                <div className='ui divider' />
+                <div id='sign-in-text'>
+                <p>Don&apos;t have an account yet? <a href="/#/signup">Sign up</a></p>
+                </div>
             </Form>
-            <Message>
-              <Link to="/signup">Click here to Register</Link>
-            </Message>
+            </Segment>
             {this.state.error === '' ? (
               ''
             ) : (
@@ -86,6 +97,10 @@ export default class Signin extends React.Component {
           </Grid.Column>
         </Grid>
       </Container>
+          </div>
+          </div>
+          <SUFooter/>
+        </div>
     );
   }
 }

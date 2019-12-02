@@ -5,45 +5,47 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Icon } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
-import Container from 'semantic-ui-react/dist/commonjs/elements/Container';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. UPDATED */
 class NavBar extends React.Component {
   render() {
+    const menuStyle = { marginBottom: '0px', backgroundColor: '#fafafa' };
     return (
         <div className='NavBar'>
-          <Menu attached="top" borderless>
+          <Menu style={menuStyle} attached="top" borderless>
             <Menu.Item>
-              <Dropdown icon='bars'>
+              <Dropdown style={{ color: '#024731' }} icon='bars'>
                 <Dropdown.Menu>
-                  <Dropdown.Item as={NavLink} activeClassName=" " text='Home Page' exact to="/home"/>
-                  <Dropdown.Item text='Profile Page'/>
-                  <Dropdown.Item text='Cart'/>
-                  <Dropdown.Item text='Notify Admin'/>
-                  <Dropdown.Divider/>
-                  <Dropdown.Item text='Feedback Page'/>
+                  <Dropdown.Item as={NavLink} activeclassname='' text='Men' exact to="/home"/>
+                  <Dropdown.Item as={NavLink} activeclassname='' text='Women' exact to='/home'/>
                 </Dropdown.Menu>
               </Dropdown>
             </Menu.Item>
-                <Container>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/store" key=
-                      'add' position='right'>VIEW STORE</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key=
-                      'add' position='right'>VIEW
-                    MY LISTINGS</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key=
-                      'list' position='right'>SELL AN ITEM</Menu.Item>
-                  <Menu.Item as={NavLink} activeClassName="active" exact to="/yourshop" key=
-                      'add' position='right'>YOUR SHOP</Menu.Item>
+                  <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
+                             exact to="/store">Clothing</Menu.Item>
+                  <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
+                             exact to="/list">Dormitory</Menu.Item>
+            <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
+                       exact to="/add">Electronics</Menu.Item>
+                  <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
+                             exact to="/add">Supplies</Menu.Item>
                   {this.props.currentUser ? (
                       // eslint-disable-next-line react/jsx-key
-                  <Menu.Item as={NavLink} activeclassNAme="active" exact to="/saved" key=
-                      'add' position='right'>SAVED ITEMS
-                    <Icon name='star'></Icon></Menu.Item>
+                  <Menu.Item
+                      as={NavLink}
+                      activeclassNAme="active"
+                      exact to="/add"
+                      key='add'
+                      style={{ color: '#024731' }}
+                      position='right'><Icon name='tag'/>Sell an Item</Menu.Item>
                   ) : ''}
-                </Container>
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
+                <Menu.Item
+                    style={{ color: '#024731' }}
+                    as={NavLink}
+                    activeclassname="active"
+                    exact to="/admin"
+                    key='admin'>Admin</Menu.Item>
             ) : ''}</Menu></div>
     );
   }

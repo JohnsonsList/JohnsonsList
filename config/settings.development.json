@@ -1,11 +1,13 @@
 {
   "defaultAccounts": [
     {
+      "user": "Johnson",
       "email": "admin@foo.com",
       "password": "changeme",
       "role": "admin"
     },
     {
+      "user": "Test",
       "email": "john@foo.com",
       "password": "changeme"
     }

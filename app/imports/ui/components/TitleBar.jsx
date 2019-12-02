@@ -22,39 +22,45 @@ class TitleBar extends React.Component {
   }
 
   render() {
-    const menuStyle = { marginBottom: '0px', backgroundColor: '#024731' };
+    const trigger = (
+        <Image src='/images/matthew.png' avatar/>
+    );
+    const menuStyle = { marginBottom: '0px', backgroundColor: '#fafafa', color: '#024731' };
     return (
-        <Menu style={menuStyle} attached="top" borderless inverted>
+        <Menu style={menuStyle} className='ui borderless top fixed menu' inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/home">
-            <Image size='small' src='/images/JL-logo2.png' to="/home"/>
+            <Image size='small' src='/images/JL-logo.png' to="/home"/>
           </Menu.Item>
           <Menu.Item>
+            <div id='search'>
             <Input
                 type='text'
+                style={{ color: '#024731' }}
                 value={this.state.search}
                 onChange={this.updateSearch.bind(this)}
                 placeholder='Search...'
                 icon='search'
             />
+            </div>
           </Menu.Item>
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
           ) : ''}
           <Menu.Item position="right">
-            {this.props.currentUser === '' ? (
-                <Dropdown text="Login" pointing="top right" icon={'user'}>
-                  <Dropdown.Menu>
-                    <Dropdown.Item icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
-                    <Dropdown.Item icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
-                  </Dropdown.Menu>
-                </Dropdown>
-            ) : (
-                <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
-                  <Dropdown.Menu>
-                    <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
-                  </Dropdown.Menu>
-                </Dropdown>
-            )}
+            <Dropdown
+              trigger={trigger}
+              style={{ color: '#024731' }}
+              pointing='top right'
+              icon={'caret down'}>
+              <Dropdown.Menu centered>
+                <Dropdown.Item icon='user' text={this.props.currentUser} as={NavLink} exact to='/profile'/>
+                <Dropdown.Item icon='heart' text='Your Listings' as={NavLink} exact to='/list'/>
+                <Dropdown.Item icon='star' text='Saved Items' as={NavLink} exact to='/saved'/>
+              <div className='ui divider'/>
+                <Dropdown.Item icon='chat' text='Contact Admin' as={NavLink} exact to='/home'/>
+                <Dropdown.Item icon='sign-out' text='Logout' as={NavLink} exact to='/signout'/>
+              </Dropdown.Menu>
+            </Dropdown>
           </Menu.Item>
         </Menu>
     );
