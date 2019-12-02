@@ -18,7 +18,7 @@
       "image": "https://www.fruitgravycompany.com/wp-content/uploads/2018/12/basket.jpg",
       "description": "yes",
       "quantity": 3,
-      "owner": "john@foo.com",
+      "owner": "Test",
       "condition": "excellent"
     },
     {
@@ -26,7 +26,7 @@
       "image": "https://dks.scene7.com/is/image/GolfGalaxy/17GTXMGGRSSRPRXXXPRF_Slate_Blue?wid=1400&fmt=jpg",
       "description": "yes",
       "quantity": 2,
-      "owner": "john@foo.com",
+      "owner": "Test",
       "condition": "poor"
     },
     {
@@ -34,7 +34,7 @@
       "image": "https://www.conservationmagazine.org/2008/09/the-sterile-banana/",
       "description": "yes",
       "quantity": 2,
-      "owner": "admin@foo.com",
+      "owner": "Johnson",
       "condition": "good"
     },
     {
@@ -42,7 +42,7 @@
       "image": "https://www.meandmomrentals.com/wp-content/uploads/2017/08/boogie.jpg",
       "description": "yes",
       "quantity": 2,
-      "owner": "admin@foo.com",
+      "owner": "Johnson",
       "condition": "excellent"
     }
   ]

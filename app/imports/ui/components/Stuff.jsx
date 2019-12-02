@@ -14,7 +14,6 @@ class Stuff extends React.Component {
                 src={this.props.stuff.image}
             />
             <Card.Header>{this.props.stuff.name}</Card.Header>
-            <Card.Meta>{this.props.stuff.description}</Card.Meta>
             <Card.Meta>Qty: {this.props.stuff.quantity}</Card.Meta>
             <Card.Meta>{this.props.stuff.owner}</Card.Meta>
             <Card.Meta>{this.props.stuff.condition}</Card.Meta>
