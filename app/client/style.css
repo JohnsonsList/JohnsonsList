@@ -138,5 +138,9 @@ h4 {
 #prof-middle {
   background-color: #f5f2ee !important;
   padding-top: 50px;
-  padding-bottom: 700px;
+  padding-bottom: 400px;
+}
+
+#profText {
+  font-family: "Roboto", "Helvetica Neue", serif;
 }
