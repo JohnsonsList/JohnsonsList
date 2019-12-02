@@ -13,7 +13,12 @@ class Signup extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = {
+      user: '',
+      email: '',
+      password: '',
+      error: '',
+      redirectToReferer: false };
   }
 
   /** Update the form controls each time the user interacts with them. */
@@ -23,8 +28,8 @@ class Signup extends React.Component {
 
   /** Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password } = this.state;
-    Accounts.createUser({ email, username: email, password }, (err) => {
+    const { user, email, password } = this.state;
+    Accounts.createUser({ user, email, username: user, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -35,7 +40,7 @@ class Signup extends React.Component {
 
   /** Display the signup form. Redirect to add page after successful registration and login. */
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/add' } };
+    const { from } = this.props.location.state || { from: { pathname: '/home' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
@@ -60,19 +65,25 @@ class Signup extends React.Component {
               <Form.Group>
                   <Form.Input
                     width={8}
+                    label='First Name'
                     icon='user'
                     iconPosition='left'
                     name='firstname'
+                    type='name'
                     placeholder="First Name"
                     onChange={this.handleChange}
+                    required
                   />
               <Form.Input
                   width={8}
+                  label='Last Name'
                   icon='user'
                   name='lastname'
                   iconPosition='left'
+                  type='name'
                   placeholder="Last Name"
                   onChange={this.handleChange}
+                  required
               />
               </Form.Group>
               <Form.Input
@@ -80,26 +91,33 @@ class Signup extends React.Component {
                   label='Careful, this is what others will see when they interact with you'
                   icon="id badge"
                   iconPosition="left"
-                  name="username"
+                  name="user"
+                  type='name'
                   placeholder="Username"
                   onChange={this.handleChange}
+                  required
               />
                 <Form.Input
                     width={16}
+                    label='Email'
                     icon="envelope"
                     iconPosition="left"
                     name="email"
                     type="email"
-                  placeholder="Email"
-                  onChange={this.handleChange}
+                    placeholder="Email"
+                    onChange={this.handleChange}
+                    required
                 />
-                <Form.Input width={16}
-                  icon="lock"
-                  iconPosition="left"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  onChange={this.handleChange}
+                <Form.Input
+                    width={16}
+                    label='Password'
+                    icon="lock"
+                    iconPosition="left"
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                    onChange={this.handleChange}
+                    required
                 />
               <div className='ui divider'/>
                 <Form.Button

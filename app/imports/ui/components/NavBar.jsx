@@ -25,6 +25,8 @@ class NavBar extends React.Component {
                              exact to="/store">Clothing</Menu.Item>
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
                              exact to="/list">Dormitory</Menu.Item>
+            <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
+                       exact to="/add">Electronics</Menu.Item>
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
                              exact to="/add">Supplies</Menu.Item>
                   {this.props.currentUser ? (
@@ -35,7 +37,7 @@ class NavBar extends React.Component {
                       exact to="/add"
                       key='add'
                       style={{ color: '#024731' }}
-                      position='right'><Icon name='tag'/>Create a Listing</Menu.Item>
+                      position='right'><Icon name='tag'/>Sell an Item</Menu.Item>
                   ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                 <Menu.Item

@@ -15,7 +15,12 @@ export default class Signin extends React.Component {
   /** Initialize component state with properties for login and redirection. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = {
+      user: '',
+      email: '',
+      password: '',
+      error: '',
+      redirectToReferer: false };
   }
 
   /** Update the form controls each time the user interacts with them. */
@@ -62,7 +67,7 @@ export default class Signin extends React.Component {
                   iconPosition="left"
                   name="email"
                   type="email"
-                  placeholder="Username or Email"
+                  placeholder="Email"
                   onChange={this.handleChange}
                 />
                 <Form.Input
@@ -75,7 +80,9 @@ export default class Signin extends React.Component {
                 />
                 <Form.Button color='blue' content="Log in"/>
                 <div className='ui divider' />
+                <div id='sign-in-text'>
                 <p>Don&apos;t have an account yet? <a href="/#/signup">Sign up</a></p>
+                </div>
             </Form>
             </Segment>
             {this.state.error === '' ? (
