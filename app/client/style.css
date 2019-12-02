@@ -26,8 +26,8 @@
 }
 
 .landing {
-  background: url("/images/manoa-campus-dark.jpg");
   background-size: auto;
+  background: url("/images/manoa-campus-dark.jpg") fixed;
   height: 100%;
   margin: 0;
   padding-top: -20px;
