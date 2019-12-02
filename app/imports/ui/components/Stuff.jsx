@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
@@ -9,6 +9,10 @@ class Stuff extends React.Component {
     return (
         <Card centered>
           <Card.Content>
+            <Image
+                size='large'
+                src={this.props.stuff.image}
+            />
             <Card.Header>{this.props.stuff.name}</Card.Header>
             <Card.Meta>{this.props.stuff.description}</Card.Meta>
             <Card.Meta>Qty: {this.props.stuff.quantity}</Card.Meta>

@@ -1,13 +1,47 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    {
+      "email": "admin@foo.com",
+      "password": "changeme",
+      "role": "admin"
+    },
+    {
+      "email": "john@foo.com",
+      "password": "changeme"
+    }
   ],
-
   "defaultData": [
-    { "name": "Basket", "description": "yes", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "description": "yes", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "description": "yes", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "description": "yes", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+    {
+      "name": "Basket",
+      "image": "https://www.fruitgravycompany.com/wp-content/uploads/2018/12/basket.jpg",
+      "description": "yes",
+      "quantity": 3,
+      "owner": "john@foo.com",
+      "condition": "excellent"
+    },
+    {
+      "name": "Bicycle",
+      "image": "https://dks.scene7.com/is/image/GolfGalaxy/17GTXMGGRSSRPRXXXPRF_Slate_Blue?wid=1400&fmt=jpg",
+      "description": "yes",
+      "quantity": 2,
+      "owner": "john@foo.com",
+      "condition": "poor"
+    },
+    {
+      "name": "Banana",
+      "image": "https://www.conservationmagazine.org/2008/09/the-sterile-banana/",
+      "description": "yes",
+      "quantity": 2,
+      "owner": "admin@foo.com",
+      "condition": "good"
+    },
+    {
+      "name": "Boogie Board",
+      "image": "https://www.meandmomrentals.com/wp-content/uploads/2017/08/boogie.jpg",
+      "description": "yes",
+      "quantity": 2,
+      "owner": "admin@foo.com",
+      "condition": "excellent"
+    }
   ]
 }
