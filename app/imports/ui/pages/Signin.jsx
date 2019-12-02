@@ -80,7 +80,9 @@ export default class Signin extends React.Component {
                 />
                 <Form.Button color='blue' content="Log in"/>
                 <div className='ui divider' />
+                <div id='sign-in-text'>
                 <p>Don&apos;t have an account yet? <a href="/#/signup">Sign up</a></p>
+                </div>
             </Form>
             </Segment>
             {this.state.error === '' ? (
