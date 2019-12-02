@@ -13,7 +13,12 @@ class Signup extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { user: '', email: '', password: '', error: '', redirectToReferer: false };
+    this.state = {
+      user: '',
+      email: '',
+      password: '',
+      error: '',
+      redirectToReferer: false };
   }
 
   /** Update the form controls each time the user interacts with them. */
@@ -60,21 +65,25 @@ class Signup extends React.Component {
               <Form.Group>
                   <Form.Input
                     width={8}
+                    label='First Name'
                     icon='user'
                     iconPosition='left'
                     name='firstname'
                     type='name'
                     placeholder="First Name"
                     onChange={this.handleChange}
+                    required
                   />
               <Form.Input
                   width={8}
+                  label='Last Name'
                   icon='user'
                   name='lastname'
                   iconPosition='left'
                   type='name'
                   placeholder="Last Name"
                   onChange={this.handleChange}
+                  required
               />
               </Form.Group>
               <Form.Input
@@ -86,23 +95,29 @@ class Signup extends React.Component {
                   type='name'
                   placeholder="Username"
                   onChange={this.handleChange}
+                  required
               />
                 <Form.Input
                     width={16}
+                    label='Email'
                     icon="envelope"
                     iconPosition="left"
                     name="email"
                     type="email"
-                  placeholder="Email"
-                  onChange={this.handleChange}
+                    placeholder="Email"
+                    onChange={this.handleChange}
+                    required
                 />
-                <Form.Input width={16}
-                  icon="lock"
-                  iconPosition="left"
-                  name="password"
-                  placeholder="Password"
-                  type="password"
-                  onChange={this.handleChange}
+                <Form.Input
+                    width={16}
+                    label='Password'
+                    icon="lock"
+                    iconPosition="left"
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                    onChange={this.handleChange}
+                    required
                 />
               <div className='ui divider'/>
                 <Form.Button

@@ -15,7 +15,12 @@ export default class Signin extends React.Component {
   /** Initialize component state with properties for login and redirection. */
   constructor(props) {
     super(props);
-    this.state = { user: '', email: '', password: '', error: '', redirectToReferer: false };
+    this.state = {
+      user: '',
+      email: '',
+      password: '',
+      error: '',
+      redirectToReferer: false };
   }
 
   /** Update the form controls each time the user interacts with them. */
