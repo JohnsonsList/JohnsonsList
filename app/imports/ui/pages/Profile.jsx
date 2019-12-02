@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Image, Grid, Header, Divider, Card } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Container, Image, Grid, Header, Divider } from 'semantic-ui-react';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
+import { withRouter } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
@@ -24,7 +27,7 @@ class Profile extends React.Component {
                 </Grid.Column>
                 <Grid.Column width={5}>
                   <Header as='h2' style={ profStyle }>
-                    {this.props.currentUser}why isn&apos;t the name showing up?
+                    {this.props.currentUser}
                   </Header>
                   <p id='profText'>maybe something will go here(maybe email)</p>
                 </Grid.Column>
@@ -48,4 +51,11 @@ Profile.propTypes = {
   items: PropTypes.string,
 };
 
-export default Profile;
+// this is required to make the name show up
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+const ProfileContainer = withTracker(() => ({
+  currentUser: Meteor.user() ? Meteor.user().username : '',
+}))(Profile);
+
+
+export default withRouter(ProfileContainer);
