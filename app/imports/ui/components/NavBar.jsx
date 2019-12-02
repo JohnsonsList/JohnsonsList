@@ -35,7 +35,7 @@ class NavBar extends React.Component {
                       exact to="/add"
                       key='add'
                       style={{ color: '#024731' }}
-                      position='right'><Icon name='tag'/>Create a Listing</Menu.Item>
+                      position='right'><Icon name='tag'/>Sell an Item</Menu.Item>
                   ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                 <Menu.Item
