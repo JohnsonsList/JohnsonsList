@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Button, Container, Icon, Menu, Segment } from 'semantic-ui-react';
+import { Grid, Button, Container, Icon, Tab, Image, Header } from 'semantic-ui-react';
 import { NavLink } from 'react-router-dom';
 import SOBar from '../components/SOBar';
 import SOFooter from '../components/SOFooter';
@@ -7,13 +7,106 @@ import SOFooter from '../components/SOFooter';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
-  state = { activeItem: 'SELLING AN ITEM' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
   render() {
-    const { activeItem } = this.state;
     const gridStyle = { height: '600px' };
+    const listStyle = { paddingLeft: '50px' };
+    const tabStyle = {
+      border: 'none',
+      boxShadow: 'none',
+      color: '#000000',
+      backgroundColor: '#fcfbfb' };
+    const panes = [
+      {
+        menuItem: 'SELLING',
+        render: () => <Tab.Pane attached={false} style={ tabStyle }>
+          <Grid centered>
+            <Grid.Column width={5}>
+          <Image style={ listStyle } size='medium' src='/images/listing.jpg'/>
+            </Grid.Column>
+            <Grid.Column width={5}>
+          <Header as='h2'>
+            Create Listing
+          </Header>
+              <hr/>
+              <p>Create a listing and fill out the appropriate information.</p>
+            </Grid.Column>
+          </Grid>
+          <Grid centered>
+            <Grid.Column width={5}>
+              <Header as='h2'>
+                Get Contacted
+              </Header>
+              <hr/>
+              <p>Wait for someone of interest to contact you about the listing you made.</p>
+            </Grid.Column>
+            <Grid.Column width={5}>
+              <Image style={ listStyle } floated='right'
+                     size='medium' src='/images/waiting.jpg'/>
+            </Grid.Column>
+          </Grid>
+          <Grid centered>
+            <Grid.Column width={5}>
+              <Image style={ listStyle } floated='right'
+                     size='medium' src='/images/sell.jpg'/>
+            </Grid.Column>
+            <Grid.Column width={5}>
+              <Header as='h2'>
+                Sell the Item
+              </Header>
+              <hr/>
+              <p>Meet up with the individual that contacted you and sell the item!</p>
+            </Grid.Column>
+          </Grid>
+        </Tab.Pane>,
+      },
+      {
+        menuItem: 'BUYING',
+        render: () => <Tab.Pane attached={false} style={ tabStyle }>
+          <Grid centered>
+            <Grid.Column width={5}>
+              <Image style={ listStyle } size='medium' src='/images/find.jpg'/>
+            </Grid.Column>
+            <Grid.Column width={5}>
+              <Header as='h2'>
+                Find a List You Like
+              </Header>
+              <hr/>
+              <p>Look around the store and encounter a listing that piques your interest.</p>
+            </Grid.Column>
+          </Grid>
+          <Grid centered>
+            <Grid.Column width={5}>
+              <Header as='h2'>
+                Contact the Seller
+              </Header>
+              <hr/>
+              <p>Contact information will be provided to let you be
+                able to contact the owner and arrange a deal.</p>
+            </Grid.Column>
+            <Grid.Column width={5}>
+              <Image style={ listStyle } floated='right'
+                     size='medium' src='/images/contact.jpg'/>
+            </Grid.Column>
+          </Grid>
+          <Grid centered>
+            <Grid.Column width={5}>
+              <Image style={ listStyle } floated='right'
+                     size='medium' src='/images/buy.jpg'/>
+            </Grid.Column>
+            <Grid.Column width={5}>
+              <Header as='h2'>
+                Buy the Item
+              </Header>
+              <hr/>
+              <p>Meet up with the individual that you contacted and buy the item!</p>
+            </Grid.Column>
+          </Grid>
+        </Tab.Pane>,
+      },
+    ];
     return (
         <div className='landing'>
           <SOBar/>
@@ -35,15 +128,9 @@ class Landing extends React.Component {
           <Grid.Column width={20}>
               <h1 align='center'>HOW IT WORKS</h1>
             <Container>
-            <Menu pointing secondary>
-              <Menu.Item name='SELLING AN ITEM'
-                         active={activeItem === 'SELLING AN ITEM'}
-                         onClick={this.handleItemClick}/>
-              <Menu.Item name='BUYING AN ITEM'
-                         active={activeItem === 'BUYING AN ITEM'}
-                         onClick={this.handleItemClick}/>
-            </Menu>
-             <Segment id='test' basic>Why is this like this?</Segment>
+
+              {/* This is what displays the HOW IT WORKS */}
+              <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
 
               <h1 align='center'>WHY JOHNSONSLIST WORKS</h1>
             <Grid centered>
