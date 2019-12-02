@@ -128,6 +128,8 @@ class Landing extends React.Component {
           <Grid.Column width={20}>
               <h1 align='center'>HOW IT WORKS</h1>
             <Container>
+
+              {/* This is what displays the HOW IT WORKS */}
               <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
 
               <h1 align='center'>WHY JOHNSONSLIST WORKS</h1>
