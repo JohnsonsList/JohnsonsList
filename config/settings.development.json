@@ -45,5 +45,12 @@
       "owner": "Johnson",
       "condition": "excellent"
     }
+  ],
+  "defaultIssue": [
+    {
+      "problem": "This site sucks",
+      "description": "This site is horrible",
+      "user": "Developers"
+    }
   ]
 }
