@@ -10,7 +10,7 @@ import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
 /** Renders a table containing all of the Stuff documents. Use <Stuff> to render each row. */
-class ListStuff extends React.Component {
+class Store extends React.Component {
 
   constructor() {
     super();
@@ -41,6 +41,7 @@ class ListStuff extends React.Component {
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
+            <Header as="h2" textAlign="center" inverted>Clothing</Header>
             <Input
                 type='text'
                 value={this.state.search}
@@ -61,7 +62,7 @@ class ListStuff extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ListStuff.propTypes = {
+Store.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -74,4 +75,4 @@ export default withTracker(() => {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ListStuff);
+})(Store);

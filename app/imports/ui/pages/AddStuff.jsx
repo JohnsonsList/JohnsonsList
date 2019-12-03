@@ -19,6 +19,7 @@ import Footer from '../components/Footer';
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
   name: String,
+  image: String,
   description: String,
   quantity: Number,
   condition: {
@@ -33,17 +34,17 @@ class AddStuff extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { name, description, quantity, condition } = data;
+    const { name, image, description, quantity, condition } = data;
     const owner = Meteor.user().username;
-    Stuffs.insert({ name, description, quantity, condition, owner },
-        (error) => {
-          if (error) {
-            swal('Error', error.message, 'error');
-          } else {
-            swal('Success', 'Item added successfully', 'success');
-            formRef.reset();
-          }
-        });
+    Stuffs.insert({ name, image, description, quantity, condition, owner },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', 'Item added successfully', 'success');
+          formRef.reset();
+        }
+      });
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -63,6 +64,7 @@ class AddStuff extends React.Component {
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment>
                       <TextField name='name'/>
+                      <TextField name='image'/>
                       <LongTextField name='description'/>
                       <NumField name='quantity' decimal={false}/>
                       <SelectField name='condition'/>
