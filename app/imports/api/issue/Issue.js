@@ -6,14 +6,14 @@ import { Tracker } from 'meteor/tracker';
 const Issues = new Mongo.Collection('Issues');
 
 /** Define a schema to specify the structure of each document in the collection. */
-const Issueschema = new SimpleSchema({
+const IssueSchema = new SimpleSchema({
   problem: String,
   description: String,
   user: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
-Issues.attachSchema(Issueschema);
+Issues.attachSchema(IssueSchema);
 
 /** Make the collection and schema available to other code. */
-export { Issues, Issueschema };
+export { Issues, IssueSchema };
