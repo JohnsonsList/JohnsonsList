@@ -24,11 +24,11 @@ class NavBar extends React.Component {
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
                              exact to="/store">Clothing</Menu.Item>
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
-                             exact to="/list">Dormitory</Menu.Item>
+                             exact to="/store">Dormitory</Menu.Item>
             <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
-                       exact to="/add">Electronics</Menu.Item>
+                       exact to="/store">Electronics</Menu.Item>
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
-                             exact to="/add">Supplies</Menu.Item>
+                             exact to="/store">Supplies</Menu.Item>
                   {this.props.currentUser ? (
                       // eslint-disable-next-line react/jsx-key
                   <Menu.Item

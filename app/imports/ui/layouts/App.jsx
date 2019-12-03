@@ -18,6 +18,7 @@ import YourShop from '../pages/YourShop';
 import Saved from '../pages/Saved';
 import Home from '../pages/HomePage';
 import Profile from '../pages/Profile';
+import NotifyAdmin from '../pages/NotifyAdmin';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -33,13 +34,14 @@ class App extends React.Component {
               <Route path="/saved" component={Saved}/>
               <Route path="/profile" component={Profile}/>
               <Route path="/home" component={Home}/>
+              <Route path="/notif" component={NotifyAdmin}/>
               <Route path="/yourshop" component={YourShop}/>
               <ProtectedRoute path="/list" component={MyListing}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
-              <Route  component={NotFound}/>
+              <Route component={NotFound}/>
             </Switch>
           </div>
         </Router>
