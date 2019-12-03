@@ -1,4 +1,5 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
@@ -18,9 +19,11 @@ class Stuff extends React.Component {
             <Card.Meta>{this.props.stuff.owner}</Card.Meta>
             <Card.Meta>{this.props.stuff.condition}</Card.Meta>
           </Card.Content>
+          {this.props.stuff.owner === Meteor.user().username ?
           <Card.Content extra>
             <Link to={`/edit/${this.props.stuff._id}`}>Edit</Link>
           </Card.Content>
+          : '' };
         </Card>
     );
   }
