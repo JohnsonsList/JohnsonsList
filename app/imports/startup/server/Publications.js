@@ -5,8 +5,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Stuff', function publish() {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Stuffs.find({ owner: username });
+    return Stuffs.find();
   }
   return this.ready();
 });
