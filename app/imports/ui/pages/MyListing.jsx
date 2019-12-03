@@ -70,7 +70,7 @@ MyListing.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuff');
+  const subscription = Meteor.subscribe('MyListings');
   return {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),

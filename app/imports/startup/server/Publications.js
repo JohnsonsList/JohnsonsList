@@ -10,6 +10,14 @@ Meteor.publish('Stuff', function publish() {
   return this.ready();
 });
 
+Meteor.publish('MyListings', function publish() {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Stuffs.find({ owner: username });
+  }
+  return this.ready();
+});
+
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
 Meteor.publish('StuffAdmin', function publish() {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
