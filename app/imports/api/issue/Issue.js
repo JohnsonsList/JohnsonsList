@@ -10,6 +10,7 @@ const IssueSchema = new SimpleSchema({
   problem: String,
   description: String,
   user: String,
+  owner: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
