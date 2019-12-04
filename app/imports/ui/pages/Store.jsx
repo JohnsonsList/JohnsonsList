@@ -32,7 +32,8 @@ class Store extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const filteredItems = this.props.stuffs.filter(
-        (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
+        (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+            items.categories.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
     const cardStyle = { paddingTop: '30px', paddingBottom: '50px' };
     const pageStyle = { paddingTop: '20px' };

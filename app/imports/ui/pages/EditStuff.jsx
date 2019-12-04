@@ -23,8 +23,8 @@ class EditStuff extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, image, description, quantity, condition, _id } = data;
-    Stuffs.update(_id, { $set: { name, image, description, quantity, condition } }, (error) => (error ?
+    const { name, image, description, quantity, condition, categories, _id } = data;
+    Stuffs.update(_id, { $set: { name, image, description, quantity, condition, categories } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
   }
@@ -51,6 +51,7 @@ class EditStuff extends React.Component {
                   <LongTextField name='description'/>
                   <NumField name='quantity' decimal={false}/>
                   <SelectField name='condition'/>
+                  <SelectField name='categories'/>
                   <SubmitField value='Submit'/>
                   <ErrorsField/>
                   <HiddenField name='owner'/>
