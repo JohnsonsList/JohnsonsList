@@ -31,7 +31,7 @@ class Signup extends React.Component {
   /** Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
     const { first, last, user, email, password } = this.state;
-    Accounts.createUser({ user, email, profile: { first, last }, username: user, password }, (err) => {
+    Accounts.createUser({ user, email, profile: { first: first, last: last }, username: user, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -70,7 +70,7 @@ class Signup extends React.Component {
                     label='First Name'
                     icon='user'
                     iconPosition='left'
-                    name='firstname'
+                    name='first'
                     type='name'
                     placeholder="First Name"
                     onChange={this.handleChange}
@@ -80,7 +80,7 @@ class Signup extends React.Component {
                   width={8}
                   label='Last Name'
                   icon='user'
-                  name='lastname'
+                  name='last'
                   iconPosition='left'
                   type='name'
                   placeholder="Last Name"
