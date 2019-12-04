@@ -17,6 +17,11 @@ const StuffSchema = new SimpleSchema({
     allowedValues: ['excellent', 'good', 'fair', 'poor'],
     defaultValue: 'good',
   },
+  categories: {
+    type: String,
+    allowedValues: ['clothing', 'dormitory', 'electronics', 'supplies'],
+    defaultValue: 'clothing',
+  },
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

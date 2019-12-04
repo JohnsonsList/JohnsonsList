@@ -22,32 +22,36 @@
       "image": "https://www.fruitgravycompany.com/wp-content/uploads/2018/12/basket.jpg",
       "description": "yes",
       "quantity": 3,
-      "owner": "SurferLover",
-      "condition": "excellent"
+      "owner": "John Foo Test",
+      "condition": "excellent",
+      "categories": "supplies"
     },
     {
       "name": "Bicycle",
       "image": "https://dks.scene7.com/is/image/GolfGalaxy/17GTXMGGRSSRPRXXXPRF_Slate_Blue?wid=1400&fmt=jpg",
       "description": "yes",
       "quantity": 2,
-      "owner": "Test",
-      "condition": "poor"
+      "owner": "John Foo Test",
+      "condition": "poor",
+      "categories": "dormitory"
     },
     {
       "name": "Banana",
       "image": "https://steamuserimages-a.akamaihd.net/ugc/684900710404502407/D1BC38BA62C1C5ED64531011E7A19DE99B16C2FB/",
       "description": "yes",
       "quantity": 2,
-      "owner": "Johnson",
-      "condition": "good"
+      "owner": "SurferLover",
+      "condition": "good",
+      "categories": "supplies"
     },
     {
       "name": "Boogie Board",
       "image": "https://www.meandmomrentals.com/wp-content/uploads/2017/08/boogie.jpg",
       "description": "yes",
       "quantity": 2,
-      "owner": "Johnson",
-      "condition": "excellent"
+      "owner": "SurferLover",
+      "condition": "excellent",
+      "categories": "dormitory"
     }
   ],
   "defaultIssue": [
