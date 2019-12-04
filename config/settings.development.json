@@ -36,6 +36,15 @@
       "categories": "dormitory"
     },
     {
+      "name": "Vintage Leather Jacket",
+      "image": "https://images.craigslist.org/00D0D_9B1rq9FpVl6_600x450.jpg",
+      "description": "yes",
+      "quantity": 1,
+      "owner": "John Foo Test",
+      "condition": "excellent",
+      "categories": "clothing"
+    },
+    {
       "name": "Banana",
       "image": "https://steamuserimages-a.akamaihd.net/ugc/684900710404502407/D1BC38BA62C1C5ED64531011E7A19DE99B16C2FB/",
       "description": "yes",

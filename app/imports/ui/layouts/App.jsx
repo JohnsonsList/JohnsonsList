@@ -14,6 +14,7 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import Store from '../pages/Store';
+import Clothing from '../pages/Clothing';
 import YourShop from '../pages/YourShop';
 import Saved from '../pages/Saved';
 import Home from '../pages/HomePage';
@@ -32,6 +33,7 @@ class App extends React.Component {
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
               <Route path="/store" component={Store}/>
+              <Route path="/clothing" component={Clothing}/>
               <Route path="/saved" component={Saved}/>
               <Route path="/profile" component={Profile}/>
               <Route path="/home" component={Home}/>

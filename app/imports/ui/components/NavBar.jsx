@@ -22,7 +22,7 @@ class NavBar extends React.Component {
               </Dropdown>
             </Menu.Item>
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
-                             exact to="/store">Clothing</Menu.Item>
+                             exact to="/clothing">Clothing</Menu.Item>
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
                              exact to="/store">Dormitory</Menu.Item>
             <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
