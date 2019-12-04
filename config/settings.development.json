@@ -1,13 +1,17 @@
 {
   "defaultAccounts": [
     {
-      "user": "Johnson",
+      "first": "Philip",
+      "last": "Johnson",
+      "user": "SurferLover",
       "email": "admin@foo.com",
       "password": "changeme",
       "role": "admin"
     },
     {
-      "user": "Test",
+      "first": "John",
+      "last": "Foo",
+      "user": "John Foo Test",
       "email": "john@foo.com",
       "password": "changeme"
     }

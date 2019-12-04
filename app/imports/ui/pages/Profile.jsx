@@ -14,7 +14,8 @@ class Profile extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
-    const profStyle = { paddingTop: '130px', fontFamily: 'Roboto' };
+    const profStyle = { paddingTop: '80px', fontFamily: 'Roboto' };
+    const fontStyle = { fontFamily: 'Roboto' };
     return (
         <div>
           <TitleBar/>
@@ -27,9 +28,14 @@ class Profile extends React.Component {
                 </Grid.Column>
                 <Grid.Column width={5}>
                   <Header as='h2' style={ profStyle }>
+                    {this.props.currentFirst} {this.props.currentLast}
+                  </Header>
+                  <Header as='h2' style={ fontStyle } >
                     {this.props.currentUser}
                   </Header>
-                  <p id='profText'>maybe something will go here(maybe email)</p>
+                  <Header as='h2' style={ fontStyle }>
+                    {this.props.currentEmail}
+                  </Header>
                 </Grid.Column>
               </Grid>
               <Divider fluid/>
@@ -48,13 +54,19 @@ class Profile extends React.Component {
 /** Declare the types of all properties. */
 Profile.propTypes = {
   currentUser: PropTypes.string,
+  currentFirst: PropTypes.string,
+  currentLast: PropTypes.string,
   items: PropTypes.string,
+  currentEmail: PropTypes.string,
 };
 
 // this is required to make the name show up
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 const ProfileContainer = withTracker(() => ({
   currentUser: Meteor.user() ? Meteor.user().username : '',
+  currentEmail: Meteor.user() ? Meteor.user().emails[0].address : '',
+  currentFirst: Meteor.user() ? Meteor.user().profile.first : '',
+  currentLast: Meteor.user() ? Meteor.user().profile.last : '',
 }))(Profile);
 
 
