@@ -14,6 +14,8 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      first: '',
+      last: '',
       user: '',
       email: '',
       password: '',
@@ -28,8 +30,8 @@ class Signup extends React.Component {
 
   /** Handle Signup submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { user, email, password } = this.state;
-    Accounts.createUser({ user, email, username: user, password }, (err) => {
+    const { first, last, user, email, password } = this.state;
+    Accounts.createUser({ user, email, profile: { first, last }, username: user, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
