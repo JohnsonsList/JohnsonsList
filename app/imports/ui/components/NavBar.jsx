@@ -39,14 +39,7 @@ class NavBar extends React.Component {
                       style={{ color: '#024731' }}
                       position='right'><Icon name='tag'/>Sell an Item</Menu.Item>
                   ) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                <Menu.Item
-                    style={{ color: '#024731' }}
-                    as={NavLink}
-                    activeclassname="active"
-                    exact to="/admin"
-                    key='admin'>Admin</Menu.Item>
-            ) : ''}</Menu></div>
+          </Menu></div>
     );
   }
 }
