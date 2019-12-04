@@ -19,6 +19,7 @@ import Saved from '../pages/Saved';
 import Home from '../pages/HomePage';
 import Profile from '../pages/Profile';
 import NotifyAdmin from '../pages/NotifyAdmin';
+import IssueAdmin from '../pages/IssueAdmin';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -40,6 +41,7 @@ class App extends React.Component {
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+              <AdminProtectedRoute path="/issues" component={IssueAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
