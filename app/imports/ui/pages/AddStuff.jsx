@@ -56,6 +56,7 @@ class AddStuff extends React.Component {
   render() {
     let fRef = null;
     const formStyle = { paddingTop: '20px', paddingBottom: '50px' };
+    const submitStyle = { marginTop: '20px' };
     return (
         <div className='background'>
           <TitleBar/>
@@ -71,10 +72,12 @@ class AddStuff extends React.Component {
                       <TextField name='name'/>
                       <TextField name='image'/>
                       <LongTextField name='description'/>
-                      <NumField name='price' decimal={false}/>
-                      <SelectField name='condition'/>
-                      <SelectField name='categories'/>
-                      <SubmitField value='Submit'/>
+                      <Grid columns="3">
+                        <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
+                        <Grid.Column><SelectField name='condition'/></Grid.Column>
+                        <Grid.Column><SelectField name='categories'/></Grid.Column>
+                      </Grid>
+                      <SubmitField value='Submit' style={submitStyle}/>
                       <ErrorsField/>
                     </Segment>
                   </AutoForm>

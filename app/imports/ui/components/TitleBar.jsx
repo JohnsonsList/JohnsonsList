@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Image, Input } from 'semantic-ui-react';
+import { Menu, Dropdown, Image, Search  } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. UPDATED */
@@ -33,13 +33,12 @@ class TitleBar extends React.Component {
           </Menu.Item>
           <Menu.Item>
             <div id='search'>
-            <Input
+            <Search
                 type='text'
                 style={{ color: '#024731' }}
                 value={this.state.search}
                 onChange={this.updateSearch.bind(this)}
                 placeholder='Search...'
-                icon='search'
             />
             </div>
           </Menu.Item>
