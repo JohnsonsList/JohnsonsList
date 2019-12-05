@@ -10,7 +10,7 @@ import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
 /** Renders a table containing all of the Stuff documents. Use <Stuff> to render each row. */
-class Store extends React.Component {
+class Clothing extends React.Component {
 
   constructor() {
     super();
@@ -42,7 +42,7 @@ class Store extends React.Component {
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
-            <Header as="h2" textAlign="center" inverted>Store</Header>
+            <Header as="h2" textAlign="center" inverted>Dormitory</Header>
             <Input
                 type='text'
                 value={this.state.search}
@@ -63,7 +63,7 @@ class Store extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-Store.propTypes = {
+Clothing.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -71,9 +71,9 @@ Store.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuff');
+  const subscription = Meteor.subscribe('Dormitory');
   return {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(Store);
+})(Clothing);

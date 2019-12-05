@@ -4,7 +4,6 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Icon } from 'semantic-ui-react';
-import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. UPDATED */
 class NavBar extends React.Component {
@@ -22,13 +21,15 @@ class NavBar extends React.Component {
               </Dropdown>
             </Menu.Item>
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
-                             exact to="/store">Clothing</Menu.Item>
+                       exact to="/store">Main Store</Menu.Item>
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
-                             exact to="/store">Dormitory</Menu.Item>
+                             exact to="/clothing">Clothing</Menu.Item>
+                  <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
+                             exact to="/dormitory">Dormitory</Menu.Item>
             <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
-                       exact to="/store">Electronics</Menu.Item>
+                       exact to="/electronics">Electronics</Menu.Item>
                   <Menu.Item style={{ color: '#024731' }} as={NavLink} activeclassname="active"
-                             exact to="/store">Supplies</Menu.Item>
+                             exact to="/supplies">Supplies</Menu.Item>
                   {this.props.currentUser ? (
                       // eslint-disable-next-line react/jsx-key
                   <Menu.Item

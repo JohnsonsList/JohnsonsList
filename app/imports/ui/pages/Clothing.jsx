@@ -15,7 +15,7 @@ class Clothing extends React.Component {
   constructor() {
     super();
     this.state = {
-      search: 'clothing',
+      search: '',
     };
   }
 
@@ -71,7 +71,7 @@ Clothing.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuff');
+  const subscription = Meteor.subscribe('Clothing');
   return {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
