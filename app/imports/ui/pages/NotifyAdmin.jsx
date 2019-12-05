@@ -50,12 +50,12 @@ class NotifyAdmin extends React.Component {
           <Container>
               <Grid container centered style={formStyle}>
                 <Grid.Column>
-                  <Header as="h2" textAlign="center" inverted>Notify Admin</Header>
+                  <Header as="h2" textAlign="center">Notify Admin</Header>
                   <AutoForm ref={ref => {
                     fRef = ref;
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment>
-                      <TextField name='problem' placeholder='The issue being created.'/>
+                      <TextField name='problem' placeholder='The Issue being created.'/>
                       <TextField name='user' placeholder='Username of user creating the issue.'/>
                       <LongTextField name='description' placeholder='Description of the issue.'/>
                       <SubmitField value='Submit'/>

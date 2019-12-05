@@ -42,7 +42,7 @@ class Clothing extends React.Component {
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
-            <Header as="h2" textAlign="center" inverted>Dormitory</Header>
+            <Header as="h2" textAlign="center">Dormitory</Header>
             <Input
                 type='text'
                 value={this.state.search}

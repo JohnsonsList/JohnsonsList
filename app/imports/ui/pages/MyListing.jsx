@@ -41,7 +41,7 @@ class MyListing extends React.Component {
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
-            <Header as="h2" textAlign="center" inverted>Current Items Being Sold</Header>
+            <Header as="h2" textAlign="center">Current Items Being Sold</Header>
             <Input
                 type='text'
                 value={this.state.search}

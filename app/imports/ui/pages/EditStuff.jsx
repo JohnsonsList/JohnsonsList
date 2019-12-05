@@ -23,8 +23,8 @@ class EditStuff extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, image, description, price, condition, categories, _id } = data;
-    Stuffs.update(_id, { $set: { name, image, description, price, condition, categories } }, (error) => (error ?
+    const { name, email, image, description, price, condition, categories, _id } = data;
+    Stuffs.update(_id, { $set: { name, email, image, description, price, condition, categories } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
   }
@@ -37,22 +37,26 @@ class EditStuff extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     const formStyle = { paddingTop: '20px', paddingBottom: '50px' };
+    const submitStyle = { marginTop: '20px' };
     return (
         <div className="background">
           <TitleBar/>
           <NavBar/>
           <Grid container centered style={formStyle}>
             <Grid.Column>
-              <Header as="h2" textAlign="center" inverted>Edit Stuff</Header>
+              <Header as="h2" textAlign="center">Edit Stuff</Header>
               <AutoForm schema={StuffSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
                 <Segment>
                   <TextField name='name'/>
+                  <TextField name='email'/>
                   <TextField name='image'/>
                   <LongTextField name='description'/>
-                  <NumField name='price' decimal={true}/>
-                  <SelectField name='condition'/>
-                  <SelectField name='categories'/>
-                  <SubmitField value='Submit'/>
+                  <Grid columns="3">
+                    <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
+                    <Grid.Column><SelectField name='condition'/></Grid.Column>
+                    <Grid.Column><SelectField name='categories'/></Grid.Column>
+                  </Grid>
+                  <SubmitField value='Submit' style={submitStyle}/>
                   <ErrorsField/>
                   <HiddenField name='owner'/>
                 </Segment>

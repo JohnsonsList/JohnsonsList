@@ -41,7 +41,7 @@ class ListStuff extends React.Component {
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
-            <Header as="h2" textAlign="center" inverted>Your Interests</Header>
+            <Header as="h2" textAlign="center">Your Interests</Header>
             <Input
                 type='text'
                 value={this.state.search}

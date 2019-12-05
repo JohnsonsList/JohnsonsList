@@ -19,13 +19,13 @@ class IssueAdmin extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const pageStyle = { paddingTop: '20px', paddingBottom: '50px' };
+    const pageStyle = { paddingTop: '20px', paddingBottom: '300px' };
     return (
         <div className="background">
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
-            <Header as="h2" textAlign="center" inverted>User Submitted Complaints</Header>
+            <Header as="h2" textAlign="center">User Submitted Complaints</Header>
             <Table celled>
               <Table.Header>
                 <Table.Row>
