@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
+import { withRouter } from 'react-router-dom';
 import { Stuffs } from '/imports/api/stuff/Stuff';
 import { Grid, Segment, Header, Container } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
@@ -19,6 +22,7 @@ import Footer from '../components/Footer';
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
   name: String,
+  email: String,
   image: String,
   description: String,
   price: Number,
@@ -39,9 +43,9 @@ class AddStuff extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { name, image, description, price, condition, categories } = data;
+    const { name, email, image, description, price, condition, categories } = data;
     const owner = Meteor.user().username;
-    Stuffs.insert({ name, image, description, price, condition, categories, owner },
+    Stuffs.insert({ name, email, image, description, price, condition, categories, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -70,6 +74,7 @@ class AddStuff extends React.Component {
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment>
                       <TextField name='name'/>
+                      <TextField name='email' label='Contact Info' placeholder={this.props.currentEmail}/>
                       <TextField name='image'/>
                       <LongTextField name='description'/>
                       <Grid columns="3">
@@ -90,4 +95,16 @@ class AddStuff extends React.Component {
   }
 }
 
-export default AddStuff;
+/** Declare the types of all properties. */
+AddStuff.propTypes = {
+  currentEmail: PropTypes.string,
+};
+
+// this is required to make the name show up
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+const AddStuffContainer = withTracker(() => ({
+  currentEmail: Meteor.user() ? Meteor.user().emails[0].address : '',
+}))(AddStuff);
+
+
+export default withRouter(AddStuffContainer);

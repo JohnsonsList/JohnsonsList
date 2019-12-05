@@ -19,6 +19,7 @@
   "defaultData": [
     {
       "name": "Modoker Vintage School College Backpack with USB Charging Port Fashion Backpack (Grey)",
+      "email": "john@foo.com",
       "image": "https://images-na.ssl-images-amazon.com/images/I/81Unr0Qa-cL._AC_SX679_.jpg",
       "description": "yes",
       "price": 25.99,
@@ -28,6 +29,7 @@
     },
     {
       "name": "Bicycle",
+      "email": "john@foo.com",
       "image": "https://dks.scene7.com/is/image/GolfGalaxy/17GTXMGGRSSRPRXXXPRF_Slate_Blue?wid=1400&fmt=jpg",
       "description": "yes",
       "price": 200,
@@ -37,6 +39,7 @@
     },
     {
       "name": "Vintage Leather Jacket",
+      "email": "john@foo.com",
       "image": "https://images.craigslist.org/00D0D_9B1rq9FpVl6_600x450.jpg",
       "description": "yes",
       "price": 45,
@@ -46,6 +49,7 @@
     },
     {
       "name": "Nintendo Switch – Neon Red and Neon Blue Joy-Con",
+      "email": "john@foo.com",
       "image": "https://images-na.ssl-images-amazon.com/images/I/71ivrWiYkLL._AC_.jpg",
       "description": "yes",
       "price": 298.99,
@@ -55,6 +59,7 @@
     },
     {
       "name": "Rechargeable 2.4G Slim Wireless Mouse",
+      "email": "admin@foo.com",
       "image": "https://images-na.ssl-images-amazon.com/images/I/51Ffw4cWHYL._AC_SL1200_.jpg",
       "description": "yes",
       "price": 11.99,
@@ -64,6 +69,7 @@
     },
     {
       "name": "Boogie Board",
+      "email": "admin@foo.com",
       "image": "https://www.meandmomrentals.com/wp-content/uploads/2017/08/boogie.jpg",
       "description": "yes",
       "price": 20,

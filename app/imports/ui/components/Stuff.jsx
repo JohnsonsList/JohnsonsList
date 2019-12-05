@@ -19,6 +19,7 @@ class Stuff extends React.Component {
             <Card.Header style={{ paddingBottom: '10px' }}>{this.props.stuff.name}</Card.Header>
             <Card.Meta>Condition: {this.props.stuff.condition}</Card.Meta>
             <Card.Meta>Price: ${this.props.stuff.price}</Card.Meta>
+            <Card.Meta>Contact Info: {this.props.stuff.email}</Card.Meta>
             <Card.Meta style={{ paddingTop: '10px' }}>
               <Label color='teal'>{this.props.stuff.categories}</Label>
             </Card.Meta>
