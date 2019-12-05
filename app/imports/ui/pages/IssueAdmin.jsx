@@ -29,9 +29,9 @@ class IssueAdmin extends React.Component {
             <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Issue</Table.HeaderCell>
-                  <Table.HeaderCell>Description of issue</Table.HeaderCell>
-                  <Table.HeaderCell>Who is issue is about</Table.HeaderCell>
+                  <Table.HeaderCell>Reason for reporting</Table.HeaderCell>
+                  <Table.HeaderCell>Description of report</Table.HeaderCell>
+                  <Table.HeaderCell>Listing&apos;s owner</Table.HeaderCell>
                   <Table.HeaderCell>User who submitted</Table.HeaderCell>
                 </Table.Row>
               </Table.Header>

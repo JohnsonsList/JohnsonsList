@@ -59,7 +59,7 @@ class NotifyAdmin extends React.Component {
                     <Segment>
                       <TextField name='problem' placeholder='Reason for report.'/>
                       <TextField name='user' placeholder='Username of Listing&apos;s owner'/>
-                      <LongTextField name='description' placeholder='Reason for reporting.'/>
+                      <LongTextField name='description' placeholder='More explanation as to why you&apos;re reporting.'/>
                       <SubmitField value='Submit'/>
                       <ErrorsField/>
                     </Segment>

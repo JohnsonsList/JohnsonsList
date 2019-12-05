@@ -63,7 +63,7 @@ class TitleBar extends React.Component {
                 <Dropdown.Item icon='chat' text='All Listings' as={NavLink} exact to='/admin'/>
                 ) : ''}
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                <Dropdown.Item icon='chat' text='User Complaints' as={NavLink} exact to='/issues'/>
+                <Dropdown.Item icon='chat' text='User Reports' as={NavLink} exact to='/issues'/>
                 ) : ''}
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                     <Dropdown.Item icon='chat' text='Website Feedback' as={NavLink} exact to='/feedback'/>
