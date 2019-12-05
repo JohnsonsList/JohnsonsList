@@ -29,6 +29,10 @@
   float: right !important;
 }
 
+#report {
+  float: right !important;
+}
+
 .NavBar {
   background-color: #fafafa;
   color: #024731 !important;

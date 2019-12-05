@@ -24,6 +24,8 @@ import Home from '../pages/HomePage';
 import Profile from '../pages/Profile';
 import NotifyAdmin from '../pages/NotifyAdmin';
 import IssueAdmin from '../pages/IssueAdmin';
+import Feedback from '../pages/Feedback';
+import FeedbackAdmin from '../pages/FeedbackAdmin';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -45,11 +47,13 @@ class App extends React.Component {
               <Route path="/home" component={Home}/>
               <Route path="/notif" component={NotifyAdmin}/>
               <Route path="/yourshop" component={YourShop}/>
+              <Route path="/feed" component={Feedback}/>
               <ProtectedRoute path="/list" component={MyListing}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <AdminProtectedRoute path="/issues" component={IssueAdmin}/>
+              <AdminProtectedRoute path="/feedback" component={FeedbackAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

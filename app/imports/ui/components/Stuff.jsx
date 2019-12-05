@@ -2,7 +2,8 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Card, Image, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, Link, NavLink } from 'react-router-dom';
+// import { Roles } from 'meteor/alanning:roles';
 
 /** Renders a single row in the List Stuff table. See pages/MyListing.jsx. */
 class Stuff extends React.Component {
@@ -27,6 +28,15 @@ class Stuff extends React.Component {
           <Card.Content extra>
             <Card.Meta>
               {this.props.stuff.owner}
+              {this.props.stuff.owner !== Meteor.user().username ?
+                    <NavLink
+                        id='report'
+                        to='/notif'
+                        exact
+                        activeClassName=''>
+                    Report Listing
+                    </NavLink>
+              : '' }
               {this.props.stuff.owner === Meteor.user().username ?
               <Link className='edit' to={`/edit/${this.props.stuff._id}`}>Edit</Link>
               : '' }

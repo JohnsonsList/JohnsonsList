@@ -7,20 +7,17 @@ import LongTextField from 'uniforms-semantic/LongTextField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import swal from 'sweetalert';
-// import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import SimpleSchema from 'simpl-schema';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
-// import { Stuff } from '../components/Stuff';
+import SimpleSchema from 'simpl-schema';
 import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
-  problem: String,
+  thoughts: String,
   description: String,
-  user: String,
 });
 
 /** Renders the Page for adding a document. */
@@ -28,15 +25,16 @@ class NotifyAdmin extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { problem, description, user } = data;
+    const { thoughts, description } = data;
     const owner = Meteor.user().username;
-    Issues.insert({ problem, description, user, owner },
+    Issues.insert({ thoughts, description, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Notification sent!', 'success');
+          swal('Success', 'Notification sent! Redirecting you back to the homepage..', 'success');
           formRef.reset();
+          // add in code to redirect TODO
         }
       });
   }
@@ -52,14 +50,19 @@ class NotifyAdmin extends React.Component {
           <Container>
               <Grid container centered style={formStyle}>
                 <Grid.Column>
-                  <Header as="h2" textAlign="center">Report Listing</Header>
+                  <Header as="h2" textAlign="center">
+                    Have any thoughts about the website? Post it here!
+                  </Header>
                   <AutoForm ref={ref => {
                     fRef = ref;
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment>
-                      <TextField name='problem' placeholder='Reason for report.'/>
-                      <TextField name='user' placeholder='Username of Listing&apos;s owner'/>
-                      <LongTextField name='description' placeholder='Reason for reporting.'/>
+                      <TextField
+                          name='thoughts'
+                          placeholder='The Issue being created.'/>
+                      <LongTextField
+                          name='description'
+                          placeholder='Give us some thoughts on why you feel the way you do.'/>
                       <SubmitField value='Submit'/>
                       <ErrorsField/>
                     </Segment>
@@ -72,10 +75,5 @@ class NotifyAdmin extends React.Component {
     );
   }
 }
-
-// /** Require a document to be passed to this component. */
-// Stuff.propTypes = {
-//   stuff: PropTypes.object.isRequired,
-// };
 
 export default NotifyAdmin;
