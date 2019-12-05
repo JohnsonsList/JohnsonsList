@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Input, Card } from 'semantic-ui-react';
+import { Container, Header, Loader, Input, Grid } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/Stuff';
 import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -35,7 +35,14 @@ class Store extends React.Component {
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
             items.categories.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
-    const cardStyle = { paddingTop: '30px', paddingBottom: '50px' };
+    const cardStyle = {
+      paddingTop: '30px',
+      paddingLeft: '20px',
+      paddingRight: '20px',
+      marginBottom: '15px !important',
+      backgroundColor: '#fcfbfb',
+      shadow: 'none',
+      boxShadow: 'none' };
     const pageStyle = { paddingTop: '20px' };
     return (
         <div className='background'>
@@ -50,11 +57,13 @@ class Store extends React.Component {
                 placeholder='Search...'
                 icon='search'
             />
-            <Card.Group style={cardStyle}>
-              {filteredItems.map((stuff) => <Stuff
+            <Grid>
+              {filteredItems.map((stuff) =>
+                  <Grid.Column width={4} style={cardStyle}><Stuff
                   key={stuff._id}
-                  stuff={stuff}/>)}
-            </Card.Group>
+                  stuff={stuff}/>
+                  </Grid.Column>)}
+            </Grid>
           </Container>
           <Footer/>
         </div>

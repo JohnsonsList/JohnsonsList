@@ -10,7 +10,7 @@ const StuffSchema = new SimpleSchema({
   name: String,
   image: String,
   description: String,
-  quantity: Number,
+  price: Number,
   owner: String,
   condition: {
     type: String,
