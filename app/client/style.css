@@ -10,8 +10,15 @@
   width: 150px !important;
 }
 
-.limitCard {
-
+#background-temp {
+  background-size: auto;
+  background: url("/images/manoa-blur.jpg") !important;
+  height: 100%;
+  margin: 0;
+  padding-top: -20px;
+  padding-bottom: 0;
+  color: white;
+  font: sans-serif;
 }
 
 .edit {
