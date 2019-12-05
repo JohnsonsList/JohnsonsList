@@ -1,5 +1,5 @@
 {
-  "defaultAccounts": [
+  "defaultAccounts":[
     {
       "first": "Philip",
       "last": "Johnson",
@@ -13,6 +13,27 @@
       "last": "Foo",
       "user": "John Foo Test",
       "email": "john@foo.com",
+      "password": "changeme"
+    },
+    {
+      "first": "Jake",
+      "last": "Camarao",
+      "user": "Jakekeke",
+      "email": "jake@foo.com",
+      "password": "changeme"
+    },
+    {
+      "first": "Kason",
+      "last": "Shiroma",
+      "user": "Gomi-san",
+      "email": "kason@foo.com",
+      "password": "changeme"
+    },
+    {
+      "first": "Kevin",
+      "last": "Wong",
+      "user": "WeeabooKevin",
+      "email": "Kevin@foo.com",
       "password": "changeme"
     }
   ],
