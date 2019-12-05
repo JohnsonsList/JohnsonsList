@@ -7,9 +7,11 @@ import LongTextField from 'uniforms-semantic/LongTextField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import swal from 'sweetalert';
+// import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
+import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
+// import { Stuff } from '../components/Stuff';
 import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
@@ -50,14 +52,14 @@ class NotifyAdmin extends React.Component {
           <Container>
               <Grid container centered style={formStyle}>
                 <Grid.Column>
-                  <Header as="h2" textAlign="center">Notify Admin</Header>
+                  <Header as="h2" textAlign="center">Report Listing</Header>
                   <AutoForm ref={ref => {
                     fRef = ref;
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment>
-                      <TextField name='problem' placeholder='The Issue being created.'/>
-                      <TextField name='user' placeholder='Username of user creating the issue.'/>
-                      <LongTextField name='description' placeholder='Description of the issue.'/>
+                      <TextField name='problem' placeholder='Reason for report.'/>
+                      <TextField name='user' placeholder='Username of Listing&apos;s owner'/>
+                      <LongTextField name='description' placeholder='Reason for reporting.'/>
                       <SubmitField value='Submit'/>
                       <ErrorsField/>
                     </Segment>
@@ -70,5 +72,10 @@ class NotifyAdmin extends React.Component {
     );
   }
 }
+
+// /** Require a document to be passed to this component. */
+// Stuff.propTypes = {
+//   stuff: PropTypes.object.isRequired,
+// };
 
 export default NotifyAdmin;
