@@ -73,10 +73,10 @@ class AddStuff extends React.Component {
                     fRef = ref;
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment>
-                      <TextField name='name'/>
+                      <TextField name='name' placeholder='Name of item to sell.'/>
                       <TextField name='email' label='Contact Info' placeholder={this.props.currentEmail}/>
-                      <TextField name='image'/>
-                      <LongTextField name='description'/>
+                      <TextField name='image' placeholder='Insert the url to the image.'/>
+                      <LongTextField name='description' placeholder='Give a description of the item.'/>
                       <Grid columns="3">
                         <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                         <Grid.Column><SelectField name='condition'/></Grid.Column>
