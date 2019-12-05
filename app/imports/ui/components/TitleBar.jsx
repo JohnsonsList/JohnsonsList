@@ -58,12 +58,15 @@ class TitleBar extends React.Component {
               <div className='ui divider'/>
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                 ''
-                ) : <Dropdown.Item icon='chat' text='Contact Admin' as={NavLink} exact to='/notif'/> }
+                ) : <Dropdown.Item icon='chat' text='Provide Feedback' as={NavLink} exact to='/feed'/> }
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                 <Dropdown.Item icon='chat' text='All Listings' as={NavLink} exact to='/admin'/>
                 ) : ''}
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
                 <Dropdown.Item icon='chat' text='User Complaints' as={NavLink} exact to='/issues'/>
+                ) : ''}
+                {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                    <Dropdown.Item icon='chat' text='Website Feedback' as={NavLink} exact to='/feedback'/>
                 ) : ''}
                 <Dropdown.Item icon='sign-out' text='Logout' as={NavLink} exact to='/signout'/>
               </Dropdown.Menu>
