@@ -19,7 +19,7 @@ class IssueAdmin extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const pageStyle = { paddingTop: '20px', paddingBottom: '50px' };
+    const pageStyle = { paddingTop: '20px', paddingBottom: '300px' };
     return (
         <div className="background">
           <TitleBar/>

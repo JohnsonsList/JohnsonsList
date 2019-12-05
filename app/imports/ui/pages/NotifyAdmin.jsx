@@ -55,7 +55,7 @@ class NotifyAdmin extends React.Component {
                     fRef = ref;
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment>
-                      <TextField name='problem' placeholder='The issue being created.'/>
+                      <TextField name='problem' placeholder='The Issue being created.'/>
                       <TextField name='user' placeholder='Username of user creating the issue.'/>
                       <LongTextField name='description' placeholder='Description of the issue.'/>
                       <SubmitField value='Submit'/>
