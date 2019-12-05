@@ -7,7 +7,7 @@ class NotFound extends React.Component {
     const pageStyle = { paddingTop: '20px', paddingBottom: '50px' };
     return (
         <div style={pageStyle}>
-          <Header as="h2" textAlign="center" inverted>
+          <Header as="h2" textAlign="center">
           <p>Page not found</p>
         </Header>
         </div>

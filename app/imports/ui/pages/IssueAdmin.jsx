@@ -25,7 +25,7 @@ class IssueAdmin extends React.Component {
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
-            <Header as="h2" textAlign="center" inverted>User Submitted Complaints</Header>
+            <Header as="h2" textAlign="center">User Submitted Complaints</Header>
             <Table celled>
               <Table.Header>
                 <Table.Row>

@@ -25,7 +25,7 @@ class ListStuffAdmin extends React.Component {
           <TitleBar/>
           <NavBar/>
           <Container style={pageStyle}>
-            <Header as="h2" textAlign="center" inverted>All Listings</Header>
+            <Header as="h2" textAlign="center">All Listings</Header>
             <Table celled>
               <Table.Header>
                 <Table.Row>
