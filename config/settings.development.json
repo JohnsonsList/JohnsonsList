@@ -21,7 +21,7 @@
       "name": "Basket",
       "image": "https://www.fruitgravycompany.com/wp-content/uploads/2018/12/basket.jpg",
       "description": "yes",
-      "quantity": 3,
+      "price": 3,
       "owner": "John Foo Test",
       "condition": "excellent",
       "categories": "supplies"
@@ -30,7 +30,7 @@
       "name": "Bicycle",
       "image": "https://dks.scene7.com/is/image/GolfGalaxy/17GTXMGGRSSRPRXXXPRF_Slate_Blue?wid=1400&fmt=jpg",
       "description": "yes",
-      "quantity": 2,
+      "price": 2,
       "owner": "John Foo Test",
       "condition": "poor",
       "categories": "dormitory"
@@ -39,7 +39,7 @@
       "name": "Vintage Leather Jacket",
       "image": "https://images.craigslist.org/00D0D_9B1rq9FpVl6_600x450.jpg",
       "description": "yes",
-      "quantity": 1,
+      "price": 1,
       "owner": "John Foo Test",
       "condition": "excellent",
       "categories": "clothing"
@@ -48,16 +48,25 @@
       "name": "Banana",
       "image": "https://steamuserimages-a.akamaihd.net/ugc/684900710404502407/D1BC38BA62C1C5ED64531011E7A19DE99B16C2FB/",
       "description": "yes",
-      "quantity": 2,
+      "price": 2,
       "owner": "SurferLover",
       "condition": "good",
       "categories": "supplies"
     },
     {
+      "name": "Limited Edition V2 Nintendo Switch Red Mario Joy Cons",
+      "image": "https://images.craigslist.org/00l0l_8a7PC89jv6D_600x450.jpg",
+      "description": "yes",
+      "price": 350,
+      "owner": "SurferLover",
+      "condition": "excellent",
+      "categories": "electronics"
+    },
+    {
       "name": "Boogie Board",
       "image": "https://www.meandmomrentals.com/wp-content/uploads/2017/08/boogie.jpg",
       "description": "yes",
-      "quantity": 2,
+      "price": 2,
       "owner": "SurferLover",
       "condition": "excellent",
       "categories": "dormitory"

@@ -14,8 +14,8 @@ class Stuff extends React.Component {
                 size='large'
                 src={this.props.stuff.image}
             />
-            <Card.Header style={{ paddingTop: '10px' }}>{this.props.stuff.name}</Card.Header>
-            <Card.Meta>Qty: {this.props.stuff.quantity}</Card.Meta>
+            <Card.Header style={{ paddingTop: '10px', paddingBottom: '10px' }}>{this.props.stuff.name}</Card.Header>
+            <Card.Meta>Price: ${this.props.stuff.price}</Card.Meta>
             <Card.Meta>{this.props.stuff.owner}</Card.Meta>
             <Card.Meta>{this.props.stuff.condition}</Card.Meta>
             <Card.Meta style={{ paddingTop: '10px' }}>
