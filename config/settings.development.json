@@ -18,10 +18,10 @@
   ],
   "defaultData": [
     {
-      "name": "Basket",
-      "image": "https://www.fruitgravycompany.com/wp-content/uploads/2018/12/basket.jpg",
+      "name": "Modoker Vintage School College Backpack with USB Charging Port Fashion Backpack (Grey)",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81Unr0Qa-cL._AC_SX679_.jpg",
       "description": "yes",
-      "price": 3,
+      "price": 25.99,
       "owner": "John Foo Test",
       "condition": "excellent",
       "categories": "supplies"
@@ -30,7 +30,7 @@
       "name": "Bicycle",
       "image": "https://dks.scene7.com/is/image/GolfGalaxy/17GTXMGGRSSRPRXXXPRF_Slate_Blue?wid=1400&fmt=jpg",
       "description": "yes",
-      "price": 2,
+      "price": 200,
       "owner": "John Foo Test",
       "condition": "poor",
       "categories": "dormitory"
@@ -39,25 +39,34 @@
       "name": "Vintage Leather Jacket",
       "image": "https://images.craigslist.org/00D0D_9B1rq9FpVl6_600x450.jpg",
       "description": "yes",
-      "price": 1,
+      "price": 45,
       "owner": "John Foo Test",
       "condition": "excellent",
       "categories": "clothing"
     },
     {
-      "name": "Banana",
-      "image": "https://steamuserimages-a.akamaihd.net/ugc/684900710404502407/D1BC38BA62C1C5ED64531011E7A19DE99B16C2FB/",
+      "name": "Nintendo Switch – Neon Red and Neon Blue Joy-Con",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71ivrWiYkLL._AC_.jpg",
       "description": "yes",
-      "price": 2,
+      "price": 298.99,
+      "owner": "John Foo Test",
+      "condition": "excellent",
+      "categories": "electronics"
+    },
+    {
+      "name": "Rechargeable 2.4G Slim Wireless Mouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51Ffw4cWHYL._AC_SL1200_.jpg",
+      "description": "yes",
+      "price": 11.99,
       "owner": "SurferLover",
       "condition": "good",
-      "categories": "supplies"
+      "categories": "electronics"
     },
     {
       "name": "Boogie Board",
       "image": "https://www.meandmomrentals.com/wp-content/uploads/2017/08/boogie.jpg",
       "description": "yes",
-      "price": 2,
+      "price": 20,
       "owner": "SurferLover",
       "condition": "excellent",
       "categories": "dormitory"

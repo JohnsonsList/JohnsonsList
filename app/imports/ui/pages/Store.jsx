@@ -35,20 +35,20 @@ class Store extends React.Component {
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
             items.categories.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
-    const cardStyle = {
-      paddingTop: '30px',
-      paddingLeft: '20px',
-      paddingRight: '20px',
-      marginBottom: '15px !important',
-      backgroundColor: '#fcfbfb',
-      shadow: 'none',
-      boxShadow: 'none' };
-    const pageStyle = { paddingTop: '20px' };
+    // const cardStyle = {
+    //   paddingTop: '50px',
+    //   paddingLeft: '20px',
+    //   paddingRight: '20px',
+    //   marginBottom: '15px !important',
+    //   backgroundColor: '#fcfbfb',
+    //   shadow: 'none',
+    //   boxShadow: 'none' };
+    const pageStyle = { paddingTop: '50px' };
     return (
         <div className='background'>
           <TitleBar/>
           <NavBar/>
-          <Container style={pageStyle}>
+          <Container>
             <Header as="h2" textAlign="center" inverted>Store</Header>
             <Input
                 type='text'
@@ -59,7 +59,7 @@ class Store extends React.Component {
             />
             <Grid>
               {filteredItems.map((stuff) =>
-                  <Grid.Column width={4} style={cardStyle}><Stuff
+                  <Grid.Column width={4} style={pageStyle}><Stuff
                   key={stuff._id}
                   stuff={stuff}/>
                   </Grid.Column>)}

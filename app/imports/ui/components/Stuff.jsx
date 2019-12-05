@@ -9,14 +9,14 @@ class Stuff extends React.Component {
   render() {
     return (
         <Card className='limitCard' centered>
+          <Image
+              centered
+              className='limit'
+              size='small'
+              src={this.props.stuff.image}
+          />
           <Card.Content>
-            <Image
-                centered
-                className='limit'
-                size='small'
-                src={this.props.stuff.image}
-            />
-            <Card.Header style={{ paddingTop: '10px' }}>{this.props.stuff.name}</Card.Header>
+            <Card.Header style={{ paddingBottom: '10px' }}>{this.props.stuff.name}</Card.Header>
             <Card.Meta>Condition: {this.props.stuff.condition}</Card.Meta>
             <Card.Meta>Price: ${this.props.stuff.price}</Card.Meta>
             <Card.Meta style={{ paddingTop: '10px' }}>
@@ -36,7 +36,6 @@ class Stuff extends React.Component {
   }
 }
 
-//'
 /** Require a document to be passed to this component. */
 Stuff.propTypes = {
   stuff: PropTypes.object.isRequired,
