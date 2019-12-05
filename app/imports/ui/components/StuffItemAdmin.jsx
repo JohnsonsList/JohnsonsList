@@ -8,7 +8,7 @@ class StuffItemAdmin extends React.Component {
     return (
         <Table.Row>
           <Table.Cell>{this.props.stuff.name}</Table.Cell>
-          <Table.Cell>{this.props.stuff.quantity}</Table.Cell>
+          <Table.Cell>{this.props.stuff.price}</Table.Cell>
           <Table.Cell>{this.props.stuff.condition}</Table.Cell>
           <Table.Cell>{this.props.stuff.owner}</Table.Cell>
         </Table.Row>

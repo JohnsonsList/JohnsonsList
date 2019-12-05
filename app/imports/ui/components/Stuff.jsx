@@ -8,29 +8,35 @@ import { withRouter, Link } from 'react-router-dom';
 class Stuff extends React.Component {
   render() {
     return (
-        <Card centered>
+        <Card className='limitCard' centered>
           <Card.Content>
             <Image
-                size='large'
+                centered
+                className='limit'
+                size='small'
                 src={this.props.stuff.image}
             />
             <Card.Header style={{ paddingTop: '10px' }}>{this.props.stuff.name}</Card.Header>
-            <Card.Meta>Qty: {this.props.stuff.quantity}</Card.Meta>
-            <Card.Meta>{this.props.stuff.owner}</Card.Meta>
-            <Card.Meta>{this.props.stuff.condition}</Card.Meta>
+            <Card.Meta>Condition: {this.props.stuff.condition}</Card.Meta>
+            <Card.Meta>Price: ${this.props.stuff.price}</Card.Meta>
             <Card.Meta style={{ paddingTop: '10px' }}>
               <Label color='teal'>{this.props.stuff.categories}</Label>
             </Card.Meta>
           </Card.Content>
-          {this.props.stuff.owner === Meteor.user().username ?
           <Card.Content extra>
-            <Link to={`/edit/${this.props.stuff._id}`}>Edit</Link>
+            <Card.Meta>
+              {this.props.stuff.owner}
+              {this.props.stuff.owner === Meteor.user().username ?
+              <Link className='edit' to={`/edit/${this.props.stuff._id}`}>Edit</Link>
+              : '' }
+            </Card.Meta>
           </Card.Content>
-          : '' };
         </Card>
     );
   }
 }
+
+//'
 /** Require a document to be passed to this component. */
 Stuff.propTypes = {
   stuff: PropTypes.object.isRequired,
