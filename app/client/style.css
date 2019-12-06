@@ -32,7 +32,7 @@ p.not-menu-item:after {
   width: 0;
   height: 2px;
   background: #FFD700;
-  transition: width 1s;
+  transition: width .75s;
 }
 
 p.not-menu-item:hover:after {
