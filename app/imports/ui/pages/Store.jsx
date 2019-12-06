@@ -1,11 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Input, Grid } from 'semantic-ui-react';
+import { Container, Loader, Input, Grid } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/Stuff';
 import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -37,26 +36,48 @@ class Store extends React.Component {
     );
     const cardStyle = {
       paddingTop: '30px',
-    //   paddingLeft: '20px',
-    //   paddingRight: '20px',
+      // paddingLeft: '100px',
       marginBottom: '50px !important',
-    //   backgroundColor: '#fcfbfb',
-    //   shadow: 'none',
     };
     const pageStyle = { paddingTop: '20px' };
     return (
         <div className='background'>
           <TitleBar/>
-          <NavBar/>
-          <Container style={pageStyle}>
-            <Header as="h2" textAlign="center">Store</Header>
+          <Container>
             <Input
+                id='search'
+                type='text'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                icon='search'
+                placeholder='Search...'
+                fluid
+            />
+          </Container>
+          <Container>
+            <Input
+                id='search'
                 type='text'
                 value={this.state.search}
                 onChange={this.updateSearch.bind(this)}
                 placeholder='Search...'
                 icon='search'
+                fluid
             />
+          </Container>
+            <Container>
+              <Input
+                  id='search'
+                  type='text'
+                  icon='search'
+                  value={this.state.search}
+                  onChange={this.updateSearch.bind(this)}
+                  placeholder='Search...'
+                  fluid
+              />
+            </Container>
+          <div id='store-content'>
+          <Container style={pageStyle}>
             <Grid>
               {filteredItems.map((stuff) =>
                   <Grid.Column width={4} style={cardStyle}><Stuff
@@ -65,6 +86,7 @@ class Store extends React.Component {
                   </Grid.Column>)}
             </Grid>
           </Container>
+          </div>
           <Footer/>
         </div>
     );

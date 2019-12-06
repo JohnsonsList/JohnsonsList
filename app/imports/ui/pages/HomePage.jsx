@@ -11,7 +11,6 @@ class HomePage extends React.Component {
     return (
         <div id='background-temp'>
           <TitleBar/>
-          <NavBar/>
           <Container>
             <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
 

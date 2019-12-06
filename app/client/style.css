@@ -14,6 +14,25 @@
   height: 460px;
  }
 
+img.ui.avatar.image:hover {
+  border: 4px #024731 !important;
+  border-radius: 50px !important;
+}
+
+a#store-link.item:hover {
+  border-bottom: 3px solid #024731 !important;
+}
+#store-link {
+  color: #024731 !important;
+}
+
+#header {
+  padding-top: 50px;
+  color: #000000;
+  font-family: "Gordita", "Helvetica Neue", serif;
+  font-size: 50px;
+}
+
 #background-temp {
   background-size: auto;
   background: url("/images/manoa-blur.jpg") !important;
@@ -29,6 +48,10 @@
   float: right !important;
 }
 
+#store-content {
+  padding-left: 250px !important;
+}
+
 #report {
   float: right !important;
 }
@@ -41,7 +64,12 @@
 }
 
 #search {
-  border-color: #024731 !important;
+  background-color: #fcfbfb !important;
+  border: none;
+  border-bottom: 2px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-top: -2px;
 }
 
 .footer-background {
@@ -165,7 +193,7 @@ h4 {
 
 #prof-middle {
   background-color: #f5f2ee !important;
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 400px;
 }
 

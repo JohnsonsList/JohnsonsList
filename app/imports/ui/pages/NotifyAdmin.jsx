@@ -10,8 +10,8 @@ import swal from 'sweetalert';
 // import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
-import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 // import { Stuff } from '../components/Stuff';
+import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
@@ -59,7 +59,9 @@ class NotifyAdmin extends React.Component {
                     <Segment>
                       <TextField name='problem' placeholder='Reason for report.'/>
                       <TextField name='user' placeholder='Username of Listing&apos;s owner'/>
-                      <LongTextField name='description' placeholder='Reason for reporting.'/>
+                      <LongTextField
+                          name='description'
+                          placeholder='More explanation as to why you&apos;re reporting.'/>
                       <SubmitField value='Submit'/>
                       <ErrorsField/>
                     </Segment>
@@ -74,7 +76,7 @@ class NotifyAdmin extends React.Component {
 }
 
 // /** Require a document to be passed to this component. */
-// Stuff.propTypes = {
+// NotifyAdmin.propTypes = {
 //   stuff: PropTypes.object.isRequired,
 // };
 
