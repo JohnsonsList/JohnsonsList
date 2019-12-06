@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Image, Container } from 'semantic-ui-react';
-import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -11,7 +10,6 @@ class HomePage extends React.Component {
     return (
         <div id='background-temp'>
           <TitleBar/>
-          <NavBar/>
           <Container>
             <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>
 

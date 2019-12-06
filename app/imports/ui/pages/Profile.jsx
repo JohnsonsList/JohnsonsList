@@ -5,7 +5,6 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Container, Image, Grid, Header, Divider } from 'semantic-ui-react';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { withRouter } from 'react-router-dom';
-import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -19,7 +18,6 @@ class Profile extends React.Component {
     return (
         <div>
           <TitleBar/>
-          <NavBar/>
           <div id='prof-middle'>
             <Container>
               <Grid>
