@@ -115,5 +115,12 @@
       "user": "Developers",
       "owner": "John Foo Test"
     }
+  ],
+  "defaultFeedback": [
+    {
+      "thoughts": "I think this site needs a lot of work",
+      "description": "The ui is a little messy. Also, how dare you label me a male? I'm going to sue you so hard. You'll rue this day.",
+      "owner": "John Foo Test"
+    }
   ]
 }

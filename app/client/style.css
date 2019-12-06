@@ -14,6 +14,64 @@
   height: 460px;
  }
 
+.not-menu-item {
+  font-family: "Gordita", "Helvetica Neue", serif !important;
+  margin-top: 22px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #024731 !important;
+}
+
+.menu-space {
+  color: #FAFAFA;
+}
+
+p.not-menu-item:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FFD700;
+  transition: width .75s;
+}
+
+p.not-menu-item:hover:after {
+  width: 100%;
+}
+
+img.ui.avatar.image:hover {
+  border: 4px #024731 !important;
+  border-radius: 50px !important;
+}
+
+a.store-icon.item:hover {
+  color: #FFD700 !important;
+}
+
+.store-icon {
+  color: #024731 !important;
+}
+
+.store-link {
+  color: #024731 !important;
+}
+
+img.ui.avatar.image:hover {
+  border: 3px solid #FFD700 !important;
+}
+
+img.ui.avatar.image {
+  width: 35px;
+  height: 35px;
+}
+
+#header {
+  padding-top: 50px;
+  color: #000000;
+  font-family: "Gordita", "Helvetica Neue", serif;
+  font-size: 50px;
+}
+
 #background-temp {
   background-size: auto;
   background: url("/images/manoa-blur.jpg") !important;
@@ -29,6 +87,14 @@
   float: right !important;
 }
 
+#store-content {
+  padding-left: 250px !important;
+}
+
+#report {
+  float: right !important;
+}
+
 .NavBar {
   background-color: #fafafa;
   color: #024731 !important;
@@ -37,7 +103,12 @@
 }
 
 #search {
-  border-color: #024731 !important;
+  background-color: #fcfbfb !important;
+  border: none;
+  border-bottom: 2px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-top: -2px;
 }
 
 .footer-background {
@@ -161,7 +232,7 @@ h4 {
 
 #prof-middle {
   background-color: #f5f2ee !important;
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 400px;
 }
 
