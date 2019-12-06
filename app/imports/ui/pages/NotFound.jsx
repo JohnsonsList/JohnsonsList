@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from 'semantic-ui-react';
+import { Header, Loader } from 'semantic-ui-react';
 
 /** Render a Not Found page if the user enters a URL that doesn't match any route. */
 class NotFound extends React.Component {
@@ -8,8 +8,11 @@ class NotFound extends React.Component {
     return (
         <div style={pageStyle}>
           <Header as="h2" textAlign="center">
-          <p>Page not found</p>
+          <p>Uh oh! This seems like a faulty link.</p>
+          <p>Redirecting you to the home page...</p>
         </Header>
+        <Loader large active inline='centered' />
+        <meta httpEquiv="refresh" content = "5; url=/#/" />
         </div>
     );
   }

@@ -34,7 +34,7 @@ class MyListing extends React.Component {
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
     const cardStyle = { paddingTop: '30px', paddingBottom: '50px' };
-    const pageStyle = { paddingTop: '20px' };
+    const pageStyle = { paddingTop: '100px' };
     return (
         <div className='background'>
           <TitleBar/>
