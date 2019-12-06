@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Image, Icon } from 'semantic-ui-react';
+import { Menu, Dropdown, Image, Icon, Input, Container } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. UPDATED */
@@ -25,12 +25,14 @@ class TitleBar extends React.Component {
     const trigger = (
         <Image src='/images/matthew.png' avatar/>
     );
+
     const menuStyle = {
       marginBottom: '0px',
       backgroundColor: '#fafafa',
       color: '#024731',
       borderBottom: '1px solid #f0f0f0' };
     return (
+        <div>
         <Menu style={menuStyle} className='ui borderless top fixed menu' inverted>
           <Menu.Item as={NavLink} activeClassName="" exact to="/home">
             <Image size='small' src='/images/JL-logo.png' to="/home"/>
@@ -50,7 +52,10 @@ class TitleBar extends React.Component {
             ADD AN ITEM
           </p>
           </a>
-          <Menu.Item position='right' className='store-icon' onClick={'/#/'}>
+          <Menu.Item
+              position='right'
+              className='store-icon'
+              onClick={'/#/'}>
             <Icon name='search'/>
           </Menu.Item>
           <Menu.Item float="right">
@@ -80,6 +85,7 @@ class TitleBar extends React.Component {
             </Dropdown>
           </Menu.Item>
         </Menu>
+        </div>
     );
   }
 }

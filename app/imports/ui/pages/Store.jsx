@@ -65,17 +65,17 @@ class Store extends React.Component {
                 fluid
             />
           </Container>
-            <Container>
-              <Input
-                  id='search'
-                  type='text'
-                  icon='search'
-                  value={this.state.search}
-                  onChange={this.updateSearch.bind(this)}
-                  placeholder='Search...'
-                  fluid
-              />
-            </Container>
+          <Container>
+            <Input
+                id='search'
+                type='text'
+                icon='search'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                placeholder='Search...'
+                fluid
+            />
+          </Container>
           <div id='store-content'>
           <Container style={pageStyle}>
             <Grid>
