@@ -35,13 +35,22 @@ class TitleBar extends React.Component {
           <Menu.Item as={NavLink} activeClassName="" exact to="/home">
             <Image size='small' src='/images/JL-logo.png' to="/home"/>
           </Menu.Item>
-          <Menu.Item id='store-link' as={NavLink} activeClassName="" exact to="/store">
-            STORE
-          </Menu.Item>
-          <Menu.Item id='store-link' as={NavLink} activeClassName="" exact to="/add">
+          <a className='not-menu-item'
+             href='/#/store'>
+            <p className='not-menu-item'>
+              STORE
+            </p>
+          </a>
+            <p className='menu-space'>
+              STORE
+            </p>
+          <a className='not-menu-item'
+             href='/#/add'>
+          <p className='not-menu-item'>
             ADD AN ITEM
-          </Menu.Item>
-          <Menu.Item position='right' id='store-link' as={NavLink} activeClassName="" exact to="/search">
+          </p>
+          </a>
+          <Menu.Item position='right' className='store-icon' onClick={'/#/'}>
             <Icon name='search'/>
           </Menu.Item>
           <Menu.Item float="right">

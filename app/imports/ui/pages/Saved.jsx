@@ -5,7 +5,6 @@ import { Stuffs } from '/imports/api/stuff/Stuff';
 import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -39,7 +38,6 @@ class ListStuff extends React.Component {
     return (
         <div className="background">
           <TitleBar/>
-          <NavBar/>
           <Container style={pageStyle}>
             <Header as="h2" textAlign="center">Saved Listings</Header>
             <Input

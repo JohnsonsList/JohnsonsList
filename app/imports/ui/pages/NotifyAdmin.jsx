@@ -12,7 +12,6 @@ import { Meteor } from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
 // import { Stuff } from '../components/Stuff';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
-import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -48,7 +47,6 @@ class NotifyAdmin extends React.Component {
     return (
         <div className='background'>
           <TitleBar/>
-          <NavBar/>
           <Container>
               <Grid container centered style={formStyle}>
                 <Grid.Column>

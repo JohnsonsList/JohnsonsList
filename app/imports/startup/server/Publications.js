@@ -43,35 +43,3 @@ Meteor.publish('FeedbackAdmin', function publish() {
   }
   return this.ready();
 });
-
-/** This subscription publishes only the documents associated with the logged in user */
-Meteor.publish('Clothing', function publish() {
-  if (this.userId) {
-    return Stuffs.find({ categories: 'clothing' });
-  }
-  return this.ready();
-});
-
-/** This subscription publishes only the documents associated with the logged in user */
-Meteor.publish('Electronics', function publish() {
-  if (this.userId) {
-    return Stuffs.find({ categories: 'electronics' });
-  }
-  return this.ready();
-});
-
-/** This subscription publishes only the documents associated with the logged in user */
-Meteor.publish('Dormitory', function publish() {
-  if (this.userId) {
-    return Stuffs.find({ categories: 'dormitory' });
-  }
-  return this.ready();
-});
-
-/** This subscription publishes only the documents associated with the logged in user */
-Meteor.publish('Supplies', function publish() {
-  if (this.userId) {
-    return Stuffs.find({ categories: 'supplies' });
-  }
-  return this.ready();
-});

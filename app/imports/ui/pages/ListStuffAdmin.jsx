@@ -6,7 +6,6 @@ import StuffItemAdmin from '/imports/ui/components/StuffItemAdmin';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Footer from '../components/Footer';
-import NavBar from '../components/NavBar';
 import TitleBar from '../components/TitleBar';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -23,7 +22,6 @@ class ListStuffAdmin extends React.Component {
     return (
         <div className="background">
           <TitleBar/>
-          <NavBar/>
           <Container style={pageStyle}>
             <Header as="h2" textAlign="center">All Listings</Header>
             <Table celled>

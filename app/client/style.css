@@ -14,16 +14,50 @@
   height: 460px;
  }
 
+.not-menu-item {
+  font-family: "Gordita", "Helvetica Neue", serif !important;
+  margin-top: 22px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #024731 !important;
+}
+
+.menu-space {
+  color: #FAFAFA;
+}
+
+p.not-menu-item:hover {
+  border-bottom: 3px solid #FFD700 !important;
+}
+
 img.ui.avatar.image:hover {
   border: 4px #024731 !important;
   border-radius: 50px !important;
 }
 
-a#store-link.item:hover {
-  border-bottom: 3px solid #024731 !important;
+a.store-link.item:hover {
+  border-bottom: 3px solid #FFD700 !important;
 }
-#store-link {
+
+a.store-icon.item:hover {
+  color: #FFD700 !important;
+}
+
+.store-icon {
   color: #024731 !important;
+}
+
+.store-link {
+  color: #024731 !important;
+}
+
+img.ui.avatar.image:hover {
+  border: 3px solid #FFD700 !important;
+}
+
+img.ui.avatar.image {
+  width: 35px;
+  height: 35px;
 }
 
 #header {
