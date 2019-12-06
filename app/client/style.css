@@ -26,17 +26,22 @@
   color: #FAFAFA;
 }
 
-p.not-menu-item:hover {
-  border-bottom: 3px solid #FFD700 !important;
+p.not-menu-item:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FFD700;
+  transition: width 1s;
+}
+
+p.not-menu-item:hover:after {
+  width: 100%;
 }
 
 img.ui.avatar.image:hover {
   border: 4px #024731 !important;
   border-radius: 50px !important;
-}
-
-a.store-link.item:hover {
-  border-bottom: 3px solid #FFD700 !important;
 }
 
 a.store-icon.item:hover {
