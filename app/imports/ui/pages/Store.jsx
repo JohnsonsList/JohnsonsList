@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
-import { Stuffs } from '/imports/api/stuff/Stuff';
-import Stuff from '/imports/ui/components/Stuff';
+import { Listings } from '/imports/api/listings/Listing';
+import Listing from '/imports/ui/components/Listing';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
 import { Container, Grid, Menu, Input, Sidebar } from 'semantic-ui-react';
@@ -195,7 +195,7 @@ class Store extends Component {
   render() {
     const { animation, dimmed, direction, visible } = this.state;
     const vertical = direction === 'bottom' || direction === 'top';
-    const filteredItems = this.props.stuffs.filter(
+    const filteredItems = this.props.listings.filter(
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
             items.categories.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
@@ -238,11 +238,11 @@ class Store extends Component {
 
                   <Sidebar.Pusher dimmed={dimmed && visible}>
                     <Grid>
-                      {filteredItems.map((stuff) =>
+                      {filteredItems.map((listings) =>
                           <Grid.Column width={4} style={cardStyle}>
-                            <Stuff
-                              key={stuff._id}
-                              stuff={stuff}/>
+                            <Listing
+                              key={listings._id}
+                              listings={listings}/>
                           </Grid.Column>)}
                     </Grid>
                   </Sidebar.Pusher>
@@ -258,16 +258,16 @@ class Store extends Component {
 
 /** Require an array of Stuff documents in the props. */
 Store.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  listings: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuff');
+  const subscription = Meteor.subscribe('Listings');
   return {
-    stuffs: Stuffs.find({}).fetch(),
+    listings: Listings.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(Store);
