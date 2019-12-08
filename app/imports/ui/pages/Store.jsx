@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { Listings } from '/imports/api/listings/Listing';
-import Listing from '/imports/ui/components/Stuff';
+import Listing from '/imports/ui/components/Listing';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
 import { Container, Grid, Menu, Input, Sidebar } from 'semantic-ui-react';

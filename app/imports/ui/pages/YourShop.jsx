@@ -2,7 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Header, Loader, Input, Card } from 'semantic-ui-react';
 import { Listings } from '/imports/api/listings/Listing';
-import Stuff from '/imports/ui/components/Stuff';
+import Listing from '/imports/ui/components/Listing';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import TitleBar from '../components/TitleBar';
