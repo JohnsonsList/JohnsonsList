@@ -1,15 +1,15 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Header, Loader, Input, Card } from 'semantic-ui-react';
-import { Stuffs } from '/imports/api/stuff/Stuff';
-import Stuff from '/imports/ui/components/Stuff';
+import { Listings } from '/imports/api/listings/Listing';
+import Stuff from '/imports/ui/components/Listing';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
 /** Renders a table containing all of the Stuff documents. Use <Stuff> to render each row. */
-class ListStuff extends React.Component {
+class ListListings extends React.Component {
 
   constructor() {
     super();
@@ -30,7 +30,7 @@ class ListStuff extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const filteredItems = this.props.stuffs.filter(
+    const filteredItems = this.props.listings.filter(
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
     const cardStyle = { paddingTop: '30px', paddingBottom: '50px' };
@@ -48,9 +48,9 @@ class ListStuff extends React.Component {
                 icon='search'
             />
             <Card.Group style={cardStyle}>
-              {filteredItems.map((stuff) => <Stuff
-                  key={stuff._id}
-                  stuff={stuff}/>)}
+              {filteredItems.map((listings) => <Stuff
+                  key={listings._id}
+                  listings={listings}/>)}
             </Card.Group>
           </Container>
           <Footer/>
@@ -60,17 +60,17 @@ class ListStuff extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ListStuff.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+ListListings.propTypes = {
+  listings: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuff');
+  const subscription = Meteor.subscribe('Listings');
   return {
-    stuffs: Stuffs.find({}).fetch(),
+    listings: Listings.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ListStuff);
+})(ListListings);
