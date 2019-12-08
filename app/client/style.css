@@ -5,6 +5,84 @@
   padding-left: 0;
 }
 
+#save-icon {
+  float: right;
+}
+
+#store-test {
+  padding-top: 30px;
+}
+#item-page {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.pusher {
+  padding-bottom: 30px;
+}
+
+#sidebar {
+  border: none;
+  box-shadow: none ;
+  background-color: #FCFBFB;
+}
+.side-bar-main-item {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: left;
+  color: #024731 !important;
+  border-bottom: 1px solid #024731;
+}
+
+p.side-bar-items:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FFD700;
+  transition: width .75s;
+}
+
+p.side-bar-items:hover:after {
+  width: 100%;
+}
+
+.side-bar-items {
+  margin-left: 10px;
+  text-align: left;
+  font-size: 15px;
+  color: #024731 !important;
+}
+
+.four.wide.column {
+  padding-left: 30px !important;
+}
+
+.ui.grid {
+  padding-left: 50px !important;
+  width: 90% !important;
+}
+
+#not-active {
+  width: 22% !important;
+}
+
+#filter-list-icon {
+  color: #024731;
+  padding-left: 10px;
+}
+
+#toggle a{
+  font-family: "Gordita", "Helvetica Neue", serif !important;
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #024731 !important;
+  border-bottom: 1px solid #024731;
+  cursor: pointer;
+}
+
 .limit {
   height: 200px !important;
   width: 250px !important;
@@ -12,6 +90,7 @@
 
 .limitCard {
   height: 460px;
+  width: 300px !important;
  }
 
 .not-menu-item {
@@ -87,10 +166,6 @@ img.ui.avatar.image {
   float: right !important;
 }
 
-#store-content {
-  padding-left: 250px !important;
-}
-
 #report {
   float: right !important;
 }
@@ -102,13 +177,22 @@ img.ui.avatar.image {
   padding-left: 0;
 }
 
+#real-search {
+  background-color: #fcfbfb !important;
+  border: none;
+  border-bottom: 2px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-top: 0;
+}
+
 #search {
   background-color: #fcfbfb !important;
   border: none;
   border-bottom: 2px solid #000000 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  margin-top: -2px;
+  margin-top: -6px;
 }
 
 .footer-background {
@@ -238,4 +322,8 @@ h4 {
 
 #profText {
   font-family: "Roboto", "Helvetica Neue", serif;
+}
+
+.dropdown.icon {
+  display: none;
 }

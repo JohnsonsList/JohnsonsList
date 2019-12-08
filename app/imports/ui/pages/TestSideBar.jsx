@@ -4,7 +4,7 @@ import { Stuffs } from '/imports/api/stuff/Stuff';
 import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
-import { Container, Grid, Icon, Menu, Sidebar } from 'semantic-ui-react';
+import { Container, Grid, Icon, Input, Menu, Sidebar } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -20,14 +20,14 @@ const VerticalSidebar = ({ animation, direction, visible }) => (
     >
       <p className='side-bar-main-item'>Clothing</p>
       <a className='side-bar-items'
-         href='#/store'>
+         href='#/test'>
         {/* onClick={this.handleClick.bind(this)} */}
         <p className='side-bar-items'>
           Men
         </p>
       </a>
       <a className='side-bar-items'
-         href='/#/store'>
+         href='/#/test'>
         <p className='side-bar-items'>
           Women
         </p>
@@ -41,7 +41,7 @@ VerticalSidebar.propTypes = {
   visible: PropTypes.bool,
 };
 
-class Store extends Component {
+class SidebarExampleTransitions extends Component {
   state = {
     animation: 'push',
     direction: 'left',
@@ -82,46 +82,78 @@ class Store extends Component {
     return (
         <div className='background'>
           <TitleBar/>
+          <Container>
+            <Input
+                id='search'
+                type='text'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                icon='search'
+                placeholder='Search...'
+                fluid
+            />
+          </Container>
+          <Container>
+            <Input
+                id='search'
+                type='text'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                placeholder='Search...'
+                icon='search'
+                fluid
+            />
+          </Container>
+          <Container>
+            <Input
+                id='search'
+                type='text'
+                icon='search'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                placeholder='Search...'
+                fluid
+            />
+          </Container>
           <div id='store-test'>
 
-            <div id='toggle'>
-              <Icon id='filter-list-icon' name='list'/>
-              <a onClick={this.handleAnimationChange('push')}>Toggle Filters</a>
-            </div>
-
-            <div id='store-content'>
-              <Container fluid style={pageStyle}>
-                <Sidebar.Pushable>
-                  {vertical ? null : (
-                      <VerticalSidebar
-                          animation={animation}
-                          direction={direction}
-                          visible={visible}
-                      />
-                  )}
-
-                  <Sidebar.Pusher dimmed={dimmed && visible}>
-                    <Grid>
-                      {filteredItems.map((stuff) =>
-                          <Grid.Column width={4} style={cardStyle}>
-                            <Stuff
-                              key={stuff._id}
-                              stuff={stuff}/>
-                          </Grid.Column>)}
-                    </Grid>
-                  </Sidebar.Pusher>
-                </Sidebar.Pushable>
-              </Container>
-            </div>
+          <div id='toggle'>
+          <Icon id='filter-list-icon' name='list'/>
+          <a onClick={this.handleAnimationChange('push')}>Toggle Filters</a>
           </div>
-          <Footer/>
+
+              <div id='store-content'>
+                <Container fluid style={pageStyle}>
+                  <Sidebar.Pushable>
+                    {vertical ? null : (
+                        <VerticalSidebar
+                            animation={animation}
+                            direction={direction}
+                            visible={visible}
+                        />
+                    )}
+
+                    <Sidebar.Pusher dimmed={dimmed && visible}>
+                  <Grid>
+                    {filteredItems.map((stuff) =>
+                        <Grid.Column width={4} style={cardStyle}><Stuff
+                            key={stuff._id}
+                            stuff={stuff}/>
+                        </Grid.Column>)}
+                  </Grid>
+                    </Sidebar.Pusher>
+                  </Sidebar.Pushable>
+                </Container>
+              </div>
+          </div>
+        <Footer/>
         </div>
     );
   }
 }
 
 /** Require an array of Stuff documents in the props. */
-Store.propTypes = {
+SidebarExampleTransitions.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -134,4 +166,4 @@ export default withTracker(() => {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(Store);
+})(SidebarExampleTransitions);

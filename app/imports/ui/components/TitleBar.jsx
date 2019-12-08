@@ -3,24 +3,23 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
-import { Menu, Dropdown, Image, Icon } from 'semantic-ui-react';
+import { Menu, Dropdown, Image, Icon, Container, Input } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. UPDATED */
 class TitleBar extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       search: '',
+      show: false,
     };
   }
 
-  // Honestly just stole this lmao idk
-  // handleClick() {
-  //   const active = !this.state.isActive;
-  //   this.setState({ isActive: active });
-  // }
+  operation() {
+     this.setState({ show: !this.state.show });
+  }
 
   updateSearch(event) {
     // console.log(event.target.value);
@@ -63,8 +62,9 @@ class TitleBar extends React.Component {
           <Menu.Item
               position='right'
               className='store-icon'
-              onClick={'/#/'}>
-            <Icon name='search'/>
+              onClick={() => this.operation()}>
+            <Icon name='search'
+            onClick={() => this.operation()}/>
           </Menu.Item>
           <Menu.Item float="right">
             <Dropdown
@@ -93,6 +93,43 @@ class TitleBar extends React.Component {
             </Dropdown>
           </Menu.Item>
         </Menu>
+          <Container>
+            <Input
+                id='search'
+                type='text'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                icon='search'
+                placeholder='Search...'
+                fluid
+            />
+          </Container>
+          <Container>
+            <Input
+                id='search'
+                type='text'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                placeholder='Search...'
+                icon='search'
+                fluid
+            />
+          </Container>
+          {this.state.show ? (
+          <div id='search-bar'>
+          <Container>
+            <Input
+                id='real-search'
+                type='text'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                placeholder='Search...'
+                icon='search'
+                fluid
+            />
+          </Container>
+          </div>
+          ) : '' }
         </div>
     );
   }
