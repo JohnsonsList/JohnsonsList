@@ -60,12 +60,6 @@ class TitleBar extends React.Component {
             ADD AN ITEM
           </p>
           </a>
-          <a className='not-menu-item'
-             href='/#/test'>
-            <p className='not-menu-item'>
-              Test
-            </p>
-          </a>
           <Menu.Item
               position='right'
               className='store-icon'

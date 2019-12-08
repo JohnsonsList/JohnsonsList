@@ -5,24 +5,68 @@
   padding-left: 0;
 }
 
+.pusher {
+  padding-bottom: 30px;
+}
 #sidebar {
   border: none;
   box-shadow: none ;
   background-color: #FCFBFB;
 }
+.side-bar-main-item {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: left;
+  color: #024731 !important;
+  border-bottom: 1px solid #024731;
+}
+
+p.side-bar-items:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #FFD700;
+  transition: width .75s;
+}
+
+p.side-bar-items:hover:after {
+  width: 100%;
+}
 
 .side-bar-items {
-padding-top: 20px !important;
+  margin-left: 10px;
+  text-align: left;
+  font-size: 15px;
+  color: #024731 !important;
+}
+
+.four.wide.column {
+  padding-left: 30px !important;
+}
+.ui.grid {
+  padding-left: 50px !important;
+  width: 90% !important;
+}
+
+#not-active {
+  width: 22% !important;
+}
+
+#filter-list-icon {
+  color: #024731;
+  padding-left: 10px;
 }
 
 #toggle a{
   font-family: "Gordita", "Helvetica Neue", serif !important;
-  margin-left: 30px;
-  margin-top: 22px;
+  margin-left: 8px;
   font-weight: bold;
   font-size: 15px;
   color: #024731 !important;
   border-bottom: 1px solid #024731;
+  cursor: pointer;
 }
 
 .limit {
@@ -32,6 +76,7 @@ padding-top: 20px !important;
 
 .limitCard {
   height: 460px;
+  width: 300px !important;
  }
 
 .not-menu-item {
@@ -105,10 +150,6 @@ img.ui.avatar.image {
 
 .edit {
   float: right !important;
-}
-
-#store-content {
-  padding-left: -25px !important;
 }
 
 #report {

@@ -4,44 +4,9 @@ import { Stuffs } from '/imports/api/stuff/Stuff';
 import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
-import { Container, Grid, Header, Icon, Image, Input, Menu, Segment, Sidebar } from 'semantic-ui-react';
+import { Container, Grid, Icon, Input, Menu, Sidebar } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
-
-
-const HorizontalSidebar = ({ animation, direction, visible }) => (
-    <Sidebar
-        as={Segment}
-        animation={animation}
-        direction={direction}
-        visible={visible}
-    >
-      <Grid textAlign='center'>
-        <Grid.Row columns={1}>
-          <Grid.Column>
-            <Header as='h3'>New Content Awaits</Header>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid columns={3} divided>
-          <Grid.Column>
-            <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
-          </Grid.Column>
-          <Grid.Column>
-            <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
-          </Grid.Column>
-          <Grid.Column>
-            <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
-          </Grid.Column>
-        </Grid>
-      </Grid>
-    </Sidebar>
-);
-
-HorizontalSidebar.propTypes = {
-  animation: PropTypes.string,
-  direction: PropTypes.string,
-  visible: PropTypes.bool,
-};
 
 const VerticalSidebar = ({ animation, direction, visible }) => (
     <Sidebar
@@ -49,25 +14,22 @@ const VerticalSidebar = ({ animation, direction, visible }) => (
         as={Menu}
         animation={animation}
         direction={direction}
-        icon='labeled'
         vertical
         visible={visible}
         width='thin'
     >
+      <p className='side-bar-main-item'>Clothing</p>
       <a className='side-bar-items'
-         href='/#/store'>
+         href='#/test'>
         {/* onClick={this.handleClick.bind(this)} */}
-        <p className='not-menu-item'>
-          STORE
+        <p className='side-bar-items'>
+          Men
         </p>
       </a>
-      <p className='menu-space'>
-        SPACE
-      </p>
-      <a className='not-menu-item'
-         href='/#/add'>
-        <p className='not-menu-item'>
-          ADD AN ITEM
+      <a className='side-bar-items'
+         href='/#/test'>
+        <p className='side-bar-items'>
+          Women
         </p>
       </a>
     </Sidebar>
@@ -91,6 +53,7 @@ class SidebarExampleTransitions extends Component {
     super();
     this.state = {
       search: '',
+      sidebar: false,
     };
   }
 
@@ -155,21 +118,13 @@ class SidebarExampleTransitions extends Component {
           <div id='store-test'>
 
           <div id='toggle'>
-          <a
-            onClick={this.handleAnimationChange('push')}>
-            <Icon name='list'/>Toggle Filters</a>
+          <Icon id='filter-list-icon' name='list'/>
+          <a onClick={this.handleAnimationChange('push')}>Toggle Filters</a>
           </div>
 
               <div id='store-content'>
                 <Container fluid style={pageStyle}>
                   <Sidebar.Pushable>
-                    {vertical ? (
-                        <HorizontalSidebar
-                            animation={animation}
-                            direction={direction}
-                            visible={visible}
-                        />
-                    ) : null}
                     {vertical ? null : (
                         <VerticalSidebar
                             animation={animation}
