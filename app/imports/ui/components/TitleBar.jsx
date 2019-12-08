@@ -16,12 +16,19 @@ class TitleBar extends React.Component {
     };
   }
 
+  // Honestly just stole this lmao idk
+  // handleClick() {
+  //   const active = !this.state.isActive;
+  //   this.setState({ isActive: active });
+  // }
+
   updateSearch(event) {
     // console.log(event.target.value);
     this.setState({ search: event.target.value });
   }
 
   render() {
+
     const trigger = (
         <Image src='/images/matthew.png' avatar/>
     );
@@ -39,12 +46,13 @@ class TitleBar extends React.Component {
           </Menu.Item>
           <a className='not-menu-item'
              href='/#/store'>
+             {/* onClick={this.handleClick.bind(this)} */}
             <p className='not-menu-item'>
               STORE
             </p>
           </a>
             <p className='menu-space'>
-              STORE
+              SPACE
             </p>
           <a className='not-menu-item'
              href='/#/add'>
