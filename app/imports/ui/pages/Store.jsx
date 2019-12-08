@@ -216,7 +216,7 @@ class Store extends Component {
                           <Grid.Column width={4} style={cardStyle}>
                             <Listing
                               key={listings._id}
-                              stuff={listings}/>
+                              listings={listings}/>
                           </Grid.Column>)}
                     </Grid>
                   </Sidebar.Pusher>

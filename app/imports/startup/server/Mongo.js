@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Listings } from '../../api/listings/Listing';
+import { Listings } from '../../api/listings/Listing.js';
 import { Issues } from '../../api/issue/Issue.js';
 import { Feedback } from '../../api/Feedback/Feedback.js';
 
