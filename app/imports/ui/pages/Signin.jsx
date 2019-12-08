@@ -49,7 +49,7 @@ export default class Signin extends React.Component {
     }
     // Otherwise return the Login form.
     return (
-        <div>
+        <div >
           <LIBar/>
           <div id='log-page'>
             <div id='log-in'>

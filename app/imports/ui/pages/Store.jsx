@@ -4,32 +4,133 @@ import { Stuffs } from '/imports/api/stuff/Stuff';
 import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
-import { Container, Grid, Icon, Input, Menu, Sidebar } from 'semantic-ui-react';
+import { Container, Grid, Menu, Input, Sidebar } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
-const VerticalSidebar = ({ animation, direction, visible }) => (
+const VerticalSidebar = ({ animation, direction }) => (
     <Sidebar
         id='sidebar'
         as={Menu}
         animation={animation}
         direction={direction}
         vertical
-        visible={visible}
+        visible
         width='thin'
     >
       <p className='side-bar-main-item'>Clothing</p>
-      <a className='side-bar-items'
-         href='#/store'>
-        {/* onClick={this.handleClick.bind(this)} */}
+      <a>
         <p className='side-bar-items'>
           Men
         </p>
       </a>
-      <a className='side-bar-items'
-         href='/#/store'>
+      <a>
         <p className='side-bar-items'>
           Women
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Tops
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Bottoms
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Shoes
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Accessories
+        </p>
+      </a>
+      <p className='side-bar-main-item'>Electronics</p>
+      <a>
+        <p className='side-bar-items'>
+          Laptops & Desktops
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Photography
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Accessories
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Televsion
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Games
+        </p>
+      </a>
+      <p className='side-bar-main-item'>Dormitory</p>
+      <a>
+        <p className='side-bar-items'>
+          Self Care
+        </p>
+      </a>
+        <a>
+          <p className='side-bar-items'>
+            Appliances
+          </p>
+        </a>
+        <a>
+        <p className='side-bar-items'>
+          Home Decor
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Plants
+        </p>
+      </a>
+      <p className='side-bar-main-item'>Outdoors</p>
+      <a>
+        <p className='side-bar-items'>
+          Sports & Fitness
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Camping & Hiking
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Transportation
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Recreation
+        </p>
+      </a>
+      <p className='side-bar-main-item'>School</p>
+      <a>
+        <p className='side-bar-items'>
+          Stationary & Supplies
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Backpacks
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Laptops
         </p>
       </a>
     </Sidebar>
@@ -46,14 +147,14 @@ class Store extends Component {
     animation: 'push',
     direction: 'left',
     dimmed: false,
-    visible: false,
+    visible: true,
   }
 
   constructor() {
     super();
     this.state = {
       search: '',
-      sidebar: false,
+      sidebar: true,
     };
   }
 
@@ -82,44 +183,20 @@ class Store extends Component {
     return (
         <div className='background'>
           <TitleBar/>
-          <Container>
-            <Input
-                id='search'
-                type='text'
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}
-                icon='search'
-                placeholder='Search...'
-                fluid
-            />
-          </Container>
-          <Container>
-            <Input
-                id='search'
-                type='text'
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}
-                placeholder='Search...'
-                icon='search'
-                fluid
-            />
-          </Container>
-          <Container>
-            <Input
-                id='search'
-                type='text'
-                icon='search'
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}
-                placeholder='Search...'
-                fluid
-            />
-          </Container>
           <div id='store-test'>
 
-            <div id='toggle'>
-              <Icon id='filter-list-icon' name='list'/>
-              <a onClick={this.handleAnimationChange('push')}>Toggle Filters</a>
+            <div id='store-headline'>
+              <p>SHOP: ALL LISTINGS</p>
+            </div>
+
+            <div id='store-search'>
+            <Input
+                type='text'
+                value={this.state.search}
+                onChange={this.updateSearch.bind(this)}
+                placeholder='Search...'
+                icon='search'
+            />
             </div>
 
             <div id='store-content'>
@@ -136,7 +213,8 @@ class Store extends Component {
                   <Sidebar.Pusher dimmed={dimmed && visible}>
                     <Grid>
                       {filteredItems.map((stuff) =>
-                          <Grid.Column width={4} style={cardStyle}><Stuff
+                          <Grid.Column width={4} style={cardStyle}>
+                            <Stuff
                               key={stuff._id}
                               stuff={stuff}/>
                           </Grid.Column>)}

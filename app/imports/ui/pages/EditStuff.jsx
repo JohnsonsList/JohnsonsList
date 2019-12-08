@@ -42,7 +42,7 @@ class EditStuff extends React.Component {
           <TitleBar/>
           <Grid container centered style={formStyle}>
             <Grid.Column>
-              <Header as="h2" textAlign="center">Edit Stuff</Header>
+              <Header as="h2" textAlign="center">Edit Listing Information</Header>
               <AutoForm schema={StuffSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
                 <Segment>
                   <TextField name='name'/>
