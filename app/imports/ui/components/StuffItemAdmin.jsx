@@ -3,22 +3,22 @@ import { Table } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 /** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
-class StuffItemAdmin extends React.Component {
+class ListingsAdmin extends React.Component {
   render() {
     return (
         <Table.Row>
-          <Table.Cell>{this.props.stuff.name}</Table.Cell>
-          <Table.Cell>{this.props.stuff.price}</Table.Cell>
-          <Table.Cell>{this.props.stuff.condition}</Table.Cell>
-          <Table.Cell>{this.props.stuff.owner}</Table.Cell>
+          <Table.Cell>{this.props.listings.name}</Table.Cell>
+          <Table.Cell>{this.props.listings.price}</Table.Cell>
+          <Table.Cell>{this.props.listings.condition}</Table.Cell>
+          <Table.Cell>{this.props.listings.owner}</Table.Cell>
         </Table.Row>
     );
   }
 }
 
 /** Require a document to be passed to this component. */
-StuffItemAdmin.propTypes = {
-  stuff: PropTypes.object.isRequired,
+ListingsAdmin.propTypes = {
+  listings: PropTypes.object.isRequired,
 };
 
-export default StuffItemAdmin;
+export default ListingsAdmin;

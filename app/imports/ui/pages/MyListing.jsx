@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Header, Loader, Input, Card } from 'semantic-ui-react';
-import { Stuffs } from '/imports/api/stuff/Stuff';
+import { Listings } from '/imports/api/listings/Listing';
 import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -30,7 +30,7 @@ class MyListing extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const filteredItems = this.props.stuffs.filter(
+    const filteredItems = this.props.listings.filter(
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
     const cardStyle = { paddingTop: '30px', paddingBottom: '50px' };
@@ -48,9 +48,9 @@ class MyListing extends React.Component {
                 icon='search'
             />
             <Card.Group style={cardStyle}>
-              {filteredItems.map((stuff) => <Stuff
-                  key={stuff._id}
-                  stuff={stuff}/>)}
+              {filteredItems.map((listings) => <Stuff
+                  key={listings._id}
+                  stuff={listings}/>)}
             </Card.Group>
           </Container>
           <Footer/>
@@ -61,7 +61,7 @@ class MyListing extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 MyListing.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  listings: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -70,7 +70,7 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('MyListings');
   return {
-    stuffs: Stuffs.find({}).fetch(),
+    listings: Listings.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(MyListing);

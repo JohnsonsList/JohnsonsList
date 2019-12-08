@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter } from 'react-router-dom';
-import { Stuffs } from '/imports/api/stuff/Stuff';
+import { Listings } from '/imports/api/listings/Listing';
 import { Grid, Segment, Header, Container } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -38,13 +38,13 @@ const formSchema = new SimpleSchema({
 });
 
 /** Renders the Page for adding a document. */
-class AddStuff extends React.Component {
+class AddListing extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
     const { name, email, image, description, price, condition, categories } = data;
     const owner = Meteor.user().username;
-    Stuffs.insert({ name, email, image, description, price, condition, categories, owner },
+    Listings.insert({ name, email, image, description, price, condition, categories, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -94,15 +94,15 @@ class AddStuff extends React.Component {
 }
 
 /** Declare the types of all properties. */
-AddStuff.propTypes = {
+AddListing.propTypes = {
   currentEmail: PropTypes.string,
 };
 
 // this is required to make the name show up
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-const AddStuffContainer = withTracker(() => ({
+const AddListingContainer = withTracker(() => ({
   currentEmail: Meteor.user() ? Meteor.user().emails[0].address : '',
-}))(AddStuff);
+}))(AddListing);
 
 
-export default withRouter(AddStuffContainer);
+export default withRouter(AddListingContainer);

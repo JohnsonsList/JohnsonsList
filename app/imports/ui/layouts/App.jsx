@@ -22,7 +22,6 @@ import NotifyAdmin from '../pages/NotifyAdmin';
 import IssueAdmin from '../pages/IssueAdmin';
 import Feedback from '../pages/Feedback';
 import FeedbackAdmin from '../pages/FeedbackAdmin';
-import TestSideBar from '../pages/TestSideBar';
 import ItemPage from '../pages/ItemPage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -42,7 +41,6 @@ class App extends React.Component {
               <Route path="/notif" component={NotifyAdmin}/>
               <Route path="/yourshop" component={YourShop}/>
               <Route path="/feed" component={Feedback}/>
-              <Route path="/test" component={TestSideBar}/>
               <Route path="/details/:_id" component={ItemPage}/>
               <ProtectedRoute path="/list" component={MyListing}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
