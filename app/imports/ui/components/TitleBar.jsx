@@ -62,7 +62,7 @@ class TitleBar extends React.Component {
           <Menu.Item
               position='right'
               className='store-icon'
-              onClick={'/#/'}>
+              onClick={() => this.operation()}>
             <Icon name='search'
             onClick={() => this.operation()}/>
           </Menu.Item>

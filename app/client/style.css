@@ -5,6 +5,13 @@
   padding-left: 0;
 }
 
+#save-icon {
+  float: right;
+}
+
+#store-test {
+  padding-top: 30px;
+}
 #item-page {
   padding-top: 50px;
   padding-bottom: 50px;

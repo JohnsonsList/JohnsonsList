@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '/imports/api/stuff/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
-import { Card, Container, Image, Label } from 'semantic-ui-react';
+import { Card, Container, Image, Label, Rating } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -13,6 +13,9 @@ class ItemPage extends Component {
    <div>
     <TitleBar/>
     <div id='item-page'>
+      <div id='save-icon'>
+          <Rating size='huge' icon='star' defaultRating={0} maxRating={1} />
+      </div>
     <Container>
       <Card
           className='limitCard'
