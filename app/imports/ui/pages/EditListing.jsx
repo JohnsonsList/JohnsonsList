@@ -41,6 +41,7 @@ class EditListing extends React.Component {
     return (
         <div className="background">
           <TitleBar/>
+          <div id='edit-page'>
           <Grid container centered style={formStyle}>
             <Grid.Column>
               <Header as="h2" textAlign="center">Edit Listing Information</Header>
@@ -62,6 +63,7 @@ class EditListing extends React.Component {
               </AutoForm>
             </Grid.Column>
           </Grid>
+          </div>
           <Footer/>
         </div>
     );

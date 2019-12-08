@@ -2,7 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Table, Header, Loader } from 'semantic-ui-react';
 import { Listings } from '/imports/api/listings/Listing';
-import StuffItemAdmin from '/imports/ui/components/StuffItemAdmin';
+import ListItemAdmin from '/imports/ui/components/ListItemAdmin';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Footer from '../components/Footer';
@@ -34,7 +34,7 @@ class ListingsAdmin extends React.Component {
                 </Table.Row>
               </Table.Header>
               <Table.Body>
-                {this.props.listings.map((listings) => <StuffItemAdmin key={listings._id} listings={listings}/>)}
+                {this.props.listings.map((listings) => <ListItemAdmin key={listings._id} listings={listings}/>)}
               </Table.Body>
             </Table>
           </Container>
