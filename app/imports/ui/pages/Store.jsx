@@ -4,7 +4,7 @@ import { Stuffs } from '/imports/api/stuff/Stuff';
 import Stuff from '/imports/ui/components/Stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
-import { Container, Grid, Icon, Input, Menu, Sidebar } from 'semantic-ui-react';
+import { Container, Grid, Icon, Menu, Sidebar } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -82,39 +82,6 @@ class Store extends Component {
     return (
         <div className='background'>
           <TitleBar/>
-          <Container>
-            <Input
-                id='search'
-                type='text'
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}
-                icon='search'
-                placeholder='Search...'
-                fluid
-            />
-          </Container>
-          <Container>
-            <Input
-                id='search'
-                type='text'
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}
-                placeholder='Search...'
-                icon='search'
-                fluid
-            />
-          </Container>
-          <Container>
-            <Input
-                id='search'
-                type='text'
-                icon='search'
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}
-                placeholder='Search...'
-                fluid
-            />
-          </Container>
           <div id='store-test'>
 
             <div id='toggle'>
@@ -136,7 +103,8 @@ class Store extends Component {
                   <Sidebar.Pusher dimmed={dimmed && visible}>
                     <Grid>
                       {filteredItems.map((stuff) =>
-                          <Grid.Column width={4} style={cardStyle}><Stuff
+                          <Grid.Column width={4} style={cardStyle}>
+                            <Stuff
                               key={stuff._id}
                               stuff={stuff}/>
                           </Grid.Column>)}

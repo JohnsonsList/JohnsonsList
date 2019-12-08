@@ -9,7 +9,12 @@ import { withRouter, Link, NavLink } from 'react-router-dom';
 class Stuff extends React.Component {
   render() {
     return (
-        <Card className='limitCard' centered>
+        <Link
+        to={`/details/${this.props.stuff._id}`}>
+        <Card
+            link
+            className='limitCard'
+            centered>
           <Image
               centered
               className='limit'
@@ -43,6 +48,7 @@ class Stuff extends React.Component {
             </Card.Meta>
           </Card.Content>
         </Card>
+    </Link>
     );
   }
 }

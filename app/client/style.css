@@ -5,9 +5,15 @@
   padding-left: 0;
 }
 
+#item-page {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .pusher {
   padding-bottom: 30px;
 }
+
 #sidebar {
   border: none;
   box-shadow: none ;
@@ -45,6 +51,7 @@ p.side-bar-items:hover:after {
 .four.wide.column {
   padding-left: 30px !important;
 }
+
 .ui.grid {
   padding-left: 50px !important;
   width: 90% !important;
@@ -163,13 +170,22 @@ img.ui.avatar.image {
   padding-left: 0;
 }
 
+#real-search {
+  background-color: #fcfbfb !important;
+  border: none;
+  border-bottom: 2px solid #000000 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  margin-top: 0;
+}
+
 #search {
   background-color: #fcfbfb !important;
   border: none;
   border-bottom: 2px solid #000000 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  margin-top: -2px;
+  margin-top: -6px;
 }
 
 .footer-background {
@@ -299,4 +315,8 @@ h4 {
 
 #profText {
   font-family: "Roboto", "Helvetica Neue", serif;
+}
+
+.dropdown.icon {
+  display: none;
 }
