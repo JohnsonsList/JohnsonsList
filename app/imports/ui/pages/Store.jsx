@@ -18,6 +18,32 @@ const VerticalSidebar = ({ animation, direction }) => (
         visible
         width='thin'
     >
+      <p className='side-bar-main-item'>Categories</p>
+      <a>
+        <p className='side-bar-items'>
+          Clothing
+        </p>
+      </a>
+      <a>
+        <p className='side-bar-items'>
+          Electronics
+        </p>
+      </a>
+        <a>
+          <p className='side-bar-items'>
+            Dormitory
+          </p>
+        </a>
+        <a>
+          <p className='side-bar-items'>
+            Outdoors
+          </p>
+        </a>
+          <a>
+            <p className='side-bar-items'>
+              School
+            </p>
+          </a>
       <p className='side-bar-main-item'>Clothing</p>
       <a>
         <p className='side-bar-items'>
