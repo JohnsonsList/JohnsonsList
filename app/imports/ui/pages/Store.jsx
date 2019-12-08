@@ -8,6 +8,8 @@ import { Container, Grid, Menu, Input, Sidebar } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
+// const _ = require('underscore');
+
 const VerticalSidebar = ({ animation, direction }) => (
     <Sidebar
         id='sidebar'
@@ -184,6 +186,36 @@ class Store extends Component {
     };
   }
 
+  // getClothes() {
+  //   // line used to get all listings associated with clothing
+  //   let allClothes = _.filter(Listings.find().fetch(), 'clothing');
+  //   return allClothes;
+  // }
+  //
+  // getElectronics() {
+  //   // line used to get all listings associated with electronics
+  //   let allElectronics = _.filter(Listings.find().fetch(), 'electronics');
+  //   return allElectronics;
+  // }
+  //
+  // getDormitory() {
+  //   // line used to get all listings associated with dormitory
+  //   let allDormitory = _.filter(Listings.find().fetch(), 'dormitory');
+  //   return allDormitory;
+  // }
+  //
+  // getOutdoors() {
+  //   // line used to get all listings associated with outdoors
+  //   let allOutdoors = _.filter(Listings.find().fetch(), 'outdoors');
+  //   return allOutdoors;
+  // }
+  //
+  // getSupplies() {
+  //   // line used to get all listings associated with supplies
+  //   let allSupplies = _.filter(Listings.find().fetch(), 'supplies');
+  //   return allSupplies;
+  // }
+
   updateSearch(event) {
     // console.log(event.target.value);
     this.setState({ search: event.target.value });
@@ -205,6 +237,21 @@ class Store extends Component {
       marginBottom: '50px !important',
     };
     const pageStyle = { paddingTop: '20px' };
+
+    // // line used to get number of listings associated with clothes
+    // let totalClothes = _.size(allClothes);
+    //
+    // // line used to get number of listings associated with electronics
+    // let totalElectronics = _.size(allElectronics);
+    //
+    // // line used to get number of listings associated with dormitory
+    // let totalDormitory = _.size(allDormitory);
+    //
+    // // line used to get number of listings associated with outdoors
+    // let totalOutdoors = _.size(allOutdoors);
+    //
+    // // line used to get number of listings associated with supplies
+    // let totalSupplies = _.size(allSupplies);
 
     return (
         <div className='background'>
