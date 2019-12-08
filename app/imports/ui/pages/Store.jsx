@@ -8,14 +8,14 @@ import { Container, Grid, Icon, Menu, Sidebar } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
-const VerticalSidebar = ({ animation, direction, visible }) => (
+const VerticalSidebar = ({ animation, direction}) => (
     <Sidebar
         id='sidebar'
         as={Menu}
         animation={animation}
         direction={direction}
         vertical
-        visible={visible}
+        visible
         width='thin'
     >
       <p className='side-bar-main-item'>Clothing</p>
@@ -46,14 +46,14 @@ class Store extends Component {
     animation: 'push',
     direction: 'left',
     dimmed: false,
-    visible: false,
+    visible: true,
   }
 
   constructor() {
     super();
     this.state = {
       search: '',
-      sidebar: false,
+      sidebar: true,
     };
   }
 
@@ -83,11 +83,6 @@ class Store extends Component {
         <div className='background'>
           <TitleBar/>
           <div id='store-test'>
-
-            <div id='toggle'>
-              <Icon id='filter-list-icon' name='list'/>
-              <a onClick={this.handleAnimationChange('push')}>Toggle Filters</a>
-            </div>
 
             <div id='store-content'>
               <Container fluid style={pageStyle}>
