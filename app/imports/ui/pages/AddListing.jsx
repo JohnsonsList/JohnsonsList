@@ -32,7 +32,7 @@ const formSchema = new SimpleSchema({
   },
   categories: {
     type: String,
-    allowedValues: ['clothing', 'dormitory', 'electronics', 'supplies'],
+    allowedValues: ['clothing', 'dormitory', 'electronics', 'supplies', 'outdoors'],
     defaultValue: 'clothing',
   },
 });
