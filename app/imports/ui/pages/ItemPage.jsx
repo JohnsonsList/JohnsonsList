@@ -5,6 +5,7 @@ import { Grid, Header, Container, Image, Divider, Label } from 'semantic-ui-reac
 import { Meteor } from 'meteor/meteor';
 import { Listings } from '/imports/api/listings/Listing';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
+import { Link, NavLink } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -35,6 +36,21 @@ class ItemPage extends React.Component {
                 <Header.Subheader>List Price: ${this.props.listings.price}</Header.Subheader>
                 <Header.Subheader>Condition: {this.props.listings.condition}</Header.Subheader>
                 <Header.Subheader style={spaceStyle}>{this.props.listings.description}</Header.Subheader>
+                <div style={spaceStyle}>
+                  {this.props.listings.owner !== Meteor.user().username ?
+                      <NavLink
+                          to='/notif'
+                          exact
+                          activeClassName=''>
+                        Report Listing
+                      </NavLink>
+                      : ''}
+                </div>
+                <div style={spaceStyle}>
+                  {this.props.listings.owner === Meteor.user().username ?
+                      <Link to={`/edit/${this.props.listings._id}`}>Edit</Link>
+                      : ''}
+                </div>
               </Grid.Column>
             </Grid>
           </Container>

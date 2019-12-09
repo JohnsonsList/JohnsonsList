@@ -66,7 +66,7 @@ class AddListing extends React.Component {
           <Container>
               <Grid container centered style={formStyle}>
                 <Grid.Column>
-                  <Header as="h2" textAlign="center" id='add-font'>Add Item to Store</Header>
+                  <Header as="h2" textAlign="center" id='thin-font'>Add Item to Store</Header>
                   <AutoForm ref={ref => {
                     fRef = ref;
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>

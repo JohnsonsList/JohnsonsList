@@ -36,7 +36,7 @@ class EditListing extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
-    const formStyle = { paddingTop: '20px', paddingBottom: '50px' };
+    const formStyle = { paddingBottom: '50px' };
     const submitStyle = { marginTop: '20px' };
     return (
         <div className="background">
@@ -44,7 +44,7 @@ class EditListing extends React.Component {
           <div id='edit-page'>
           <Grid container centered style={formStyle}>
             <Grid.Column>
-              <Header as="h2" textAlign="center">Edit Listing Information</Header>
+              <Header as="h2" textAlign="center" id="thin-font">Edit Listing Information</Header>
               <AutoForm schema={ListingsSchema} onSubmit={data => this.submit(data)} model={this.props.doc}>
                 <Segment>
                   <TextField name='name'/>

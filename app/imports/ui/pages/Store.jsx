@@ -311,8 +311,8 @@ class Store extends Component {
 
                   <Sidebar.Pusher dimmed={dimmed && visible}>
                     <Grid>
-                      {filteredItems.map((listings) =>
-                          <Grid.Column width={4} style={cardStyle}>
+                      {/* eslint-disable-next-line react/jsx-key */}
+                      {filteredItems.map((listings) => <Grid.Column width={4} style={cardStyle}>
                             <Listing
                               key={listings._id}
                               listings={listings}/>
