@@ -17,6 +17,7 @@ import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import SimpleSchema from 'simpl-schema';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
+import MultiSelectField from '../forms/MultiSelectField';
 
 /** Create a schema to specify the structure of the data to appear in the form. */
 const formSchema = new SimpleSchema({
@@ -35,6 +36,46 @@ const formSchema = new SimpleSchema({
     allowedValues: ['clothing', 'dormitory', 'electronics', 'supplies', 'outdoors'],
     defaultValue: 'clothing',
   },
+  clothes: {
+    type: Array,
+  },
+  'clothes.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['men', 'women', 'top', 'bottom', 'shoes', 'accessories'],
+  },
+  electronics: {
+    type: Array,
+  },
+  'electronics.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['laptops & desktops', 'photography', 'accessories', 'television', 'games'],
+  },
+  dormitory: {
+    type: Array,
+  },
+  'dormitory.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['self care', 'appliances', 'home decor', 'plants'],
+  },
+  outdoors: {
+    type: Array,
+  },
+  'outdoors.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['sports & fitness', 'camping & hiking', 'transportation', 'recreation'],
+  },
+  school: {
+    type: Array,
+  },
+  'school.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['stationary & supplies', 'backpacks', 'laptops'],
+  },
 });
 
 /** Renders the Page for adding a document. */
@@ -42,9 +83,11 @@ class AddListing extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { name, email, image, description, price, condition, categories } = data;
+    const { name, email, image, description, price, condition,
+      categories, clothes, electronics, dormitory, outdoors, school } = data;
     const owner = Meteor.user().username;
-    Listings.insert({ name, email, image, description, price, condition, categories, owner },
+    Listings.insert({ name, email, image, description, price, condition,
+          categories, clothes, electronics, dormitory, outdoors, school, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -79,6 +122,11 @@ class AddListing extends React.Component {
                         <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                         <Grid.Column><SelectField name='condition'/></Grid.Column>
                         <Grid.Column><SelectField name='categories'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='clothes'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='electronics'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='dormitory'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='outdoors'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='school'/></Grid.Column>
                       </Grid>
                       <SubmitField value='Submit' style={submitStyle}/>
                       <ErrorsField/>

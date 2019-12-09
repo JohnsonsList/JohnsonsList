@@ -6,7 +6,7 @@ import { Feedback } from '../../api/Feedback/Feedback.js';
 /* eslint-disable no-console */
 
 /** Initialize the database with a default data document. */
-function addData(data) {
+function addListing(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
   Listings.insert(data);
 }
@@ -15,7 +15,7 @@ function addData(data) {
 if (Listings.find().count() === 0) {
   if (Meteor.settings.defaultData) {
     console.log('Creating default listings.');
-    Meteor.settings.defaultData.map(data => addData(data));
+    Meteor.settings.defaultData.map(data => addListing(data));
   }
 }
 
