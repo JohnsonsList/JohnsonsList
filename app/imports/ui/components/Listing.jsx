@@ -9,6 +9,12 @@ import { withRouter, Link, NavLink } from 'react-router-dom';
 /** Renders a single row in the List Listing table. See pages/MyListing.jsx. */
 class Listing extends React.Component {
   render() {
+
+    const labelStyle = { marginBottom: '5px',
+      marginRight: '5px',
+      marginTop: '0px',
+      marginLeft: '0px' };
+
     return (
         <Link
         to={`/details/${this.props.listings._id}`}>
@@ -28,27 +34,27 @@ class Listing extends React.Component {
             <Card.Meta>Price: ${this.props.listings.price}</Card.Meta>
             <Card.Meta>Contact Info: {this.props.listings.email}</Card.Meta>
             <Card.Meta style={{ paddingTop: '10px' }}>
-              <Label color='teal'>{this.props.listings.categories}</Label>
+              <Label style={labelStyle} color='teal'>{this.props.listings.categories}</Label>
               {/* eslint-disable-next-line eqeqeq */}
               {this.props.listings.categories === 'clothing' ?
               _.map(this.props.listings.clothes,
-              (clothes, index) => <Label key={index} color='red'>{clothes}</Label>)
+              (clothes, index) => <Label style={labelStyle} key={index} color='red'>{clothes}</Label>)
               : '' }
               {this.props.listings.categories === 'electronics' ?
               _.map(this.props.listings.electronics,
-              (electronics, index) => <Label key={index} color='red'>{electronics}</Label>)
+              (electronics, index) => <Label style={labelStyle} key={index} color='red'>{electronics}</Label>)
               : '' }
               {this.props.listings.categories === 'dormitory' ?
               _.map(this.props.listings.dormitory,
-              (dormitory, index) => <Label key={index} color='red'>{dormitory}</Label>)
+              (dormitory, index) => <Label style={labelStyle} key={index} color='red'>{dormitory}</Label>)
               : '' }
               {this.props.listings.categories === 'outdoors' ?
               _.map(this.props.listings.outdoors,
-              (outdoors, index) => <Label key={index} color='red'>{outdoors}</Label>)
+              (outdoors, index) => <Label style={labelStyle} key={index} color='red'>{outdoors}</Label>)
               : '' }
               {this.props.listings.categories === 'school' ?
               _.map(this.props.listings.school,
-              (school, index) => <Label key={index} color='red'>{school}</Label>)
+              (school, index) => <Label style={labelStyle} key={index} color='red'>{school}</Label>)
               : '' }
             </Card.Meta>
           </Card.Content>
