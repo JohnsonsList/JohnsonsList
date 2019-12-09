@@ -49,36 +49,6 @@ class Store extends Component {
     this.setState({ outdoors: !this.state.outdoors });
   }
 
-  // getClothes() {
-  //   // line used to get all listings associated with clothing
-  //   let allClothes = _.filter(Listings, function (num) { return num.categories === 'clothing'; });
-  //   return allClothes;
-  // }
-  //
-  // getElectronics() {
-  //   // line used to get all listings associated with electronics
-  //   let allElectronics = _.filter(Listings.find().fetch(), 'electronics');
-  //   return allElectronics;
-  // }
-  //
-  // getDormitory() {
-  //   // line used to get all listings associated with dormitory
-  //   let allDormitory = _.filter(Listings.find().fetch(), 'dormitory');
-  //   return allDormitory;
-  // }
-  //
-  // getOutdoors() {
-  //   // line used to get all listings associated with outdoors
-  //   let allOutdoors = _.filter(Listings.find().fetch(), 'outdoors');
-  //   return allOutdoors;
-  // }
-  //
-  // getSupplies() {
-  //   // line used to get all listings associated with supplies
-  //   let allSupplies = _.filter(Listings.find().fetch(), 'supplies');
-  //   return allSupplies;
-  // }
-
   updateSearch(event) {
     // console.log(event.target.value);
     this.setState({ search: event.target.value });
