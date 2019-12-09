@@ -8,168 +8,6 @@ import { Container, Grid, Menu, Input, Sidebar } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
-// const _ = require('underscore');
-
-const VerticalSidebar = ({ animation, direction }) => (
-    <Sidebar
-        id='sidebar'
-        as={Menu}
-        animation={animation}
-        direction={direction}
-        vertical
-        visible
-        width='thin'
-    >
-      <p className='side-bar-main-item'>Categories</p>
-      <a>
-        <p className='side-bar-items'>
-          Clothing
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Electronics
-        </p>
-      </a>
-        <a>
-          <p className='side-bar-items'>
-            Dormitory
-          </p>
-        </a>
-        <a>
-          <p className='side-bar-items'>
-            Outdoors
-          </p>
-        </a>
-          <a>
-            <p className='side-bar-items'>
-              School
-            </p>
-          </a>
-      <p className='side-bar-main-item'>Clothing</p>
-      <a>
-        <p className='side-bar-items'>
-          Men
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Women
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Tops
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Bottoms
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Shoes
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Accessories
-        </p>
-      </a>
-      <p className='side-bar-main-item'>Electronics</p>
-      <a>
-        <p className='side-bar-items'>
-          Laptops & Desktops
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Photography
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Accessories
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Televsion
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Games
-        </p>
-      </a>
-      <p className='side-bar-main-item'>Dormitory</p>
-      <a>
-        <p className='side-bar-items'>
-          Self Care
-        </p>
-      </a>
-        <a>
-          <p className='side-bar-items'>
-            Appliances
-          </p>
-        </a>
-        <a>
-        <p className='side-bar-items'>
-          Home Decor
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Plants
-        </p>
-      </a>
-      <p className='side-bar-main-item'>Outdoors</p>
-      <a>
-        <p className='side-bar-items'>
-          Sports & Fitness
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Camping & Hiking
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Transportation
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Recreation
-        </p>
-      </a>
-      <p className='side-bar-main-item'>School</p>
-      <a>
-        <p className='side-bar-items'>
-          Stationary & Supplies
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Backpacks
-        </p>
-      </a>
-      <a>
-        <p className='side-bar-items'>
-          Laptops
-        </p>
-      </a>
-    </Sidebar>
-);
-
-VerticalSidebar.propTypes = {
-  animation: PropTypes.string,
-  direction: PropTypes.string,
-  visible: PropTypes.bool,
-};
-
 class Store extends Component {
   state = {
     animation: 'push',
@@ -183,12 +21,17 @@ class Store extends Component {
     this.state = {
       search: '',
       sidebar: true,
+      clothing: false,
     };
+  }
+
+  showClothing() {
+    this.setState({ clothing: !this.state.clothing });
   }
 
   // getClothes() {
   //   // line used to get all listings associated with clothing
-  //   let allClothes = _.filter(Listings.find().fetch(), 'clothing');
+  //   let allClothes = _.filter(Listings, function (num) { return num.categories === 'clothing'; });
   //   return allClothes;
   // }
   //
@@ -225,12 +68,181 @@ class Store extends Component {
       (animation) => () => this.setState((prevState) => ({ animation, visible: !prevState.visible }))
 
   render() {
+
+    const VerticalSidebar = ({ animation, direction }) => (
+        <Sidebar
+            id='sidebar'
+            as={Menu}
+            animation={animation}
+            direction={direction}
+            vertical
+            visible
+            width='thin'
+        >
+          <p className='side-bar-main-item'>Categories</p>
+          <a
+              onClick={this.showClothing.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showClothing.bind(this)}>
+              Clothing
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Electronics
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Dormitory
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Outdoors
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              School
+            </p>
+          </a>
+          <p className='side-bar-main-item'>Clothing</p>
+          <a>
+            <p className='side-bar-items'>
+              Men
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Women
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Tops
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Bottoms
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Shoes
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Accessories
+            </p>
+          </a>
+          <p className='side-bar-main-item'>Electronics</p>
+          <a>
+            <p className='side-bar-items'>
+              Laptops & Desktops
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Photography
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Accessories
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Televsion
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Games
+            </p>
+          </a>
+          <p className='side-bar-main-item'>Dormitory</p>
+          <a>
+            <p className='side-bar-items'>
+              Self Care
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Appliances
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Home Decor
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Plants
+            </p>
+          </a>
+          <p className='side-bar-main-item'>Outdoors</p>
+          <a>
+            <p className='side-bar-items'>
+              Sports & Fitness
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Camping & Hiking
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Transportation
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Recreation
+            </p>
+          </a>
+          <p className='side-bar-main-item'>School</p>
+          <a>
+            <p className='side-bar-items'>
+              Stationary & Supplies
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Backpacks
+            </p>
+          </a>
+          <a>
+            <p className='side-bar-items'>
+              Laptops
+            </p>
+          </a>
+        </Sidebar>
+    );
+
+    VerticalSidebar.propTypes = {
+      animation: PropTypes.string,
+      direction: PropTypes.string,
+      visible: PropTypes.bool,
+    };
+
     const { animation, dimmed, direction, visible } = this.state;
     const vertical = direction === 'bottom' || direction === 'top';
-    const filteredItems = this.props.listings.filter(
+
+    let filteredItems = this.props.listings.filter(
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
             items.categories.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
+
+    if (this.state.clothing) {
+      filteredItems = filteredItems.filter((items) => items.categories === 'clothing');
+    }
+
     const cardStyle = {
       paddingTop: '30px',
       // paddingLeft: '100px',
