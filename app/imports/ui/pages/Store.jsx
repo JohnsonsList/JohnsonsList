@@ -4,6 +4,7 @@ import { Listings } from '/imports/api/listings/Listing';
 import Listing from '/imports/ui/components/Listing';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
+import { _ } from 'meteor/underscore';
 import { Container, Grid, Menu, Input, Sidebar } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
@@ -26,11 +27,41 @@ class Store extends Component {
       dormitory: false,
       supplies: false,
       outdoors: false,
+      men: false,
+      women: false,
+      top: false,
+      bottom: false,
+      shoes: false,
+      accessories: false,
     };
   }
 
   showClothing() {
     this.setState({ clothing: !this.state.clothing });
+  }
+
+  showMen() {
+    this.setState({ men: !this.state.men });
+  }
+
+  showWomen() {
+    this.setState({ women: !this.state.women });
+  }
+
+  showTop() {
+    this.setState({ top: !this.state.top });
+  }
+
+  showBottom() {
+    this.setState({ bottom: !this.state.bottom });
+  }
+
+  showShoes() {
+    this.setState({ shoes: !this.state.shoes });
+  }
+
+  showAccessories() {
+    this.setState({ accessories: !this.state.accessories });
   }
 
   showElectronics() {
@@ -101,34 +132,40 @@ class Store extends Component {
             </p>
           </a>
           <p className='side-bar-main-item'>Clothing</p>
-          <a>
-            <p className='side-bar-items'>
-              Men
+          <a onClick={this.showMen.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showMen.bind(this)}>
+              Men ({(this.props.listings.filter((items) => _.contains((items.clothes), 'men'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              Women
+          <a onClick={this.showWomen.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showWomen.bind(this)}>
+              Women ({(this.props.listings.filter((items) => _.contains((items.clothes), 'women'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              Tops
+          <a onClick={this.showTop.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showTop.bind(this)}>
+              Tops ({(this.props.listings.filter((items) => _.contains((items.clothes), 'top'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              Bottoms
+          <a onClick={this.showBottom.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showBottom.bind(this)}>
+              Bottoms ({(this.props.listings.filter((items) => _.contains((items.clothes), 'bottom'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              Shoes
+          <a onClick={this.showShoes.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showShoes.bind(this)}>
+              Shoes ({(this.props.listings.filter((items) => _.contains((items.clothes), 'shoes'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              Accessories
+          <a onClick={this.showAccessories.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showAccessories.bind(this)}>
+              Accessories ({(this.props.listings.filter((items) => _.contains((items.clothes), 'accessories'))).length})
             </p>
           </a>
           <p className='side-bar-main-item'>Electronics</p>
@@ -234,6 +271,30 @@ class Store extends Component {
 
     if (this.state.clothing) {
       filteredItems = filteredItems.filter((items) => items.categories === 'clothing');
+    }
+
+    if (this.state.men) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.clothes), 'men'));
+    }
+
+    if (this.state.women) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.clothes), 'women'));
+    }
+
+    if (this.state.top) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.clothes), 'top'));
+    }
+
+    if (this.state.bottom) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.clothes), 'bottom'));
+    }
+
+    if (this.state.shoes) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.clothes), 'shoes'));
+    }
+
+    if (this.state.accessories) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.clothes), 'accessories'));
     }
 
     if (this.state.electronics) {
