@@ -33,7 +33,7 @@ class ItemPage extends React.Component {
                 <Divider fluid/>
                 <Header.Subheader>List Price: ${this.props.listings.price}</Header.Subheader>
                 <Header.Subheader>Condition: {this.props.listings.condition}</Header.Subheader>
-                <Header.Subheader>{this.props.listings.description}</Header.Subheader>
+                <Header.Subheader style={spaceStyle}>{this.props.listings.description}</Header.Subheader>
               </Grid.Column>
             </Grid>
           </Container>
