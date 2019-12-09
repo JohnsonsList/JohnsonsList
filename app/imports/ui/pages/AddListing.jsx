@@ -35,14 +35,6 @@ const formSchema = new SimpleSchema({
     allowedValues: ['clothing', 'dormitory', 'electronics', 'supplies', 'outdoors'],
     defaultValue: 'clothing',
   },
-  clothes: {
-    type: Array,
-  },
-  'clothes.$': {
-    type: String,
-    optional: true,
-    allowedValues: ['Men', 'Women', 'Top', 'Bottom', 'Shoes', 'Accessories'],
-  },
 });
 
 /** Renders the Page for adding a document. */
@@ -50,9 +42,9 @@ class AddListing extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
-    const { name, email, image, description, price, condition, categories, clothes } = data;
+    const { name, email, image, description, price, condition, categories } = data;
     const owner = Meteor.user().username;
-    Listings.insert({ name, email, image, description, price, condition, categories, clothes, owner },
+    Listings.insert({ name, email, image, description, price, condition, categories, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -86,10 +78,7 @@ class AddListing extends React.Component {
                       <Grid columns="3">
                         <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                         <Grid.Column><SelectField name='condition'/></Grid.Column>
-                        {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
                         <Grid.Column><SelectField name='categories'/></Grid.Column>
-                        // make it so this only shows if clothes is selected
-                        <Grid.Column><SelectField name='clothes'/></Grid.Column>
                       </Grid>
                       <SubmitField value='Submit' style={submitStyle}/>
                       <ErrorsField/>
