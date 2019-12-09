@@ -56,7 +56,6 @@ export default withTracker(({ match }) => {
   const subscription = Meteor.subscribe('Stuff');
   return {
     stuffs: Stuffs.findOne(documentId),
-
     ready: subscription.ready(),
   };
 })(ItemPage);
