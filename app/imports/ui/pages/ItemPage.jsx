@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Grid, Header, Container, Image, Divider, Label } from 'semantic-ui-react';
+import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Listings } from '/imports/api/listings/Listing';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
@@ -16,6 +17,11 @@ class ItemPage extends React.Component {
     const pageStyle = { paddingTop: '20px' };
     const formStyle = { paddingTop: '75px', paddingBottom: '50px' };
     const spaceStyle = { paddingTop: '10px' };
+    const labelStyle = { marginBottom: '5px',
+      marginRight: '5px',
+      marginTop: '0px',
+      marginLeft: '0px' };
+
     return (
         <div>
           <TitleBar/>
@@ -30,6 +36,31 @@ class ItemPage extends React.Component {
                 <Header.Subheader>Contact me at: {this.props.listings.email}</Header.Subheader>
                 <Header.Subheader style={spaceStyle}>
                   <Label color='teal'>{this.props.listings.categories}</Label>
+                  {this.props.listings.categories === 'clothing' ?
+                      _.map(this.props.listings.clothes,
+                          (clothes, index) => <Label style={labelStyle}
+                                                     key={index} color='red'>{clothes}</Label>)
+                      : '' }
+                  {this.props.listings.categories === 'electronics' ?
+                      _.map(this.props.listings.electronics,
+                          (electronics, index) => <Label style={labelStyle}
+                                                         key={index} color='red'>{electronics}</Label>)
+                      : '' }
+                  {this.props.listings.categories === 'dormitory' ?
+                      _.map(this.props.listings.dormitory,
+                          (dormitory, index) => <Label style={labelStyle}
+                                                       key={index} color='red'>{dormitory}</Label>)
+                      : '' }
+                  {this.props.listings.categories === 'outdoors' ?
+                      _.map(this.props.listings.outdoors,
+                          (outdoors, index) => <Label style={labelStyle}
+                                                      key={index} color='red'>{outdoors}</Label>)
+                      : '' }
+                  {this.props.listings.categories === 'school' ?
+                      _.map(this.props.listings.school,
+                          (school, index) => <Label style={labelStyle}
+                                                    key={index} color='red'>{school}</Label>)
+                      : '' }
                 </Header.Subheader>
                 <Divider fluid/>
                 <Header.Subheader>List Price: ${this.props.listings.price}</Header.Subheader>
