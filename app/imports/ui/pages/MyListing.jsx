@@ -257,6 +257,21 @@ class Store extends Component {
       filteredItems = filteredItems.filter((items) => items.categories === 'outdoors');
     }
 
+    let title;
+    if (this.state.clothing === true) {
+      title = 'CLOTHING';
+    } else if (this.state.electronics === true) {
+      title = 'ELECTRONICS';
+    } else if (this.state.dormitory === true) {
+      title = 'DORMITORY';
+    } else if (this.state.outdoors === true) {
+      title = 'OUTDOORS';
+    } else if (this.state.supplies === true) {
+      title = 'SCHOOL';
+    } else {
+      title = 'ALL LISTINGS';
+    }
+
     const cardStyle = {
       paddingTop: '30px',
       // paddingLeft: '100px',
@@ -270,7 +285,7 @@ class Store extends Component {
           <div id='store-test'>
 
             <div id='store-headline'>
-              <p>YOUR LISTINGS: ALL LISTINGS</p>
+              <p>YOUR LISTINGS: {title}</p>
             </div>
 
             <div id='store-search'>
