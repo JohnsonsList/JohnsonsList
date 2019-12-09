@@ -20,7 +20,7 @@ class ItemPage extends React.Component {
     const labelStyle = { marginBottom: '5px',
       marginRight: '5px',
       marginTop: '0px',
-      marginLeft: '0px' };
+      marginLeft: '5px' };
 
     return (
         <div>

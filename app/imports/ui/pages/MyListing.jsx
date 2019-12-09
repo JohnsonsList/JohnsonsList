@@ -493,8 +493,10 @@ class Store extends Component {
       title = 'DORMITORY';
     } else if (this.state.outdoors === true) {
       title = 'OUTDOORS';
-    } else if (this.state.supplies === true) {
+    } else if (this.state.school === true) {
       title = 'SCHOOL';
+    } else if (this.state.men === true) {
+      title = 'CLOTHING: MEN';
     } else {
       title = 'ALL LISTINGS';
     }
@@ -512,7 +514,7 @@ class Store extends Component {
           <div id='store-test'>
 
             <div id='store-headline'>
-              <p>YOUR LISTINGS: {title}</p>
+              <p>SHOP: {title}</p>
             </div>
 
             <div id='store-search'>
