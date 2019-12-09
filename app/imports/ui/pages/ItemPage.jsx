@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Grid, Header, Container, Image, Divider, Label } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
-import { Stuffs } from '/imports/api/stuff/Stuff';
+import { Listings } from '/imports/api/listings/Listing';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
@@ -21,19 +21,19 @@ class ItemPage extends React.Component {
           <Container>
             <Grid container style={formStyle} columns={2}>
               <Grid.Column>
-                <Image className='itemPageImage' src={this.props.stuffs.image}/>
+                <Image className='itemPageImage' src={this.props.listings.image}/>
               </Grid.Column>
               <Grid.Column>
-                <Header as="h2">{this.props.stuffs.name}</Header>
-                <Header.Subheader>by {this.props.stuffs.owner}</Header.Subheader>
-                <Header.Subheader>Contact me at: {this.props.stuffs.email}</Header.Subheader>
+                <Header as="h2">{this.props.listings.name}</Header>
+                <Header.Subheader>by {this.props.listings.owner}</Header.Subheader>
+                <Header.Subheader>Contact me at: {this.props.listings.email}</Header.Subheader>
                 <Header.Subheader style={spaceStyle}>
-                  <Label color='teal'>{this.props.stuffs.categories}</Label>
+                  <Label color='teal'>{this.props.listings.categories}</Label>
                 </Header.Subheader>
                 <Divider fluid/>
-                <Header.Subheader>List Price: ${this.props.stuffs.price}</Header.Subheader>
-                <Header.Subheader>Condition: {this.props.stuffs.condition}</Header.Subheader>
-                <Header.Subheader>{this.props.stuffs.description}</Header.Subheader>
+                <Header.Subheader>List Price: ${this.props.listings.price}</Header.Subheader>
+                <Header.Subheader>Condition: {this.props.listings.condition}</Header.Subheader>
+                <Header.Subheader>{this.props.listings.description}</Header.Subheader>
               </Grid.Column>
             </Grid>
           </Container>
@@ -45,7 +45,7 @@ class ItemPage extends React.Component {
 
 /** Declare the types of all properties. */
 ItemPage.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  listings: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -53,9 +53,9 @@ ItemPage.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
   const documentId = match.params._id;
-  const subscription = Meteor.subscribe('Stuff');
+  const subscription = Meteor.subscribe('Listings');
   return {
-    stuffs: Stuffs.findOne(documentId),
+    listings: Listings.findOne(documentId),
     ready: subscription.ready(),
   };
 })(ItemPage);
