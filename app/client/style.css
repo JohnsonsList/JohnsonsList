@@ -22,6 +22,11 @@
   color: #024731 !important;
 }
 
+#add-font {
+  font-family: "lato", "Helvetica Neue", serif !important;
+  font-weight: normal;
+}
+
 #store-test {
   padding-top: 100px;
 }
