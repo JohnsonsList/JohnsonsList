@@ -37,7 +37,7 @@ const ListingsSchema = new SimpleSchema({
   'electronics.$': {
     type: String,
     optional: true,
-    allowedValues: ['laptops & desktops', 'photography', 'accessories', 'television', 'games'],
+    allowedValues: ['computers', 'photography', 'accessories', 'television', 'games'],
   },
   dormitory: {
     type: Array,
@@ -61,7 +61,7 @@ const ListingsSchema = new SimpleSchema({
   'school.$': {
     type: String,
     optional: true,
-    allowedValues: ['stationary & supplies', 'backpacks', 'laptops'],
+    allowedValues: ['stationery', 'backpacks'],
   },
 }, { tracker: Tracker });
 

@@ -25,14 +25,29 @@ class Store extends Component {
       clothing: false,
       electronics: false,
       dormitory: false,
-      supplies: false,
+      school: false,
       outdoors: false,
       men: false,
       women: false,
       top: false,
       bottom: false,
       shoes: false,
-      accessories: false,
+      caccessories: false,
+      laptops: false,
+      photography: false,
+      eaccessories: false,
+      television: false,
+      games: false,
+      self: false,
+      appliances: false,
+      decor: false,
+      plants: false,
+      sports: false,
+      camping: false,
+      transportation: false,
+      recreation: false,
+      stationery: false,
+      backpacks: false,
     };
   }
 
@@ -60,24 +75,84 @@ class Store extends Component {
     this.setState({ shoes: !this.state.shoes });
   }
 
-  showAccessories() {
-    this.setState({ accessories: !this.state.accessories });
+  showCaccessories() {
+    this.setState({ caccessories: !this.state.caccessories });
   }
 
   showElectronics() {
     this.setState({ electronics: !this.state.electronics });
   }
 
+  showLaptops() {
+    this.setState({ laptops: !this.state.laptops });
+  }
+
+  showPhotography() {
+    this.setState({ photography: !this.state.photography });
+  }
+
+  showEaccessories() {
+    this.setState({ eaccessories: !this.state.eaccessories });
+  }
+
+  showTelevision() {
+    this.setState({ television: !this.state.television });
+  }
+
+  showGames() {
+    this.setState({ games: !this.state.games });
+  }
+
   showDormitory() {
     this.setState({ dormitory: !this.state.dormitory });
   }
 
-  showSchool() {
-    this.setState({ supplies: !this.state.supplies });
+  showSelf() {
+    this.setState({ self: !this.state.self });
+  }
+
+  showAppliances() {
+    this.setState({ appliances: !this.state.appliances });
+  }
+
+  showDecor() {
+    this.setState({ decor: !this.state.decor });
+  }
+
+  showPlants() {
+    this.setState({ plants: !this.state.plants });
   }
 
   showOutdoors() {
     this.setState({ outdoors: !this.state.outdoors });
+  }
+
+  showSports() {
+    this.setState({ sports: !this.state.sports });
+  }
+
+  showCamping() {
+    this.setState({ camping: !this.state.camping });
+  }
+
+  showTransportation() {
+    this.setState({ transportation: !this.state.transportation });
+  }
+
+  showRecreation() {
+    this.setState({ recreation: !this.state.recreation });
+  }
+
+  showSchool() {
+    this.setState({ school: !this.state.school });
+  }
+
+  showStationery() {
+    this.setState({ stationery: !this.state.stationery });
+  }
+
+  showBackpacks() {
+    this.setState({ backpacks: !this.state.backpacks });
   }
 
   updateSearch(event) {
@@ -104,152 +179,188 @@ class Store extends Component {
           <a onClick={this.showClothing.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showClothing.bind(this)}>
-              Clothing ({(this.props.listings.filter((items) => items.categories === 'clothing')).length})
+              Clothing
+              ({(this.props.listings.filter((items) => items.categories === 'clothing')).length})
             </p>
           </a>
           <a onClick={this.showElectronics.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showElectronics.bind(this)}>
-              Electronics ({(this.props.listings.filter((items) => items.categories === 'electronics')).length})
+              Electronics
+              ({(this.props.listings.filter((items) => items.categories === 'electronics')).length})
             </p>
           </a>
           <a onClick={this.showDormitory.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showDormitory.bind(this)}>
-              Dormitory ({(this.props.listings.filter((items) => items.categories === 'dormitory')).length})
+              Dormitory
+              ({(this.props.listings.filter((items) => items.categories === 'dormitory')).length})
             </p>
           </a>
           <a onClick={this.showOutdoors.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showOutdoors.bind(this)}>
-              Outdoors ({(this.props.listings.filter((items) => items.categories === 'outdoors')).length})
+              Outdoors
+              ({(this.props.listings.filter((items) => items.categories === 'outdoors')).length})
             </p>
           </a>
           <a onClick={this.showSchool.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showSchool.bind(this)}>
-              School ({(this.props.listings.filter((items) => items.categories === 'school')).length})
+              School
+              ({(this.props.listings.filter((items) => items.categories === 'school')).length})
             </p>
           </a>
           <p className='side-bar-main-item'>Clothing</p>
           <a onClick={this.showMen.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showMen.bind(this)}>
-              Men ({(this.props.listings.filter((items) => _.contains((items.clothes), 'men'))).length})
+              Men
+              ({(this.props.listings.filter((items) => _.contains((items.clothes), 'men'))).length})
             </p>
           </a>
           <a onClick={this.showWomen.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showWomen.bind(this)}>
-              Women ({(this.props.listings.filter((items) => _.contains((items.clothes), 'women'))).length})
+              Women
+              ({(this.props.listings.filter((items) => _.contains((items.clothes), 'women'))).length})
             </p>
           </a>
           <a onClick={this.showTop.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showTop.bind(this)}>
-              Tops ({(this.props.listings.filter((items) => _.contains((items.clothes), 'top'))).length})
+              Tops
+              ({(this.props.listings.filter((items) => _.contains((items.clothes), 'top'))).length})
             </p>
           </a>
           <a onClick={this.showBottom.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showBottom.bind(this)}>
-              Bottoms ({(this.props.listings.filter((items) => _.contains((items.clothes), 'bottom'))).length})
+              Bottoms
+              ({(this.props.listings.filter((items) => _.contains((items.clothes), 'bottom'))).length})
             </p>
           </a>
           <a onClick={this.showShoes.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showShoes.bind(this)}>
-              Shoes ({(this.props.listings.filter((items) => _.contains((items.clothes), 'shoes'))).length})
+              Shoes
+              ({(this.props.listings.filter((items) => _.contains((items.clothes), 'shoes'))).length})
             </p>
           </a>
-          <a onClick={this.showAccessories.bind(this)}>
+          <a onClick={this.showCaccessories.bind(this)}>
             <p className='side-bar-items'
-               onClick={this.showAccessories.bind(this)}>
-              Accessories ({(this.props.listings.filter((items) => _.contains((items.clothes), 'accessories'))).length})
+               onClick={this.showCaccessories.bind(this)}>
+              Accessories
+              ({(this.props.listings.filter((items) => _.contains((items.clothes), 'accessories'))).length})
             </p>
           </a>
           <p className='side-bar-main-item'>Electronics</p>
-          <a>
-            <p className='side-bar-items'>
-              Laptops & Desktops
+          <a onClick={this.showLaptops.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showLaptops.bind(this)}>
+              Computers
+              ({(this.props.listings.filter((items) => _.contains((items.electronics), 'computers'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showPhotography.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showPhotography.bind(this)}>
               Photography
+              ({(this.props.listings.filter((items) => _.contains((items.electronics), 'photography'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showEaccessories.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showEaccessories.bind(this)}>
               Accessories
+              ({(this.props.listings.filter((items) => _.contains((items.electronics), 'accessories'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              Televsion
+          <a onClick={this.showTelevision.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showTelevision.bind(this)}>
+              Television
+              ({(this.props.listings.filter((items) => _.contains((items.electronics), 'television'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showGames.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showGames.bind(this)}>
               Games
+              ({(this.props.listings.filter((items) => _.contains((items.electronics), 'games'))).length})
             </p>
           </a>
           <p className='side-bar-main-item'>Dormitory</p>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showSelf.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showSelf.bind(this)}>
               Self Care
+              ({(this.props.listings.filter((items) => _.contains((items.dormitory), 'self care'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showAppliances.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showAppliances.bind(this)}>
               Appliances
+              ({(this.props.listings.filter((items) => _.contains((items.dormitory), 'appliances'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showDecor.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showDecor.bind(this)}>
               Home Decor
+              ({(this.props.listings.filter((items) => _.contains((items.dormitory), 'home decor'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showPlants.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showPlants.bind(this)}>
               Plants
+              ({(this.props.listings.filter((items) => _.contains((items.dormitory), 'plants'))).length})
             </p>
           </a>
           <p className='side-bar-main-item'>Outdoors</p>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showSports.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showSports.bind(this)}>
               Sports & Fitness
+              ({(this.props.listings.filter((items) => _.contains((items.outdoors), 'sports & fitness'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showCamping.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showCamping.bind(this)}>
               Camping & Hiking
+              ({(this.props.listings.filter((items) => _.contains((items.outdoors), 'camping & hiking'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showTransportation.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showTransportation.bind(this)}>
               Transportation
+              ({(this.props.listings.filter((items) => _.contains((items.outdoors), 'transportation'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showRecreation.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showRecreation.bind(this)}>
               Recreation
+              ({(this.props.listings.filter((items) => _.contains((items.outdoors), 'recreation'))).length})
             </p>
           </a>
           <p className='side-bar-main-item'>School</p>
-          <a>
-            <p className='side-bar-items'>
-              Stationary & Supplies
+          <a onClick={this.showStationery.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showStationery.bind(this)}>
+              Stationery
+              ({(this.props.listings.filter((items) => _.contains((items.school), 'stationery'))).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
+          <a onClick={this.showBackpacks.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showBackpacks.bind(this)}>
               Backpacks
-            </p>
-          </a>
-          <a>
-            <p className='side-bar-items'>
-              Laptops
+              ({(this.props.listings.filter((items) => _.contains((items.school), 'backpacks'))).length})
             </p>
           </a>
         </Sidebar>
@@ -293,7 +404,7 @@ class Store extends Component {
       filteredItems = filteredItems.filter((items) => _.contains((items.clothes), 'shoes'));
     }
 
-    if (this.state.accessories) {
+    if (this.state.caccessories) {
       filteredItems = filteredItems.filter((items) => _.contains((items.clothes), 'accessories'));
     }
 
@@ -301,16 +412,76 @@ class Store extends Component {
       filteredItems = filteredItems.filter((items) => items.categories === 'electronics');
     }
 
+    if (this.state.laptops) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.electronics), 'computers'));
+    }
+
+    if (this.state.photography) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.electronics), 'photography'));
+    }
+
+    if (this.state.eaccessories) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.electronics), 'accessories'));
+    }
+
+    if (this.state.television) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.electronics), 'television'));
+    }
+
+    if (this.state.games) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.electronics), 'games'));
+    }
+
     if (this.state.dormitory) {
       filteredItems = filteredItems.filter((items) => items.categories === 'dormitory');
     }
 
-    if (this.state.supplies) {
-      filteredItems = filteredItems.filter((items) => items.categories === 'school');
+    if (this.state.self) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.dormitory), 'self care'));
+    }
+
+    if (this.state.appliances) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.dormitory), 'appliances'));
+    }
+
+    if (this.state.decor) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.dormitory), 'decor'));
+    }
+
+    if (this.state.plants) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.dormitory), 'plants'));
     }
 
     if (this.state.outdoors) {
       filteredItems = filteredItems.filter((items) => items.categories === 'outdoors');
+    }
+
+    if (this.state.sports) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.outdoors), 'sports & fitness'));
+    }
+
+    if (this.state.camping) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.outdoors), 'camping & hiking'));
+    }
+
+    if (this.state.transportation) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.outdoors), 'transportation'));
+    }
+
+    if (this.state.recreation) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.outdoors), 'recreation'));
+    }
+
+    if (this.state.school) {
+      filteredItems = filteredItems.filter((items) => items.categories === 'school');
+    }
+
+    if (this.state.stationery) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.school), 'stationery'));
+    }
+
+    if (this.state.backpacks) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.school), 'backpacks'));
     }
 
     let title;
