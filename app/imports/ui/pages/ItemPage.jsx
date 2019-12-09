@@ -14,7 +14,7 @@ class ItemPage extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     const formStyle = { paddingTop: '75px', paddingBottom: '50px' };
-    const detailStyle = { paddingTop: '10px' };
+    const spaceStyle = { paddingTop: '10px' };
     return (
         <div>
           <TitleBar/>
@@ -24,14 +24,15 @@ class ItemPage extends React.Component {
                 <Image className='itemPageImage' src={this.props.stuffs.image}/>
               </Grid.Column>
               <Grid.Column>
-                <Header as="h2" textAlign="center">{this.props.stuffs.name}</Header>
+                <Header as="h2">{this.props.stuffs.name}</Header>
                 <Header.Subheader>by {this.props.stuffs.owner}</Header.Subheader>
                 <Header.Subheader>Contact me at: {this.props.stuffs.email}</Header.Subheader>
-                <Header.Subheader style={detailStyle}>
+                <Header.Subheader style={spaceStyle}>
                   <Label color='teal'>{this.props.stuffs.categories}</Label>
                 </Header.Subheader>
                 <Divider fluid/>
                 <Header.Subheader>List Price: ${this.props.stuffs.price}</Header.Subheader>
+                <Header.Subheader>Condition: {this.props.stuffs.condition}</Header.Subheader>
                 <Header.Subheader>{this.props.stuffs.description}</Header.Subheader>
               </Grid.Column>
             </Grid>
