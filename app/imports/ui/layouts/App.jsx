@@ -14,7 +14,6 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import Store from '../pages/Store';
-import YourShop from '../pages/YourShop';
 import Saved from '../pages/Saved';
 import Home from '../pages/HomePage';
 import Profile from '../pages/Profile';
@@ -39,7 +38,6 @@ class App extends React.Component {
               <Route path="/profile" component={Profile}/>
               <Route path="/home" component={Home}/>
               <Route path="/notif" component={NotifyAdmin}/>
-              <Route path="/yourshop" component={YourShop}/>
               <Route path="/feed" component={Feedback}/>
               <Route path="/details/:_id" component={ItemPage}/>
               <ProtectedRoute path="/list" component={MyListing}/>
