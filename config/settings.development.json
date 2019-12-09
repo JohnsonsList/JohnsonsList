@@ -35,6 +35,7 @@
       "user": "WeeabooKevin",
       "email": "Kevin@foo.com",
       "password": "changeme"
+
     }
   ],
   "defaultData": [
@@ -46,7 +47,12 @@
       "price": 25.99,
       "owner": "John Foo Test",
       "condition": "excellent",
-      "categories": "school"
+      "categories": "school",
+      "clothes": [],
+      "electronics": [],
+      "dormitory": [],
+      "outdoors": [],
+      "school": ["backpacks"]
     },
     {
       "name": "Bicycle",
@@ -56,7 +62,12 @@
       "price": 200,
       "owner": "John Foo Test",
       "condition": "poor",
-      "categories": "dormitory"
+      "categories": "outdoors",
+      "clothes": [],
+      "electronics": [],
+      "dormitory": [],
+      "outdoors": ["sports & fitness"],
+      "school": []
     },
     {
       "name": "Vintage Leather Jacket",
@@ -65,8 +76,13 @@
       "description": "Men's vintage leather jacket. 70's era Wilson's leather, size 40 medium.\nGood condition. $45",
       "price": 45,
       "owner": "John Foo Test",
-      "condition": "good",
-      "categories": "clothing"
+      "condition": "excellent",
+      "categories": "clothing",
+      "clothes": ["men", "top"],
+      "electronics": [],
+      "dormitory": [],
+      "outdoors": [],
+      "school": []
     },
     {
       "name": "Nintendo Switch – Neon Red and Neon Blue Joy-Con",
@@ -76,7 +92,12 @@
       "price": 298.99,
       "owner": "John Foo Test",
       "condition": "excellent",
-      "categories": "electronics"
+      "categories": "electronics",
+      "clothes": [],
+      "electronics": ["games", "accessories"],
+      "dormitory": [],
+      "outdoors": [],
+      "school": []
     },
     {
       "name": "Rechargeable 2.4G Slim Wireless Mouse",
@@ -86,7 +107,12 @@
       "price": 11.99,
       "owner": "SurferLover",
       "condition": "good",
-      "categories": "electronics"
+      "categories": "electronics",
+      "clothes": [],
+      "electronics": ["accessories"],
+      "dormitory": [],
+      "outdoors": [],
+      "school": []
     },
     {
       "name": "Limited Edition V2 Nintendo Switch Red Mario Joy Cons",
@@ -96,7 +122,12 @@
       "price": 350,
       "owner": "SurferLover",
       "condition": "excellent",
-      "categories": "electronics"
+      "categories": "electronics",
+      "clothes": [],
+      "electronics": ["games", "accessories"],
+      "dormitory": [],
+      "outdoors": [],
+      "school": []
     },
     {
       "name": "Boogie Board",
@@ -106,7 +137,12 @@
       "price": 20,
       "owner": "SurferLover",
       "condition": "excellent",
-      "categories": "dormitory"
+      "categories": "outdoors",
+      "clothes": [],
+      "electronics": [],
+      "dormitory": [],
+      "outdoors": ["sports & fitness", "recreation"],
+      "school": []
     },
     {
       "name": "Tent",
@@ -116,7 +152,12 @@
       "price": 20,
       "owner": "SurferLover",
       "condition": "excellent",
-      "categories": "outdoors"
+      "categories": "outdoors",
+      "clothes": [],
+      "electronics": [],
+      "dormitory": [],
+      "outdoors": ["camping & hiking"],
+      "school": []
     }
   ],
   "defaultIssue": [

@@ -14,6 +14,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
+import MultiSelectField from '../forms/MultiSelectField';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -22,9 +23,11 @@ class EditListing extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, email, image, description, price, condition, categories, _id } = data;
+    const { name, email, image, description, price, condition,
+      categories, clothes, electronics, dormitory, outdoors, school, _id } = data;
     // eslint-disable-next-line max-len
-    Listings.update(_id, { $set: { name, email, image, description, price, condition, categories } }, (error) => (error ?
+    Listings.update(_id, { $set: { name, email, image, description, price, condition,
+        categories, clothes, electronics, dormitory, outdoors, school } }, (error) => (error ?
         swal('Error', error.message, 'error') :
         swal('Success', 'Item updated successfully', 'success')));
   }
@@ -55,6 +58,11 @@ class EditListing extends React.Component {
                     <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                     <Grid.Column><SelectField name='condition'/></Grid.Column>
                     <Grid.Column><SelectField name='categories'/></Grid.Column>
+                    <Grid.Column><MultiSelectField name='clothes'/></Grid.Column>
+                    <Grid.Column><MultiSelectField name='electronics'/></Grid.Column>
+                    <Grid.Column><MultiSelectField name='dormitory'/></Grid.Column>
+                    <Grid.Column><MultiSelectField name='outdoors'/></Grid.Column>
+                    <Grid.Column><MultiSelectField name='school'/></Grid.Column>
                   </Grid>
                   <SubmitField value='Submit' style={submitStyle}/>
                   <ErrorsField/>

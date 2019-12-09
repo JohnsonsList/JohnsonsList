@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Card, Image, Label } from 'semantic-ui-react';
+import { _ } from 'meteor/underscore';
 import PropTypes from 'prop-types';
 import { withRouter, Link, NavLink } from 'react-router-dom';
 // import { Roles } from 'meteor/alanning:roles';
@@ -28,6 +29,27 @@ class Listing extends React.Component {
             <Card.Meta>Contact Info: {this.props.listings.email}</Card.Meta>
             <Card.Meta style={{ paddingTop: '10px' }}>
               <Label color='teal'>{this.props.listings.categories}</Label>
+              {/* eslint-disable-next-line eqeqeq */}
+              {this.props.listings.categories === 'clothing' ?
+              _.map(this.props.listings.clothes,
+              (clothes, index) => <Label key={index} color='red'>{clothes}</Label>)
+              : '' }
+              {this.props.listings.categories === 'electronics' ?
+              _.map(this.props.listings.electronics,
+              (electronics, index) => <Label key={index} color='red'>{electronics}</Label>)
+              : '' }
+              {this.props.listings.categories === 'dormitory' ?
+              _.map(this.props.listings.dormitory,
+              (dormitory, index) => <Label key={index} color='red'>{dormitory}</Label>)
+              : '' }
+              {this.props.listings.categories === 'outdoors' ?
+              _.map(this.props.listings.outdoors,
+              (outdoors, index) => <Label key={index} color='red'>{outdoors}</Label>)
+              : '' }
+              {this.props.listings.categories === 'school' ?
+              _.map(this.props.listings.school,
+              (school, index) => <Label key={index} color='red'>{school}</Label>)
+              : '' }
             </Card.Meta>
           </Card.Content>
           <Card.Content extra>

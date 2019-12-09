@@ -69,37 +69,32 @@ class Store extends Component {
             visible
             width='thin'
         >
-          <p className='side-bar-main-item'>Categories</p>
-          <a
-              onClick={this.showClothing.bind(this)}>
+          <p className='side-bar-main-item'>Main Categories</p>
+          <a onClick={this.showClothing.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showClothing.bind(this)}>
               Clothing ({(this.props.listings.filter((items) => items.categories === 'clothing')).length})
             </p>
           </a>
-          <a
-              onClick={this.showElectronics.bind(this)}>
+          <a onClick={this.showElectronics.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showElectronics.bind(this)}>
               Electronics ({(this.props.listings.filter((items) => items.categories === 'electronics')).length})
             </p>
           </a>
-          <a
-              onClick={this.showDormitory.bind(this)}>
+          <a onClick={this.showDormitory.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showDormitory.bind(this)}>
               Dormitory ({(this.props.listings.filter((items) => items.categories === 'dormitory')).length})
             </p>
           </a>
-          <a
-              onClick={this.showOutdoors.bind(this)}>
+          <a onClick={this.showOutdoors.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showOutdoors.bind(this)}>
               Outdoors ({(this.props.listings.filter((items) => items.categories === 'outdoors')).length})
             </p>
           </a>
-          <a
-              onClick={this.showSchool.bind(this)}>
+          <a onClick={this.showSchool.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showSchool.bind(this)}>
               School ({(this.props.listings.filter((items) => items.categories === 'school')).length})
