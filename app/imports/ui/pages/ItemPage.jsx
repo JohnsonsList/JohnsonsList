@@ -13,12 +13,13 @@ class ItemPage extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+    const pageStyle = { paddingTop: '20px' };
     const formStyle = { paddingTop: '75px', paddingBottom: '50px' };
     const spaceStyle = { paddingTop: '10px' };
     return (
         <div>
           <TitleBar/>
-          <Container>
+          <Container style={pageStyle}>
             <Grid container style={formStyle} columns={2}>
               <Grid.Column>
                 <Image className='itemPageImage' src={this.props.listings.image}/>
@@ -33,7 +34,7 @@ class ItemPage extends React.Component {
                 <Divider fluid/>
                 <Header.Subheader>List Price: ${this.props.listings.price}</Header.Subheader>
                 <Header.Subheader>Condition: {this.props.listings.condition}</Header.Subheader>
-                <Header.Subheader>{this.props.listings.description}</Header.Subheader>
+                <Header.Subheader style={spaceStyle}>{this.props.listings.description}</Header.Subheader>
               </Grid.Column>
             </Grid>
           </Container>
