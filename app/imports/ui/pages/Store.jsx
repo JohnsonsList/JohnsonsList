@@ -22,11 +22,31 @@ class Store extends Component {
       search: '',
       sidebar: true,
       clothing: false,
+      electronics: false,
+      dormitory: false,
+      supplies: false,
+      outdoors: false,
     };
   }
 
   showClothing() {
     this.setState({ clothing: !this.state.clothing });
+  }
+
+  showElectronics() {
+    this.setState({ electronics: !this.state.electronics });
+  }
+
+  showDormitory() {
+    this.setState({ dormitory: !this.state.dormitory });
+  }
+
+  showSchool() {
+    this.setState({ supplies: !this.state.supplies });
+  }
+
+  showOutdoors() {
+    this.setState({ outdoors: !this.state.outdoors });
   }
 
   // getClothes() {
@@ -84,27 +104,35 @@ class Store extends Component {
               onClick={this.showClothing.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showClothing.bind(this)}>
-              Clothing
+              Clothing ({(this.props.listings.filter((items) => items.categories === 'clothing')).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              Electronics
+          <a
+              onClick={this.showElectronics.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showElectronics.bind(this)}>
+              Electronics ({(this.props.listings.filter((items) => items.categories === 'electronics')).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              Dormitory
+          <a
+              onClick={this.showDormitory.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showDormitory.bind(this)}>
+              Dormitory ({(this.props.listings.filter((items) => items.categories === 'dormitory')).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              Outdoors
+          <a
+              onClick={this.showOutdoors.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showOutdoors.bind(this)}>
+              Outdoors ({(this.props.listings.filter((items) => items.categories === 'outdoors')).length})
             </p>
           </a>
-          <a>
-            <p className='side-bar-items'>
-              School
+          <a
+              onClick={this.showSchool.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showSchool.bind(this)}>
+              School ({(this.props.listings.filter((items) => items.categories === 'school')).length})
             </p>
           </a>
           <p className='side-bar-main-item'>Clothing</p>
@@ -243,27 +271,28 @@ class Store extends Component {
       filteredItems = filteredItems.filter((items) => items.categories === 'clothing');
     }
 
+    if (this.state.electronics) {
+      filteredItems = filteredItems.filter((items) => items.categories === 'electronics');
+    }
+
+    if (this.state.dormitory) {
+      filteredItems = filteredItems.filter((items) => items.categories === 'dormitory');
+    }
+
+    if (this.state.supplies) {
+      filteredItems = filteredItems.filter((items) => items.categories === 'school');
+    }
+
+    if (this.state.outdoors) {
+      filteredItems = filteredItems.filter((items) => items.categories === 'outdoors');
+    }
+
     const cardStyle = {
       paddingTop: '30px',
       // paddingLeft: '100px',
       marginBottom: '50px !important',
     };
     const pageStyle = { paddingTop: '20px' };
-
-    // // line used to get number of listings associated with clothes
-    // let totalClothes = _.size(allClothes);
-    //
-    // // line used to get number of listings associated with electronics
-    // let totalElectronics = _.size(allElectronics);
-    //
-    // // line used to get number of listings associated with dormitory
-    // let totalDormitory = _.size(allDormitory);
-    //
-    // // line used to get number of listings associated with outdoors
-    // let totalOutdoors = _.size(allOutdoors);
-    //
-    // // line used to get number of listings associated with supplies
-    // let totalSupplies = _.size(allSupplies);
 
     return (
         <div className='background'>
