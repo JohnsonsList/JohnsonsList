@@ -257,6 +257,26 @@ class Store extends Component {
       filteredItems = filteredItems.filter((items) => items.categories === 'outdoors');
     }
 
+    // let title;
+    // switch () {
+    //   case 1:
+    //     title = 'CLOTHING';
+    //     break;
+    //   case 2:
+    //     title = 'ELECTRONICS';
+    //     break;
+    //   case 3:
+    //     title = 'DORMITORY';
+    //     break;
+    //   case 4:
+    //     title = 'OUTDOORS';
+    //     break;
+    //   case 5:
+    //     title = 'SCHOOL';
+    //   default:
+    //     title = 'ALL LISTINGS';
+    // }
+
     const cardStyle = {
       paddingTop: '30px',
       // paddingLeft: '100px',
