@@ -14,7 +14,7 @@
 }
 
 #store-headline {
-  font-family: "serif", "Helvetica Neue", serif !important;
+  font-family: "lato", "Helvetica Neue", serif !important;
   margin-left: 10px;
   padding-bottom: 5px;
   text-align: left;
@@ -147,14 +147,6 @@ p.not-menu-item:hover:after {
 img.ui.avatar.image:hover {
   border: 4px #024731 !important;
   border-radius: 50px !important;
-}
-
-a.store-icon.item:hover {
-  color: #FFD700 !important;
-}
-
-.store-icon {
-  color: #024731 !important;
 }
 
 .store-link {
