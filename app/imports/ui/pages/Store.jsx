@@ -257,25 +257,20 @@ class Store extends Component {
       filteredItems = filteredItems.filter((items) => items.categories === 'outdoors');
     }
 
-    // let title;
-    // switch () {
-    //   case 1:
-    //     title = 'CLOTHING';
-    //     break;
-    //   case 2:
-    //     title = 'ELECTRONICS';
-    //     break;
-    //   case 3:
-    //     title = 'DORMITORY';
-    //     break;
-    //   case 4:
-    //     title = 'OUTDOORS';
-    //     break;
-    //   case 5:
-    //     title = 'SCHOOL';
-    //   default:
-    //     title = 'ALL LISTINGS';
-    // }
+    let title;
+    if (this.state.clothing === true) {
+      title = 'CLOTHING';
+    } else if (this.state.electronics === true) {
+      title = 'ELECTRONICS';
+    } else if (this.state.dormitory === true) {
+      title = 'DORMITORY';
+    } else if (this.state.outdoors === true) {
+      title = 'OUTDOORS';
+    } else if (this.state.supplies === true) {
+      title = 'SCHOOL';
+    } else {
+      title = 'ALL LISTINGS';
+    }
 
     const cardStyle = {
       paddingTop: '30px',
@@ -290,7 +285,7 @@ class Store extends Component {
           <div id='store-test'>
 
             <div id='store-headline'>
-              <p>SHOP: ALL LISTINGS</p>
+              <p>SHOP: {title}</p>
             </div>
 
             <div id='store-search'>
