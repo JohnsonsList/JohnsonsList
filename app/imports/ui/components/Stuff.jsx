@@ -17,7 +17,7 @@ class Stuff extends React.Component {
             centered>
           <Image
               centered
-              className='limit'
+              className='cardImage'
               size='small'
               src={this.props.stuff.image}
           />
