@@ -9,16 +9,30 @@
   float: right;
 }
 
+#store-search {
+  margin-left: 10px;
+}
+
+#store-headline {
+  font-family: "serif", "Helvetica Neue", serif !important;
+  margin-left: 10px;
+  padding-bottom: 5px;
+  text-align: left;
+  font-size: 36px;
+  color: #024731 !important;
+}
+
 #store-test {
-  padding-top: 30px;
+  padding-top: 100px;
 }
 #item-page {
-  padding-top: 50px;
+  padding-top: 100px;
   padding-bottom: 50px;
 }
 
 .pusher {
   padding-bottom: 30px;
+  height: 1600px;
 }
 
 #sidebar {
@@ -26,13 +40,24 @@
   box-shadow: none ;
   background-color: #FCFBFB;
 }
+
 .side-bar-main-item {
   margin-left: 10px;
+  padding-top: 10px !important;
   font-weight: bold;
   font-size: 15px;
   text-align: left;
   color: #024731 !important;
   border-bottom: 1px solid #024731;
+}
+
+.side-bar-items {
+  margin-left: 10px;
+  padding-bottom: 5px;
+  text-align: left;
+  font-size: 15px;
+  color: #024731 !important;
+  cursor: pointer;
 }
 
 p.side-bar-items:after {
@@ -43,16 +68,11 @@ p.side-bar-items:after {
   background: #FFD700;
   transition: width .75s;
 }
-
+.ui.input:focus {
+  border: 1px solid #024731 !important;
+}
 p.side-bar-items:hover:after {
   width: 100%;
-}
-
-.side-bar-items {
-  margin-left: 10px;
-  text-align: left;
-  font-size: 15px;
-  color: #024731 !important;
 }
 
 .four.wide.column {
@@ -100,9 +120,8 @@ p.side-bar-items:hover:after {
  }
 
 .not-menu-item {
-  font-family: "Gordita", "Helvetica Neue", serif !important;
+  font-family: "Lato", "Helvetica Neue", serif;
   margin-top: 22px;
-  font-weight: bold;
   font-size: 15px;
   color: #024731 !important;
 }
@@ -114,6 +133,7 @@ p.side-bar-items:hover:after {
 p.not-menu-item:after {
   content: '';
   display: block;
+  font-family: "Lato", "Helvetica Neue", serif;
   width: 0;
   height: 2px;
   background: #FFD700;
@@ -181,24 +201,6 @@ img.ui.avatar.image {
   color: #024731 !important;
   padding-top: 60px;
   padding-left: 0;
-}
-
-#real-search {
-  background-color: #fcfbfb !important;
-  border: none;
-  border-bottom: 2px solid #000000 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  margin-top: 0;
-}
-
-#search {
-  background-color: #fcfbfb !important;
-  border: none;
-  border-bottom: 2px solid #000000 !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  margin-top: -6px;
 }
 
 .footer-background {
@@ -282,6 +284,10 @@ h4 {
   font-family: "Roboto", "Helvetica Neue", serif;
   color: #000000;
   text-align: center !important;
+}
+
+#edit-page {
+  padding-top: 90px;
 }
 
 #log-page {
