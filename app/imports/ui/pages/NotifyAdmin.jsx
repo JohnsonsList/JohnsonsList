@@ -10,7 +10,7 @@ import swal from 'sweetalert';
 // import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
-// import { Stuff } from '../components/Listing';
+// import { Stuff } from '../components/Stuff';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';

@@ -46,7 +46,7 @@
       "price": 25.99,
       "owner": "John Foo Test",
       "condition": "excellent",
-      "categories": "school"
+      "categories": "supplies"
     },
     {
       "name": "Bicycle",
@@ -107,16 +107,6 @@
       "owner": "SurferLover",
       "condition": "excellent",
       "categories": "dormitory"
-    },
-    {
-      "name": "Tent",
-      "email": "john@foo.com",
-      "image": "https://i0.wp.com/www.rivercountryproducts.com/wp-content/uploads/2018/08/0622191204c.jpg?fit=1600%2C1200&ssl=1",
-      "description": "nice looking tent if you ask me",
-      "price": 20,
-      "owner": "SurferLover",
-      "condition": "excellent",
-      "categories": "outdoors"
     }
   ],
   "defaultIssue": [

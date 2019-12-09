@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { Listings } from '../../api/listings/Listing.js';
+import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Issues } from '../../api/issue/Issue.js';
 import { Feedback } from '../../api/Feedback/Feedback.js';
 
@@ -8,13 +8,13 @@ import { Feedback } from '../../api/Feedback/Feedback.js';
 /** Initialize the database with a default data document. */
 function addData(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
-  Listings.insert(data);
+  Stuffs.insert(data);
 }
 
 /** Initialize the collection if empty. */
-if (Listings.find().count() === 0) {
+if (Stuffs.find().count() === 0) {
   if (Meteor.settings.defaultData) {
-    console.log('Creating default listings.');
+    console.log('Creating default data.');
     Meteor.settings.defaultData.map(data => addData(data));
   }
 }
@@ -28,7 +28,7 @@ function addIssue(data) {
 /** Initialize the collection if empty. */
 if (Issues.find().count() === 0) {
   if (Meteor.settings.defaultIssue) {
-    console.log('Creating default issues.');
+    console.log('Creating default data.');
     Meteor.settings.defaultIssue.map(data => addIssue(data));
   }
 }
@@ -42,7 +42,7 @@ function addFeedback(data) {
 /** Initialize the collection if empty. */
 if (Feedback.find().count() === 0) {
   if (Meteor.settings.defaultFeedback) {
-    console.log('Creating default feedback.');
+    console.log('Creating default data.');
     Meteor.settings.defaultFeedback.map(data => addFeedback(data));
   }
 }

@@ -34,12 +34,12 @@ class ListStuff extends React.Component {
         (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
     const cardStyle = { paddingTop: '30px', paddingBottom: '50px' };
-    const pageStyle = { paddingTop: '100px' };
+    const pageStyle = { paddingTop: '20px' };
     return (
         <div className="background">
           <TitleBar/>
           <Container style={pageStyle}>
-            <Header as="h2" textAlign="center">Saved Listings</Header>
+            <Header as="h2" textAlign="center">Your Interests</Header>
             <Input
                 type='text'
                 value={this.state.search}

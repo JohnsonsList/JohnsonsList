@@ -1,15 +1,15 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Table, Header, Loader } from 'semantic-ui-react';
-import { Listings } from '/imports/api/listings/Listing';
-import ListItemAdmin from '/imports/ui/components/ListItemAdmin';
+import { Stuffs } from '/imports/api/stuff/Stuff';
+import StuffItemAdmin from '/imports/ui/components/StuffItemAdmin';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Footer from '../components/Footer';
 import TitleBar from '../components/TitleBar';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListingsAdmin extends React.Component {
+class ListStuffAdmin extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -34,7 +34,7 @@ class ListingsAdmin extends React.Component {
                 </Table.Row>
               </Table.Header>
               <Table.Body>
-                {this.props.listings.map((listings) => <ListItemAdmin key={listings._id} listings={listings}/>)}
+                {this.props.stuffs.map((stuff) => <StuffItemAdmin key={stuff._id} stuff={stuff}/>)}
               </Table.Body>
             </Table>
           </Container>
@@ -45,17 +45,17 @@ class ListingsAdmin extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ListingsAdmin.propTypes = {
-  listings: PropTypes.array.isRequired,
+ListStuffAdmin.propTypes = {
+  stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('ListingsAdmin');
+  const subscription = Meteor.subscribe('StuffAdmin');
   return {
-    listings: Listings.find({}).fetch(),
+    stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ListingsAdmin);
+})(ListStuffAdmin);
