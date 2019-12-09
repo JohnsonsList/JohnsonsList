@@ -23,6 +23,14 @@ const ListingsSchema = new SimpleSchema({
     allowedValues: ['clothing', 'dormitory', 'electronics', 'school', 'outdoors'],
     defaultValue: 'clothing',
   },
+  clothes: {
+    type: Array,
+  },
+  'clothes.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['Men', 'Women', 'Top', 'Bottom', 'Shoes', 'Accessories'],
+  },
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

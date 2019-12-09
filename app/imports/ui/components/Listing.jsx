@@ -28,6 +28,7 @@ class Listing extends React.Component {
             <Card.Meta>Contact Info: {this.props.listings.email}</Card.Meta>
             <Card.Meta style={{ paddingTop: '10px' }}>
               <Label color='teal'>{this.props.listings.categories}</Label>
+              <Label color='red'>{this.props.listings.clothes}</Label>
             </Card.Meta>
           </Card.Content>
           <Card.Content extra>
