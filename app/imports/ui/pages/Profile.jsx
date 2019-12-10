@@ -11,6 +11,18 @@ import Footer from '../components/Footer';
 /** Renders the Page for adding a document. */
 class Profile extends React.Component {
 
+  edit() {
+    this.setState({
+      editing: true,
+    });
+  }
+
+  save() {
+    this.setState({
+      editing: false,
+    });
+  }
+
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     const profStyle = { paddingTop: '80px', fontFamily: 'Roboto' };

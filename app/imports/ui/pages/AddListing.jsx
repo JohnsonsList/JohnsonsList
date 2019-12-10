@@ -103,6 +103,7 @@ class AddListing extends React.Component {
     let fRef = null;
     const formStyle = { paddingTop: '75px', paddingBottom: '50px' };
     const submitStyle = { marginTop: '20px' };
+
     return (
         <div className='background'>
           <TitleBar/>
@@ -121,7 +122,7 @@ class AddListing extends React.Component {
                         placeholder='Enter your preferred form of contact (Ex. phone number or email address)'/>
                       <TextField name='image' placeholder='Insert the url to the image.'/>
                       <LongTextField name='description' placeholder='Give a description of the item.'/>
-                      <Grid columns="3">
+                      <Grid columns="4">
                         <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                         <Grid.Column><SelectField name='condition'/></Grid.Column>
                         <Grid.Column><SelectField name='categories'/></Grid.Column>
@@ -147,10 +148,6 @@ class AddListing extends React.Component {
 /** Declare the types of all properties. */
 AddListing.propTypes = {
   currentEmail: PropTypes.string,
-};
-
-AddListing.proptypes = {
-  listings: PropTypes.object.isRequired,
 };
 
 // this is required to make the name show up
