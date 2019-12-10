@@ -89,10 +89,12 @@ class AddListing extends React.Component {
     };
   }
 
-  //  currentCategory = (e, data) => {
-  //   console.log(data);
-  //   this.setState({ category: data.value });
-  // }
+   // this freezes the current category, I hate coding
+   currentCategory = (data) => {
+    console.log(data);
+    this.setState({ category: data.value });
+    console.log(this.state.category);
+  }
 
 
   /** On submit, insert the data. */
@@ -140,7 +142,7 @@ class AddListing extends React.Component {
                         <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                         <Grid.Column><SelectField name='condition'/></Grid.Column>
                         <Grid.Column><SelectField
-                            // onChange={this.currentCategory.bind(this)}
+                            onChange={this.currentCategory}
                             name='categories'
                             label='Main Category'/></Grid.Column>
                         <Grid.Column><MultiSelectField name='clothes'/></Grid.Column>

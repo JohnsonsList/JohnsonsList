@@ -48,8 +48,14 @@ class Store extends Component {
       recreation: false,
       stationery: false,
       backpacks: false,
+      page: 1,
+      listingsPerPage: 5,
     };
   }
+
+  setPageNum = (event, { activePage }) => {
+    this.setState({ page: activePage });
+  };
 
   showClothing() {
     this.setState({ clothing: !this.state.clothing });
@@ -548,6 +554,16 @@ class Store extends Component {
     };
     const pageStyle = { paddingTop: '20px' };
 
+    const listingsPerPage = 12;
+    const page = this.state.page;
+    const totalPages = this.props.listings.length / listingsPerPage;
+    const currentPage = this.props.listings.slice(
+        (page - 1) * listingsPerPage,
+        (page - 1) * listingsPerPage + listingsPerPage,
+    );
+
+    console.log(currentPage);
+
     return (
         <div className='background'>
           <TitleBar/>
@@ -577,11 +593,10 @@ class Store extends Component {
                           visible={visible}
                       />
                   )}
-
                   <Sidebar.Pusher dimmed={dimmed && visible}>
                     <Grid>
                       {/* eslint-disable-next-line react/jsx-key */}
-                      {filteredItems.map((listings) => <Grid.Column width={4} style={cardStyle}>
+                      {currentPage.map((listings) => <Grid.Column width={4} style={cardStyle}>
                             <Listing
                               key={listings._id}
                               listings={listings}/>
@@ -591,13 +606,12 @@ class Store extends Component {
                 </Sidebar.Pushable>
                 <Pagination
                     id='page'
-                    defaultActivePage={5}
+                    totalPages={totalPages}
+                    activePage={page}
+                    onPageChange={this.setPageNum}
                     ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
-                    firstItem={null}
-                    lastItem={null}
                     pointing
                     secondary
-                    totalPages={10}
                     centered
                 />
               </Container>
