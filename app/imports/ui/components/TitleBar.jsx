@@ -18,7 +18,7 @@ class TitleBar extends React.Component {
   }
 
   operation() {
-     this.setState({ show: 'active' });
+    this.setState({ show: 'active' });
   }
 
   updateSearch(event) {
@@ -36,73 +36,68 @@ class TitleBar extends React.Component {
       marginBottom: '0px',
       backgroundColor: '#fafafa',
       color: '#024731',
-      borderBottom: '1px solid #f0f0f0' };
+      borderBottom: '1px solid #f0f0f0',
+    };
     return (
         <div>
-        <Menu style={menuStyle} className='ui borderless top fixed menu' inverted>
-          <Menu.Item as={NavLink} activeClassName="" exact to="/home">
-            <Image size='small' src='/images/JL-logo.png' to="/home"/>
-          </Menu.Item>
-          <a className='not-menu-item'
-             href='/#/store'>
-            <p className='not-menu-item'>
-              STORE
-            </p>
-          </a>
+          <Menu style={menuStyle} className='ui borderless top fixed menu' inverted>
+            <Menu.Item as={NavLink} activeClassName="" exact to="/home">
+              <Image size='small' src='/images/JL-logo.png' to="/home"/>
+            </Menu.Item>
+            <a className='not-menu-item'
+               href='/#/store'>
+              <p className='not-menu-item'>
+                STORE
+              </p>
+            </a>
             <p className='menu-space'>
               SPACE
             </p>
-          <a className='not-menu-item'
-             href='/#/add'>
-          <p className='not-menu-item'>
-            ADD AN ITEM
-          </p>
-          </a>
-          <Menu.Item
-              position='right'
-              id='search'
-              fluid>
-          <Search
-              type='text'
-              value={this.state.search}
-              onChange={this.updateSearch.bind(this)}
-              placeholder='Search...'
-              icon='search'
-          />
-          </Menu.Item>
-          <Menu.Item
-              className='store-icon'
-              onClick={() => this.operation()}>
-            <Icon name='search'
-            onClick={() => this.operation()}/>
-          </Menu.Item>
-          <Menu.Item float="right">
-            <Dropdown
-              trigger={trigger}
-              style={{ color: '#024731' }}
-              pointing='top right'>
-              <Dropdown.Menu centered>
-                <Dropdown.Item icon='user' text={this.props.currentUser} as={NavLink} exact to='/profile'/>
-                <Dropdown.Item icon='heart' text='Your Listings' as={NavLink} exact to='/list'/>
-                <Dropdown.Item icon='star' text='Saved Items' as={NavLink} exact to='/saved'/>
-              <div className='ui divider'/>
-                {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                ''
-                ) : <Dropdown.Item icon='chat' text='Provide Feedback' as={NavLink} exact to='/feed'/> }
-                {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                <Dropdown.Item icon='chat' text='All Listings' as={NavLink} exact to='/admin'/>
-                ) : ''}
-                {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                <Dropdown.Item icon='chat' text='User Complaints' as={NavLink} exact to='/issues'/>
-                ) : ''}
-                {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                    <Dropdown.Item icon='chat' text='Website Feedback' as={NavLink} exact to='/feedback'/>
-                ) : ''}
-                <Dropdown.Item icon='sign-out' text='Logout' as={NavLink} exact to='/signout'/>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Menu.Item>
-        </Menu>
+            <a className='not-menu-item'
+               href='/#/add'>
+              <p className='not-menu-item'>
+                ADD AN ITEM
+              </p>
+            </a>
+            <Menu.Item
+                position='right'
+                id='search'
+                fluid>
+              <Search
+                  type='text'
+                  value={this.state.search}
+                  onChange={this.updateSearch.bind(this)}
+                  placeholder='Search...'
+                  icon='search'
+              />
+            </Menu.Item>
+            <Menu.Item float="right">
+              <Dropdown
+                  trigger={trigger}
+                  style={{ color: '#024731' }}
+                  pointing='top right'>
+                <Dropdown.Menu centered>
+                  <Dropdown.Item icon='user' text={this.props.currentUser} as={NavLink} exact to='/profile'/>
+                  <Dropdown.Item icon='heart' text='Your Listings' as={NavLink} exact to='/list'/>
+                  <Dropdown.Item icon='star' text='Saved Items' as={NavLink} exact to='/saved'/>
+                  <div className='ui divider'/>
+                  {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                      ''
+                  ) : <Dropdown.Item icon='chat' text='Provide Feedback' as={NavLink} exact to='/feed'/>}
+                  {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                      <Dropdown.Item icon='chat' text='All Listings' as={NavLink} exact to='/admin'/>
+                  ) : ''}
+                  {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                      <Dropdown.Item icon='chat' text='User Complaints' as={NavLink} exact to='/issues'/>
+                  ) : ''}
+                  {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                      <Dropdown.Item icon='chat' text='Website Feedback' as={NavLink} exact to='/feedback'/>
+                  ) : ''}
+                  <Dropdown.Item icon='sign-out' text='Logout' as={NavLink} exact to='/signout'/>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Menu.Item>
+          </Menu>
         </div>
     );
   }

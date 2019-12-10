@@ -18,12 +18,17 @@
 }
 
 #store-headline {
-  font-family: "serif", "Helvetica Neue", serif !important;
+  font-family: "lato", "Helvetica Neue", serif !important;
   margin-left: 10px;
   padding-bottom: 5px;
   text-align: left;
   font-size: 36px;
   color: #024731 !important;
+}
+
+#thin-font {
+  font-family: "lato", "Helvetica Neue", serif !important;
+  font-weight: normal;
 }
 
 #store-test {
@@ -121,7 +126,7 @@ p.side-bar-items:hover:after {
 }
 
 .limitCard {
-  height: 460px;
+  height: 470px;
   width: 300px !important;
  }
 
@@ -153,14 +158,6 @@ p.not-menu-item:hover:after {
 img.ui.avatar.image:hover {
   border: 4px #024731 !important;
   border-radius: 50px !important;
-}
-
-a.store-icon.item:hover {
-  color: #FFD700 !important;
-}
-
-.store-icon {
-  color: #024731 !important;
 }
 
 .store-link {
