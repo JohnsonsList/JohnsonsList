@@ -81,6 +81,20 @@ const formSchema = new SimpleSchema({
 /** Renders the Page for adding a document. */
 class AddListing extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      active: false,
+      category: null,
+    };
+  }
+
+  //  currentCategory = (e, data) => {
+  //   console.log(data);
+  //   this.setState({ category: data.value });
+  // }
+
+
   /** On submit, insert the data. */
   submit(data, formRef) {
     const { name, email, image, description, price, condition,
@@ -125,7 +139,10 @@ class AddListing extends React.Component {
                       <Grid columns="4">
                         <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                         <Grid.Column><SelectField name='condition'/></Grid.Column>
-                        <Grid.Column><SelectField name='categories' label='Main Category'/></Grid.Column>
+                        <Grid.Column><SelectField
+                            // onChange={this.currentCategory.bind(this)}
+                            name='categories'
+                            label='Main Category'/></Grid.Column>
                         <Grid.Column><MultiSelectField name='clothes'/></Grid.Column>
                         <Grid.Column><MultiSelectField name='electronics'/></Grid.Column>
                         <Grid.Column><MultiSelectField name='dormitory'/></Grid.Column>

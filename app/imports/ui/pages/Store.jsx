@@ -5,7 +5,7 @@ import Listing from '/imports/ui/components/Listing';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
 import { _ } from 'meteor/underscore';
-import { Container, Grid, Menu, Input, Sidebar } from 'semantic-ui-react';
+import { Container, Grid, Menu, Input, Sidebar, Pagination, Icon } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -589,6 +589,17 @@ class Store extends Component {
                     </Grid>
                   </Sidebar.Pusher>
                 </Sidebar.Pushable>
+                <Pagination
+                    id='page'
+                    defaultActivePage={5}
+                    ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
+                    firstItem={null}
+                    lastItem={null}
+                    pointing
+                    secondary
+                    totalPages={10}
+                    centered
+                />
               </Container>
             </div>
           </div>

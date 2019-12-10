@@ -5,6 +5,9 @@
   padding-left: 0;
 }
 
+#page {
+  margin-left: 550px;
+}
 #delete {
   float: right !important;
 }
