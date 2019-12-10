@@ -114,7 +114,7 @@ class AddListing extends React.Component {
                     fRef = ref;
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment>
-                      <TextField name='name' placeholder='Name of item to sell.'/>
+                      <TextField name='name' label='Item Name' placeholder='Name of item to sell.'/>
                       <TextField
                         name='email'
                         label='Contact Info'
@@ -124,7 +124,7 @@ class AddListing extends React.Component {
                       <Grid columns="3">
                         <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                         <Grid.Column><SelectField name='condition'/></Grid.Column>
-                        <Grid.Column><SelectField name='categories'/></Grid.Column>
+                        <Grid.Column><SelectField name='categories' label='Main Category'/></Grid.Column>
                         <Grid.Column><MultiSelectField name='clothes'/></Grid.Column>
                         <Grid.Column><MultiSelectField name='electronics'/></Grid.Column>
                         <Grid.Column><MultiSelectField name='dormitory'/></Grid.Column>
