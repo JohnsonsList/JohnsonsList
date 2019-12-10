@@ -22,6 +22,7 @@ class Profile extends React.Component {
       editing: false,
     });
   }
+
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
 
