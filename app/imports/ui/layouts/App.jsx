@@ -13,6 +13,7 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
+import Deleted from '../pages/Deleted';
 import Store from '../pages/Store';
 import Saved from '../pages/Saved';
 import Home from '../pages/HomePage';
@@ -39,6 +40,7 @@ class App extends React.Component {
               <Route path="/home" component={Home}/>
               <Route path="/notif" component={NotifyAdmin}/>
               <Route path="/feed" component={Feedback}/>
+              <Route path="/delete" component={Deleted}/>
               <Route path="/details/:_id" component={ItemPage}/>
               <ProtectedRoute path="/list" component={MyListing}/>
               <ProtectedRoute path="/add" component={AddListing}/>
