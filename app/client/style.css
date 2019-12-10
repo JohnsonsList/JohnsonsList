@@ -179,7 +179,7 @@ img.ui.avatar.image {
 #header {
   padding-top: 50px;
   color: #000000;
-  font-family: "Gordita", "Helvetica Neue", serif;
+  font-family: "Lato", "Helvetica Neue", serif;
   font-size: 50px;
 }
 
@@ -247,7 +247,7 @@ img.ui.avatar.image {
 }
 
 h1 {
-  font-family: "Roboto", "Helvetica Neue", serif;
+  font-family: "Lato", "Helvetica Neue", serif;
   font-size: 30px !important;
   color: #4a4a4a;
   padding-top: 50px !important;
@@ -255,7 +255,7 @@ h1 {
 }
 
 h4 {
-  font-family: "Roboto", "Helvetica Neue", serif;
+  font-family: "Lato", "Helvetica Neue", serif;
   color: #4a4a4a;
   padding-bottom: 30px !important;
 }
@@ -280,14 +280,14 @@ h4 {
 }
 
 #sign-page {
-  font-family: "Roboto", "Helvetica Neue", serif;
+  font-family: "Lato", "Helvetica Neue", serif;
   background-color: #fafafa !important;
   /*#FFFFFF or #f5f2ee try this later instead for white background*/
   height: 100%;
 }
 
 #span {
-  font-family: "Roboto", "Helvetica Neue", serif;
+  font-family: "Lato", "Helvetica Neue", serif;
   color: #000000;
   text-align: center !important;
 }
@@ -297,7 +297,7 @@ h4 {
 }
 
 #log-page {
-  font-family: "Roboto", "Helvetica Neue", serif;
+  font-family: "Lato", "Helvetica Neue", serif;
   background-color: #fafafa !important;
   /*#FFFFFF or #f5f2ee try this later instead for white background*/
   height: 100%;
@@ -314,7 +314,7 @@ h4 {
 }
 
 #out-page {
-  font-family: "Roboto", "Helvetica Neue", serif;
+  font-family: "Lato", "Helvetica Neue", serif;
   background-color: #fafafa !important;
   /*#FFFFFF or #f5f2ee or #fafafa try this later instead for white background*/
   height: 100%;
@@ -322,7 +322,7 @@ h4 {
 
 #redirect {
   text-align: center !important;
-  font-family: "Roboto", "Helvetica Neue", serif;
+  font-family: "Lato", "Helvetica Neue", serif;
   font-weight: bold;
   font-size: 30px;
   padding-bottom: 50px;
@@ -339,7 +339,7 @@ h4 {
 }
 
 #profText {
-  font-family: "Roboto", "Helvetica Neue", serif;
+  font-family: "Lato", "Helvetica Neue", serif;
 }
 
 .dropdown.icon {
