@@ -23,6 +23,46 @@ const ListingsSchema = new SimpleSchema({
     allowedValues: ['clothing', 'dormitory', 'electronics', 'school', 'outdoors'],
     defaultValue: 'clothing',
   },
+  clothes: {
+    type: Array,
+  },
+  'clothes.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['men', 'women', 'top', 'bottom', 'shoes', 'accessories'],
+  },
+  electronics: {
+    type: Array,
+  },
+  'electronics.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['computers', 'photography', 'accessories', 'television', 'games'],
+  },
+  dormitory: {
+    type: Array,
+  },
+  'dormitory.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['self care', 'appliances', 'home decor', 'plants'],
+  },
+  outdoors: {
+    type: Array,
+  },
+  'outdoors.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['sports & fitness', 'camping & hiking', 'transportation', 'recreation'],
+  },
+  school: {
+    type: Array,
+  },
+  'school.$': {
+    type: String,
+    optional: true,
+    allowedValues: ['stationery', 'backpacks'],
+  },
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

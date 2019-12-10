@@ -5,6 +5,10 @@
   padding-left: 0;
 }
 
+#delete {
+  float: right !important;
+}
+
 #save-icon {
   float: right;
 }
@@ -73,9 +77,11 @@ p.side-bar-items:after {
   background: #FFD700;
   transition: width .75s;
 }
+
 .ui.input:focus {
   border: 1px solid #024731 !important;
 }
+
 p.side-bar-items:hover:after {
   width: 100%;
 }

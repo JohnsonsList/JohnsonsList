@@ -11,10 +11,23 @@ import Footer from '../components/Footer';
 /** Renders the Page for adding a document. */
 class Profile extends React.Component {
 
+  edit() {
+    this.setState({
+      editing: true,
+    });
+  }
+
+  save() {
+    this.setState({
+      editing: false,
+    });
+  }
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+
     const profStyle = { paddingTop: '80px', fontFamily: 'Roboto' };
     const fontStyle = { fontFamily: 'Roboto' };
+
     return (
         <div>
           <TitleBar/>
@@ -26,19 +39,25 @@ class Profile extends React.Component {
                 </Grid.Column>
                 <Grid.Column width={5}>
                   <Header as='h2' style={ profStyle }>
-                    {this.props.currentFirst} {this.props.currentLast}
+                    Full name:  {this.props.currentFirst} {this.props.currentLast}
                   </Header>
                   <Header as='h2' style={ fontStyle } >
-                    {this.props.currentUser}
+                    Username:  {this.props.currentUser}
                   </Header>
                   <Header as='h2' style={ fontStyle }>
-                    {this.props.currentEmail}
+                    E-mail:  {this.props.currentEmail}
                   </Header>
+                  <Header as='h2' style={ fontStyle }>
+                    Posted Items:  {this.props.items}
+                  </Header>
+                  <button className="ui active button" onClick={this.edit} basic>
+                    <i className="user icon"></i>
+                    Edit Profile
+                  </button>
                 </Grid.Column>
               </Grid>
               <Divider fluid/>
               <p>
-                Maybe another tab can be here showing things on sale/liked/etc.
               </p>
             <Divider fluid/>
             </Container>
