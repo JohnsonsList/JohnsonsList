@@ -69,11 +69,15 @@ class ItemPage extends React.Component {
                       : '' }
                   {this.props.listings.owner === Meteor.user().username ||
                   Roles.userIsInRole(Meteor.userId(), 'admin') ?
-                  <Button as={NavLink} exact to='/store' id='delete' animated color='black'>
+                  <Button as={NavLink}
+                          exact to='/delete'
+                          id='delete'
+                          animated color='black'
+                          onClick={this.handleClick.bind(this)}>
                     <Button.Content visible>
                       <Icon name='trash alternate' inverted/>
                     </Button.Content>
-                    <Button.Content hidden onClick={this.handleClick.bind(this)}>Delete</Button.Content>
+                    <Button.Content hidden>Delete</Button.Content>
                   </Button>
                   : '' }
                 </Header.Subheader>
