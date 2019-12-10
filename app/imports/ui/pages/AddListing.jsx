@@ -33,7 +33,7 @@ const formSchema = new SimpleSchema({
   },
   categories: {
     type: String,
-    allowedValues: ['clothing', 'dormitory', 'electronics', 'supplies', 'outdoors'],
+    allowedValues: ['clothing', 'dormitory', 'electronics', 'school', 'outdoors'],
     defaultValue: 'clothing',
   },
   clothes: {
@@ -50,7 +50,7 @@ const formSchema = new SimpleSchema({
   'electronics.$': {
     type: String,
     optional: true,
-    allowedValues: ['laptops & desktops', 'photography', 'accessories', 'television', 'games'],
+    allowedValues: ['computers', 'photography', 'accessories', 'television', 'games'],
   },
   dormitory: {
     type: Array,
@@ -74,7 +74,7 @@ const formSchema = new SimpleSchema({
   'school.$': {
     type: String,
     optional: true,
-    allowedValues: ['stationary & supplies', 'backpacks', 'laptops'],
+    allowedValues: ['stationery', 'backpacks', 'laptops'],
   },
 });
 
@@ -115,7 +115,10 @@ class AddListing extends React.Component {
                   }} schema={formSchema} onSubmit={data => this.submit(data, fRef)}>
                     <Segment>
                       <TextField name='name' placeholder='Name of item to sell.'/>
-                      <TextField name='email' label='Contact Info' placeholder={this.props.currentEmail}/>
+                      <TextField
+                        name='email'
+                        label='Contact Info'
+                        placeholder='Enter your preferred form of contact (Ex. phone number or email address)'/>
                       <TextField name='image' placeholder='Insert the url to the image.'/>
                       <LongTextField name='description' placeholder='Give a description of the item.'/>
                       <Grid columns="3">
@@ -144,6 +147,10 @@ class AddListing extends React.Component {
 /** Declare the types of all properties. */
 AddListing.propTypes = {
   currentEmail: PropTypes.string,
+};
+
+AddListing.proptypes = {
+  listings: PropTypes.object.isRequired,
 };
 
 // this is required to make the name show up

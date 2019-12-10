@@ -525,7 +525,7 @@ class Store extends Component {
       title = 'DORMITORY: HOME DECOR';
     } else if (this.state.plants === true) {
       title = 'DORMITORY: PLANTS';
-    } else if (this.state.self === true) {
+    } else if (this.state.sports === true) {
       title = 'OUTDOORS: SPORTS & FITNESS';
     } else if (this.state.camping === true) {
       title = 'OUTDOORS: CAMPING & HIKING';
