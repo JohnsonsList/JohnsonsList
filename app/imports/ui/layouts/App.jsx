@@ -13,7 +13,7 @@ import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import Deleted from '../pages/deleted';
+import Deleted from '../pages/Deleted';
 import Store from '../pages/Store';
 import Saved from '../pages/Saved';
 import Home from '../pages/HomePage';
