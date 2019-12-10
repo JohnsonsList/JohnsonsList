@@ -5,6 +5,10 @@
   padding-left: 0;
 }
 
+#delete {
+  float: right !important;
+}
+
 #save-icon {
   float: right;
 }

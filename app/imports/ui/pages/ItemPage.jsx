@@ -1,16 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Grid, Header, Container, Image, Divider, Label } from 'semantic-ui-react';
+import { Grid, Header, Container, Image, Divider, Label, Button, Icon } from 'semantic-ui-react';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Listings } from '/imports/api/listings/Listing';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
+import { Roles } from 'meteor/alanning:roles';
+import { NavLink } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
 /** Renders the Page for adding a document. */
 class ItemPage extends React.Component {
+
+  handleClick() {
+    Listings.remove(this.props.listings._id);
+  }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
@@ -61,6 +67,15 @@ class ItemPage extends React.Component {
                           (school, index) => <Label style={labelStyle}
                                                     key={index} color='red'>{school}</Label>)
                       : '' }
+                  {this.props.listings.owner === Meteor.user().username ||
+                  Roles.userIsInRole(Meteor.userId(), 'admin') ?
+                  <Button as={NavLink} exact to='/store' id='delete' animated color='black'>
+                    <Button.Content visible>
+                      <Icon name='trash alternate' inverted/>
+                    </Button.Content>
+                    <Button.Content hidden onClick={this.handleClick.bind(this)}>Delete</Button.Content>
+                  </Button>
+                  : '' }
                 </Header.Subheader>
                 <Divider fluid/>
                 <Header.Subheader>List Price: ${this.props.listings.price}</Header.Subheader>
