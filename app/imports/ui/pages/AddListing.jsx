@@ -81,6 +81,20 @@ const formSchema = new SimpleSchema({
 /** Renders the Page for adding a document. */
 class AddListing extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {
+      category: 'clothing',
+    };
+  }
+
+   // this freezes the current category, I hate coding
+   currentCategory = (data) => {
+    this.setState({ category: data });
+    return this.state.category;
+  }
+
+
   /** On submit, insert the data. */
   submit(data, formRef) {
     const { name, email, image, description, price, condition,
@@ -125,12 +139,26 @@ class AddListing extends React.Component {
                       <Grid columns="4">
                         <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                         <Grid.Column><SelectField name='condition'/></Grid.Column>
-                        <Grid.Column><SelectField name='categories' label='Main Category'/></Grid.Column>
+                        <Grid.Column><SelectField
+                            onChange={this.currentCategory}
+                            value={this.state.category}
+                            name='categories'
+                            label='Main Category'/></Grid.Column>
+                        { this.state.category === 'clothing' ?
                         <Grid.Column><MultiSelectField name='clothes'/></Grid.Column>
+                        : '' }
+                        { this.state.category === 'electronics' ?
                         <Grid.Column><MultiSelectField name='electronics'/></Grid.Column>
+                        : '' }
+                        { this.state.category === 'dormitory' ?
                         <Grid.Column><MultiSelectField name='dormitory'/></Grid.Column>
+                        : '' }
+                        { this.state.category === 'outdoors' ?
                         <Grid.Column><MultiSelectField name='outdoors'/></Grid.Column>
+                        : '' }
+                        { this.state.category === 'school' ?
                         <Grid.Column><MultiSelectField name='school'/></Grid.Column>
+                        : '' }
                       </Grid>
                       <SubmitField value='Submit' style={submitStyle}/>
                       <ErrorsField/>

@@ -5,6 +5,9 @@
   padding-left: 0;
 }
 
+#page {
+  margin-left: 42.7vw;
+}
 #delete {
   float: right !important;
 }

@@ -5,7 +5,7 @@ import Listing from '/imports/ui/components/Listing';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
 import { _ } from 'meteor/underscore';
-import { Container, Grid, Menu, Input, Sidebar } from 'semantic-ui-react';
+import { Container, Grid, Menu, Input, Sidebar, Pagination, Icon } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -48,111 +48,143 @@ class Store extends Component {
       recreation: false,
       stationery: false,
       backpacks: false,
+      page: 1,
+      listingsPerPage: 5,
     };
   }
 
+  setPageNum = (event, { activePage }) => {
+    this.setState({ page: activePage });
+  };
+
   showClothing() {
     this.setState({ clothing: !this.state.clothing });
+    this.setState({ page: 1 });
   }
 
   showMen() {
     this.setState({ men: !this.state.men });
+    this.setState({ page: 1 });
   }
 
   showWomen() {
     this.setState({ women: !this.state.women });
+    this.setState({ page: 1 });
   }
 
   showTop() {
     this.setState({ top: !this.state.top });
+    this.setState({ page: 1 });
   }
 
   showBottom() {
     this.setState({ bottom: !this.state.bottom });
+    this.setState({ page: 1 });
   }
 
   showShoes() {
     this.setState({ shoes: !this.state.shoes });
+    this.setState({ page: 1 });
   }
 
   showCaccessories() {
     this.setState({ caccessories: !this.state.caccessories });
+    this.setState({ page: 1 });
   }
 
   showElectronics() {
     this.setState({ electronics: !this.state.electronics });
+    this.setState({ page: 1 });
   }
 
   showLaptops() {
     this.setState({ laptops: !this.state.laptops });
+    this.setState({ page: 1 });
   }
 
   showPhotography() {
     this.setState({ photography: !this.state.photography });
+    this.setState({ page: 1 });
   }
 
   showEaccessories() {
     this.setState({ eaccessories: !this.state.eaccessories });
+    this.setState({ page: 1 });
   }
 
   showTelevision() {
     this.setState({ television: !this.state.television });
+    this.setState({ page: 1 });
   }
 
   showGames() {
     this.setState({ games: !this.state.games });
+    this.setState({ page: 1 });
   }
 
   showDormitory() {
     this.setState({ dormitory: !this.state.dormitory });
+    this.setState({ page: 1 });
   }
 
   showSelf() {
     this.setState({ self: !this.state.self });
+    this.setState({ page: 1 });
   }
 
   showAppliances() {
     this.setState({ appliances: !this.state.appliances });
+    this.setState({ page: 1 });
   }
 
   showDecor() {
     this.setState({ decor: !this.state.decor });
+    this.setState({ page: 1 });
   }
 
   showPlants() {
     this.setState({ plants: !this.state.plants });
+    this.setState({ page: 1 });
   }
 
   showOutdoors() {
     this.setState({ outdoors: !this.state.outdoors });
+    this.setState({ page: 1 });
   }
 
   showSports() {
     this.setState({ sports: !this.state.sports });
+    this.setState({ page: 1 });
   }
 
   showCamping() {
     this.setState({ camping: !this.state.camping });
+    this.setState({ page: 1 });
   }
 
   showTransportation() {
     this.setState({ transportation: !this.state.transportation });
+    this.setState({ page: 1 });
   }
 
   showRecreation() {
     this.setState({ recreation: !this.state.recreation });
+    this.setState({ page: 1 });
   }
 
   showSchool() {
     this.setState({ school: !this.state.school });
+    this.setState({ page: 1 });
   }
 
   showStationery() {
     this.setState({ stationery: !this.state.stationery });
+    this.setState({ page: 1 });
   }
 
   showBackpacks() {
     this.setState({ backpacks: !this.state.backpacks });
+    this.setState({ page: 1 });
   }
 
   updateSearch(event) {
@@ -548,6 +580,17 @@ class Store extends Component {
     };
     const pageStyle = { paddingTop: '20px' };
 
+
+    const listingsPerPage = 12;
+    const page = this.state.page;
+    const totalPages = filteredItems.length / listingsPerPage;
+    const currentPage = filteredItems.slice(
+        (page - 1) * listingsPerPage,
+        (page - 1) * listingsPerPage + listingsPerPage,
+    );
+
+    console.log(currentPage);
+
     return (
         <div className='background'>
           <TitleBar/>
@@ -577,18 +620,25 @@ class Store extends Component {
                           visible={visible}
                       />
                   )}
-
                   <Sidebar.Pusher dimmed={dimmed && visible}>
                     <Grid>
-                      {/* eslint-disable-next-line react/jsx-key */}
-                      {filteredItems.map((listings) => <Grid.Column width={4} style={cardStyle}>
+                      {currentPage.map((listings) => <Grid.Column key={listings._id} width={4} style={cardStyle}>
                             <Listing
-                              key={listings._id}
                               listings={listings}/>
                           </Grid.Column>)}
                     </Grid>
                   </Sidebar.Pusher>
                 </Sidebar.Pushable>
+                <Pagination
+                    id='page'
+                    totalPages={totalPages}
+                    activePage={page}
+                    onPageChange={this.setPageNum}
+                    ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
+                    pointing
+                    secondary
+                    centered
+                />
               </Container>
             </div>
           </div>
