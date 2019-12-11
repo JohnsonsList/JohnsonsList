@@ -18,6 +18,7 @@ import Store from '../pages/Store';
 import Saved from '../pages/Saved';
 import Home from '../pages/HomePage';
 import Profile from '../pages/Profile';
+import EditProfile from '../pages/EditProfile';
 import NotifyAdmin from '../pages/NotifyAdmin';
 import IssueAdmin from '../pages/IssueAdmin';
 import Feedback from '../pages/Feedback';
@@ -37,6 +38,7 @@ class App extends React.Component {
               <Route path="/store" component={Store}/>
               <Route path="/saved" component={Saved}/>
               <Route path="/profile" component={Profile}/>
+              <Route path="/EditProfile/:email" component={EditProfile}/>
               <Route path="/home" component={Home}/>
               <Route path="/notif" component={NotifyAdmin}/>
               <Route path="/feed" component={Feedback}/>

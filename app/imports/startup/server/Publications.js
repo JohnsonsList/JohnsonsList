@@ -3,6 +3,8 @@ import { Roles } from 'meteor/alanning:roles';
 import { Listings } from '../../api/listings/Listing';
 import { Issues } from '../../api/issue/Issue';
 import { Feedback } from '../../api/Feedback/Feedback';
+import { StudentData } from '../../api/studentdata/StudentData.js';
+import { EnrollmentData } from '../../api/enrollmentdata/EnrollmentData.js';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Listings', function publish() {
@@ -42,4 +44,12 @@ Meteor.publish('FeedbackAdmin', function publish() {
     return Feedback.find();
   }
   return this.ready();
+});
+
+Meteor.publish('StudentData', function publishStudentData() {
+  return StudentData.find();
+});
+
+Meteor.publish('EnrollmentData', function publishEnrollmentData() {
+  return EnrollmentData.find();
 });
