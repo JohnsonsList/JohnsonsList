@@ -10,8 +10,7 @@
 /*  scroll-behavior: smooth;*/
 /*}*/
 
-/*test*
-*/
+
 
 #home-mid {
   padding-top: 100px;
@@ -22,6 +21,8 @@
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
+
+/* ANIMATION CODE FROM: https://codepen.io/fr33co/pen/xOBXGy*/
 .fade-in {
   opacity:0;  /* make things invisible upon start */
   -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
@@ -41,9 +42,8 @@
   -webkit-animation-delay: 0.7s;
   -moz-animation-delay: 0.7s;
   animation-delay: 0.7s;
-  color: #024731;
+  color: #d2fad2;
   font-size: 30px;
-  padding-top: 100px;
   text-align: center;
 }
 
@@ -51,7 +51,7 @@
   -webkit-animation-delay: 1.2s;
   -moz-animation-delay:1.2s;
   animation-delay: 1.2s;
-  color: #024731;
+  color: #d2fad2;
   font-size: 30px;
   padding-top: 50px;
   text-align: center;
@@ -247,12 +247,12 @@ img.ui.avatar.image {
 }
 
 #home-page {
-  background-size: auto;
-  background-color: #f5f2ee;
-  height: 600px;
-  margin: 0;
-  padding-top: -20px;
-  padding-bottom: 0;
+  background: url("/images/gateway.jpg") fixed;
+  background-size: cover;
+  /*background-color: #f5f2ee;*/
+  height: 100%;
+  padding-top: 150px;
+  padding-bottom: 200px;
   color: white;
   font: sans-serif;
 }
@@ -275,7 +275,7 @@ img.ui.avatar.image {
 .footer-background {
   background-color: #363636;
   color: white;
-  margin-top: 20px !important;
+  padding-top: 20px !important;
   left: 0;
   bottom: 0;
   right: 0;
