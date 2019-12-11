@@ -589,8 +589,6 @@ class Store extends Component {
         (page - 1) * listingsPerPage + listingsPerPage,
     );
 
-    console.log(currentPage);
-
     return (
         <div className='background'>
           <TitleBar/>
