@@ -151,23 +151,23 @@ class AddListing extends React.Component {
                             label='Main Category'/></Grid.Column>
                         { this.state.category === 'clothing' ?
                         <Grid.Column><MultiSelectField name='clothes'
-                                                       label='Clothing subtag (optional)'/></Grid.Column>
+                                                       label='Clothing Subtag (optional)'/></Grid.Column>
                         : '' }
                         { this.state.category === 'electronics' ?
                         <Grid.Column><MultiSelectField name='electronics'
-                                                       label='Electronics subtag (optional)'/></Grid.Column>
+                                                       label='Electronics Subtag (optional)'/></Grid.Column>
                         : '' }
                         { this.state.category === 'dormitory' ?
                         <Grid.Column><MultiSelectField name='dormitory'
-                                                       label='Dormitory subtag (optional)'/></Grid.Column>
+                                                       label='Dormitory Subtag (optional)'/></Grid.Column>
                         : '' }
                         { this.state.category === 'outdoors' ?
                         <Grid.Column><MultiSelectField name='outdoors'
-                                                       label='Outdoors subtag (optional)'/></Grid.Column>
+                                                       label='Outdoors Subtag (optional)'/></Grid.Column>
                         : '' }
                         { this.state.category === 'school' ?
                         <Grid.Column><MultiSelectField name='school'
-                                                       label='School subtag (optional)'/></Grid.Column>
+                                                       label='School Subtag (optional)'/></Grid.Column>
                         : '' }
                       </Grid>
                       <SubmitField value='Submit' style={submitStyle}/>
