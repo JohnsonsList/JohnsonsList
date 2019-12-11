@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Container, Image, Grid, Header, Divider } from 'semantic-ui-react';
+import { Container, Image, Grid, Header, Input } from 'semantic-ui-react';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { withRouter } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';

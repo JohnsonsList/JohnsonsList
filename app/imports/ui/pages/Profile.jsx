@@ -17,9 +17,9 @@ class Profile extends React.Component {
     this.state = { email: false, redirect: false };
   }
 
-  edit() {
+  edit = () => {
     this.setState({ editing: true });
-  }
+  };
 
   save() {
     this.setState({
@@ -34,8 +34,13 @@ class Profile extends React.Component {
     const fontStyle = { fontFamily: 'Roboto' };
     const ProtectedComponent = () => {
       if (authFails)
-        return <Redirect to='/EditProfile'  />
+        return <Redirect exact to='/editprofile'  />
     }
+
+    if (this.state.editing) {
+      return <Redirect exact to='/editprofile'/>
+    }
+
     return (
         <div>
           <TitleBar/>
