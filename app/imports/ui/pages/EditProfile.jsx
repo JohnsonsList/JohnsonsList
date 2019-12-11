@@ -7,6 +7,7 @@ import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { withRouter } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
+import Profile from '../pages/Profile';
 
 /** Renders the Page for adding a document. */
 class EditProfile extends React.Component {
@@ -77,7 +78,7 @@ const ProfileContainer = withTracker(() => ({
   currentEmail: Meteor.user() ? Meteor.user().emails[0].address : '',
   currentFirst: Meteor.user() ? Meteor.user().profile.first : '',
   currentLast: Meteor.user() ? Meteor.user().profile.last : '',
-}))(Profile);
+}))(EditProfile);
 
 
 export default withRouter(ProfileContainer);
