@@ -25,6 +25,7 @@ const ListingsSchema = new SimpleSchema({
   },
   clothes: {
     type: Array,
+    optional: true,
   },
   'clothes.$': {
     type: String,
@@ -33,6 +34,7 @@ const ListingsSchema = new SimpleSchema({
   },
   electronics: {
     type: Array,
+    optional: true,
   },
   'electronics.$': {
     type: String,
@@ -41,6 +43,7 @@ const ListingsSchema = new SimpleSchema({
   },
   dormitory: {
     type: Array,
+    optional: true,
   },
   'dormitory.$': {
     type: String,
@@ -49,6 +52,7 @@ const ListingsSchema = new SimpleSchema({
   },
   outdoors: {
     type: Array,
+    optional: true,
   },
   'outdoors.$': {
     type: String,
@@ -57,11 +61,12 @@ const ListingsSchema = new SimpleSchema({
   },
   school: {
     type: Array,
+    optional: true,
   },
   'school.$': {
     type: String,
     optional: true,
-    allowedValues: ['stationery', 'backpacks'],
+    allowedValues: ['stationery', 'backpacks', 'textbook'],
   },
 }, { tracker: Tracker });
 

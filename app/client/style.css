@@ -5,8 +5,13 @@
   padding-left: 0;
 }
 
+/*make it scroll back up to top*/
+/*html {*/
+/*  scroll-behavior: smooth;*/
+/*}*/
+
 #page {
-  margin-left: 42.7vw;
+  margin-left: 44.5vw
 }
 #delete {
   float: right !important;
