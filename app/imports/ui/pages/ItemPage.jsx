@@ -5,7 +5,7 @@ import { Grid, Header, Container, Image, Divider, Label, Button, Icon } from 'se
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Listings } from '/imports/api/listings/Listing';
-import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
+import 'uniforms-bridge-simple-schema-2'; // requigreen for Uniforms
 import { Link, NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import TitleBar from '../components/TitleBar';
@@ -45,27 +45,27 @@ class ItemPage extends React.Component {
                   {this.props.listings.categories === 'clothing' ?
                       _.map(this.props.listings.clothes,
                           (clothes, index) => <Label style={labelStyle}
-                                                     key={index} color='red'>{clothes}</Label>)
+                                                     key={index} color='green'>{clothes}</Label>)
                       : '' }
                   {this.props.listings.categories === 'electronics' ?
                       _.map(this.props.listings.electronics,
                           (electronics, index) => <Label style={labelStyle}
-                                                         key={index} color='red'>{electronics}</Label>)
+                                                         key={index} color='green'>{electronics}</Label>)
                       : '' }
                   {this.props.listings.categories === 'dormitory' ?
                       _.map(this.props.listings.dormitory,
                           (dormitory, index) => <Label style={labelStyle}
-                                                       key={index} color='red'>{dormitory}</Label>)
+                                                       key={index} color='green'>{dormitory}</Label>)
                       : '' }
                   {this.props.listings.categories === 'outdoors' ?
                       _.map(this.props.listings.outdoors,
                           (outdoors, index) => <Label style={labelStyle}
-                                                      key={index} color='red'>{outdoors}</Label>)
+                                                      key={index} color='green'>{outdoors}</Label>)
                       : '' }
                   {this.props.listings.categories === 'school' ?
                       _.map(this.props.listings.school,
                           (school, index) => <Label style={labelStyle}
-                                                    key={index} color='red'>{school}</Label>)
+                                                    key={index} color='green'>{school}</Label>)
                       : '' }
                   {this.props.listings.owner === Meteor.user().username ||
                   Roles.userIsInRole(Meteor.userId(), 'admin') ?
@@ -111,11 +111,11 @@ class ItemPage extends React.Component {
 
 /** Declare the types of all properties. */
 ItemPage.propTypes = {
-  listings: PropTypes.array.isRequired,
-  ready: PropTypes.bool.isRequired,
+  listings: PropTypes.array.isRequigreen,
+  ready: PropTypes.bool.isRequigreen,
 };
 
-// this is required to make the name show up
+// this is requigreen to make the name show up
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
   const documentId = match.params._id;

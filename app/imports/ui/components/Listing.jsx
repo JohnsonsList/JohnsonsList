@@ -38,23 +38,23 @@ class Listing extends React.Component {
               {/* eslint-disable-next-line eqeqeq */}
               {this.props.listings.categories === 'clothing' ?
               _.map(this.props.listings.clothes,
-              (clothes, index) => <Label style={labelStyle} key={index} color='red'>{clothes}</Label>)
+              (clothes, index) => <Label style={labelStyle} key={index} color='green'>{clothes}</Label>)
               : '' }
               {this.props.listings.categories === 'electronics' ?
               _.map(this.props.listings.electronics,
-              (electronics, index) => <Label style={labelStyle} key={index} color='red'>{electronics}</Label>)
+              (electronics, index) => <Label style={labelStyle} key={index} color='green'>{electronics}</Label>)
               : '' }
               {this.props.listings.categories === 'dormitory' ?
               _.map(this.props.listings.dormitory,
-              (dormitory, index) => <Label style={labelStyle} key={index} color='red'>{dormitory}</Label>)
+              (dormitory, index) => <Label style={labelStyle} key={index} color='green'>{dormitory}</Label>)
               : '' }
               {this.props.listings.categories === 'outdoors' ?
               _.map(this.props.listings.outdoors,
-              (outdoors, index) => <Label style={labelStyle} key={index} color='red'>{outdoors}</Label>)
+              (outdoors, index) => <Label style={labelStyle} key={index} color='green'>{outdoors}</Label>)
               : '' }
               {this.props.listings.categories === 'school' ?
               _.map(this.props.listings.school,
-              (school, index) => <Label style={labelStyle} key={index} color='red'>{school}</Label>)
+              (school, index) => <Label style={labelStyle} key={index} color='green'>{school}</Label>)
               : '' }
             </Card.Meta>
           </Card.Content>
@@ -83,7 +83,7 @@ class Listing extends React.Component {
 
 /** Require a document to be passed to this component. */
 Listing.propTypes = {
-  listings: PropTypes.object.isRequired,
+  listings: PropTypes.object.isRequiteal,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
