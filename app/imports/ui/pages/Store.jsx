@@ -376,19 +376,8 @@ class Store extends Component {
     const vertical = direction === 'bottom' || direction === 'top';
 
     let filteredItems = this.props.listings.filter(
-        function (items) {
-          let returnVal = 0;
-
-          if (this.props.location.state === '') {
-            returnVal = (items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
-                items.categories.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1);
-          } else {
-            returnVal = (items.name.toLowerCase().indexOf(this.props.location.state.toLowerCase()) !== -1 ||
-                items.categories.toLowerCase().indexOf(this.props.location.state.toLowerCase()) !== -1);
-          }
-
-          return returnVal;
-        },
+        (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+            items.categories.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
     );
 
     if (this.state.clothing) {
@@ -637,7 +626,6 @@ class Store extends Component {
 /** Require an array of Stuff documents in the props. */
 Store.propTypes = {
   listings: PropTypes.array.isRequired,
-  location: React.PropTypes.string,
   ready: PropTypes.bool.isRequired,
 };
 
