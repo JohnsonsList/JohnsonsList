@@ -8,7 +8,7 @@ class HomePage extends React.Component {
   render() {
     const gridStyle = { height: '600px' };
     return (
-        <div id='background-temp'>
+        <div id='home-page'>
           <TitleBar/>
           <Container>
             <Grid verticalAlign='middle' textAlign='center' container style={gridStyle}>

@@ -188,9 +188,9 @@ img.ui.avatar.image {
   font-size: 50px;
 }
 
-#background-temp {
+#home-page {
   background-size: auto;
-  background: url("/images/manoa-blur.jpg") !important;
+  background-color: #f5f2ee;
   height: 100%;
   margin: 0;
   padding-top: -20px;
