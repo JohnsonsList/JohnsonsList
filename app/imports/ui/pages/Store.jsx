@@ -48,6 +48,7 @@ class Store extends Component {
       recreation: false,
       stationery: false,
       backpacks: false,
+      textbooks: false,
       page: 1,
       listingsPerPage: 5,
     };
@@ -184,6 +185,11 @@ class Store extends Component {
 
   showBackpacks() {
     this.setState({ backpacks: !this.state.backpacks });
+    this.setState({ page: 1 });
+  }
+
+  showTextbooks() {
+    this.setState({ textbooks: !this.state.textbooks });
     this.setState({ page: 1 });
   }
 
@@ -395,6 +401,13 @@ class Store extends Component {
               ({(this.props.listings.filter((items) => _.contains((items.school), 'backpacks'))).length})
             </p>
           </a>
+          <a onClick={this.showTextbooks().bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.showTextbooks.bind(this)}>
+              Textbooks
+              ({(this.props.listings.filter((items) => _.contains((items.school), 'textbooks'))).length})
+            </p>
+          </a>
         </Sidebar>
     );
 
@@ -516,6 +529,10 @@ class Store extends Component {
       filteredItems = filteredItems.filter((items) => _.contains((items.school), 'backpacks'));
     }
 
+    if (this.state.textbooks) {
+      filteredItems = filteredItems.filter((items) => _.contains((items.school), 'textbooks'));
+    }
+
     let title;
     if (this.state.clothing === true) {
       title = 'CLOTHING';
@@ -569,6 +586,8 @@ class Store extends Component {
       title = 'SCHOOL: STATIONERY';
     } else if (this.state.backpacks === true) {
       title = 'SCHOOL: BACKPACKS';
+    } else if (this.state.textbooks === true) {
+      title = 'SCHOOL: TEXTBOOKS';
     } else {
       title = 'ALL LISTINGS';
     }

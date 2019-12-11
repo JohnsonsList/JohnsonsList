@@ -79,7 +79,7 @@ const formSchema = new SimpleSchema({
   'school.$': {
     type: String,
     optional: true,
-    allowedValues: ['stationery', 'backpacks', 'textbook'],
+    allowedValues: ['stationery', 'backpacks', 'textbooks'],
   },
 });
 
