@@ -629,17 +629,17 @@ class Store extends Component {
                     </Grid>
                   </Sidebar.Pusher>
                 </Sidebar.Pushable>
-                <Pagination
-                    id='page'
-                    totalPages={totalPages}
-                    activePage={page}
-                    onPageChange={this.setPageNum}
-                    ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
-                    pointing
-                    secondary
-                    centered
-                />
               </Container>
+              <Pagination
+                  id='page'
+                  totalPages={totalPages}
+                  activePage={page}
+                  onPageChange={this.setPageNum}
+                  ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
+                  pointing
+                  secondary
+                  centered
+              />
             </div>
           </div>
           <Footer/>

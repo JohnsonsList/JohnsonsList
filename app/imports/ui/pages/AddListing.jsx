@@ -38,6 +38,7 @@ const formSchema = new SimpleSchema({
   },
   clothes: {
     type: Array,
+    optional: true,
   },
   'clothes.$': {
     type: String,
@@ -46,6 +47,7 @@ const formSchema = new SimpleSchema({
   },
   electronics: {
     type: Array,
+    optional: true,
   },
   'electronics.$': {
     type: String,
@@ -54,6 +56,7 @@ const formSchema = new SimpleSchema({
   },
   dormitory: {
     type: Array,
+    optional: true,
   },
   'dormitory.$': {
     type: String,
@@ -62,6 +65,7 @@ const formSchema = new SimpleSchema({
   },
   outdoors: {
     type: Array,
+    optional: true,
   },
   'outdoors.$': {
     type: String,
@@ -70,11 +74,12 @@ const formSchema = new SimpleSchema({
   },
   school: {
     type: Array,
+    optional: true,
   },
   'school.$': {
     type: String,
     optional: true,
-    allowedValues: ['stationery', 'backpacks', 'laptops'],
+    allowedValues: ['stationery', 'backpacks', 'textbook'],
   },
 });
 
@@ -145,19 +150,24 @@ class AddListing extends React.Component {
                             name='categories'
                             label='Main Category'/></Grid.Column>
                         { this.state.category === 'clothing' ?
-                        <Grid.Column><MultiSelectField name='clothes'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='clothes'
+                                                       label='Clothing subtag (optional)'/></Grid.Column>
                         : '' }
                         { this.state.category === 'electronics' ?
-                        <Grid.Column><MultiSelectField name='electronics'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='electronics'
+                                                       label='Electronics subtag (optional)'/></Grid.Column>
                         : '' }
                         { this.state.category === 'dormitory' ?
-                        <Grid.Column><MultiSelectField name='dormitory'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='dormitory'
+                                                       label='Dormitory subtag (optional)'/></Grid.Column>
                         : '' }
                         { this.state.category === 'outdoors' ?
-                        <Grid.Column><MultiSelectField name='outdoors'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='outdoors'
+                                                       label='Outdoors subtag (optional)'/></Grid.Column>
                         : '' }
                         { this.state.category === 'school' ?
-                        <Grid.Column><MultiSelectField name='school'/></Grid.Column>
+                        <Grid.Column><MultiSelectField name='school'
+                                                       label='School subtag (optional)'/></Grid.Column>
                         : '' }
                       </Grid>
                       <SubmitField value='Submit' style={submitStyle}/>
