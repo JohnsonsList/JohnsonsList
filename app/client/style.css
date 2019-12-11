@@ -247,8 +247,8 @@ img.ui.avatar.image {
 }
 
 #home-page {
-  background: url("/images/gateway.jpg") fixed;
-  background-size: cover;
+  background: url("/images/gateway-test.jpg") fixed;
+  background-size: 1580px;
   /*background-color: #f5f2ee;*/
   height: 100%;
   padding-top: 150px;
