@@ -27,7 +27,7 @@ class TitleBar extends React.Component {
   }
 
   handleClick() {
-    this.props.history.push('/store');
+    this.props.history.push({ pathname: '/store', state: this.state.search });
   }
 
   render() {

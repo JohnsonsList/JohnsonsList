@@ -376,8 +376,19 @@ class Store extends Component {
     const vertical = direction === 'bottom' || direction === 'top';
 
     let filteredItems = this.props.listings.filter(
-        (items) => items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
-            items.categories.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1,
+        function (items) {
+          let returnVal = 0;
+
+          if (this.props.location.state === '') {
+            returnVal = (items.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
+                items.categories.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1);
+          } else {
+            returnVal = (items.name.toLowerCase().indexOf(this.props.location.state.toLowerCase()) !== -1 ||
+                items.categories.toLowerCase().indexOf(this.props.location.state.toLowerCase()) !== -1);
+          }
+
+          return returnVal;
+        },
     );
 
     if (this.state.clothing) {
@@ -487,59 +498,84 @@ class Store extends Component {
     let title;
     if (this.state.clothing === true) {
       title = 'CLOTHING';
-    } else if (this.state.electronics === true) {
-      title = 'ELECTRONICS';
-    } else if (this.state.dormitory === true) {
-      title = 'DORMITORY';
-    } else if (this.state.outdoors === true) {
-      title = 'OUTDOORS';
-    } else if (this.state.school === true) {
-      title = 'SCHOOL';
-    } else if (this.state.men === true) {
-      title = 'CLOTHING: MEN';
-    } else if (this.state.women === true) {
-      title = 'CLOTHING: WOMEN';
-    } else if (this.state.top === true) {
-      title = 'CLOTHING: TOPS';
-    } else if (this.state.bottom === true) {
-      title = 'CLOTHING: BOTTOMS';
-    } else if (this.state.shoes === true) {
-      title = 'CLOTHING: SHOES';
-    } else if (this.state.caccessories === true) {
-      title = 'CLOTHING: ACCESSORIES';
-    } else if (this.state.laptops === true) {
-      title = 'ELECTRONICS: COMPUTERS';
-    } else if (this.state.photography === true) {
-      title = 'ELECTRONICS: PHOTOGRAPHY';
-    } else if (this.state.eaccessories === true) {
-      title = 'ELECTRONICS: ACCESSORIES';
-    } else if (this.state.television === true) {
-      title = 'ELECTRONICS: TELEVISION';
-    } else if (this.state.games === true) {
-      title = 'ELECTRONICS: GAMES';
-    } else if (this.state.self === true) {
-      title = 'DORMITORY: SELF CARE';
-    } else if (this.state.appliances === true) {
-      title = 'DORMITORY: APPLIANCES';
-    } else if (this.state.decor === true) {
-      title = 'DORMITORY: HOME DECOR';
-    } else if (this.state.plants === true) {
-      title = 'DORMITORY: PLANTS';
-    } else if (this.state.sports === true) {
-      title = 'OUTDOORS: SPORTS & FITNESS';
-    } else if (this.state.camping === true) {
-      title = 'OUTDOORS: CAMPING & HIKING';
-    } else if (this.state.transportation === true) {
-      title = 'OUTDOORS: TRANSPORTATION';
-    } else if (this.state.recreation === true) {
-      title = 'OUTDOORS: RECREATION';
-    } else if (this.state.stationery === true) {
-      title = 'SCHOOL: STATIONERY';
-    } else if (this.state.backpacks === true) {
-      title = 'SCHOOL: BACKPACKS';
-    } else {
-      title = 'ALL LISTINGS';
-    }
+    } else
+      if (this.state.electronics === true) {
+        title = 'ELECTRONICS';
+      } else
+        if (this.state.dormitory === true) {
+          title = 'DORMITORY';
+        } else
+          if (this.state.outdoors === true) {
+            title = 'OUTDOORS';
+          } else
+            if (this.state.school === true) {
+              title = 'SCHOOL';
+            } else
+              if (this.state.men === true) {
+                title = 'CLOTHING: MEN';
+              } else
+                if (this.state.women === true) {
+                  title = 'CLOTHING: WOMEN';
+                } else
+                  if (this.state.top === true) {
+                    title = 'CLOTHING: TOPS';
+                  } else
+                    if (this.state.bottom === true) {
+                      title = 'CLOTHING: BOTTOMS';
+                    } else
+                      if (this.state.shoes === true) {
+                        title = 'CLOTHING: SHOES';
+                      } else
+                        if (this.state.caccessories === true) {
+                          title = 'CLOTHING: ACCESSORIES';
+                        } else
+                          if (this.state.laptops === true) {
+                            title = 'ELECTRONICS: COMPUTERS';
+                          } else
+                            if (this.state.photography === true) {
+                              title = 'ELECTRONICS: PHOTOGRAPHY';
+                            } else
+                              if (this.state.eaccessories === true) {
+                                title = 'ELECTRONICS: ACCESSORIES';
+                              } else
+                                if (this.state.television === true) {
+                                  title = 'ELECTRONICS: TELEVISION';
+                                } else
+                                  if (this.state.games === true) {
+                                    title = 'ELECTRONICS: GAMES';
+                                  } else
+                                    if (this.state.self === true) {
+                                      title = 'DORMITORY: SELF CARE';
+                                    } else
+                                      if (this.state.appliances === true) {
+                                        title = 'DORMITORY: APPLIANCES';
+                                      } else
+                                        if (this.state.decor === true) {
+                                          title = 'DORMITORY: HOME DECOR';
+                                        } else
+                                          if (this.state.plants === true) {
+                                            title = 'DORMITORY: PLANTS';
+                                          } else
+                                            if (this.state.sports === true) {
+                                              title = 'OUTDOORS: SPORTS & FITNESS';
+                                            } else
+                                              if (this.state.camping === true) {
+                                                title = 'OUTDOORS: CAMPING & HIKING';
+                                              } else
+                                                if (this.state.transportation === true) {
+                                                  title = 'OUTDOORS: TRANSPORTATION';
+                                                } else
+                                                  if (this.state.recreation === true) {
+                                                    title = 'OUTDOORS: RECREATION';
+                                                  } else
+                                                    if (this.state.stationery === true) {
+                                                      title = 'SCHOOL: STATIONERY';
+                                                    } else
+                                                      if (this.state.backpacks === true) {
+                                                        title = 'SCHOOL: BACKPACKS';
+                                                      } else {
+                                                        title = 'ALL LISTINGS';
+                                                      }
 
     const cardStyle = {
       paddingTop: '30px',
@@ -558,13 +594,13 @@ class Store extends Component {
             </div>
 
             <div id='store-search'>
-            <Input
-                type='text'
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}
-                placeholder='Search...'
-                icon='search'
-            />
+              <Input
+                  type='text'
+                  value={this.state.search}
+                  onChange={this.updateSearch.bind(this)}
+                  placeholder='Search...'
+                  icon='search'
+              />
             </div>
 
             <div id='store-content'>
@@ -582,10 +618,10 @@ class Store extends Component {
                     <Grid>
                       {/* eslint-disable-next-line react/jsx-key */}
                       {filteredItems.map((listings) => <Grid.Column width={4} style={cardStyle}>
-                            <Listing
-                              key={listings._id}
-                              listings={listings}/>
-                          </Grid.Column>)}
+                        <Listing
+                            key={listings._id}
+                            listings={listings}/>
+                      </Grid.Column>)}
                     </Grid>
                   </Sidebar.Pusher>
                 </Sidebar.Pushable>
@@ -601,6 +637,7 @@ class Store extends Component {
 /** Require an array of Stuff documents in the props. */
 Store.propTypes = {
   listings: PropTypes.array.isRequired,
+  location: React.PropTypes.string,
   ready: PropTypes.bool.isRequired,
 };
 
