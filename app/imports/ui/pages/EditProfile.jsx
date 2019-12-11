@@ -46,12 +46,15 @@ class EditProfile extends React.Component {
                   <Header as='h2' style={ profStyle }>
                     Full name:  {this.props.currentFirst} {this.props.currentLast}
                   </Header>
+                  <input></input>
                   <Header as='h2' style={ fontStyle } >
                     Username:  {this.props.currentUser}
                   </Header>
+                  <input></input>
                   <Header as='h2' style={ fontStyle }>
                     E-mail:  {this.props.currentEmail}
                   </Header>
+                  <input></input>
                 </Grid.Column>
               </Grid>
             </Container>
