@@ -8,24 +8,6 @@ import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. UPDATED */
 class TitleBar extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      search: '',
-      show: 'disabled',
-    };
-  }
-
-  operation() {
-    this.setState({ show: 'active' });
-  }
-
-  updateSearch(event) {
-    // console.log(event.target.value);
-    this.setState({ search: event.target.value });
-  }
-
   render() {
 
     const trigger = (
@@ -59,19 +41,7 @@ class TitleBar extends React.Component {
                 ADD AN ITEM
               </p>
             </a>
-            <Menu.Item
-                position='right'
-                id='search'
-                fluid>
-              <Search
-                  type='text'
-                  value={this.state.search}
-                  onChange={this.updateSearch.bind(this)}
-                  placeholder='Search...'
-                  icon='search'
-              />
-            </Menu.Item>
-            <Menu.Item float="right">
+            <Menu.Item position="right">
               <Dropdown
                   trigger={trigger}
                   style={{ color: '#024731' }}
