@@ -66,7 +66,7 @@ const ListingsSchema = new SimpleSchema({
   'school.$': {
     type: String,
     optional: true,
-    allowedValues: ['stationery', 'backpacks', 'textbooks'],
+    allowedValues: ['stationery', 'backpacks', 'textbook'],
   },
 }, { tracker: Tracker });
 
