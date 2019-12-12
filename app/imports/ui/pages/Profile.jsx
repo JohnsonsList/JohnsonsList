@@ -40,7 +40,6 @@ class Profile extends React.Component {
     if (this.state.editing) {
       return <Redirect exact to='/editprofile'/>
     }
-
     return (
         <div>
           <TitleBar/>

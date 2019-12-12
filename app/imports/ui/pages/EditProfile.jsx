@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Container, Image, Grid, Header, Input } from 'semantic-ui-react';
+import { Container, Image, Grid, Header, Form, Loader } from 'semantic-ui-react';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { withRouter } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';
@@ -14,7 +14,7 @@ class EditProfile extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { email: false, redirect: false };
+    this.state = { email: false, redirect: false, firstName: '', lastName: '',  newUsername: '', newEmail: ''};
   }
 
   edit() {
@@ -22,10 +22,36 @@ class EditProfile extends React.Component {
   }
 
   save() {
-    this.setState({
-      editing: false,
-    });
+    this.setState({ editing: false, });
   }
+
+  submitFirstName() {
+    console.log(this.state.firstName);
+    Meteor.users.update({ _id: Meteor.userId() }, { $set: { 'profile.first': this.state.firstName }});
+    this.setState({ firstName: '' });
+  }
+
+  submitLastName() {
+    console.log(this.state.lastName);
+    Meteor.users.update({ _id: Meteor.userId() }, { $set: { 'profile.last': this.state.lastName }});
+    this.setState({ lastName: '' });
+  }
+
+  submitUsername() {
+    console.log(this.state.newUsername);
+    Meteor.users.update({ _id: Meteor.userId() }, { $set: { 'username': this.state.newUsername }});
+    this.setState({ newUsername: '' });
+  }
+
+  submitEmail() {
+    console.log(this.state.newEmail);
+    Meteor.users.update({ _id: Meteor.userId() }, { $set: { 'emails[0].address': this.state.newEmail }});
+    this.setState({ newEmail: '' });
+  }
+
+  handleChange = (e, { name, value }) => {
+    this.setState({ [name]: value });
+  };
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
@@ -43,18 +69,39 @@ class EditProfile extends React.Component {
                   <Image src='/images/matthew.png' size='medium' circular/>
                 </Grid.Column>
                 <Grid.Column width={5}>
-                  <Header as='h2' style={ profStyle }>
-                    Full name:  {this.props.currentFirst} {this.props.currentLast}
-                  </Header>
-                  <input></input>
-                  <Header as='h2' style={ fontStyle } >
-                    Username:  {this.props.currentUser}
-                  </Header>
-                  <input></input>
-                  <Header as='h2' style={ fontStyle }>
-                    E-mail:  {this.props.currentEmail}
-                  </Header>
-                  <input></input>
+                <Header as='h2' style={ profStyle }>
+                  Full name:  {this.props.currentFirst} {this.props.currentLast}
+                </Header>
+                <Form onSubmit={() => this.submitFirstName()} model={this.props.doc}>
+                  <Form.Input name='firstName' type="text" value={this.props.firstName} onChange={this.handleChange} placeholder="type new first name here"/>
+                  <button className="ui active button" onClick={this.submit}>
+                    <i className="user icon"></i>Edit First Name
+                  </button>
+                </Form>
+                <Form onSubmit={() => this.submitLastName()} model={this.props.doc}>
+                  <Form.Input name='lastName' type="text" value={this.props.lastName} onChange={this.handleChange} placeholder="type new last name here"/>
+                  <button className="ui active button" onClick={this.submit}>
+                    <i className="user icon"></i>Edit Last Name
+                  </button>
+                </Form>
+                <Header as='h2' style={ fontStyle } >
+                  Username:  {this.props.currentUser}
+                </Header>
+                <Form onSubmit={() => this.submitUsername()} model={this.props.doc}>
+                  <Form.Input name='newUsername' type="text" value={this.props.newUsername} onChange={this.handleChange} placeholder="type new username here"/>
+                  <button className="ui active button" onClick={this.submit}>
+                    <i className="user icon"></i>Edit Username
+                  </button>
+                </Form>
+                <Header as='h2' style={ fontStyle }>
+                  E-mail:  {this.props.currentEmail}
+                </Header>
+                <Form onSubmit={() => this.submitEmail()} model={this.props.doc}>
+                  <Form.Input name='newEmail' type="text" value={this.props.newEmail} onChange={this.handleChange} placeholder="type new email here"/>
+                  <button className="ui active button" onClick={this.submit}>
+                    <i className="user icon"></i>Edit Email address
+                  </button>
+                </Form>
                 </Grid.Column>
               </Grid>
             </Container>
@@ -82,7 +129,6 @@ const ProfileContainer = withTracker(() => ({
   currentFirst: Meteor.user() ? Meteor.user().profile.first : '',
   currentLast: Meteor.user() ? Meteor.user().profile.last : '',
 }))(EditProfile);
-
 
 export default withRouter(ProfileContainer);
 
