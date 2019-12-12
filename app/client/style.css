@@ -151,6 +151,10 @@
   cursor: pointer;
 }
 
+#all-items-button.side-bar-items:hover:after {
+  width: 70%;
+}
+
 #store-test .ui.grid {
   padding-left: 10px !important;
 }
