@@ -17,6 +17,12 @@ class Store extends Component {
     visible: true,
   }
 
+  componentDidMount() {
+    if (this.props.location.state !== undefined) {
+      this.setState({ search: this.props.location.state });
+    }
+  }
+
   constructor() {
     super();
     this.state = {
@@ -202,7 +208,6 @@ class Store extends Component {
       (animation) => () => this.setState((prevState) => ({ animation, visible: !prevState.visible }))
 
   render() {
-
     const VerticalSidebar = ({ animation, direction }) => (
         <Sidebar
             id='sidebar'
@@ -618,13 +623,13 @@ class Store extends Component {
             </div>
 
             <div id='store-search'>
-            <Input
-                type='text'
-                value={this.state.search}
-                onChange={this.updateSearch.bind(this)}
-                placeholder='Search...'
-                icon='search'
-            />
+              <Input
+                  type='text'
+                  value={this.state.search}
+                  onChange={this.updateSearch.bind(this)}
+                  placeholder='Search...'
+                  icon='search'
+              />
             </div>
 
             <div id='store-content'>
@@ -639,6 +644,7 @@ class Store extends Component {
                   )}
                   <Sidebar.Pusher dimmed={dimmed && visible}>
                     <Grid>
+
                       {currentPage.map((listings) => <Grid.Column key={listings._id} width={4} style={cardStyle}>
                             <Listing
                               listings={listings}/>
@@ -669,6 +675,7 @@ class Store extends Component {
 Store.propTypes = {
   listings: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
+  location: PropTypes.object,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */

@@ -33,7 +33,7 @@ class TitleBar extends React.Component {
               </p>
             </a>
             <p className='menu-space'>
-              SPACE
+              ||||||||
             </p>
             <a className='not-menu-item'
                href='/#/add'>
@@ -41,6 +41,7 @@ class TitleBar extends React.Component {
                 ADD AN ITEM
               </p>
             </a>
+
             <Menu.Item position="right">
               <Dropdown
                   trigger={trigger}
@@ -77,6 +78,7 @@ class TitleBar extends React.Component {
 TitleBar.propTypes = {
   currentUser: PropTypes.string,
   items: PropTypes.string,
+  history: PropTypes.array,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */

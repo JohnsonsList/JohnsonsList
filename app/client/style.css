@@ -139,12 +139,24 @@
   cursor: pointer;
 }
 
+button.ui.icon.button {
+  border-radius: 0rem 500rem 500rem 0rem !important;
+}
+
+.fade-in.three input {
+  border-radius: 500rem !important;
+}
+
+.store-search ui.icon.input {
+  border-radius: 500rem !important;
+}
+
 p.side-bar-items:after {
   content: '';
   display: block;
   width: 0;
   height: 2px;
-  background: #FFD700;
+  background: #a0e8a0;
   transition: width .75s;
 }
 
@@ -217,7 +229,7 @@ p.not-menu-item:after {
   font-family: "Lato", "Helvetica Neue", serif;
   width: 0;
   height: 2px;
-  background: #FFD700;
+  background: #a0e8a0;
   transition: width .75s;
 }
 
@@ -235,7 +247,7 @@ img.ui.avatar.image:hover {
 }
 
 img.ui.avatar.image:hover {
-  border: 3px solid #FFD700 !important;
+  border: 3px solid #a0e8a0 !important;
 }
 
 img.ui.avatar.image {
@@ -258,7 +270,6 @@ img.ui.avatar.image {
   padding-top: 150px;
   padding-bottom: 200px;
   color: white;
-  font: sans-serif;
 }
 
 .edit {
