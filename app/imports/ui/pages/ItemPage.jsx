@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Grid, Header, Container, Image, Divider, Label, Button, Icon } from 'semantic-ui-react';
+import { Grid, Header, Container, Image, Divider, Label, Button, Icon, Rating } from 'semantic-ui-react';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 import { Listings } from '/imports/api/listings/Listing';
@@ -13,6 +13,21 @@ import Footer from '../components/Footer';
 
 /** Renders the Page for adding a document. */
 class ItemPage extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      active: false,
+    };
+  }
+
+  state = {}
+
+  handleRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating });
+
+  isActive() {
+    this.setState({ active: !this.state.active });
+  }
 
   handleClick() {
     Listings.remove(this.props.listings._id);
@@ -31,6 +46,11 @@ class ItemPage extends React.Component {
     return (
         <div>
           <TitleBar/>
+          <Rating size='massive'
+                  id='star-favorite'
+                  icon='star'
+                  maxRating={1}
+                  onRate={this.handleRate}/>
           <Container style={pageStyle}>
             <Grid container style={formStyle} columns={2}>
               <Grid.Column>

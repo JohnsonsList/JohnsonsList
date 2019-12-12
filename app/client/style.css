@@ -38,6 +38,10 @@
   animation-duration:1s;
 }
 
+#star-favorite {
+  padding-top: 70px;
+  float: right;
+}
 .fade-in.one {
   -webkit-animation-delay: 0.7s;
   -moz-animation-delay: 0.7s;
