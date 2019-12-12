@@ -33,7 +33,7 @@ class TitleBar extends React.Component {
               </p>
             </a>
             <p className='menu-space'>
-              SPACE
+              ||||||||
             </p>
             <a className='not-menu-item'
                href='/#/add'>
