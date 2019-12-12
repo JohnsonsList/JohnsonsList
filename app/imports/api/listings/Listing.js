@@ -11,6 +11,14 @@ const ListingsSchema = new SimpleSchema({
   email: String,
   image: String,
   description: String,
+  favorite: {
+    type: Array,
+    optional: true,
+  },
+  'favorite.$': {
+    type: String,
+    optional: true,
+  },
   price: Number,
   owner: String,
   condition: {

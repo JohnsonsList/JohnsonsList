@@ -36,6 +36,14 @@ const formSchema = new SimpleSchema({
     allowedValues: ['clothing', 'dormitory', 'electronics', 'school', 'outdoors'],
     defaultValue: 'clothing',
   },
+  favorite: {
+    type: Array,
+    optional: true,
+  },
+  'favorite.$': {
+    type: String,
+    optional: true,
+  },
   clothes: {
     type: Array,
     optional: true,
