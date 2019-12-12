@@ -695,7 +695,7 @@ class Store extends Component {
                 <a onClick={this.searchReset.bind(this)}>
                   <p className='all-items-button'
                      onClick={this.searchReset.bind(this)}>
-                    All Listings
+                    View All Listings
                     ({(this.props.listings.filter((items) => items)).length})
                   </p>
                 </a>
