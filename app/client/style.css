@@ -5,16 +5,63 @@
   padding-left: 0;
 }
 
-/*make it scroll back up to top*/
-/*html {*/
-/*  scroll-behavior: smooth;*/
-/*}*/
+/* WEBSITE GUIDE SECTION */
+/* ~~~~~~~~START~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~ */
+#icons {
+  height: 500px;
+  background-color: #CB7DD0;
+}
 
+#sell-buy {
+  height: 500px;
+  background-color: #5C86FF
+}
 
+#guide-page {
+  padding-top: 70px;
+  padding-bottom: 100px;
+  background: #fafafa;
+}
+
+#guide-menu {
+  border: none !important;
+  box-shadow: none !important;
+  background: #fafafa;
+  text-align: center;
+}
+
+.item:before {
+  background: transparent !important;
+}
 
 #home-mid {
   padding-top: 100px;
 }
+
+.navigation-space {
+  color: #fafafa;
+  cursor: default;
+}
+
+p.navigation {
+  font-family: "Roboto", "Helvetica Neue", serif;
+  margin-top: 22px;
+  font-size: 20px;
+  color: #024731 !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+p.navigation:hover {
+  color: #a0e8a0 !important;
+  transition: .5s easy;
+}
+
+/* WEBSITE GUIDE SECTION */
+/* ~~~~~~~~~END~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~ */
+
 
 /* make keyframes that tell the start state and the end state of our object */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -245,7 +292,7 @@ p.side-bar-items:hover:after {
 p.not-menu-item:after {
   content: '';
   display: block;
-  font-family: "Lato", "Helvetica Neue", serif;
+  font-family: "Roboto", "Helvetica Neue", serif;
   width: 0;
   height: 2px;
   background: #a0e8a0;

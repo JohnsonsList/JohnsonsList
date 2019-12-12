@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
+import { Container, Menu } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';
@@ -7,27 +7,55 @@ import Footer from '../components/Footer';
 
 /** A simple static component to render some text for the landing page. */
 class Guide extends React.Component {
-
   render() {
 
     return (
         <div>
           <TitleBar/>
-          <div id='home-page'>
+          <div id='guide-page'>
+            <div>
+              <Menu id='guide-menu'>
+                <Menu.Item>
+                <a className='navigation-space'>
+                  <p className='navigation-space'>
+                    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+                    ||||||||||||||||||||||||||||||||||||||||
+                  </p>
+                </a>
+              <a className='navigation'
+                 href='#icons'>
+                <p className='navigation'>
+                Icon Meaning
+              </p>
+              </a>
+                <a className='navigation-space'>
+                  <p className='navigation-space'>
+                    |||||||
+                  </p>
+              </a>
+              <a className='navigation'
+                 href='#sell-buy'>
+                <p className='navigation'>
+                  How to purchase/sell
+                </p>
+              </a>
+                </Menu.Item>
+              </Menu>
+            </div>
+            <div id='icons'>
             <Container>
-              <div id='home-mid'>
-                <div className="fade-in one">
-                  Welcome to Johnsonslist.
-                </div>
+                <div className="guide-help">
 
-                <div className="fade-in two">
-                  Discover a whole world of items.
                 </div>
-
-                <div className="fade-in three" style={{ borderRadius: '500rem' }}>
-                </div>
-              </div>
             </Container>
+            </div>
+            <div id='sell-buy'>
+              <Container>
+                <div className="guide-help">
+
+                </div>
+              </Container>
+            </div>
           </div>
           <Footer/>
         </div>
