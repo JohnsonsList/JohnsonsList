@@ -219,6 +219,33 @@ class Store extends Component {
   searchReset() {
     this.setState({ value: '' });
     this.setState({ search: '' });
+    this.setState({ clothing: false });
+    this.setState({ electronics: false });
+    this.setState({ dormitory: false });
+    this.setState({ outdoors: false });
+    this.setState({ school: false });
+    this.setState({ men: false });
+    this.setState({ women: false });
+    this.setState({ tops: false });
+    this.setState({ bottoms: false });
+    this.setState({ shoes: false });
+    this.setState({ caccessories: false });
+    this.setState({ computers: false });
+    this.setState({ photography: false });
+    this.setState({ eaccessories: false });
+    this.setState({ television: false });
+    this.setState({ games: false });
+    this.setState({ self: false });
+    this.setState({ appliances: false });
+    this.setState({ decor: false });
+    this.setState({ plants: false });
+    this.setState({ sports: false });
+    this.setState({ camping: false });
+    this.setState({ transportation: false });
+    this.setState({ recreation: false });
+    this.setState({ stationary: false });
+    this.setState({ backpacks: false });
+    this.setState({ textbooks: false });
   }
 
   handleAnimationChange =
@@ -240,7 +267,7 @@ class Store extends Component {
             <p className='side-bar-items'
                onClick={this.searchReset.bind(this)}>
               All Listings
-              ({(this.props.listings.filter((items) => items )).length})
+              ({(this.props.listings.filter((items) => items)).length})
             </p>
           </a>
           <a onClick={this.showClothing.bind(this)}>
