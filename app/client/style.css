@@ -142,7 +142,7 @@
   cursor: pointer;
 }
 
-.all-items-button {
+#all-items-button {
   padding-bottom: 10px;
   padding-top: 10px;
   text-align: left;

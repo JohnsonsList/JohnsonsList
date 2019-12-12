@@ -693,7 +693,7 @@ class Store extends Component {
             <Grid>
               <Grid.Column width={3}>
                 <a onClick={this.searchReset.bind(this)}>
-                  <p className='all-items-button'
+                  <p className='side-bar-items' id='all-items-button'
                      onClick={this.searchReset.bind(this)}>
                     View All Listings
                     ({(this.props.listings.filter((items) => items)).length})
