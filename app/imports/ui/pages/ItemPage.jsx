@@ -21,9 +21,25 @@ class ItemPage extends React.Component {
     };
   }
 
-  updateFavorite() {
-    this.props.listings.update({ _id: this.props.listings.favorite },
-        { $push: { favorite: Meteor.user().emails[0].address } });
+  addFavorite() {
+    Listings.update(
+        {
+          _id: this.props.listings._id,
+        }, {
+          $push: { favorite: Meteor.user().emails[0].address },
+        },
+    );
+    console.log(this.props.listings.favorite);
+  }
+
+  removeFavorite() {
+    Listings.update(
+        {
+          _id: this.props.listings._id,
+        }, {
+          $pull: { favorite: Meteor.user().emails[0].address },
+        },
+    );
     console.log(this.props.listings.favorite);
   }
 
@@ -47,11 +63,19 @@ class ItemPage extends React.Component {
     return (
         <div>
           <TitleBar/>
+          {_.contains(this.props.listings.favorite, (Meteor.user().emails[0].address)) ?
           <Rating size='massive'
                   id='star-favorite'
                   icon='star'
+                  defaultRating={1}
                   maxRating={1}
-                  onClick={this.updateFavorite}/>
+                  onClick={this.removeFavorite.bind(this)}/>
+          : <Rating size='massive'
+                    id='star-favorite'
+                    icon='star'
+                    defaultRating={0}
+                    maxRating={1}
+                    onClick={this.addFavorite.bind(this)}/> }
           <Container style={pageStyle}>
             <Grid container style={formStyle} columns={2}>
               <Grid.Column>
