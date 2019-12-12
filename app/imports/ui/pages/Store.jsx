@@ -226,8 +226,8 @@ class Store extends Component {
     this.setState({ school: false });
     this.setState({ men: false });
     this.setState({ women: false });
-    this.setState({ tops: false });
-    this.setState({ bottoms: false });
+    this.setState({ top: false });
+    this.setState({ bottom: false });
     this.setState({ shoes: false });
     this.setState({ caccessories: false });
     this.setState({ computers: false });
@@ -246,6 +246,7 @@ class Store extends Component {
     this.setState({ stationary: false });
     this.setState({ backpacks: false });
     this.setState({ textbooks: false });
+    this.setState({ page: 1 });
   }
 
   handleAnimationChange =
