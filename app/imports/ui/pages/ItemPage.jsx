@@ -21,12 +21,10 @@ class ItemPage extends React.Component {
     };
   }
 
-  state = {}
-
-  handleRate = (e, { rating, maxRating }) => this.setState({ rating, maxRating });
-
-  isActive() {
-    this.setState({ active: !this.state.active });
+  updateFavorite() {
+    this.props.listings.update({ _id: this.props.listings.favorite },
+        { $push: { favorite: Meteor.user().emails[0].address } });
+    console.log(this.props.listings.favorite);
   }
 
   handleClick() {
@@ -43,6 +41,9 @@ class ItemPage extends React.Component {
       marginTop: '0px',
       marginLeft: '5px' };
 
+    console.log(this.props.listings);
+    console.log(this.props.listings.favorite);
+
     return (
         <div>
           <TitleBar/>
@@ -50,7 +51,7 @@ class ItemPage extends React.Component {
                   id='star-favorite'
                   icon='star'
                   maxRating={1}
-                  onRate={this.handleRate}/>
+                  onClick={this.updateFavorite}/>
           <Container style={pageStyle}>
             <Grid container style={formStyle} columns={2}>
               <Grid.Column>
