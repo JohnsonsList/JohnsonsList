@@ -41,6 +41,17 @@ class TitleBar extends React.Component {
                 ADD AN ITEM
               </p>
             </a>
+            <p className='menu-space'>
+              {/* eslint-disable-next-line max-len */}
+              ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+              |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+            </p>
+            <a className='not-menu-item'
+               href='/#/guide'>
+              <p className='not-menu-item'>
+                WEBSITE GUIDE
+              </p>
+            </a>
 
             <Menu.Item position="right">
               <Dropdown

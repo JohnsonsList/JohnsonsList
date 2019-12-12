@@ -23,6 +23,7 @@ import IssueAdmin from '../pages/IssueAdmin';
 import Feedback from '../pages/Feedback';
 import FeedbackAdmin from '../pages/FeedbackAdmin';
 import ItemPage from '../pages/ItemPage';
+import Guide from '../pages/Guide';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -41,6 +42,7 @@ class App extends React.Component {
               <Route path="/notif" component={NotifyAdmin}/>
               <Route path="/feed" component={Feedback}/>
               <Route path="/delete" component={Deleted}/>
+              <Route path="/guide" component={Guide}/>
               <Route path="/details/:_id" component={ItemPage}/>
               <ProtectedRoute path="/list" component={MyListing}/>
               <ProtectedRoute path="/add" component={AddListing}/>
