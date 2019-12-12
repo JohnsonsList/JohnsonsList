@@ -86,14 +86,14 @@
 #store-search {
   margin-left: 10px;
   border-radius: 500rem !important;
-  padding-left: 500px !important;
-  padding-right: 500px !important;
+  padding-left: 100px !important;
+  padding-right: 200px !important;
 }
 
 #store-headline {
   font-family: "lato", "Helvetica Neue", serif !important;
-  margin-left: 10px;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
+  padding-left: 5px;
   text-align: left;
   font-size: 36px;
   color: #024731 !important;
@@ -140,6 +140,19 @@
   font-size: 15px;
   color: #024731 !important;
   cursor: pointer;
+}
+
+.all-items-button {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: left;
+  font-size: 16px;
+  color: #024731 !important;
+  cursor: pointer;
+}
+
+#store-test .ui.grid {
+  padding-left: 10px !important;
 }
 
 button.ui.icon.button {

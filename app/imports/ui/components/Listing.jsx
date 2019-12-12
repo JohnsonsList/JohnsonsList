@@ -8,7 +8,6 @@ import { withRouter, Link, NavLink } from 'react-router-dom';
 
 /** Renders a single row in the List Listing table. See pages/MyListing.jsx. */
 class Listing extends React.Component {
-
   render() {
     const labelStyle = { marginBottom: '5px',
       marginRight: '5px',
