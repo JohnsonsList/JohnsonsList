@@ -135,6 +135,18 @@
   cursor: pointer;
 }
 
+button.ui.icon.button {
+  border-radius: 0rem 500rem 500rem 0rem !important;
+}
+
+.fade-in.three input {
+  border-radius: 500rem !important;
+}
+
+.store-search ui.icon.input {
+  border-radius: 500rem !important;
+}
+
 p.side-bar-items:after {
   content: '';
   display: block;
