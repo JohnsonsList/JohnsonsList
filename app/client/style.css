@@ -55,7 +55,6 @@ p.navigation {
 
 p.navigation:hover {
   color: #a0e8a0 !important;
-  transition: .5s easy;
 }
 
 /* WEBSITE GUIDE SECTION */
