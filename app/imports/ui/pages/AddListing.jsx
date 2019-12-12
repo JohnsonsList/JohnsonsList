@@ -38,6 +38,7 @@ const formSchema = new SimpleSchema({
   },
   clothes: {
     type: Array,
+    optional: true,
   },
   'clothes.$': {
     type: String,
@@ -46,6 +47,7 @@ const formSchema = new SimpleSchema({
   },
   electronics: {
     type: Array,
+    optional: true,
   },
   'electronics.$': {
     type: String,
@@ -54,6 +56,7 @@ const formSchema = new SimpleSchema({
   },
   dormitory: {
     type: Array,
+    optional: true,
   },
   'dormitory.$': {
     type: String,
@@ -62,6 +65,7 @@ const formSchema = new SimpleSchema({
   },
   outdoors: {
     type: Array,
+    optional: true,
   },
   'outdoors.$': {
     type: String,
@@ -70,16 +74,31 @@ const formSchema = new SimpleSchema({
   },
   school: {
     type: Array,
+    optional: true,
   },
   'school.$': {
     type: String,
     optional: true,
-    allowedValues: ['stationery', 'backpacks', 'laptops'],
+    allowedValues: ['stationery', 'backpacks', 'textbook'],
   },
 });
 
 /** Renders the Page for adding a document. */
 class AddListing extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+      category: 'clothing',
+    };
+  }
+
+   // this freezes the current category, I hate coding
+   currentCategory = (data) => {
+    this.setState({ category: data });
+    return this.state.category;
+  }
+
 
   /** On submit, insert the data. */
   submit(data, formRef) {
@@ -125,12 +144,31 @@ class AddListing extends React.Component {
                       <Grid columns="4">
                         <Grid.Column><NumField name='price' decimal={true} icon='dollar' iconLeft/></Grid.Column>
                         <Grid.Column><SelectField name='condition'/></Grid.Column>
-                        <Grid.Column><SelectField name='categories' label='Main Category'/></Grid.Column>
-                        <Grid.Column><MultiSelectField name='clothes'/></Grid.Column>
-                        <Grid.Column><MultiSelectField name='electronics'/></Grid.Column>
-                        <Grid.Column><MultiSelectField name='dormitory'/></Grid.Column>
-                        <Grid.Column><MultiSelectField name='outdoors'/></Grid.Column>
-                        <Grid.Column><MultiSelectField name='school'/></Grid.Column>
+                        <Grid.Column><SelectField
+                            onChange={this.currentCategory}
+                            value={this.state.category}
+                            name='categories'
+                            label='Main Category'/></Grid.Column>
+                        { this.state.category === 'clothing' ?
+                        <Grid.Column><MultiSelectField name='clothes'
+                                                       label='Clothing Subtag (optional)'/></Grid.Column>
+                        : '' }
+                        { this.state.category === 'electronics' ?
+                        <Grid.Column><MultiSelectField name='electronics'
+                                                       label='Electronics Subtag (optional)'/></Grid.Column>
+                        : '' }
+                        { this.state.category === 'dormitory' ?
+                        <Grid.Column><MultiSelectField name='dormitory'
+                                                       label='Dormitory Subtag (optional)'/></Grid.Column>
+                        : '' }
+                        { this.state.category === 'outdoors' ?
+                        <Grid.Column><MultiSelectField name='outdoors'
+                                                       label='Outdoors Subtag (optional)'/></Grid.Column>
+                        : '' }
+                        { this.state.category === 'school' ?
+                        <Grid.Column><MultiSelectField name='school'
+                                                       label='School Subtag (optional)'/></Grid.Column>
+                        : '' }
                       </Grid>
                       <SubmitField value='Submit' style={submitStyle}/>
                       <ErrorsField/>
