@@ -83,7 +83,7 @@ class Listing extends React.Component {
 
 /** Require a document to be passed to this component. */
 Listing.propTypes = {
-  listings: PropTypes.object.isRequiteal,
+  listings: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
