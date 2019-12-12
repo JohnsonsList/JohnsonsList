@@ -17,6 +17,12 @@ class Store extends Component {
     visible: true,
   }
 
+  componentDidMount() {
+    if (this.props.location.state !== undefined) {
+      this.setState({ search: this.props.location.state });
+    }
+  }
+
   constructor() {
     super();
     this.state = {
@@ -164,7 +170,6 @@ class Store extends Component {
       (animation) => () => this.setState((prevState) => ({ animation, visible: !prevState.visible }))
 
   render() {
-
     const VerticalSidebar = ({ animation, direction }) => (
         <Sidebar
             id='sidebar'
@@ -627,6 +632,7 @@ class Store extends Component {
 Store.propTypes = {
   listings: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
+  location: PropTypes.object,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
