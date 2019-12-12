@@ -29,7 +29,6 @@ class ItemPage extends React.Component {
           $push: { favorite: Meteor.user().emails[0].address },
         },
     );
-    console.log(this.props.listings.favorite);
   }
 
   removeFavorite() {
@@ -40,7 +39,6 @@ class ItemPage extends React.Component {
           $pull: { favorite: Meteor.user().emails[0].address },
         },
     );
-    console.log(this.props.listings.favorite);
   }
 
   handleClick() {
@@ -56,9 +54,6 @@ class ItemPage extends React.Component {
       marginRight: '5px',
       marginTop: '0px',
       marginLeft: '5px' };
-
-    console.log(this.props.listings);
-    console.log(this.props.listings.favorite);
 
     return (
         <div>
