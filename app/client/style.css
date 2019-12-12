@@ -81,6 +81,9 @@
 
 #store-search {
   margin-left: 10px;
+  border-radius: 500rem !important;
+  padding-left: 500px !important;
+  padding-right: 500px !important;
 }
 
 #store-headline {
@@ -137,14 +140,17 @@
 
 button.ui.icon.button {
   border-radius: 0rem 500rem 500rem 0rem !important;
+  background-color: white !important;
+  border: 1px solid rgba(34, 36, 38, 0.15) !important;
+  border-left: white !important;
 }
 
 .fade-in.three input {
   border-radius: 500rem !important;
 }
 
-.store-search ui.icon.input {
-  border-radius: 500rem !important;
+#store-search input {
+  border-radius: 500rem 0rem 0rem 500rem !important;
 }
 
 p.side-bar-items:after {

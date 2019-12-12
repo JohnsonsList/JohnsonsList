@@ -19,6 +19,7 @@ class Store extends Component {
 
   componentDidMount() {
     if (this.props.location.state !== undefined) {
+      this.setState({ value: this.props.location.state });
       this.setState({ search: this.props.location.state });
     }
   }
@@ -27,6 +28,7 @@ class Store extends Component {
     super();
     this.state = {
       search: '',
+      value: '',
       sidebar: true,
       clothing: false,
       electronics: false,
@@ -199,9 +201,24 @@ class Store extends Component {
     this.setState({ page: 1 });
   }
 
-  updateSearch(event) {
+  updateValue(event) {
     // console.log(event.target.value);
-    this.setState({ search: event.target.value });
+    this.setState({ value: event.target.value });
+  }
+
+  handleClick(e) {
+    if (e.key === 'Enter') {
+      this.setState({ search: this.state.value });
+    }
+  }
+
+  handleButton() {
+    this.setState({ search: this.state.value });
+  }
+
+  searchReset() {
+    this.setState({ value: '' });
+    this.setState({ search: '' });
   }
 
   handleAnimationChange =
@@ -219,6 +236,13 @@ class Store extends Component {
             width='thin'
         >
           <p className='side-bar-main-item'>Main Categories</p>
+          <a onClick={this.searchReset.bind(this)}>
+            <p className='side-bar-items'
+               onClick={this.searchReset.bind(this)}>
+              All Listings
+              ({(this.props.listings.filter((items) => items )).length})
+            </p>
+          </a>
           <a onClick={this.showClothing.bind(this)}>
             <p className='side-bar-items'
                onClick={this.showClothing.bind(this)}>
@@ -541,61 +565,87 @@ class Store extends Component {
     let title;
     if (this.state.clothing === true) {
       title = 'CLOTHING';
-    } else if (this.state.electronics === true) {
-      title = 'ELECTRONICS';
-    } else if (this.state.dormitory === true) {
-      title = 'DORMITORY';
-    } else if (this.state.outdoors === true) {
-      title = 'OUTDOORS';
-    } else if (this.state.school === true) {
-      title = 'SCHOOL';
-    } else if (this.state.men === true) {
-      title = 'CLOTHING: MEN';
-    } else if (this.state.women === true) {
-      title = 'CLOTHING: WOMEN';
-    } else if (this.state.top === true) {
-      title = 'CLOTHING: TOPS';
-    } else if (this.state.bottom === true) {
-      title = 'CLOTHING: BOTTOMS';
-    } else if (this.state.shoes === true) {
-      title = 'CLOTHING: SHOES';
-    } else if (this.state.caccessories === true) {
-      title = 'CLOTHING: ACCESSORIES';
-    } else if (this.state.laptops === true) {
-      title = 'ELECTRONICS: COMPUTERS';
-    } else if (this.state.photography === true) {
-      title = 'ELECTRONICS: PHOTOGRAPHY';
-    } else if (this.state.eaccessories === true) {
-      title = 'ELECTRONICS: ACCESSORIES';
-    } else if (this.state.television === true) {
-      title = 'ELECTRONICS: TELEVISION';
-    } else if (this.state.games === true) {
-      title = 'ELECTRONICS: GAMES';
-    } else if (this.state.self === true) {
-      title = 'DORMITORY: SELF CARE';
-    } else if (this.state.appliances === true) {
-      title = 'DORMITORY: APPLIANCES';
-    } else if (this.state.decor === true) {
-      title = 'DORMITORY: HOME DECOR';
-    } else if (this.state.plants === true) {
-      title = 'DORMITORY: PLANTS';
-    } else if (this.state.sports === true) {
-      title = 'OUTDOORS: SPORTS & FITNESS';
-    } else if (this.state.camping === true) {
-      title = 'OUTDOORS: CAMPING & HIKING';
-    } else if (this.state.transportation === true) {
-      title = 'OUTDOORS: TRANSPORTATION';
-    } else if (this.state.recreation === true) {
-      title = 'OUTDOORS: RECREATION';
-    } else if (this.state.stationery === true) {
-      title = 'SCHOOL: STATIONERY';
-    } else if (this.state.backpacks === true) {
-      title = 'SCHOOL: BACKPACKS';
-    } else if (this.state.textbooks === true) {
-      title = 'SCHOOL: TEXTBOOKS';
-    } else {
-      title = 'ALL LISTINGS';
-    }
+    } else
+      if (this.state.electronics === true) {
+        title = 'ELECTRONICS';
+      } else
+        if (this.state.dormitory === true) {
+          title = 'DORMITORY';
+        } else
+          if (this.state.outdoors === true) {
+            title = 'OUTDOORS';
+          } else
+            if (this.state.school === true) {
+              title = 'SCHOOL';
+            } else
+              if (this.state.men === true) {
+                title = 'CLOTHING: MEN';
+              } else
+                if (this.state.women === true) {
+                  title = 'CLOTHING: WOMEN';
+                } else
+                  if (this.state.top === true) {
+                    title = 'CLOTHING: TOPS';
+                  } else
+                    if (this.state.bottom === true) {
+                      title = 'CLOTHING: BOTTOMS';
+                    } else
+                      if (this.state.shoes === true) {
+                        title = 'CLOTHING: SHOES';
+                      } else
+                        if (this.state.caccessories === true) {
+                          title = 'CLOTHING: ACCESSORIES';
+                        } else
+                          if (this.state.laptops === true) {
+                            title = 'ELECTRONICS: COMPUTERS';
+                          } else
+                            if (this.state.photography === true) {
+                              title = 'ELECTRONICS: PHOTOGRAPHY';
+                            } else
+                              if (this.state.eaccessories === true) {
+                                title = 'ELECTRONICS: ACCESSORIES';
+                              } else
+                                if (this.state.television === true) {
+                                  title = 'ELECTRONICS: TELEVISION';
+                                } else
+                                  if (this.state.games === true) {
+                                    title = 'ELECTRONICS: GAMES';
+                                  } else
+                                    if (this.state.self === true) {
+                                      title = 'DORMITORY: SELF CARE';
+                                    } else
+                                      if (this.state.appliances === true) {
+                                        title = 'DORMITORY: APPLIANCES';
+                                      } else
+                                        if (this.state.decor === true) {
+                                          title = 'DORMITORY: HOME DECOR';
+                                        } else
+                                          if (this.state.plants === true) {
+                                            title = 'DORMITORY: PLANTS';
+                                          } else
+                                            if (this.state.sports === true) {
+                                              title = 'OUTDOORS: SPORTS & FITNESS';
+                                            } else
+                                              if (this.state.camping === true) {
+                                                title = 'OUTDOORS: CAMPING & HIKING';
+                                              } else
+                                                if (this.state.transportation === true) {
+                                                  title = 'OUTDOORS: TRANSPORTATION';
+                                                } else
+                                                  if (this.state.recreation === true) {
+                                                    title = 'OUTDOORS: RECREATION';
+                                                  } else
+                                                    if (this.state.stationery === true) {
+                                                      title = 'SCHOOL: STATIONERY';
+                                                    } else
+                                                      if (this.state.backpacks === true) {
+                                                        title = 'SCHOOL: BACKPACKS';
+                                                      } else
+                                                        if (this.state.textbooks === true) {
+                                                          title = 'SCHOOL: TEXTBOOKS';
+                                                        } else {
+                                                          title = 'ALL LISTINGS';
+                                                        }
 
     const cardStyle = {
       paddingTop: '30px',
@@ -603,7 +653,6 @@ class Store extends Component {
       marginBottom: '50px !important',
     };
     const pageStyle = { paddingTop: '20px' };
-
 
     const listingsPerPage = 12;
     const page = this.state.page;
@@ -625,13 +674,15 @@ class Store extends Component {
             <div id='store-search'>
               <Input
                   type='text'
-                  value={this.state.search}
-                  onChange={this.updateSearch.bind(this)}
+                  value={this.state.value}
+                  fluid
+                  size='large'
+                  onChange={this.updateValue.bind(this)}
+                  onKeyPress={this.handleClick.bind(this)}
                   placeholder='Search...'
-                  icon='search'
+                  action={{ icon: 'search', onClick: () => this.handleButton() }}
               />
             </div>
-
             <div id='store-content'>
               <Container fluid style={pageStyle}>
                 <Sidebar.Pushable>
@@ -646,9 +697,9 @@ class Store extends Component {
                     <Grid>
 
                       {currentPage.map((listings) => <Grid.Column key={listings._id} width={4} style={cardStyle}>
-                            <Listing
-                              listings={listings}/>
-                          </Grid.Column>)}
+                        <Listing
+                            listings={listings}/>
+                      </Grid.Column>)}
                     </Grid>
                   </Sidebar.Pusher>
                 </Sidebar.Pushable>
@@ -658,7 +709,7 @@ class Store extends Component {
                   totalPages={totalPages}
                   activePage={page}
                   onPageChange={this.setPageNum}
-                  ellipsisItem={{ content: <Icon name='ellipsis horizontal' />, icon: true }}
+                  ellipsisItem={{ content: <Icon name='ellipsis horizontal'/>, icon: true }}
                   pointing
                   secondary
                   centered

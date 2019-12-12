@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
-
 /** A simple static component to render some text for the landing page. */
 class HomePage extends React.Component {
 
@@ -26,7 +25,13 @@ class HomePage extends React.Component {
     this.setState({ search: event.target.value });
   }
 
-  handleClick() {
+  handleClick(e) {
+    if (e.key === 'Enter') {
+      this.props.history.push({ pathname: '/store', state: this.state.search });
+    }
+  }
+
+  handleButton() {
     this.props.history.push({ pathname: '/store', state: this.state.search });
   }
 
@@ -46,16 +51,14 @@ class HomePage extends React.Component {
                   Discover a whole world of items.
                 </div>
 
-                <div className="fade-in three">
+                <div className="fade-in three" style={{ borderRadius: '500rem' }}>
                   <Input
                       type='text'
                       value={this.state.search}
                       onChange={this.updateSearch.bind(this)}
                       placeholder='Search...'
-                      action={{
-                        icon: 'search',
-                        onClick: () => this.handleClick(),
-                      }}
+                      onKeyPress={this.handleClick.bind(this)}
+                      action={{ icon: 'search', onClick: () => this.handleButton() }}
                   />
                 </div>
               </div>
