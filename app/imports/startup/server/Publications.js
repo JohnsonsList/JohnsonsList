@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Listings } from '../../api/listings/Listing';
+import { _ } from 'meteor/underscore';
 import { Issues } from '../../api/issue/Issue';
 import { Feedback } from '../../api/Feedback/Feedback';
 
@@ -19,6 +20,15 @@ Meteor.publish('MyListings', function publish() {
   }
   return this.ready();
 });
+
+Meteor.publish('Favorites', function publish() {
+  if (this.userId) {
+    const email = Meteor.user().emails[0].address;
+    return Listings.find({ favorite: email });
+  }
+  return this.ready();
+});
+
 
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
 Meteor.publish('ListingsAdmin', function publish() {
