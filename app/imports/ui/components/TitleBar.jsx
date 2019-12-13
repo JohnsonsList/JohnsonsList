@@ -32,20 +32,41 @@ class TitleBar extends React.Component {
                 STORE
               </p>
             </a>
-            <p className='menu-space'>
-              ||||||||
-            </p>
+            <Menu.Item></Menu.Item>
             <a className='not-menu-item'
                href='/#/add'>
               <p className='not-menu-item'>
                 ADD AN ITEM
               </p>
             </a>
-            <p className='menu-space'>
-              {/* eslint-disable-next-line max-len */}
-              ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-              |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-            </p>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
+            <Menu.Item></Menu.Item>
             <a className='not-menu-item'
                href='/#/guide'>
               <p className='not-menu-item'>

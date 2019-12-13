@@ -12,31 +12,39 @@ class Guide extends React.Component {
     return (
         <div>
           <TitleBar/>
+          <nav>
           <div id='guide-page'>
             <div>
               <Menu id='guide-menu'>
-                <Menu.Item>
-                <a className='navigation-space'>
-                  <p className='navigation-space'>
-                    ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-                    ||||||||||||||||||||||||||||||||||||||||
-                  </p>
-                </a>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item></Menu.Item>
+                <Menu.Item float="middle">
               <a className='navigation'
                  href='#icons'>
                 <p className='navigation'>
                 Icon Meaning
               </p>
               </a>
-                <a className='navigation-space'>
-                  <p className='navigation-space'>
-                    |||||||
-                  </p>
-              </a>
+                </Menu.Item>
+                <Menu.Item position='right'>
               <a className='navigation'
                  href='#sell-buy'>
                 <p className='navigation'>
-                  How to purchase/sell
+                  How to Purchase & Sell
                 </p>
               </a>
                 </Menu.Item>
@@ -45,18 +53,17 @@ class Guide extends React.Component {
             <div id='icons'>
             <Container>
                 <div className="guide-help">
-
                 </div>
             </Container>
             </div>
             <div id='sell-buy'>
               <Container>
                 <div className="guide-help">
-
                 </div>
               </Container>
             </div>
           </div>
+          </nav>
           <Footer/>
         </div>
     );

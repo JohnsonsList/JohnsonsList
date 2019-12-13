@@ -1,3 +1,64 @@
+/* GLOBAL CSS SECTION */
+/* ~~~~~~START~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~ */
+.background {
+  background-color: #fcfbfb;
+  background-size: cover;
+  height: 100%;
+  padding-bottom: 0;
+  color: white;
+}
+
+h1 {
+  font-family: "Lato", "Helvetica Neue", serif;
+  font-size: 30px !important;
+  color: #4a4a4a;
+  padding-top: 50px !important;
+  padding-bottom: 30px !important;
+}
+
+h4 {
+  font-family: "Lato", "Helvetica Neue", serif;
+  color: #4a4a4a;
+  padding-bottom: 30px !important;
+}
+
+.NavBar {
+  background-color: #fafafa;
+  color: #024731 !important;
+  padding-top: 60px;
+  padding-left: 0;
+}
+
+.footer-background {
+  background-color: #363636;
+  color: white;
+  padding-top: 20px !important;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+}
+
+.ui.input:focus {
+  border: 1px solid #024731 !important;
+}
+
+.four.wide.column {
+  padding-left: 30px !important;
+}
+
+.ui.grid {
+  padding-left: 50px !important;
+  width: 90% !important;
+}
+/* GLOBAL CSS SECTION */
+/* ~~~~~~~~END~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~ */
+
+/* TITLE BAR SECTION */
+/* ~~~~~~START~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ */
 .TitleBar {
   background-color: #13aa52;
   /*#13aa52 and #024731 keep this in case of changes*/
@@ -5,29 +66,147 @@
   padding-left: 0;
 }
 
+.not-menu-item {
+  font-family: "Lato", "Helvetica Neue", serif;
+  margin-top: 22px;
+  font-size: 15px;
+  color: #024731 !important;
+}
+
+p.not-menu-item:after {
+  content: '';
+  display: block;
+  font-family: "Roboto", "Helvetica Neue", serif;
+  width: 0;
+  height: 2px;
+  background: #a0e8a0;
+  transition: width .75s;
+}
+
+p.not-menu-item:hover:after {
+  width: 100%;
+}
+
+img.ui.avatar.image:hover {
+  border: 4px #024731 !important;
+  border-radius: 50px !important;
+}
+
+
+img.ui.avatar.image:hover {
+  border: 3px solid #a0e8a0 !important;
+}
+
+img.ui.avatar.image {
+  width: 35px;
+  height: 35px;
+}
+
+.dropdown.icon {
+  display: none;
+}
+/* TITLE BAR SECTION */
+/* ~~~~~~~~END~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ */
+
+/* SIGN IN SECTION */
+/* ~~~~~START~~~~~ */
+/* ~~~~~~~~~~~~~~~ */
+#log-page {
+  font-family: "Lato", "Helvetica Neue", serif;
+  background-color: #fafafa !important;
+  /*#FFFFFF or #f5f2ee try this later instead for white background*/
+  height: 100%;
+}
+
+#log-in {
+  padding-top: 150px;
+  padding-bottom: 125px;
+}
+
+#sign-in-text {
+  text-align: center;
+}
+/* SIGN IN SECTION */
+/* ~~~~~~END~~~~~~ */
+/* ~~~~~~~~~~~~~~~ */
+
+/* SIGN UP SECTION */
+/* ~~~~~START~~~~~ */
+/* ~~~~~~~~~~~~~~~ */
+#sign-up {
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+
+#sign-page {
+  font-family: "Lato", "Helvetica Neue", serif;
+  background-color: #fafafa !important;
+  /*#FFFFFF or #f5f2ee try this later instead for white background*/
+  height: 100%;
+}
+
+#span {
+  font-family: "Lato", "Helvetica Neue", serif;
+  color: #000000;
+  text-align: center !important;
+}
+/* SIGN UP SECTION */
+/* ~~~~~~END~~~~~~ */
+/* ~~~~~~~~~~~~~~~ */
+
+/* SIGN OUT PAGE */
+/* ~~~~START~~~~ */
+/* ~~~~~~~~~~~~~ */
+#signed-out {
+  padding-top: 150px;
+  padding-bottom: 350px;
+}
+
+#out-page {
+  font-family: "Lato", "Helvetica Neue", serif;
+  background-color: #fafafa !important;
+  /*#FFFFFF or #f5f2ee or #fafafa try this later instead for white background*/
+  height: 100%;
+}
+
+#redirect {
+  text-align: center !important;
+  font-family: "Lato", "Helvetica Neue", serif;
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 50px;
+}
+/* SIGN OUT PAGE */
+/* ~~~~START~~~~ */
+/* ~~~~~~~~~~~~~ */
+
 /* WEBSITE GUIDE SECTION */
 /* ~~~~~~~~START~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~ */
 #icons {
   height: 500px;
-  background-color: #CB7DD0;
+  background-color: transparent;
 }
 
 #sell-buy {
   height: 500px;
-  background-color: #5C86FF
+  background-color: transparent;
 }
 
 #guide-page {
   padding-top: 70px;
   padding-bottom: 100px;
-  background: #fafafa;
+  background-color: #fafafa;
+  background-size: cover;
+  scroll-behavior: smooth;
 }
 
 #guide-menu {
+  position: fixed;
   border: none !important;
   box-shadow: none !important;
-  background: #fafafa;
+  background: transparent !important;
   text-align: center;
 }
 
@@ -35,12 +214,8 @@
   background: transparent !important;
 }
 
-#home-mid {
-  padding-top: 100px;
-}
-
 .navigation-space {
-  color: #fafafa;
+  color: transparent !important;
   cursor: default;
 }
 
@@ -62,13 +237,28 @@ p.navigation:hover {
 /* ~~~~~~~~~~~~~~~~~~~~~ */
 
 
+/* HOME PAGE SECTION */
+/* ~~~~~~~START~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~ */
+#home-page {
+  background: url("/images/gateway-test.jpg") fixed;
+  background-size: 1580px;
+  /*background-color: #f5f2ee;*/
+  height: 100%;
+  padding-top: 150px;
+  padding-bottom: 200px;
+  color: white;
+}
+
+#home-mid {
+  padding-top: 100px;
+}
+
+/* ANIMATION CODE FROM: https://codepen.io/fr33co/pen/xOBXGy*/
 /* make keyframes that tell the start state and the end state of our object */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-
-/* ANIMATION CODE FROM: https://codepen.io/fr33co/pen/xOBXGy*/
 .fade-in {
   opacity:0;  /* make things invisible upon start */
   -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
@@ -84,10 +274,6 @@ p.navigation:hover {
   animation-duration:1s;
 }
 
-#star-favorite {
-  padding-top: 70px;
-  float: right;
-}
 .fade-in.one {
   -webkit-animation-delay: 0.7s;
   -moz-animation-delay: 0.7s;
@@ -117,56 +303,64 @@ p.navigation:hover {
   text-align: center;
 }
 
-#page {
-  margin-left: 44.5vw
-}
-
-#delete {
-  float: right !important;
-}
-
-#save-icon {
-  float: right;
-}
-
-#store-search {
-  margin-left: 10px;
+.fade-in.three input {
   border-radius: 500rem !important;
-  padding-left: 100px !important;
-  padding-right: 200px !important;
+}
+/* HOME PAGE SECTION */
+/* ~~~~~~~END~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ */
+
+/* LANDING PAGE SECTION */
+/* ~~~~~~~~START~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~ */
+.landing {
+  background-size: auto;
+  background: url("/images/manoa-campus-dark.jpg") fixed;
+  height: 100%;
+  margin: 0;
+  padding-top: -20px;
+  padding-bottom: 0;
+  color: white;
+  font: sans-serif;
 }
 
-#store-headline {
-  font-family: "lato", "Helvetica Neue", serif !important;
-  padding-bottom: 15px;
-  padding-left: 5px;
-  text-align: left;
-  font-size: 36px;
-  color: #024731 !important;
+.features {
+  background-color: #fcfbfb;
 }
 
-#thin-font {
-  font-family: "lato", "Helvetica Neue", serif !important;
-  font-weight: normal;
+.SOFoot {
+  background-color: #363636;
+  color: white;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-top: 14px;
+  text-align: center;
 }
+/* LANDING PAGE SECTION */
+/* ~~~~~~~~~END~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~ */
 
-#store-test {
-  padding-top: 100px;
-}
-#item-page {
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
-
-.pusher {
-  padding-bottom: 30px;
-  height: 1600px;
-}
-
+/* STORE PAGE SECTION */
+/* ~~~~~~START~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~ */
 #sidebar {
   border: none;
   box-shadow: none ;
   background-color: #FCFBFB;
+}
+
+p.side-bar-items:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #a0e8a0;
+  transition: width .75s;
+}
+
+p.side-bar-items:hover:after {
+  width: 100%;
 }
 
 .side-bar-main-item {
@@ -197,60 +391,126 @@ p.navigation:hover {
   cursor: pointer;
 }
 
+#store-test {
+  padding-top: 100px;
+}
+
 #store-test .ui.grid {
   padding-left: 10px !important;
 }
 
-button.ui.icon.button {
-  border-radius: 0rem 500rem 500rem 0rem !important;
-  background-color: white !important;
-  border: 1px solid rgba(34, 36, 38, 0.15) !important;
-  border-left: white !important;
+#store-search {
+  margin-left: 10px;
+  border-radius: 500rem !important;
+  padding-left: 100px !important;
+  padding-right: 200px !important;
 }
 
-.fade-in.three input {
-  border-radius: 500rem !important;
+#store-headline {
+  font-family: "lato", "Helvetica Neue", serif !important;
+  padding-bottom: 15px;
+  padding-left: 5px;
+  text-align: left;
+  font-size: 36px;
+  color: #024731 !important;
+}
+
+.store-link {
+  color: #024731 !important;
 }
 
 #store-search input {
   border-radius: 500rem 0rem 0rem 500rem !important;
 }
 
-p.side-bar-items:after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #a0e8a0;
-  transition: width .75s;
+.pusher {
+  padding-bottom: 30px;
+  height: 1600px;
+}
+/* STORE PAGE SECTION */
+/* ~~~~~~~~END~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~ */
+
+/* ITEM PAGE SECTION */
+/* ~~~~~~START~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ */
+#item-page {
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
 
-.ui.input:focus {
-  border: 1px solid #024731 !important;
+#star-favorite {
+  padding-top: 70px;
+  float: right;
 }
 
-p.side-bar-items:hover:after {
-  width: 100%;
+#delete {
+  float: right !important;
 }
 
-.four.wide.column {
-  padding-left: 30px !important;
+.itemPageImage {
+  height: 500px;
+  width: 600px;
+  padding-right: 20px;
+}
+/* ITEM PAGE SECTION */
+/* ~~~~~~~END~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~ */
+
+/* EDIT LISTING SECTION */
+/* ~~~~~~~~START~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~ */
+#edit-page {
+  padding-top: 90px;
+}
+/* EDIT LISTING SECTION */
+/* ~~~~~~~~END~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* LISTINGS CARD SECTION */
+/* ~~~~~~~~START~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~ */
+.cardImage {
+  height: 200px !important;
+  width: 250px !important;
 }
 
-.ui.grid {
-  padding-left: 50px !important;
-  width: 90% !important;
+.limitCard {
+  height: 470px;
+  width: 300px !important;
 }
 
-#not-active {
-  width: 22% !important;
+.edit {
+  float: right !important;
 }
 
-#filter-list-icon {
-  color: #024731;
-  padding-left: 10px;
+#report {
+  float: right !important;
+}
+/* LISTINGS CARD SECTION */
+/* ~~~~~~~~~END~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~ */
+
+/* PROFILE SECTION */
+/* ~~~~~START~~~~~ */
+/* ~~~~~~~~~~~~~~~ */
+#prof-middle {
+  background-color: #f5f2ee !important;
+  padding-top: 100px;
+  padding-bottom: 400px;
 }
 
+#profText {
+  font-family: "Lato", "Helvetica Neue", serif;
+}
+/* PROFILE SECTION */
+/* ~~~~~~END~~~~~~ */
+/* ~~~~~~~~~~~~~~~ */
+
+/* NO CLUE HONESTLY SECTION */
+/* ~~~~~~~~~START~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
 #toggle a{
   font-family: "Gordita", "Helvetica Neue", serif !important;
   margin-left: 8px;
@@ -261,63 +521,24 @@ p.side-bar-items:hover:after {
   cursor: pointer;
 }
 
-.cardImage {
-  height: 200px !important;
-  width: 250px !important;
+#page {
+  margin-left: 44.5vw
 }
 
-.itemPageImage {
-  height: 500px;
-  width: 600px;
-  padding-right: 20px;
+#thin-font {
+  font-family: "lato", "Helvetica Neue", serif !important;
+  font-weight: normal;
 }
 
-.limitCard {
-  height: 470px;
-  width: 300px !important;
- }
-
-.not-menu-item {
-  font-family: "Lato", "Helvetica Neue", serif;
-  margin-top: 22px;
-  font-size: 15px;
-  color: #024731 !important;
+button.ui.icon.button {
+  border-radius: 0rem 500rem 500rem 0rem !important;
+  background-color: white !important;
+  border: 1px solid rgba(34, 36, 38, 0.15) !important;
+  border-left: white !important;
 }
 
-.menu-space {
-  color: #FAFAFA;
-}
-
-p.not-menu-item:after {
-  content: '';
-  display: block;
-  font-family: "Roboto", "Helvetica Neue", serif;
-  width: 0;
-  height: 2px;
-  background: #a0e8a0;
-  transition: width .75s;
-}
-
-p.not-menu-item:hover:after {
-  width: 100%;
-}
-
-img.ui.avatar.image:hover {
-  border: 4px #024731 !important;
-  border-radius: 50px !important;
-}
-
-.store-link {
-  color: #024731 !important;
-}
-
-img.ui.avatar.image:hover {
-  border: 3px solid #a0e8a0 !important;
-}
-
-img.ui.avatar.image {
-  width: 35px;
-  height: 35px;
+#not-active {
+  width: 22% !important;
 }
 
 #header {
@@ -327,164 +548,13 @@ img.ui.avatar.image {
   font-size: 50px;
 }
 
-#home-page {
-  background: url("/images/gateway-test.jpg") fixed;
-  background-size: 1580px;
-  /*background-color: #f5f2ee;*/
-  height: 100%;
-  padding-top: 150px;
-  padding-bottom: 200px;
-  color: white;
-}
-
-.edit {
-  float: right !important;
-}
-
-#report {
-  float: right !important;
-}
-
-.NavBar {
-  background-color: #fafafa;
-  color: #024731 !important;
-  padding-top: 60px;
-  padding-left: 0;
-}
-
-.footer-background {
-  background-color: #363636;
-  color: white;
-  padding-top: 20px !important;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-}
-
-.landing {
-  background-size: auto;
-  background: url("/images/manoa-campus-dark.jpg") fixed;
-  height: 100%;
-  margin: 0;
-  padding-top: -20px;
-  padding-bottom: 0;
-  color: white;
-  font: sans-serif;
-}
-
-.background {
-  background-color: #fcfbfb;
-  background-size: cover;
-  height: 100%;
-  padding-bottom: 0;
-  color: white;
-}
-
 .gridStyle {
   border-bottom: 40px;
-}
-
-.features {
-  background-color: #fcfbfb;
-}
-
-h1 {
-  font-family: "Lato", "Helvetica Neue", serif;
-  font-size: 30px !important;
-  color: #4a4a4a;
-  padding-top: 50px !important;
-  padding-bottom: 30px !important;
-}
-
-h4 {
-  font-family: "Lato", "Helvetica Neue", serif;
-  color: #4a4a4a;
-  padding-bottom: 30px !important;
 }
 
 #test {
   color: #000000;
 }
-
-.SOFoot {
-  background-color: #363636;
-  color: white;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin-top: 14px;
-  text-align: center;
-}
-
-#sign-up {
-  padding-top: 150px;
-  padding-bottom: 80px;
-}
-
-#sign-page {
-  font-family: "Lato", "Helvetica Neue", serif;
-  background-color: #fafafa !important;
-  /*#FFFFFF or #f5f2ee try this later instead for white background*/
-  height: 100%;
-}
-
-#span {
-  font-family: "Lato", "Helvetica Neue", serif;
-  color: #000000;
-  text-align: center !important;
-}
-
-#edit-page {
-  padding-top: 90px;
-}
-
-#log-page {
-  font-family: "Lato", "Helvetica Neue", serif;
-  background-color: #fafafa !important;
-  /*#FFFFFF or #f5f2ee try this later instead for white background*/
-  height: 100%;
-}
-
-#log-in {
-  padding-top: 150px;
-  padding-bottom: 125px;
-}
-
-#signed-out {
-  padding-top: 150px;
-  padding-bottom: 350px;
-}
-
-#out-page {
-  font-family: "Lato", "Helvetica Neue", serif;
-  background-color: #fafafa !important;
-  /*#FFFFFF or #f5f2ee or #fafafa try this later instead for white background*/
-  height: 100%;
-}
-
-#redirect {
-  text-align: center !important;
-  font-family: "Lato", "Helvetica Neue", serif;
-  font-weight: bold;
-  font-size: 30px;
-  padding-bottom: 50px;
-}
-
-#sign-in-text {
-  text-align: center;
-}
-
-#prof-middle {
-  background-color: #f5f2ee !important;
-  padding-top: 100px;
-  padding-bottom: 400px;
-}
-
-#profText {
-  font-family: "Lato", "Helvetica Neue", serif;
-}
-
-.dropdown.icon {
-  display: none;
-}
+/* NO CLUE HONESTLY SECTION */
+/* ~~~~~~~~~~~END~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~ */
