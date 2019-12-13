@@ -67,136 +67,163 @@ class Store extends Component {
   };
 
   showClothing() {
+    this.searchReset();
     this.setState({ clothing: !this.state.clothing });
     this.setState({ page: 1 });
   }
 
   showMen() {
+    this.searchReset();
     this.setState({ men: !this.state.men });
     this.setState({ page: 1 });
   }
 
   showWomen() {
+    this.searchReset();
     this.setState({ women: !this.state.women });
     this.setState({ page: 1 });
   }
 
   showTop() {
+    this.searchReset();
     this.setState({ top: !this.state.top });
     this.setState({ page: 1 });
   }
 
   showBottom() {
+    this.searchReset();
     this.setState({ bottom: !this.state.bottom });
     this.setState({ page: 1 });
   }
 
   showShoes() {
+    this.searchReset();
     this.setState({ shoes: !this.state.shoes });
     this.setState({ page: 1 });
   }
 
   showCaccessories() {
+    this.searchReset();
     this.setState({ caccessories: !this.state.caccessories });
     this.setState({ page: 1 });
   }
 
   showElectronics() {
+    this.searchReset();
     this.setState({ electronics: !this.state.electronics });
     this.setState({ page: 1 });
   }
 
   showLaptops() {
+    this.searchReset();
     this.setState({ laptops: !this.state.laptops });
     this.setState({ page: 1 });
   }
 
   showPhotography() {
+    this.searchReset();
     this.setState({ photography: !this.state.photography });
     this.setState({ page: 1 });
   }
 
   showEaccessories() {
+    this.searchReset();
     this.setState({ eaccessories: !this.state.eaccessories });
     this.setState({ page: 1 });
   }
 
   showTelevision() {
+    this.searchReset();
     this.setState({ television: !this.state.television });
     this.setState({ page: 1 });
   }
 
   showGames() {
+    this.searchReset();
     this.setState({ games: !this.state.games });
     this.setState({ page: 1 });
   }
 
   showDormitory() {
+    this.searchReset();
     this.setState({ dormitory: !this.state.dormitory });
     this.setState({ page: 1 });
   }
 
   showSelf() {
+    this.searchReset();
     this.setState({ self: !this.state.self });
     this.setState({ page: 1 });
   }
 
   showAppliances() {
+    this.searchReset();
     this.setState({ appliances: !this.state.appliances });
     this.setState({ page: 1 });
   }
 
   showDecor() {
+    this.searchReset();
     this.setState({ decor: !this.state.decor });
     this.setState({ page: 1 });
   }
 
   showPlants() {
+    this.searchReset();
     this.setState({ plants: !this.state.plants });
     this.setState({ page: 1 });
   }
 
   showOutdoors() {
+    this.searchReset();
     this.setState({ outdoors: !this.state.outdoors });
     this.setState({ page: 1 });
   }
 
   showSports() {
+    this.searchReset();
     this.setState({ sports: !this.state.sports });
     this.setState({ page: 1 });
   }
 
   showCamping() {
+    this.searchReset();
     this.setState({ camping: !this.state.camping });
     this.setState({ page: 1 });
   }
 
   showTransportation() {
+    this.searchReset();
     this.setState({ transportation: !this.state.transportation });
     this.setState({ page: 1 });
   }
 
   showRecreation() {
+    this.searchReset();
     this.setState({ recreation: !this.state.recreation });
     this.setState({ page: 1 });
   }
 
   showSchool() {
+    this.searchReset();
     this.setState({ school: !this.state.school });
     this.setState({ page: 1 });
   }
 
   showStationery() {
+    this.searchReset();
     this.setState({ stationery: !this.state.stationery });
     this.setState({ page: 1 });
   }
 
   showBackpacks() {
+    this.searchReset();
     this.setState({ backpacks: !this.state.backpacks });
     this.setState({ page: 1 });
   }
 
   showTextbooks() {
+    this.searchReset();
     this.setState({ textbooks: !this.state.textbooks });
     this.setState({ page: 1 });
   }
