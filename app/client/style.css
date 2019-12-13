@@ -350,6 +350,27 @@ p.navigation:hover {
   background-color: #FCFBFB;
 }
 
+#all-items-button.side-bar-items {
+  margin-left: 5px !important;
+}
+
+#all-items-button {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: left;
+  font-size: 16px;
+  color: #024731 !important;
+  cursor: pointer;
+}
+
+#all-items-button.side-bar-items:hover:after {
+  width: 65%;
+}
+
+#store-test .ui.grid {
+  padding-left: 10px !important;
+}
+
 p.side-bar-items:after {
   content: '';
   display: block;
