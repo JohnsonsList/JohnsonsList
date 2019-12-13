@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Listings } from '../../api/listings/Listing';
-import { _ } from 'meteor/underscore';
 import { Issues } from '../../api/issue/Issue';
 import { Feedback } from '../../api/Feedback/Feedback';
 

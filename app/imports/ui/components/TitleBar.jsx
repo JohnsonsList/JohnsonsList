@@ -32,13 +32,74 @@ class TitleBar extends React.Component {
                 STORE
               </p>
             </a>
-            <p className='menu-space'>
-              ||||||||
-            </p>
+            <Menu.Item>
+            </Menu.Item>
             <a className='not-menu-item'
                href='/#/add'>
               <p className='not-menu-item'>
                 ADD AN ITEM
+              </p>
+            </a>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <Menu.Item>
+            </Menu.Item>
+            <a className='not-menu-item'
+               href='/#/guide'>
+              <p className='not-menu-item'>
+                WEBSITE GUIDE
               </p>
             </a>
 
