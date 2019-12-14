@@ -111,10 +111,10 @@ class AddListing extends React.Component {
   /** On submit, insert the data. */
   submit(data, formRef) {
     const { name, email, image, description, price, condition,
-      categories, clothes, electronics, dormitory, outdoors, school } = data;
+      clothes, electronics, dormitory, outdoors, school } = data;
     const owner = Meteor.user().username;
     Listings.insert({ name, email, image, description, price, condition,
-          categories, clothes, electronics, dormitory, outdoors, school, owner },
+          categories: this.state.category, clothes, electronics, dormitory, outdoors, school, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
