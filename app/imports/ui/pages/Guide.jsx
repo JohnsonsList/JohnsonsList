@@ -106,7 +106,7 @@ class Guide extends React.Component {
                     <div>
                       <Grid centered>
                         <Grid.Column width={10}>
-                          <Image size='big' src='/images/find.jpg'/>
+                          <Image size='big' src='/images/find-listing.png'/>
                         </Grid.Column>
                         <Grid.Column width={6}>
                           <Header as='h2'>
@@ -127,13 +127,13 @@ class Guide extends React.Component {
                         </Grid.Column>
                         <Grid.Column width={10}>
                           <Image floated='right'
-                                 size='big' src='/images/contact.jpg'/>
+                                 size='big' src='/images/contact.png'/>
                         </Grid.Column>
                       </Grid>
                       <Grid centered>
                         <Grid.Column width={10}>
                           <Image floated='right'
-                                 size='big' src='/images/buy.jpg'/>
+                                 size='big' src='/images/buy.png'/>
                         </Grid.Column>
                         <Grid.Column width={6}>
                           <Header as='h2'>
