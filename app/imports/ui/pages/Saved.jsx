@@ -681,6 +681,7 @@ class Store extends Component {
       marginBottom: '50px !important',
     };
     const pageStyle = { paddingTop: '20px' };
+    const searchStyle = { paddingLeft: '100px', paddingRight: '100px' };
 
     const listingsPerPage = 12;
     const page = this.state.page;
@@ -698,19 +699,31 @@ class Store extends Component {
             <div id='store-headline'>
               <p>YOUR SAVED LISTINGS: {title}</p>
             </div>
-
-            <div id='store-search'>
-              <Input
-                  type='text'
-                  value={this.state.value}
-                  fluid
-                  size='large'
-                  onChange={this.updateValue.bind(this)}
-                  onKeyPress={this.handleClick.bind(this)}
-                  placeholder='Search...'
-                  action={{ icon: 'search', onClick: () => this.handleButton() }}
-              />
-            </div>
+            <Grid>
+              <Grid.Column width={3}>
+                <a onClick={this.searchReset.bind(this)}>
+                  <p className='side-bar-items' id='all-items-button'
+                     onClick={this.searchReset.bind(this)}>
+                    View All Listings
+                    ({(this.props.listings.filter((items) => items)).length})
+                  </p>
+                </a>
+              </Grid.Column>
+              <Grid.Column width={13} style={searchStyle}>
+                <div id='store-search'>
+                  <Input
+                      type='text'
+                      value={this.state.value}
+                      fluid
+                      size='large'
+                      onChange={this.updateValue.bind(this)}
+                      onKeyPress={this.handleClick.bind(this)}
+                      placeholder='Search...'
+                      action={{ icon: 'search', onClick: () => this.handleButton() }}
+                  />
+                </div>
+              </Grid.Column>
+            </Grid>
             <div id='store-content'>
               <Container fluid style={pageStyle}>
                 <Sidebar.Pushable>

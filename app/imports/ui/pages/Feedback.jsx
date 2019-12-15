@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feedbacks } from '/imports/api/feedback/Feedback';
+import { Feedbacks } from '/imports/api/Feedback/Feedback';
 import { Grid, Segment, Header, Container } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';

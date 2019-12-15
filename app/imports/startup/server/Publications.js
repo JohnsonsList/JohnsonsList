@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Listings } from '../../api/listings/Listing';
 import { Issues } from '../../api/issue/Issue';
-import { Feedbacks } from '../../api/feedback/Feedback';
+import { Feedbacks } from '../../api/Feedback/Feedback';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Listings', function publish() {

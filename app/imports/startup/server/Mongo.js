@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Listings } from '../../api/listings/Listing.js';
 import { Issues } from '../../api/issue/Issue.js';
-import { Feedbacks } from '../../api/feedback/Feedback.js';
+import { Feedbacks } from '../../api/Feedback/Feedback.js';
 
 /* eslint-disable no-console */
 

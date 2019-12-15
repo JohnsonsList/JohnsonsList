@@ -17,10 +17,18 @@ class Store extends Component {
     visible: true,
   }
 
+  componentDidMount() {
+    if (this.props.location.state !== undefined) {
+      this.setState({ value: this.props.location.state });
+      this.setState({ search: this.props.location.state });
+    }
+  }
+
   constructor() {
     super();
     this.state = {
       search: '',
+      value: '',
       sidebar: true,
       clothing: false,
       electronics: false,
@@ -48,116 +56,224 @@ class Store extends Component {
       recreation: false,
       stationery: false,
       backpacks: false,
+      textbooks: false,
+      page: 1,
+      listingsPerPage: 5,
     };
   }
 
+  setPageNum = (event, { activePage }) => {
+    this.setState({ page: activePage });
+  };
+
   showClothing() {
+    this.searchReset();
     this.setState({ clothing: !this.state.clothing });
+    this.setState({ page: 1 });
   }
 
   showMen() {
+    this.searchReset();
     this.setState({ men: !this.state.men });
+    this.setState({ page: 1 });
   }
 
   showWomen() {
+    this.searchReset();
     this.setState({ women: !this.state.women });
+    this.setState({ page: 1 });
   }
 
   showTop() {
+    this.searchReset();
     this.setState({ top: !this.state.top });
+    this.setState({ page: 1 });
   }
 
   showBottom() {
+    this.searchReset();
     this.setState({ bottom: !this.state.bottom });
+    this.setState({ page: 1 });
   }
 
   showShoes() {
+    this.searchReset();
     this.setState({ shoes: !this.state.shoes });
+    this.setState({ page: 1 });
   }
 
   showCaccessories() {
+    this.searchReset();
     this.setState({ caccessories: !this.state.caccessories });
+    this.setState({ page: 1 });
   }
 
   showElectronics() {
+    this.searchReset();
     this.setState({ electronics: !this.state.electronics });
+    this.setState({ page: 1 });
   }
 
   showLaptops() {
+    this.searchReset();
     this.setState({ laptops: !this.state.laptops });
+    this.setState({ page: 1 });
   }
 
   showPhotography() {
+    this.searchReset();
     this.setState({ photography: !this.state.photography });
+    this.setState({ page: 1 });
   }
 
   showEaccessories() {
+    this.searchReset();
     this.setState({ eaccessories: !this.state.eaccessories });
+    this.setState({ page: 1 });
   }
 
   showTelevision() {
+    this.searchReset();
     this.setState({ television: !this.state.television });
+    this.setState({ page: 1 });
   }
 
   showGames() {
+    this.searchReset();
     this.setState({ games: !this.state.games });
+    this.setState({ page: 1 });
   }
 
   showDormitory() {
+    this.searchReset();
     this.setState({ dormitory: !this.state.dormitory });
+    this.setState({ page: 1 });
   }
 
   showSelf() {
+    this.searchReset();
     this.setState({ self: !this.state.self });
+    this.setState({ page: 1 });
   }
 
   showAppliances() {
+    this.searchReset();
     this.setState({ appliances: !this.state.appliances });
+    this.setState({ page: 1 });
   }
 
   showDecor() {
+    this.searchReset();
     this.setState({ decor: !this.state.decor });
+    this.setState({ page: 1 });
   }
 
   showPlants() {
+    this.searchReset();
     this.setState({ plants: !this.state.plants });
+    this.setState({ page: 1 });
   }
 
   showOutdoors() {
+    this.searchReset();
     this.setState({ outdoors: !this.state.outdoors });
+    this.setState({ page: 1 });
   }
 
   showSports() {
+    this.searchReset();
     this.setState({ sports: !this.state.sports });
+    this.setState({ page: 1 });
   }
 
   showCamping() {
+    this.searchReset();
     this.setState({ camping: !this.state.camping });
+    this.setState({ page: 1 });
   }
 
   showTransportation() {
+    this.searchReset();
     this.setState({ transportation: !this.state.transportation });
+    this.setState({ page: 1 });
   }
 
   showRecreation() {
+    this.searchReset();
     this.setState({ recreation: !this.state.recreation });
+    this.setState({ page: 1 });
   }
 
   showSchool() {
+    this.searchReset();
     this.setState({ school: !this.state.school });
+    this.setState({ page: 1 });
   }
 
   showStationery() {
+    this.searchReset();
     this.setState({ stationery: !this.state.stationery });
+    this.setState({ page: 1 });
   }
 
   showBackpacks() {
+    this.searchReset();
     this.setState({ backpacks: !this.state.backpacks });
+    this.setState({ page: 1 });
   }
 
-  updateSearch(event) {
+  showTextbooks() {
+    this.searchReset();
+    this.setState({ textbooks: !this.state.textbooks });
+    this.setState({ page: 1 });
+  }
+
+  updateValue(event) {
     // console.log(event.target.value);
-    this.setState({ search: event.target.value });
+    this.setState({ value: event.target.value });
+  }
+
+  handleClick(e) {
+    if (e.key === 'Enter') {
+      this.setState({ search: this.state.value });
+    }
+  }
+
+  handleButton() {
+    this.setState({ search: this.state.value });
+  }
+
+  searchReset() {
+    this.setState({ value: '' });
+    this.setState({ search: '' });
+    this.setState({ clothing: false });
+    this.setState({ electronics: false });
+    this.setState({ dormitory: false });
+    this.setState({ outdoors: false });
+    this.setState({ school: false });
+    this.setState({ men: false });
+    this.setState({ women: false });
+    this.setState({ top: false });
+    this.setState({ bottom: false });
+    this.setState({ shoes: false });
+    this.setState({ caccessories: false });
+    this.setState({ laptops: false });
+    this.setState({ photography: false });
+    this.setState({ eaccessories: false });
+    this.setState({ television: false });
+    this.setState({ games: false });
+    this.setState({ self: false });
+    this.setState({ appliances: false });
+    this.setState({ decor: false });
+    this.setState({ plants: false });
+    this.setState({ sports: false });
+    this.setState({ camping: false });
+    this.setState({ transportation: false });
+    this.setState({ recreation: false });
+    this.setState({ stationery: false });
+    this.setState({ backpacks: false });
+    this.setState({ textbooks: false });
+    this.setState({ page: 1 });
   }
 
   handleAnimationChange =
@@ -547,6 +663,7 @@ class Store extends Component {
       marginBottom: '50px !important',
     };
     const pageStyle = { paddingTop: '20px' };
+    const searchStyle = { paddingLeft: '100px', paddingRight: '100px' };
 
     return (
         <div className='background'>
@@ -556,17 +673,31 @@ class Store extends Component {
             <div id='store-headline'>
               <p>YOUR LISTINGS: {title}</p>
             </div>
-
-            <div id='store-search'>
-              <Input
-                  type='text'
-                  value={this.state.search}
-                  onChange={this.updateSearch.bind(this)}
-                  placeholder='Search...'
-                  icon='search'
-              />
-            </div>
-
+            <Grid>
+              <Grid.Column width={3}>
+                <a onClick={this.searchReset.bind(this)}>
+                  <p className='side-bar-items' id='all-items-button'
+                     onClick={this.searchReset.bind(this)}>
+                    View All Listings
+                    ({(this.props.listings.filter((items) => items)).length})
+                  </p>
+                </a>
+              </Grid.Column>
+              <Grid.Column width={13} style={searchStyle}>
+                <div id='store-search'>
+                  <Input
+                      type='text'
+                      value={this.state.value}
+                      fluid
+                      size='large'
+                      onChange={this.updateValue.bind(this)}
+                      onKeyPress={this.handleClick.bind(this)}
+                      placeholder='Search...'
+                      action={{ icon: 'search', onClick: () => this.handleButton() }}
+                  />
+                </div>
+              </Grid.Column>
+            </Grid>
             <div id='store-content'>
               <Container fluid style={pageStyle}>
                 <Sidebar.Pushable>
@@ -580,8 +711,8 @@ class Store extends Component {
 
                   <Sidebar.Pusher dimmed={dimmed && visible}>
                     <Grid>
-                      {filteredItems.map((listings) =>
-                          <Grid.Column width={4} style={cardStyle}>
+                      {/* eslint-disable-next-line react/jsx-key */}
+                      {filteredItems.map((listings) => <Grid.Column width={4} style={cardStyle}>
                             <Listing
                                 key={listings._id}
                                 listings={listings}/>
@@ -601,6 +732,7 @@ class Store extends Component {
 /** Require an array of Stuff documents in the props. */
 Store.propTypes = {
   listings: PropTypes.array.isRequired,
+  location: PropTypes.object,
   ready: PropTypes.bool.isRequired,
 };
 

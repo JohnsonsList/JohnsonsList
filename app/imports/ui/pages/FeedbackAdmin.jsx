@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Table, Header, Loader } from 'semantic-ui-react';
-import { Feedbacks } from '/imports/api/feedback/Feedback';
+import { Feedbacks } from '/imports/api/Feedback/Feedback';
 import FeedbackList from '/imports/ui/components/FeedbackList';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
