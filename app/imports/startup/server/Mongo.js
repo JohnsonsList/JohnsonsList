@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Listings } from '../../api/listings/Listing.js';
 import { Issues } from '../../api/issue/Issue.js';
-import { Feedback } from '../../api/Feedback/Feedback.js';
+import { Feedbacks } from '../../api/feedback/Feedback.js';
 
 /* eslint-disable no-console */
 
@@ -36,11 +36,11 @@ if (Issues.find().count() === 0) {
 /** Initialize the database with a default data document. */
 function addFeedback(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
-  Feedback.insert(data);
+  Feedbacks.insert(data);
 }
 
 /** Initialize the collection if empty. */
-if (Feedback.find().count() === 0) {
+if (Feedbacks.find().count() === 0) {
   if (Meteor.settings.defaultFeedback) {
     console.log('Creating default feedback.');
     Meteor.settings.defaultFeedback.map(data => addFeedback(data));

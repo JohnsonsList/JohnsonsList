@@ -3,7 +3,7 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** Define a Mongo collection to hold the data. */
-const Feedback = new Mongo.Collection('Feedback');
+const Feedbacks = new Mongo.Collection('Feedback');
 
 /** Define a schema to specify the structure of each document in the collection. */
 const FeedbackSchema = new SimpleSchema({
@@ -13,7 +13,7 @@ const FeedbackSchema = new SimpleSchema({
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
-Feedback.attachSchema(FeedbackSchema);
+Feedbacks.attachSchema(FeedbackSchema);
 
 /** Make the collection and schema available to other code. */
-export { Feedback, FeedbackSchema };
+export { Feedbacks, FeedbackSchema };

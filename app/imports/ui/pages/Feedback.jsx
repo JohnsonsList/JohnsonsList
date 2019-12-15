@@ -1,5 +1,5 @@
 import React from 'react';
-import { Issues } from '/imports/api/issue/Issue';
+import { Feedbacks } from '/imports/api/feedback/Feedback';
 import { Grid, Segment, Header, Container } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -20,18 +20,18 @@ const formSchema = new SimpleSchema({
 });
 
 /** Renders the Page for adding a document. */
-class NotifyAdmin extends React.Component {
+class Feedback extends React.Component {
 
   /** On submit, insert the data. */
   submit(data, formRef) {
     const { thoughts, description } = data;
     const owner = Meteor.user().username;
-    Issues.insert({ thoughts, description, owner },
+    Feedbacks.insert({ thoughts, description, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Notification sent! Redirecting you back to the homepage..', 'success');
+          swal('Success', 'Notification sent!', 'success');
           formRef.reset();
           // add in code to redirect TODO
         }
@@ -57,7 +57,7 @@ class NotifyAdmin extends React.Component {
                     <Segment>
                       <TextField
                           name='thoughts'
-                          placeholder='The Issue being created.'/>
+                          placeholder='Thoughts on our website?.'/>
                       <LongTextField
                           name='description'
                           placeholder='Give us some thoughts on why you feel the way you do.'/>
@@ -74,4 +74,4 @@ class NotifyAdmin extends React.Component {
   }
 }
 
-export default NotifyAdmin;
+export default Feedback;

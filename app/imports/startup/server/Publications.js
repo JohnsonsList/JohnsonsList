@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Listings } from '../../api/listings/Listing';
 import { Issues } from '../../api/issue/Issue';
-import { Feedback } from '../../api/Feedback/Feedback';
+import { Feedbacks } from '../../api/feedback/Feedback';
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Listings', function publish() {
@@ -48,7 +48,7 @@ Meteor.publish('IssueAdmin', function publish() {
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
 Meteor.publish('FeedbackAdmin', function publish() {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Feedback.find();
+    return Feedbacks.find();
   }
   return this.ready();
 });
