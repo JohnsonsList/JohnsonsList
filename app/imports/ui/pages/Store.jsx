@@ -257,7 +257,7 @@ class Store extends Component {
     this.setState({ bottom: false });
     this.setState({ shoes: false });
     this.setState({ caccessories: false });
-    this.setState({ computers: false });
+    this.setState({ laptops: false });
     this.setState({ photography: false });
     this.setState({ eaccessories: false });
     this.setState({ television: false });
@@ -270,7 +270,7 @@ class Store extends Component {
     this.setState({ camping: false });
     this.setState({ transportation: false });
     this.setState({ recreation: false });
-    this.setState({ stationary: false });
+    this.setState({ stationery: false });
     this.setState({ backpacks: false });
     this.setState({ textbooks: false });
     this.setState({ page: 1 });

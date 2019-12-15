@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Table, Header, Loader } from 'semantic-ui-react';
-import { Feedback } from '/imports/api/Feedback/Feedback';
+import { Feedbacks } from '/imports/api/feedback/Feedback';
 import FeedbackList from '/imports/ui/components/FeedbackList';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -52,9 +52,9 @@ FeedbackAdmin.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('FeedbackAdmin');
+  const subscription = Meteor.subscribe('Feedbacks');
   return {
-    feedback: Feedback.find({}).fetch(),
+    feedback: Feedbacks.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(FeedbackAdmin);

@@ -33,11 +33,25 @@ h4 {
 .footer-background {
   background-color: #363636;
   color: white;
+}
+
+.button.ui.circular.icon.right.floated.button {
+  border-radius: 500rem !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+div.left.floated {
   padding-top: 20px !important;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
+  padding-left: 20px !important;
+}
+
+div.nine.wide.column {
+  padding: 10px 10px 5px 10px !important;
+}
+
+div.seven.wide.column {
+  padding-right: 0px !important;
 }
 
 .ui.input:focus {
@@ -543,7 +557,8 @@ p.side-bar-items:hover:after {
 }
 
 #page {
-  margin-left: 44.5vw
+  padding-bottom: 20px !important;
+  margin-left: 40.25vw
 }
 
 #thin-font {
