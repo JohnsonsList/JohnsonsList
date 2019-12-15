@@ -233,6 +233,10 @@ img.ui.avatar.image {
   cursor: default;
 }
 
+#navigation-buy {
+  padding-left: 1100px !important;
+}
+
 p.navigation {
   font-family: "Roboto", "Helvetica Neue", serif;
   margin-top: 22px;
