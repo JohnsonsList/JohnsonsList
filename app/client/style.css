@@ -581,9 +581,6 @@ p.side-bar-items:hover:after {
   font-size: 15px;
 }
 
-#prof-about {
-  cursor: pointer;
-}
 #prof-listings {
   cursor: pointer;
 }

@@ -11,7 +11,7 @@ class TitleBar extends React.Component {
   render() {
 
     const trigger = (
-        <Image src='/images/matthew.png' avatar/>
+        <Image src='images/matthew.png' avatar/>
     );
 
     const menuStyle = {
