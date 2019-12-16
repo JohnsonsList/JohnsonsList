@@ -10,8 +10,10 @@ class Footer extends React.Component {
             {/* eslint-disable-next-line react/jsx-no-target-blank */}
             <Grid Columns={2}>
               <Grid.Column width={7}>
-                <a href='https://johnsonslist.github.io/'><Button
-                    floated='right' circular icon='github'/></a>
+                <a href='https://johnsonslist.github.io/'
+                   rel='noopener noreferrer'
+                   target='_blank'>
+                  <Button circular floated='right' icon='github'/></a>
               </Grid.Column>
               <Grid.Column width={9}>
                 <div className='left floated'>A Manoa Flea Market Project</div>

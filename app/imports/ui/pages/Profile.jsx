@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Container, Image, Grid, Header, Divider } from 'semantic-ui-react';
+import { Container, Image, Grid, Menu } from 'semantic-ui-react';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import { withRouter } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';
@@ -26,42 +26,32 @@ class Profile extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
 
-    const profStyle = { paddingTop: '80px', fontFamily: 'Roboto' };
-    const fontStyle = { fontFamily: 'Roboto' };
-
     return (
         <div>
           <TitleBar/>
-          <div id='prof-middle'>
+          <div id='prof-page'>
+            <div id='prof-top'>
             <Container>
               <Grid>
                 <Grid.Column width={5}>
-             <Image src='/images/matthew.png' size='medium' circular/>
-                </Grid.Column>
-                <Grid.Column width={5}>
-                  <Header as='h2' style={ profStyle }>
-                    Full name:  {this.props.currentFirst} {this.props.currentLast}
-                  </Header>
-                  <Header as='h2' style={ fontStyle } >
-                    Username:  {this.props.currentUser}
-                  </Header>
-                  <Header as='h2' style={ fontStyle }>
-                    E-mail:  {this.props.currentEmail}
-                  </Header>
-                  <Header as='h2' style={ fontStyle }>
-                    Posted Items:  {this.props.items}
-                  </Header>
-                  <button className="ui active button" onClick={this.edit} basic>
-                    <i className="user icon"></i>
-                    Edit Profile
-                  </button>
+             <Image id='profile-image' src='/images/matthew.png' size='small' circular/>
                 </Grid.Column>
               </Grid>
-              <Divider fluid/>
-              <p>
-              </p>
-            <Divider fluid/>
             </Container>
+            </div>
+            <div id='prof-middle'>
+              <Menu id='prof-menu'>
+                <Menu.Item>
+                  <p className='profile-words'>{this.props.currentFirst}</p>
+                </Menu.Item>
+                <Menu.Item>
+                  <p className='profile-words'>{this.props.currentUser}</p>
+                </Menu.Item>
+                <Menu.Item>
+                  <p className='profile-words'>{this.props.currentEmail}</p>
+                </Menu.Item>
+              </Menu>
+            </div>
           </div>
           <Footer/>
         </div>
