@@ -6,7 +6,7 @@ class Footer extends React.Component {
   render() {
     return (
         <div className="footer-background">
-          <Container style={{ paddingBottom: '2em' }}>
+          <Container style={{ paddingBottom: '40px' }}>
             {/* eslint-disable-next-line react/jsx-no-target-blank */}
             <Grid Columns={2}>
               <Grid.Column width={7}>

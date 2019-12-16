@@ -41,14 +41,14 @@ class Feedback extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     let fRef = null;
-    const formStyle = { paddingTop: '100px', paddingBottom: '50px' };
+    const formStyle = { paddingTop: '100px', paddingBottom: '60px' };
     return (
         <div className='background'>
           <TitleBar/>
           <Container>
               <Grid container centered style={formStyle}>
                 <Grid.Column>
-                  <Header as="h2" textAlign="center">
+                  <Header as="h2" textAlign="center" style={{ paddingTop: '10px', paddingBottom: '30px' }}>
                     Have any thoughts about the website? Post it here!
                   </Header>
                   <AutoForm ref={ref => {
