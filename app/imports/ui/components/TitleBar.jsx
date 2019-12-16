@@ -40,65 +40,9 @@ class TitleBar extends React.Component {
                 ADD AN ITEM
               </p>
             </a>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
-            <Menu.Item>
-            </Menu.Item>
             <a className='not-menu-item'
                href='/#/guide'>
-              <p className='not-menu-item'>
+              <p id='nav-guide' className='not-menu-item'>
                 WEBSITE GUIDE
               </p>
             </a>

@@ -9,7 +9,7 @@ import { Container, Grid, Menu, Input, Sidebar, Pagination, Icon } from 'semanti
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
-class Store extends Component {
+class Saved extends Component {
   state = {
     animation: 'push',
     direction: 'left',
@@ -764,7 +764,7 @@ class Store extends Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-Store.propTypes = {
+Saved.propTypes = {
   listings: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
   location: PropTypes.object,
@@ -778,4 +778,4 @@ export default withTracker(() => {
     listings: Listings.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(Store);
+})(Saved);

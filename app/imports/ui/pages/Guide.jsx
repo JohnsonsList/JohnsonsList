@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Menu, Header, Grid, Image, Divider } from 'semantic-ui-react';
+import { Container, Menu, Header, Grid, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';

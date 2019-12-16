@@ -30,6 +30,10 @@ h4 {
   padding-left: 0;
 }
 
+#nav-guide {
+  padding-left: 870px;
+}
+
 .footer-background {
   background-color: #363636;
   color: white;
@@ -549,14 +553,96 @@ p.side-bar-items:hover:after {
 /* PROFILE SECTION */
 /* ~~~~~START~~~~~ */
 /* ~~~~~~~~~~~~~~~ */
-#prof-middle {
+#prof-page {
   background-color: #f5f2ee !important;
-  padding-top: 100px;
+  padding-top: 75px;
   padding-bottom: 400px;
 }
 
-#profText {
+#prof-top {
+  background-color: #f1e2d3;
+  height: 150px;
+}
+
+#prof-middle {
+  background-color: #fafafa;
+  height: 50px;
+}
+
+#prof-menu {
+  border: none;
+  box-shadow: none;
+  background-color: #fafafa !important;
+}
+
+.profile-words {
   font-family: "Lato", "Helvetica Neue", serif;
+  color: #024731;
+  font-size: 15px;
+}
+
+#prof-about {
+  padding-left: 930px;
+  cursor: pointer;
+}
+#prof-listings {
+  cursor: pointer;
+}
+
+#prof-listings:after {
+  content: '';
+  display: block;
+  font-family: "Roboto", "Helvetica Neue", serif;
+  width: 0;
+  height: 2px;
+  background: #a0e8a0;
+  transition: width .75s;
+}
+
+#prof-listings:hover:after {
+  width: 100%;
+}
+
+#prof-saved:after {
+  content: '';
+  display: block;
+  font-family: "Roboto", "Helvetica Neue", serif;
+  width: 0;
+  height: 2px;
+  background: #a0e8a0;
+  transition: width .75s;
+}
+
+#prof-saved:hover:after {
+  width: 100%;
+}
+
+#prof-about:after {
+  content: '';
+  display: block;
+  font-family: "Roboto", "Helvetica Neue", serif;
+  width: 0;
+  height: 2px;
+  background: #a0e8a0;
+  transition: width .75s;
+}
+
+#prof-about:hover:after {
+  width: 100%;
+}
+
+#prof-saved {
+  cursor: pointer;
+}
+
+#prof-email {
+  padding-bottom: 100px;
+}
+
+#profile-image {
+  border: 2px solid #024731;
+  border-radius: 500rem;
+  margin-right: 0 !important;
 }
 /* PROFILE SECTION */
 /* ~~~~~~END~~~~~~ */
