@@ -71,7 +71,7 @@ class Profile extends React.Component {
                 <Menu.Item>
                   <p className='profile-words'>{this.props.currentEmail}</p>
                 </Menu.Item>
-                <Menu.Item>
+                <Menu.Item position='right'>
                   <p id='prof-about'
                      className='profile-words'
                      onClick={this.showProfile.bind(this)}>About</p>

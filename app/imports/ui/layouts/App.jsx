@@ -24,6 +24,7 @@ import Feedback from '../pages/Feedback';
 import FeedbackAdmin from '../pages/FeedbackAdmin';
 import ItemPage from '../pages/ItemPage';
 import Guide from '../pages/Guide';
+import OtherProfiles from '../pages/OtherProfiles';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -44,6 +45,7 @@ class App extends React.Component {
               <Route path="/delete" component={Deleted}/>
               <Route path="/guide" component={Guide}/>
               <Route path="/details/:_id" component={ItemPage}/>
+              <Route path="/profiles/:_id" component={OtherProfiles}/>
               <ProtectedRoute path="/list" component={MyListing}/>
               <ProtectedRoute path="/add" component={AddListing}/>
               <ProtectedRoute path="/edit/:_id" component={EditListing}/>
