@@ -581,6 +581,60 @@ p.side-bar-items:hover:after {
   font-size: 15px;
 }
 
+#prof-about {
+  padding-left: 930px;
+  cursor: pointer;
+}
+#prof-listings {
+  cursor: pointer;
+}
+
+#prof-listings:after {
+  content: '';
+  display: block;
+  font-family: "Roboto", "Helvetica Neue", serif;
+  width: 0;
+  height: 2px;
+  background: #a0e8a0;
+  transition: width .75s;
+}
+
+#prof-listings:hover:after {
+  width: 100%;
+}
+
+#prof-saved:after {
+  content: '';
+  display: block;
+  font-family: "Roboto", "Helvetica Neue", serif;
+  width: 0;
+  height: 2px;
+  background: #a0e8a0;
+  transition: width .75s;
+}
+
+#prof-saved:hover:after {
+  width: 100%;
+}
+
+#prof-about:after {
+  content: '';
+  display: block;
+  font-family: "Roboto", "Helvetica Neue", serif;
+  width: 0;
+  height: 2px;
+  background: #a0e8a0;
+  transition: width .75s;
+}
+
+#prof-about:hover:after {
+  width: 100%;
+}
+
+#prof-saved {
+  cursor: pointer;
+}
+
 #prof-email {
   padding-bottom: 100px;
 }

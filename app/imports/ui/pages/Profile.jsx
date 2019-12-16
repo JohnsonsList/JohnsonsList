@@ -11,16 +11,31 @@ import Footer from '../components/Footer';
 /** Renders the Page for adding a document. */
 class Profile extends React.Component {
 
-  edit() {
-    this.setState({
-      editing: true,
-    });
+  constructor() {
+    super();
+    this.state = {
+      profile: true,
+      listings: false,
+      saved: false,
+    };
   }
 
-  save() {
-    this.setState({
-      editing: false,
-    });
+  showProfile() {
+    this.setState({ profile: true });
+    this.setState({ listings: false });
+    this.setState({ saved: false });
+  }
+
+  showListings() {
+    this.setState({ listings: !this.state.listings });
+    this.setState({ profile: false });
+    this.setState({ saved: false });
+  }
+
+  showSaved() {
+    this.setState({ saved: !this.state.saved });
+    this.setState({ profile: false });
+    this.setState({ listings: false });
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -50,9 +65,39 @@ class Profile extends React.Component {
                 <Menu.Item>
                   <p className='profile-words'>{this.props.currentEmail}</p>
                 </Menu.Item>
+                <Menu.Item>
+                  <p id='prof-about'
+                     className='profile-words'
+                     onClick={this.showProfile.bind(this)}>About</p>
+                </Menu.Item>
+                <Menu.Item>
+                  <p id='prof-listings'
+                     className='profile-words'
+                     onClick={this.showListings.bind(this)}>Listings</p>
+                </Menu.Item>
+                <Menu.Item>
+                  <p id='prof-saved'
+                     className='profile-words'
+                     onClick={this.showSaved.bind(this)}>Saved</p>
+                </Menu.Item>
               </Menu>
+            {this.state.profile === true ?
+            <div>
+              <p>ABOUT TEST TEST TEST TEST TEST TEST TEST</p>
             </div>
+            : '' }
+            {this.state.listings === true ?
+            <div>
+              <p>LISTINGS TEST TEST TEST TEST TEST TEST TEST</p>
+            </div>
+            : '' }
+            {this.state.saved === true ?
+            <div>
+              <p>SAVED TEST TEST TEST TEST TEST TEST TEST</p>
+            </div>
+            : '' }
           </div>
+        </div>
           <Footer/>
         </div>
     );
