@@ -11,7 +11,7 @@ class Landing extends React.Component {
 
   render() {
     const gridStyle = { height: '600px' };
-    const listStyle = { paddingLeft: '50px' };
+    const listStyle = { boxShadow: '5px 5px 5px #4a4a4a' };
     const tabStyle = {
       border: 'none',
       boxShadow: 'none',
@@ -24,7 +24,7 @@ class Landing extends React.Component {
         render: () => <Tab.Pane attached={false} style={tabStyle}>
           <Grid centered>
             <Grid.Column width={5}>
-              <Image style={listStyle} size='medium' src='/images/listing.jpg'/>
+              <Image style={listStyle} size='medium' rounded src='/images/taking-photo.jpg'/>
             </Grid.Column>
             <Grid.Column width={5}>
               <Header as='h2'>
@@ -43,14 +43,14 @@ class Landing extends React.Component {
               <p>Wait for someone of interest to contact you about the listing you made.</p>
             </Grid.Column>
             <Grid.Column width={5}>
-              <Image style={listStyle} floated='right'
-                     size='medium' src='/images/waiting.jpg'/>
+              <Image style={listStyle} rounded floated='right'
+                     size='medium' src='/images/waiting-item.jpg'/>
             </Grid.Column>
           </Grid>
           <Grid centered>
             <Grid.Column width={5}>
-              <Image style={listStyle} floated='right'
-                     size='medium' src='/images/sell.jpg'/>
+              <Image style={listStyle} rounded floated='right'
+                     size='medium' src='/images/sell-item.jpg'/>
             </Grid.Column>
             <Grid.Column width={5}>
               <Header as='h2'>
@@ -67,7 +67,7 @@ class Landing extends React.Component {
         render: () => <Tab.Pane attached={false} style={tabStyle}>
           <Grid centered>
             <Grid.Column width={5}>
-              <Image style={listStyle} size='medium' src='/images/find.jpg'/>
+              <Image style={listStyle} size='medium' rounded src='/images/listing.png'/>
             </Grid.Column>
             <Grid.Column width={5}>
               <Header as='h2'>
@@ -87,14 +87,14 @@ class Landing extends React.Component {
                 able to contact the owner and arrange a deal.</p>
             </Grid.Column>
             <Grid.Column width={5}>
-              <Image style={listStyle} floated='right'
-                     size='medium' src='/images/contact.jpg'/>
+              <Image style={listStyle} rounded floated='right'
+                     size='large' src='/images/email-seller.jpg'/>
             </Grid.Column>
           </Grid>
           <Grid centered>
             <Grid.Column width={5}>
-              <Image style={listStyle} floated='right'
-                     size='medium' src='/images/buy.jpg'/>
+              <Image style={listStyle} rounded floated='right'
+                     size='medium' src='/images/buy-item.jpg'/>
             </Grid.Column>
             <Grid.Column width={5}>
               <Header as='h2'>
