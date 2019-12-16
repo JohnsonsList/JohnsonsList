@@ -23,8 +23,8 @@ class Landing extends React.Component {
         menuItem: 'SELLING',
         render: () => <Tab.Pane attached={false} style={tabStyle}>
           <Grid centered>
-            <Grid.Column width={5}>
-              <Image style={listStyle} size='medium' src='/images/listing.jpg'/>
+            <Grid.Column width={11}>
+              <Image style={listStyle} size='big' src='/images/create-listing.png'/>
             </Grid.Column>
             <Grid.Column width={5}>
               <Header as='h2'>
@@ -42,15 +42,15 @@ class Landing extends React.Component {
               <hr/>
               <p>Wait for someone of interest to contact you about the listing you made.</p>
             </Grid.Column>
-            <Grid.Column width={5}>
+            <Grid.Column width={11}>
               <Image style={listStyle} floated='right'
-                     size='medium' src='/images/waiting.jpg'/>
+                     size='big' src='/images/get-contacted.png'/>
             </Grid.Column>
           </Grid>
           <Grid centered>
-            <Grid.Column width={5}>
+            <Grid.Column width={11}>
               <Image style={listStyle} floated='right'
-                     size='medium' src='/images/sell.jpg'/>
+                     size='big' src='/images/selling-item.png'/>
             </Grid.Column>
             <Grid.Column width={5}>
               <Header as='h2'>
@@ -66,8 +66,8 @@ class Landing extends React.Component {
         menuItem: 'BUYING',
         render: () => <Tab.Pane attached={false} style={tabStyle}>
           <Grid centered>
-            <Grid.Column width={5}>
-              <Image style={listStyle} size='medium' src='/images/find.jpg'/>
+            <Grid.Column width={11}>
+              <Image style={listStyle} size='big' src='/images/find-listing.png'/>
             </Grid.Column>
             <Grid.Column width={5}>
               <Header as='h2'>
@@ -86,15 +86,15 @@ class Landing extends React.Component {
               <p>Contact information will be provided to let you be
                 able to contact the owner and arrange a deal.</p>
             </Grid.Column>
-            <Grid.Column width={5}>
+            <Grid.Column width={11}>
               <Image style={listStyle} floated='right'
-                     size='medium' src='/images/contact.jpg'/>
+                     size='big' src='/images/contact-owner.png'/>
             </Grid.Column>
           </Grid>
           <Grid centered>
-            <Grid.Column width={5}>
+            <Grid.Column width={11}>
               <Image style={listStyle} floated='right'
-                     size='medium' src='/images/buy.jpg'/>
+                     size='big' src='/images/buy.png'/>
             </Grid.Column>
             <Grid.Column width={5}>
               <Header as='h2'>
