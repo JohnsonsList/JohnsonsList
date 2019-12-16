@@ -80,8 +80,7 @@ class ItemPage extends React.Component {
                 <Header as="h2">{this.props.listings.name}</Header>
                 {this.props.listings.owner === Meteor.user().username ?
                 <Header.Subheader>by <a href='/#/profile'>{this.props.listings.owner}</a></Header.Subheader>
-                : <Header.Subheader>by <a href='/#/profiles/`${this.props.listings.owner._id}`'
-                    >{this.props.listings.owner}</a></Header.Subheader> }
+                : <Header.Subheader>by {this.props.listings.owner}</Header.Subheader> }
                 <Header.Subheader>Contact me at: {this.props.listings.email}</Header.Subheader>
                 <Header.Subheader style={spaceStyle}>
                   <Label color='teal'>{this.props.listings.categories}</Label>

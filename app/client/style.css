@@ -55,7 +55,7 @@ div.nine.wide.column {
 }
 
 div.seven.wide.column {
-  padding-right: 0px !important;
+  padding-right: 0 !important;
 }
 
 .ui.input:focus {
@@ -554,7 +554,7 @@ p.side-bar-items:hover:after {
 /* ~~~~~START~~~~~ */
 /* ~~~~~~~~~~~~~~~ */
 #prof-page {
-  background-color: #f5f2ee !important;
+  background-color: #fafafa !important;
   padding-top: 75px;
   padding-bottom: 400px;
 }
@@ -570,7 +570,7 @@ p.side-bar-items:hover:after {
 }
 
 #prof-menu {
-  border: none;
+  border-bottom: 1px solid #e8ebe9;
   box-shadow: none;
   background-color: #fafafa !important;
 }
@@ -639,7 +639,7 @@ p.side-bar-items:hover:after {
 }
 
 #profile-image {
-  border: 2px solid #024731;
+  border: 2px solid #a0e8a0;
   border-radius: 500rem;
   margin-right: 0 !important;
 }
