@@ -15,27 +15,18 @@ class Profile extends React.Component {
   constructor() {
     super();
     this.state = {
-      profile: true,
-      listings: false,
+      listings: true,
       saved: false,
     };
   }
 
-  showProfile() {
-    this.setState({ profile: true });
-    this.setState({ listings: false });
-    this.setState({ saved: false });
-  }
-
   showListings() {
     this.setState({ listings: !this.state.listings });
-    this.setState({ profile: false });
     this.setState({ saved: false });
   }
 
   showSaved() {
     this.setState({ saved: !this.state.saved });
-    this.setState({ profile: false });
     this.setState({ listings: false });
   }
 
@@ -71,12 +62,7 @@ class Profile extends React.Component {
                 <Menu.Item>
                   <p className='profile-words'>{this.props.currentEmail}</p>
                 </Menu.Item>
-                <Menu.Item>
-                  <p id='prof-about'
-                     className='profile-words'
-                     onClick={this.showProfile.bind(this)}>About</p>
-                </Menu.Item>
-                <Menu.Item>
+                <Menu.Item position='right'>
                   <p id='prof-listings'
                      className='profile-words'
                      onClick={this.showListings.bind(this)}>Listings</p>
@@ -89,11 +75,6 @@ class Profile extends React.Component {
               </Menu>
             </div>
             <div id='prof-bottom'>
-            {this.state.profile === true ?
-            <div>
-              <p>ABOUT TEST TEST TEST TEST TEST TEST TEST</p>
-            </div>
-            : '' }
             {this.state.listings === true ?
                 <Grid>
                   {this.props.listings.map((listings) => <Grid.Column key={listings._id} width={4} style={cardStyle}>
