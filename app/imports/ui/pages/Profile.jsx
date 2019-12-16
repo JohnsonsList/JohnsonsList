@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
+import { Listings } from '/imports/api/listings/Listing';
+import Listing from '/imports/ui/components/Listing';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Container, Image, Grid, Menu } from 'semantic-ui-react';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
-import { withRouter } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
@@ -40,6 +41,11 @@ class Profile extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+
+    const cardStyle = {
+      paddingTop: '50px',
+      // paddingLeft: '100px',
+    };
 
     return (
         <div>
@@ -81,24 +87,32 @@ class Profile extends React.Component {
                      onClick={this.showSaved.bind(this)}>Saved</p>
                 </Menu.Item>
               </Menu>
+            </div>
+            <div id='prof-bottom'>
             {this.state.profile === true ?
             <div>
               <p>ABOUT TEST TEST TEST TEST TEST TEST TEST</p>
             </div>
             : '' }
             {this.state.listings === true ?
-            <div>
-              <p>LISTINGS TEST TEST TEST TEST TEST TEST TEST</p>
-            </div>
+                <Grid>
+                  {this.props.listings.map((listings) => <Grid.Column key={listings._id} width={4} style={cardStyle}>
+                    <Listing
+                        listings={listings}/>
+                  </Grid.Column>)}
+                </Grid>
             : '' }
             {this.state.saved === true ?
-            <div>
-              <p>SAVED TEST TEST TEST TEST TEST TEST TEST</p>
-            </div>
+                <Grid>
+                  {this.props.listings.map((listings) => <Grid.Column key={listings._id} width={4} style={cardStyle}>
+                    <Listing
+                        listings={listings}/>
+                  </Grid.Column>)}
+                </Grid>
             : '' }
           </div>
         </div>
-          <Footer/>
+        <Footer/>
         </div>
     );
   }
@@ -111,6 +125,8 @@ Profile.propTypes = {
   currentLast: PropTypes.string,
   items: PropTypes.string,
   currentEmail: PropTypes.string,
+  listings: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
 };
 
 // this is required to make the name show up
@@ -122,5 +138,13 @@ const ProfileContainer = withTracker(() => ({
   currentLast: Meteor.user() ? Meteor.user().profile.last : '',
 }))(Profile);
 
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const sub1 = Meteor.subscribe('MyListings');
+  const sub2 = Meteor.subscribe('Favorites');
+  return {
+    listings: Listings.find({}).fetch(),
+    ready: sub1.ready() && sub2.ready(),
+  };
 
-export default withRouter(ProfileContainer);
+})(ProfileContainer);

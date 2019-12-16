@@ -9,7 +9,7 @@ import { Container, Grid, Menu, Input, Sidebar } from 'semantic-ui-react';
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
 
-class Store extends Component {
+class MyListings extends Component {
   state = {
     animation: 'push',
     direction: 'left',
@@ -730,7 +730,7 @@ class Store extends Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-Store.propTypes = {
+MyListings.propTypes = {
   listings: PropTypes.array.isRequired,
   location: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -744,4 +744,4 @@ export default withTracker(() => {
     listings: Listings.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(Store);
+})(MyListings);
