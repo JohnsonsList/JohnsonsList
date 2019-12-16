@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Menu, Header, Grid, Image, Tab } from 'semantic-ui-react';
+import { Container, Menu, Header, Grid, Image, Divider } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import TitleBar from '../components/TitleBar';
@@ -58,40 +58,39 @@ class Guide extends React.Component {
               <div>
                 <Grid centered>
                   <Grid.Column width={10}>
-                    <Image size='big' src='/images/create-listing.png'/>
+                    <Image className='guide-images' size='big' src='/images/create-listing.png'/>
                   </Grid.Column>
                   <Grid.Column width={6}>
-                    <Header as='h2'>
-                      Step 1 - Create Listing
+                    <Header className='guide-words' as='h2'>
+                      Step 1 - Create a Listing
                     </Header>
                     <hr/>
-                    <p>Create a listing and fill out the appropriate information.</p>
+                    <p className='guide-words'>Create a listing and fill out the appropriate information.</p>
                   </Grid.Column>
                 </Grid>
                 <Grid centered>
                   <Grid.Column width={6}>
-                    <Header as='h2'>
+                    <Header className='guide-words' as='h2'>
                       Step 2 - Get Contacted
                     </Header>
                     <hr/>
-                    <p>Wait for someone of interest to contact you about the listing you made.</p>
+                    <p className='guide-words'>
+                      Wait for someone of interest to contact you about the listing you made.</p>
                   </Grid.Column>
                   <Grid.Column width={10}>
-                    <Image floated='right'
-                           size='big' src='/images/get-contacted.png'/>
+                    <Image className='guide-images'floated='right' size='big' src='/images/get-contacted.png'/>
                   </Grid.Column>
                 </Grid>
                 <Grid centered>
                   <Grid.Column width={10}>
-                    <Image floated='right'
-                           size='big' src='/images/selling-item.png'/>
+                    <Image className='guide-images' floated='right' size='big' src='/images/selling-item.png'/>
                   </Grid.Column>
                   <Grid.Column width={6}>
-                    <Header as='h2'>
+                    <Header className='guide-words' as='h2'>
                       Step 3 - Sell the Item
                     </Header>
                     <hr/>
-                    <p>Meet up with the individual that contacted you and sell the item!</p>
+                    <p className='guide-words'>Meet up with the individual that contacted you and sell the item!</p>
                   </Grid.Column>
                 </Grid>
               </div>
@@ -106,41 +105,41 @@ class Guide extends React.Component {
                     <div>
                       <Grid centered>
                         <Grid.Column width={10}>
-                          <Image size='big' src='/images/find-listing.png'/>
+                          <Image className='guide-images' size='big' src='/images/find-listing.png'/>
                         </Grid.Column>
                         <Grid.Column width={6}>
-                          <Header as='h2'>
+                          <Header className='guide-words' as='h2'>
                             Step 1 - Find a Listing
                           </Header>
                           <hr/>
-                          <p>Look around the store and encounter a listing that piques your interest.</p>
+                          <p className='guide-words'>
+                            Look around the store and encounter a listing that piques your interest.</p>
                         </Grid.Column>
                       </Grid>
                       <Grid centered>
                         <Grid.Column width={6}>
-                          <Header as='h2'>
+                          <Header className='guide-words' as='h2'>
                             Step 2 - Contact the Seller
                           </Header>
                           <hr/>
-                          <p>Contact information will be provided to let you be
+                          <p className='guide-words'>Contact information will be provided to let you be
                             able to contact the owner and arrange a deal.</p>
                         </Grid.Column>
                         <Grid.Column width={10}>
-                          <Image floated='right'
-                                 size='big' src='/images/contact.png'/>
+                          <Image className='guide-images' floated='right' size='big' src='/images/contact.png'/>
                         </Grid.Column>
                       </Grid>
                       <Grid centered>
                         <Grid.Column width={10}>
-                          <Image floated='right'
-                                 size='big' src='/images/buy.png'/>
+                          <Image className='guide-images' floated='right' size='big' src='/images/buy.png'/>
                         </Grid.Column>
                         <Grid.Column width={6}>
-                          <Header as='h2'>
+                          <Header className='guide-words' as='h2'>
                             Step 3 - Buy the Item
                           </Header>
                           <hr/>
-                          <p>Meet up with the individual that you contacted and buy the item!</p>
+                          <p className='guide-words'>
+                            Meet up with the individual that you contacted and buy the item!</p>
                         </Grid.Column>
                       </Grid>
                     </div>
