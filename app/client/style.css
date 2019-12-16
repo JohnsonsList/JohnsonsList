@@ -208,6 +208,21 @@ img.ui.avatar.image {
   background-color: transparent;
 }
 
+.guide-words{
+  color: #024731 !important;
+}
+
+hr {
+  color: #024731 !important;
+}
+.guide-header {
+  color: #024731 !important;
+}
+
+.guide-images {
+  border: 1px solid #024731 !important;
+}
+
 #guide-page {
   padding-top: 70px;
   padding-bottom: 100px;
