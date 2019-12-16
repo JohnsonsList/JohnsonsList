@@ -556,7 +556,7 @@ p.side-bar-items:hover:after {
 #prof-page {
   background-color: #fafafa !important;
   padding-top: 75px;
-  padding-bottom: 400px;
+  padding-bottom: 50px;
 }
 
 #prof-top {
@@ -573,6 +573,15 @@ p.side-bar-items:hover:after {
   border-bottom: 1px solid #e8ebe9;
   box-shadow: none;
   background-color: #fafafa !important;
+}
+
+#prof-header {
+  font-family: "Lato", "Helvetica Neue", serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #024731;
+  padding-top: 10px;
+  padding-left: 20px;
 }
 
 .profile-words {
