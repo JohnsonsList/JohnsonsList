@@ -4,7 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { Listings } from '/imports/api/listings/Listing';
 import Listing from '/imports/ui/components/Listing';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Container, Image, Grid, Menu } from 'semantic-ui-react';
+import { Container, Image, Grid, Menu, Header } from 'semantic-ui-react';
 import 'uniforms-bridge-simple-schema-2'; // required for Uniforms
 import TitleBar from '../components/TitleBar';
 import Footer from '../components/Footer';
@@ -34,9 +34,17 @@ class Profile extends React.Component {
   render() {
 
     const cardStyle = {
-      paddingTop: '50px',
+      paddingTop: '20px',
       // paddingLeft: '100px',
     };
+
+    let title;
+    if (this.state.listings === true) {
+      title = 'YOUR LISTINGS';
+    }
+    if (this.state.saved === true) {
+      title = 'SAVED LISTINGS';
+    }
 
     return (
         <div>
@@ -75,6 +83,7 @@ class Profile extends React.Component {
               </Menu>
             </div>
             <div id='prof-bottom'>
+              <p id='prof-header'>{title}</p>
             {this.state.listings === true ?
                 <Grid>
                   {this.props.listings.map((listings) => <Grid.Column key={listings._id} width={4} style={cardStyle}>
